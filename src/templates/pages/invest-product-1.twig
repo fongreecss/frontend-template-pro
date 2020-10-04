@@ -123,14 +123,22 @@ our clients as well.",
 		"title" : "Želim svetovanje",
 		"url" : "#",
 	},
-	"image" : "assets/images/three-small-3.png",
 } %}
 
 {% set progressBarItems2 = {
 	"number": "80",
 	"is_percent" : true,
 	"description": "have adapted to be more cost efficient and modernized.",
-	"image" : "assets/images/three-small-right-2.png",
+} %}
+
+{% set progressBarItems3 = {
+	"number": "48",
+	"is_percent" : true,
+	"description": "of startus have already hired new employees.",
+	"cta" : {
+		"title" : "Želim svetovanje",
+		"url" : "#",
+	},
 } %}
 
 
@@ -143,7 +151,9 @@ our clients as well.",
 		{% include "/templates/components/progress-bar-1.twig" with { params: progressBarItems } %}
 		<div class="mb-30 lg:mb-24"></div>
 		{% include "/templates/components/progress-bar-2.twig" with { params: progressBarItems2 } %}
-		<div class="mb-30 lg:mb-24"></div>
+		<div class="mb-30 lg:mb-36"></div>
+		{% include "/templates/components/progress-bar-3.twig" with { params: progressBarItems3 } %}
+		<div class="mb-34 lg:mb-36"></div>
 		{% include "/templates/components/image-aside-3.twig" with { params: imageAsideItems2 } %}
 		<div class="mb-32 lg:mb-36"></div>
 		{% include "/templates/components/testimonial-1.twig" with { params: testimonialItems1 } %}

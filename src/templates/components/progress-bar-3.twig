@@ -1,0 +1,58 @@
+{#
+  Section with progress bar - version 1
+
+  this one is made for percents 
+
+  @param {string}  number - percents or not
+  @params {bool} is_percent - true or false
+  @param {string} description
+  @param {object}  cta 
+  {
+    @param {string} title
+    @param {string} url
+  }
+
+#}
+
+{# Output #}
+<section class="c-progress-bar c-progress-bar-3 container-only-lg">
+  <div class="flex flex-wrap -mx-10 lg:-mx-5">
+    <div class="hidden lg:block col-12 lg:col-4">
+        <div class="bg-image-left-container">
+            <img src="{{ manifest("assets/images/three-small-right-4.png") }}" class="object-cover h-full w-full" alt="">
+        </div>
+        
+    </div>
+    <div class="col-12 lg:col-4">
+        <div class="w-full -ml-10 sm:ml-0 sm:text-center">       
+            <div class="lg2-number inline-block text-coalblack relative">
+                {{ params.number }}
+                <div class="absolute bottom-0 left-0 right-0 overflow-hidden number number-{{params.number}}">
+                    <div class="absolute bottom-0 left-0 right-0 lg2-number inline-block text-peppermint">{{ params.number }}</div>
+                </div>
+                {% if params.is_percent == true %}
+                    <div class="percent h2 lg:h1 title text-midtonegray">%</div>
+                {% endif %}
+            </div> 
+            
+        </div>
+    </div>
+    <div class="hidden lg:block  col-12 lg:col-4 relative">
+        <div class="bg-image-right-container">
+            <img src="{{ manifest("assets/images/three-small-4.png") }}" class="object-cover h-full w-full" alt="">
+        </div>
+    </div>
+  </div>
+  <div class="flex flex-wrap -mx-5">
+    <div class="col-12 lg:col-4 lg:offset-4">
+        {% if params.description %}
+        <p class="mt-15 mb-6 lg:mt-10 lg:mb-6 lg:text-center leading-paragraph text-midtonegray">{{ params.description }}</p>
+        {% endif %}
+        {% if params.cta %}
+        <div class="lg:text-center">
+          <a href="{{ params.cta.url }}" class="button button-full medium-button w-full lg:w-auto">{{ params.cta.title }}</a>
+        </div>
+        {% endif %}
+    </div>
+  </div>
+</section>

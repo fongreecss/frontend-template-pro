@@ -91,5 +91,31 @@
 }
 
 .c-progress-bar-3 {
-    
+    @for $i from 1 through 100 {
+        .number-#{$i} {
+            height : $i * 1%;
+        }
+    }
+    .percent {
+        position: absolute;
+        bottom: 0;
+        left: calc(100% + 4px);
+    }
+
+    @screen lg {
+        .bg-image-left-container {
+            position: absolute;
+            width: 184px;
+            height: 379px;
+            top:0;
+            left: 0;
+        }
+        .bg-image-right-container {
+            position: absolute;
+            width: 184px;
+            height: 291px;
+            right:0;
+            top: 124px;
+        }
+    }
 }
