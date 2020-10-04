@@ -23,10 +23,10 @@
             <img src="{{ params.image }}" class="object-cover h-full w-full" alt="">
         </div>
         <div class="w-full bg-arcticsilver h-75 lg:h-75 overflow-hidden relative">
-            <div class="progress-bar number-{{ params.number }} bg-peppermint h-full"></div>         
-            <div class="lg3-number number mask-number bg-white">{{ params.number }}</div>
+            <div class="progress-bar number-{{ params.number }} bg-peppermint h-full absolute top-0 left-0"></div>         
+            <div class="lg3-number number mask-number bg-white" style="background-image: url({{manifest("assets/images/mask1.svg")}});">{{ params.number }}</div>
             {% if params.is_percent == true %}
-              <div class="percent lg:h1 title text-midtonegray">%</div>
+              <div class="percent h2 lg:h1 title text-midtonegray">%</div>
             {% endif %}
         </div>
     </div>

@@ -61,7 +61,7 @@
                 <div class="lg:px-14 mb-1 flex lg:block justify-center">
                 <div class="relative py-4 lg:py-0">
                 <div class="lg:hidden absolute top-0 bottom-0 right-1/2 w-screen -z-1 bg-arcticsilver"></div>
-                <span class="lg-number number-mask inline-block">{{ params.number.title }}</span>
+                <span class="lg-number number-mask inline-block" style="background-image: url({{manifest("assets/images/mask1.svg")}});">{{ params.number.title }}</span>
                 {% if params.number.isPercentage == true %}
                 <span class="h1 large-title inline-block text-peppermint ">%</span>
                 {% endif %}
