@@ -1,0 +1,84 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,700&display=swap&subset=latin-ext');
+@import "fonts";
+
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@import "../../node_modules/tiny-slider/src/tiny-slider.scss";
+@import '../../node_modules/pikaday/scss/pikaday';
+@import 'typography';
+@import 'colors';
+@import "scrollspy";
+@import "yt-player";
+@import "animation";
+@import "./components/header";
+@import "./components/we-offer";
+@import "./components/button";
+@import "./components/card";
+@import "./components/input";
+@import "./components/text";
+@import "./components/text-with-note";
+@import "./components/progress-bar";
+@import "./components/image-aside";
+@import "./components/banner";
+@import "./components/footer";
+
+html, body {
+  color:#000;
+  //scroll-behavior: smooth;
+  
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+main {
+  
+}
+
+body {
+  @apply antialiased;
+}
+
+.container-only-lg,
+.container-lg-only,
+.container-wider {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+@media (min-width: 1024px) {
+  .container-only-lg {
+      max-width: 1004px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container-only-lg,
+  .container-lg-only {
+      max-width: 1344px;
+  }
+  .container-wider {
+      max-width: 1408px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .max-width-none-mobile,
+  .mw-none-mobile {
+    max-width: none!important;
+  }
+}
+
+
+
+

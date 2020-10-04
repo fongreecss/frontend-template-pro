@@ -1,0 +1,10 @@
+{% extends '/templates/layouts/base.twig' %}
+
+{% block content %}
+
+	<main role="main" class="p-index">
+		{% for item in index.content %}
+			{% include "/templates/components/" ~ item.acf_fc_layout ~ ".twig" with { params: item } %}
+		{% endfor %}
+	</main>
+{% endblock %}

@@ -1,0 +1,143 @@
+{
+    "post": {
+        "title": "Flaviar Test",
+        "thumbnail": "",
+        "date": "",
+        "author": {
+            "first_name": "Janez",
+            "last_name": "Novak"
+        }
+    },
+    "index": {
+        "content": [
+            {
+                "acf_fc_layout" : "header-v1",
+                "background_image" : "",
+                "title" : "Vaš partner pri doseganju finančnih ciljev",
+                "cta1" : {
+                    "title" : "Naročite svetovalca",
+                    "url" : "#",
+                    "sub" : "Or <b>learn more</b> about us"
+                },
+                "cta2" : {
+                    "title" : "Video klic v živo",
+                    "url" : "#",
+                    "sub" : "3 trenutno aktivni"
+                }
+            },
+            {
+                "acf_fc_layout" : "more-than",
+                "item1" : {
+                    "sup" : "Več kot",
+                    "number" : "100.000.000",
+                    "sub" : "evrov vloženih sredstev strank"
+                },
+                "item2" : {
+                    "sup" : "Več kot",
+                    "number" : "20.000",
+                    "sub" : "strank"
+                }
+            },
+            {
+                "acf_fc_layout": "text",
+                "title": "Start building their gift",
+                "text": "Your Gift, Their Journey"
+            },
+            {
+                "acf_fc_layout": "separator",
+                "class": "mb-20 g:mb-16"
+            },
+            {
+                "acf_fc_layout": "card-list",
+
+                "items": [
+                    {
+                        "title": "Personalize the card",
+                        "text": "Choose their membership period, delivery method and add a personal handwritten message",
+                        "image": "assets/images/picto_01.png"
+                    },
+                    {
+                        "title": "Deliver the gift",
+                        "text": "As soon as they receive their gift card, they will be able to claim their membership by following the instructions",
+                        "image": "assets/images/picto_02.png"
+                    },
+                    {
+                        "title": "Recap the rewards",
+                        "text": "May 2018 be the year of exploration and tasting for you and yours!",
+                        "image": "assets/images/picto_03.png"
+                    }
+                ]
+            },
+            {
+                "acf_fc_layout": "separator",
+                "class": "mb-4 lg:mb-20"
+            },
+            {
+                "acf_fc_layout" : "image-section",
+                "title" : "Personalize their gift card"
+            },
+            {
+                "acf_fc_layout" : "order-form"
+            },
+            {
+                "acf_fc_layout" : "questions",
+                "title" : "Got questions?",
+                "items" : [
+                    {
+                        "title" : "How much does it cost?",
+                        "url" : "#"
+                        
+                    }, 
+                    {
+                        "title" : "Can I ship Tasting Boxes directly to the recipient?",
+                        "url" : "#"
+                        
+                    },
+                    {
+                        "title" : "Can I buy multiple gifts?",
+                        "url" : "#"
+                        
+                    },
+                    {
+                        "title" : "How does it work for the recipient?",
+                        "url" : "#"
+                        
+                    },
+                    {
+                        "title" : "When will the First Box arrive?",
+                        "url" : "#"
+                        
+                    },
+                    {
+                        "title" : "What happens when the Gift ends?",
+                        "url" : "#"
+                        
+                    },
+                    {
+                        "title" : "What counties do you ship to?",
+                        "url" : "#"
+                        
+                    },
+                    {
+                        "title" : "How many different spirits are included?",
+                        "url" : "#"
+                        
+                    },
+                    {
+                        "title" : "What recipient info is required from me?",
+                        "url" : "#"
+                        
+                    },
+                    {
+                        "title" : "Will you ask the recipients for billing info?",
+                        "url" : "#"
+                        
+                    }
+                ]
+            },
+            {
+                "acf_fc_layout" : "brands"
+            }
+        ]
+    }
+}

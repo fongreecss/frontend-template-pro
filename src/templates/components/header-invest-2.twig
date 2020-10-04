@@ -1,0 +1,24 @@
+<header class="header-invest-v2 {{ params.header_class }} w-full  relative overflow-hidden flex pt-18 lg:pt-0 pb-72 lg:pb-0 lg:justify-center lg:items-center lg:min-h-screen">
+    {% if params.background_image_desktop %}
+    <div style="{{ params.background_image_desktop ? "background-image: url(" ~ params.background_image_desktop ~ ");" : "" }}" class="{{ params.background_image_class ? params.background_image_class : "" }} hidden lg:block absolute top-0 left-0 w-full h-full bg-no-repeat"></div>
+    {% endif %}
+    {% if params.background_image_mobile %}
+    <div style="{{ params.background_image_mobile ? "background-image: url(" ~ params.background_image_mobile ~ ");" : "" }}" class="{{ params.background_image_class ? params.background_image_class : "" }} lg:hidden absolute top-0 left-0 w-full h-full bg-no-repeat"></div>
+    {% endif %}
+    <div class="container-only-lg">
+        <div class="row">
+            <div class="col-12 lg:col-9 xl:col-8 xl:offset-1">
+                {% if params.logo %}
+                    <div>
+                        <img class="header-logo mb-6 lg:mb-6 w-40 h-auto" src="{{ params.logo }}" alt="">
+                    </div>
+                {% endif %}
+                <h1 class="h5 lg:h1 font-medium lg:font-bold title text-coalblack mb-6 lg:mb-3">{{ params.title }}</h1>
+                <p class="large-paragraph lg:large-paragraph text-textgray mb-6 lg:mb-8">{{ params.description }}</p>
+                <div class="">
+                    <a href="{{ params.cta.url }}" class="button button-full medium-button w-full lg:w-auto">{{ params.cta.title }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

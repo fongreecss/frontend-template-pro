@@ -1,0 +1,482 @@
+h1.title {
+  /* H1.Title */
+  font-family: "Tiempos Headline";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 64px;
+  line-height: 76px;
+  /* identical to box height, or 119% */
+  letter-spacing: -0.012em;
+}
+
+.h1.large-title {
+  font-family: "Tiempos Headline";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 80px;
+  line-height: 72px;
+  /* identical to box height, or 90% */
+  letter-spacing: -0.012em;
+}
+
+.h2.title {
+  /* H2.Title */
+  font-family: "Tiempos Headline";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 56px;
+  /* or 117% */
+  letter-spacing: -0.012em;
+}
+
+.h3.title {
+  font-family: "Tiempos Headline";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 56px;
+  /* identical to box height, or 140% */
+  letter-spacing: -0.012em;
+}
+
+.h4.title {
+  /* H4.Title */
+  font-family: "Tiempos Headline";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 40px;
+  /* or 125% */
+  letter-spacing: -0.012em;
+}
+
+.h5.title {
+  font-family: "Tiempos Headline";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  /* identical to box height, or 133% */
+  letter-spacing: -0.012em;
+}
+
+.h6.title {
+  /* H6.Title */
+  font-family: "Tiempos Headline";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  /* or 150% */
+  letter-spacing: -0.012em;
+}
+
+.leading-paragraph {
+  /* Leading paragraph */
+  font-family: "Tiempos Text";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 40px;
+}
+
+.large-paragraph {
+  /* Large paragraph */
+  font-family: "Tiempos Text";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 36px;
+  /* or 180% */
+}
+
+.medium-paragraph {
+  /* Medium paragraph */
+  font-family: "Tiempos Text";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 28px;
+  /* or 175% */
+}
+
+.small-paragraph {
+  /* Small paragraph */
+  font-family: "Tiempos Text";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  /* or 171% */
+}
+
+.medium-subheader {
+  /* Medium subheader */
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+}
+
+.lg-number {
+  font-family: "Tiempos Headline";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 176px;
+  line-height: 124px;
+  /* identical to box height, or 45% */
+  letter-spacing: -0.012em;
+}
+
+.lg2-number {
+  font-family: "Tiempos Headline";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 256px;
+  line-height: 180px;
+  /* identical to box height, or 125% */
+  letter-spacing: -1px;
+}
+
+.lg3-number {
+  font-family: "Tiempos Headline";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 320px;
+  line-height: 225px;
+  letter-spacing: -1px;
+}
+
+.xl-number {
+  font-family: "Tiempos Headline";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 456px;
+  line-height: 320px;
+  /* identical to box height, or 70% */
+  letter-spacing: -1px;
+}
+
+.medium-button {
+  /* Medium button */
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.small-button {
+  /* Small button */
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 24px;
+  /* identical to box height, or 171% */
+  letter-spacing: 0.02em;
+}
+
+.navigational-button {
+  /* Navigational button */
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.leading-quote {
+  /* Leading quote */
+  font-family: "Tiempos Text";
+  font-style: italic;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 38px;
+  /* or 158% */
+}
+
+.regular-quote {
+  /* Leading quote */
+  font-family: "Tiempos Text";
+  font-style: italic;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  /* or 158% */
+}
+
+.number-mask,
+.mask-number {
+  background-image: url(/assets/images/mask1.svg);
+  background-size: 100% auto;
+  background-position: right top;
+  background-clip: text;
+  color: transparent;
+}
+
+.large-quote {
+  font-family: "Tiempos Text";
+  font-style: italic;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 48px;
+}
+
+.medium-quote {
+  font-family: "Tiempos Text";
+  font-style: italic;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 32px;
+  /* or 133% */
+}
+
+/**
+ * LG
+ *
+ **/
+
+@screen lg {
+  .lg\:h1.title {
+    /* H1.Title */
+    font-family: "Tiempos Headline";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 76px;
+    /* identical to box height, or 119% */
+    letter-spacing: -0.012em;
+  }
+
+  .lg\:h1.large-title {
+    font-family: "Tiempos Headline";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 80px;
+    line-height: 72px;
+    /* identical to box height, or 90% */
+    letter-spacing: -0.012em;
+  }
+
+  .lg\:h2.title {
+    /* H2.Title */
+    font-family: "Tiempos Headline";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 56px;
+    /* or 117% */
+    letter-spacing: -0.012em;
+  }
+
+  .lg\:h3.title {
+    font-family: "Tiempos Headline";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 56px;
+    /* identical to box height, or 140% */
+    letter-spacing: -0.012em;
+  }
+
+  .lg\:h4.title {
+    /* H4.Title */
+    font-family: "Tiempos Headline";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 40px;
+    /* or 125% */
+    letter-spacing: -0.012em;
+  }
+
+  .lg\:h5.title {
+    font-family: "Tiempos Headline";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    /* identical to box height, or 133% */
+    letter-spacing: -0.012em;
+  }
+
+  .lg\:h6.title {
+    /* H6.Title */
+    font-family: "Tiempos Headline";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    /* or 150% */
+    letter-spacing: -0.012em;
+  }
+
+  .lg\:leading-paragraph {
+    /* Leading paragraph */
+    font-family: "Tiempos Text";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 40px;
+  }
+
+  .lg\:large-paragraph {
+    /* Large paragraph */
+    font-family: "Tiempos Text";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 36px;
+    /* or 180% */
+  }
+
+  .lg\:medium-paragraph {
+    /* Medium paragraph */
+    font-family: "Tiempos Text";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 28px;
+    /* or 175% */
+  }
+
+  .lg\:small-paragraph {
+    /* Small paragraph */
+    font-family: "Tiempos Text";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    /* or 171% */
+  }
+
+  .lg\:medium-subheader {
+    /* Medium subheader */
+    font-family: "Roboto Condensed";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+  }
+
+  .lg\:lg-number {
+    font-family: "Tiempos Headline";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 176px;
+    line-height: 124px;
+    /* identical to box height, or 45% */
+    letter-spacing: -0.012em;
+  }
+
+  .lg\:lg2-number {
+    font-family: "Tiempos Headline";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 256px;
+    line-height: 320px;
+    /* identical to box height, or 125% */
+    letter-spacing: -1px;
+  }
+
+  .lg\:lg3-number {
+    font-family: "Tiempos Headline";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 320px;
+    line-height: 225px;
+    letter-spacing: -1px;
+  }
+
+  .lg\:xl-number {
+    font-family: "Tiempos Headline";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 456px;
+    line-height: 320px;
+    /* identical to box height, or 70% */
+    letter-spacing: -1px;
+  }
+
+  .lg\:medium-button {
+    /* Medium button */
+    font-family: "Roboto Condensed";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .lg\:small-button {
+    /* Small button */
+    font-family: "Roboto Condensed";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 24px;
+    /* identical to box height, or 171% */
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+  .lg\:navigational-button {
+    /* Navigational button */
+    font-family: "Roboto Condensed";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  .lg\:leading-quote {
+    /* Leading quote */
+    font-family: "Tiempos Text";
+    font-style: italic;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 38px;
+    /* or 158% */
+  }
+
+  .lg\:regular-quote {
+    /* Regular quote */
+    font-family: Tiempos Text;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    /* or 150% */
+  }
+
+  .lg\:large-quote {
+    font-family: "Tiempos Text";
+    font-style: italic;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 48px;
+  }
+  .lg\:medium-quote {
+    font-family: "Tiempos Text";
+    font-style: italic;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 32px;
+    /* or 133% */
+  }
+}

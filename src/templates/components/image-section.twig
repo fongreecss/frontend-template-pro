@@ -1,0 +1,20 @@
+{#
+  Image section
+
+  Data is loaded from a custom post
+
+  @param {string}  title
+  @param {string}  text
+  @param {string}  image
+  @param {array}   categories
+  {
+    @param {string}  title
+  }
+#}
+
+{# Output #}
+<div class="c-image-section overflow-hidden justify-center h-93 lg:h-120 relative">
+  <img data-speed="0.2" class="w-full hidden lg:block h-auto absolute -top-24 left-0" src="{{ manifest('assets/images/hero_image_personalize_desktop_02.jpg') }}"  alt="">
+  <img data-speed="0.2" class="w-full block lg:hidden h-auto absolute -top-40 left-0" src="{{ manifest('assets/images/hero_image_personalize_mobile_02.jpg') }}" alt="">
+  <h2 class="absolute top-40 left-1/2 -translate-x-1/2 text-4xl lg:text-5xl lg:leading-none hidden lg:block text-pink-100 font-brothers uppercase text-center" style="max-width:340px; ">{{ params.title|raw }}</h2>
+</div>

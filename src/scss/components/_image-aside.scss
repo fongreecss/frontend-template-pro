@@ -1,0 +1,87 @@
+.background-block-bright-teal {
+    @apply absolute bg-brightteal w-auto;
+    left: -100px;
+    right: -100px;
+    bottom: auto;
+    top: calc(50%);
+    height: calc(50% + 56px);
+    @screen lg {
+        @apply -top-30 -bottom-30 right-auto h-auto;
+        left: calc(100% - 232px);
+        width:540px;
+    }
+}
+
+.c-image-aside-3 {
+    @screen lg {
+        &>.row {
+            position: relative;
+            min-height:971px;
+        }
+    }
+    .left-image-container,
+    .right-image-container {
+        @apply relative -mx-5 h-50;
+    }
+    @screen lg {
+        .left-image-container {
+            position: absolute;
+            right: 56px;
+            height: 688px;
+            width: 680px;
+            @apply mx-0;
+        }
+        .right-image-container {
+            position: absolute;
+            height: 495px;
+            width: 572px;
+            left: -40px;
+            bottom: 0;
+        }
+    }
+   
+}
+
+.c-image-aside-4 {
+    .bg-image {
+        background-size: cover;
+        
+    }
+    .text-item {
+        white-space: nowrap;
+    }
+    .text-item-1 {
+        margin-left:28%;
+        
+    }
+
+    .text-item-2 {
+        margin-left:-80px;
+    }
+
+    .text-item-3 {
+        margin-left:5%;
+    }
+}
+
+@screen lg {
+    .c-image-aside-4 {
+        .bg-image {
+            background-size: auto 100%;
+        }
+        .text-item {
+            white-space: nowrap;
+        }
+        .text-item-1 {
+            margin-left:220px;
+        }
+
+        .text-item-2 {
+            margin-left:0px;
+        }
+    
+        .text-item-3 {
+            margin-left:200px;
+        }
+    }
+}

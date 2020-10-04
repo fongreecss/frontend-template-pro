@@ -1,0 +1,63 @@
+.button {
+  outline:none;
+  @apply outline-none border-2 uppercase border-transparent border-solid text-white px-8 py-4 inline-block text-center font-bold text-base;
+  line-height:24px;
+  @screen lg {
+    @apply text-base;
+    //min-width: 240px;
+  }
+}
+
+.button-main,
+.button-full {
+  @apply bg-peppermint text-white;
+  &:hover {
+    background-color:#308278;
+  }
+}
+
+.button-full-gold {
+  @apply text-white;
+  background: linear-gradient(180deg, rgba(70, 44, 42, 0.0001) 0%, rgba(65, 39, 14, 0.38) 100%), #87764E;
+  &:hover {
+    background:linear-gradient(180deg, rgba(70, 44, 42, 0.0001) 0%, rgba(63, 29, 10, 0.47) 100%), #6C5E3E;
+  }
+}
+
+.button-empty-gold {
+  @apply bg-transparent text-gold border-gold;
+}
+
+.button-empty {
+  @apply bg-white text-peppermint border-peppermint;
+}
+
+.chat-active-bullet,
+.chat-inactive-bullet {
+  padding-left: 16px;
+  position: relative;
+  &:before {
+    position: absolute;
+    content: "";
+    left:0;
+    top:50%;
+    width:8px;
+    height:8px;
+    transform:translateY(-50%);
+    border-radius: 50%;
+  }
+}
+
+.chat-inactive-bullet {
+  &:before {
+    background-color: red;
+  }
+}
+
+.shadow-button {
+  filter: drop-shadow(0px 4px 0px rgba(0,0,0,0.75));
+}
+
+.text-shadow-button {
+  text-shadow: 0px 1px 0px #0F364C;
+}

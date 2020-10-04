@@ -1,0 +1,156 @@
+{% extends '/templates/layouts/base.twig' %}
+{% set headerItems = { 
+    "logo" : "assets/images/JonatanMars-logo.svg",
+    "background_image_class" : "mountain-bg-image",
+    "background_image_desktop" : "assets/images/main-bg-1.jpg",
+    "background_image_mobile" : "assets/images/main-bg-1-mobile.jpg",
+	"title": "Upravljalci alternativnih investicijski skladov", 
+	"description": "Making more possible.", 
+	"cta" : { 
+		"title" : "Želim svetovanje", 
+		"url" : "#" 
+	} 
+} %}
+
+{% set imageAsideItems = {
+	"title": "Ste pravi tip vlagatelja za invest?",
+	"description": "Our investment board observes the market, our products, educates our consultants and in doing so,
+our clients as well.",
+	"cta" : {
+		"title" : "Spoznajte zdaj",
+		"url" : "#"
+	},
+	"image" : "assets/images/mansuit.jpg"
+} %}
+
+{% set imageAsideItems2 = {
+	"title": "An attractive entry point, [note] somehow we need to transition into how JM manages and guides?",
+	"description": "Podjetje, ki je del Skupine Vzajemci. Cilj podjetja je graditi projekte, ki imajo visoko dodano vrednost, in ki bodo pustili pozitiven pečat v slovenski družbi.",
+	"logo" : "assets/images/JonatanMars-logo.svg",
+	"cta" : {
+		"title" : "Izvejte več",
+		"url" : "#"
+	},
+	"image" : "assets/images/people-working-large.png",
+	"image2" : "assets/images/people-working-large.png"
+} %}
+
+{% set textBoxItems = { 
+
+"items" : [
+	{ 
+		"title": "More is possible", 
+		"description": "JonatanMars is a spin-off company of VZAJEMCI Group, and is a result of its extensive presence and influence in the field of finance in the past 18 years.", 
+		"cta" : { "title" : "Izvejte več", "url" : "#" },
+		"number": 78,
+		"percentage": true,
+		"title2": "Startup-ov namerava zaposlit novi kader",
+	},
+	{ 
+		"title": "Nepremičnine", 
+		"description": "Podjetje, ki je del Skupine Vzajemci. Cilj podjetja je graditi projekte, ki imajo visoko dodano vrednost, in ki bodo pustili pozitiven pečat v slovenski družbi.", 
+		"cta" : { "title" : "Izvejte več", "url" : "#" },
+		"number": 42,
+		"title2": "Stanovanj" 
+	}
+] 
+
+} %}
+
+{% set advancedSectionItems = {
+	"title": "Naložbeni odbor",
+	"description": "Our investment board observes the market, our products, educates our consultants and in doing so,
+our clients as well.",
+	"cta" : {
+		"title" : "Spoznajte zdaj",
+		"url" : "#"
+	},
+	"cta2" : {
+		"title" : "Naročite svetovalca",
+		"url" : "#"
+	},
+	"image" : "assets/images/people-working.jpg",
+	"caption": "Stranke, ki so sodelovale z našimi svetovalci, so v zadnjem letu v povprečju ustvarile",
+	"number": {
+		"title": 17,
+		"caption": "Donosnost",
+		"isPercentage": true,
+	}
+} %}
+
+
+{% set bannerItems = {
+	"title": "Make more possible. ",
+	"cta" : {
+		"title" : "Želim svetovanje",
+		"url" : "#",
+        "caption" : "Or learn more about us"
+	},
+    "cta2" : {
+		"title" : "Video klic v živo",
+		"url" : "#",
+        "caption" : "3 trenutno aktivni"
+	},
+} %}
+
+{% set testimonialItems1 = {
+	"quote": "Key statement about the product and how exciting it is, or some other manner of interesting quote.",
+	"name" : "Uroš Raspet",
+	"jobtitle" : "CEO & Majority Shareholder",
+	"image" : "assets/images/guy-left.png",
+	"image_first" : true,
+} %}
+
+{% set testimonialItems2 = {
+	"quote": "Key statement about the product and how exciting it is, or some other manner of interesting quote.",
+	"name" : "Dr. David Vegelj",
+	"jobtitle" : "Cheif investment offiecer",
+	"image" : "assets/images/guy-right.png",
+} %}
+
+{% set noteItems = {
+	"title": "What does research say for companies in alternative investment funds?",
+	"description": "91% of startups globally felt their business was impacted by the recent crisis, but despite this:",
+	"note" : "[1] Based on research by Station F, measuring 120 alternative funds.",
+	"note_number" : "[1]"
+} %}
+
+{% set progressBarItems = {
+	"number": "78",
+	"is_percent" : true,
+	"description": "of startups are planning on hiring.",
+	"cta" : {
+		"title" : "Želim svetovanje",
+		"url" : "#",
+	},
+	"image" : "assets/images/three-small-3.png",
+} %}
+
+{% set progressBarItems2 = {
+	"number": "4",
+	"description": "have adapted to be more cost efficient and modernized.",
+	"image" : "assets/images/three-small-right-2.png",
+} %}
+
+
+{% block content %}
+	<main role="main" class="p-invest-landing">
+        {% include "/templates/components/header-invest-2.twig" with { params: headerItems } %}
+		<div class="mb-32 lg:mb-36"></div>
+		{% include "/templates/components/text-with-note-1.twig" with { params: noteItems } %}
+		<div class="mb-12 lg:mb-50"></div>
+		{% include "/templates/components/progress-bar-1.twig" with { params: progressBarItems } %}
+		<div class="mb-30 lg:mb-24"></div>
+		{% include "/templates/components/progress-bar-2.twig" with { params: progressBarItems2 } %}
+		<div class="mb-30 lg:mb-24"></div>
+		{% include "/templates/components/image-aside-3.twig" with { params: imageAsideItems2 } %}
+		<div class="mb-32 lg:mb-36"></div>
+		{% include "/templates/components/testimonial-1.twig" with { params: testimonialItems1 } %}
+		{% include "/templates/components/testimonial-1.twig" with { params: testimonialItems2 } %}
+		<div class="mb-32 lg:mb-36"></div>
+        {% include "/templates/components/banner-2.twig" with { params: bannerItems } %}
+		<div class="mb-32 lg:mb-36"></div>
+		{% include "/templates/components/image-aside-2.twig" with { params: imageAsideItems } %}
+		<div class="mb-32 lg:mb-36"></div> 
+	</main>
+{% endblock %}

@@ -1,0 +1,50 @@
+{#
+  Section with double text boxes. Numbers are optional
+
+  section has exactly two items 
+  @param {string}  title
+  @param {string}  text
+  @param {string}  image
+  @param {array}   categories
+  {
+    @param {string}  title
+  }
+#}
+
+{# Output #}
+<section class="c-textbox-double w-full relative overflow-hidden">
+    <div class="container-wider">
+        <div class="row">
+            <div class="col-12 lg:col-6 bg-arcticsilver lg:bg-transparent mb-4 lg:mb-0">
+              <div class="lg:bg-arcticsilver lg:-ml-5 lg:-mr-3 lg:px-5 py-10 lg:py-16 h-full">
+                <div class="upper-text-block md:mx-auto lg:pl-5 mw-none-mobile" style="max-width:408px;">
+                  <h3 class="h4 lg:h3 title mb-3">{{params.items[0].title}}</h3>
+                  <div class="medium-paragraph mb-8">{{params.items[0].description}}</div>
+                  <div class="mb-14 lg:mb-28">
+                    <a class="button button-full medium-button w-full lg:w-auto" href="{{ params.items[0].cta.url }}" class="button button-full">{{ params.items[0].cta.title }}</a>
+                  </div>
+                </div><!--upper text block -->
+                <div class="relative text-center">
+                  <div class="lg2-number lg:xl-number  number-mask">{{ params.items[0].number }}</div>
+                  <div class="absolute left-1/2 top-1/2 translate-center h5 lg:h4 title w-4/5 lg:w-auto">{{ params.items[0].title2 }}</div>
+                </div><!-- lover text block -->
+              </div><!-- block -->
+            </div><!-- col -->
+            <div class="col-12 lg:col-6 bg-arcticsilver lg:bg-transparent">
+              <div class="lg:bg-arcticsilver lg:-ml-3 lg:-mr-5 lg:px-5 py-10 lg:py-16 h-full">
+                <div class="upper-text-block md:mx-auto lg:pr-10 mw-none-mobile" style="max-width:408px;">
+                  <h3 class="h4 lg:h3 title mb-3">{{params.items[1].title}}</h3>
+                  <div class="medium-paragraph mb-8">{{params.items[1].description}}</div>
+                  <div class="mb-14 lg:mb-28">
+                    <a class="button button-full medium-button w-full lg:w-auto" href="{{ params.items[1].cta.url }}" class="button button-full">{{ params.items[1].cta.title }}</a>
+                  </div>
+                </div><!--upper text block -->
+                <div class="relative text-center">
+                  <div class="lg2-number lg:xl-number number-mask">{{ params.items[1].number }}</div>
+                  <div class="absolute left-1/2 top-1/2 translate-center h5 lg:h4 title w-4/5 lg:w-auto">{{ params.items[1].title2 }}</div>
+                </div><!-- lover text block -->
+              </div><!-- block -->
+            </div><!-- col -->
+        </div><!-- row -->
+    </div><!-- container -->
+</section>

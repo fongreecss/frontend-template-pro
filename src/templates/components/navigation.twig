@@ -1,0 +1,36 @@
+{#
+  Main menu navigation
+
+  Data is loaded from the global menu field
+
+  @param {array} items
+  {
+    @param {string}  title
+    @param {string}  url
+  }
+
+  @param {object}  logo - loaded from global menu field. options.logo
+  {
+    @param {string}  type  can be "text" or "image"
+    @param {string}  url  -  on logo click
+    @param {string}  text - if type is "text" use this as brand name, if type is "image" this will be used as alt image text
+    @param {string}  image - if type is "image" use this as brand logo
+  }
+#}
+
+{# Output #}
+<section class="c-navigation bg-gray-111 fixed top-0 left-0 w-full z-10 border-pink-400 border-b-2 flex justify-end">
+  
+  {#<a href="{{ options.logo.url }}" class="outline-none absolute top-8 lg:top-6 left-5 lg:left-8"><img src="{{ manifest('assets/images/logotype.svg') }}" class="w-22 h-auto lg:w-30" alt="{{ options.logo.text }}" /></a>
+    #}
+    <nav class="navigation__items">
+      <ul class="list-none">
+        {% for item in navigation.items %}
+        <li class="navigation__item inline-block relative">
+          <a href="{{ item.url }}" class="inline-block px-5 py-5 {{ loop.last ? 'lg:mr-5' : '' }} text-pink-400 outline-none font-malaga leading-none">{{ item.title }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>{# navigation__items #}
+
+</section>

@@ -1,0 +1,42 @@
+{#
+  Section with questions
+
+  @param {string}  title
+  @param {array}  items {
+      @param {object} item
+      {
+            @param {string}  title
+            @param {string}  url
+      }
+  }
+
+  
+#}
+
+{# Output #}
+{% set column1 = params.items|slice(0,5) %}
+{% set column2 = params.items|slice(5,5) %}
+<section class="c-questions bg-pink-200 pt-16 pb-16 lg:pt-20 lg:pb-20">
+    <div class="pl-gutter pr-gutter ml-auto mr-auto max-w-md2">
+        <div class="row">
+            <div class="col-12 relative">
+                <h3 class="font-malaga-bold-italic text-base leading-none mb-5">{{ params.title }}</h4>
+                <img src="{{ manifest('assets/images/picto_seal.svg') }}" style="width:158px; height:auto;" class="absolute lg:-right-20 xl:right-auto xl:left-1/1 top-0 hidden lg:inline-block" alt="" />
+                <div class="row">
+                    <ul class="col-12 md:col-6 list-none">
+                        {% for item in column1 %}
+                            <li><a class="text-formtext underline font-malaga-italic text-base leading-normal md:leading-snug" href="{{ item.url }}" target="_blank">{{ item.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                    {% if column2|length %}
+                    <ul class="col-12 md:col-6 list-none">
+                        {% for item in column2 %}
+                            <li><a class="text-formtext underline font-malaga-italic text-base leading-normal md:leading-snug" href="{{ item.url }}" target="_blank">{{ item.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+   </div>
+</section>

@@ -1,0 +1,19 @@
+<header class="header-v1 w-full min-h-screen relative overflow-hidden flex justify-center items-center" style="{{ params.background_image ? "background-image: url(" ~ params.background_image ~ ");" : "" }}">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-6xl text-black mb-40">{{ params.title }}</h1>
+                <div class="inline-block mr-8">
+                    <a href="{{ params.cta1.url }}" class="button button-full medium-button block mb-4">{{ params.cta1.title }}</a>
+                    <div class="medium-paragraph">{{ params.cta1.sub }}</div>
+                </div>
+                <div class="inline-block">
+                    <a href="{{ params.cta2.url}}"  class="button button-empty medium-button block mb-4">{{ params.cta2.title }}</a>
+                    <div class="medium-paragraph chat-bullet chat-inactive-bullet">{{ params.cta2.sub}}</div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</header>

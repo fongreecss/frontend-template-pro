@@ -1,0 +1,86 @@
+.c-banner-1 {
+  .chart-number {
+    position: absolute;
+  }
+  @screen lg {
+    .chart-image {
+      width: 443px;
+      height: auto;
+      max-width: none;
+      margin-left: -60px;
+    }
+
+    .chart-number-1 {
+        top: -35px;
+        left: 70px;
+    }
+
+    .chart-number-2 {
+        top: -50px;
+        left: 315px; 
+      white-space: nowrap;
+      div {
+        display: inline;
+      }
+    }
+
+    .chart-number-3 {
+      top: 370px;
+      left: 90px;
+    }
+
+    .chart-number-4 {
+      top: 430px;
+      left: 325px;
+      white-space: nowrap;
+      div {
+        display: inline;
+      }
+    }
+  }
+  @screen xl {
+    .chart-image {
+      width: 443px;
+      height: auto;
+      max-width: none;
+      margin-left: -20px;
+    }
+
+    .chart-number-1 {
+      top: -30px;
+      left: 110px;
+    }
+
+    .chart-number-2 {
+      top: -50px;
+      left: 355px;
+      white-space: nowrap;
+      div {
+        display: inline;
+      }
+    }
+
+    .chart-number-3 {
+      top: 370px;
+      left: 90px;
+    }
+
+    .chart-number-4 {
+      top: 440px;
+      left: 365px;
+      white-space: nowrap;
+      div {
+        display: inline;
+      }
+    }
+  }
+}
+
+
+.c-banner-advanced-1 {
+  .image-container {
+    @screen xl {
+      width:1300px;
+    }
+  }
+}

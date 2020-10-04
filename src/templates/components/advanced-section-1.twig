@@ -1,0 +1,79 @@
+{#
+  Advanced section version 1
+
+  Data is loaded from a custom post
+
+  @param {string}  title
+  @param {string}  description
+  @param {string}  image
+  @param {string}  caption  - image caption
+  @param {object}  cta
+  {
+    @param {string}  title
+    @param {string}  url
+  }
+  @param {object}  cta2 
+  {
+      @param {string}  title
+      @param {string}  url
+  }
+  @param {object} number 
+  {
+      @param {string} title
+      @param {string} caption
+      @param {bool} isPercentage
+  }
+#}
+
+{# Output #}
+<div class="c-advanced-section c-advanced-section-1 overflow-hidden relative">
+    <div class="container-only-lg">
+        <div class="row">
+            <div class="col-12 xl:col-11 xl:offset-1">
+                <h2 class="h4 lg:h1 title">{{ params.title }}</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="lg:col-5 lg:offset-7 xl:col-4 xl:offset-7">
+                <div class="pb-3 lg:pb-12 lg:bg-arcticsilver"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="w-full h-50 md:h-130">
+                    <img src="{{ params.image }}" alt="{{ params.caption }}" class="object-cover w-full h-full">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 lg:col-7 xl:col-6 xl:offset-1">
+                <div class="medium-paragraph lg:large-paragraph pt-3 lg:pt-10 mb-8 lg:mb-8 mw-none-mobile" style="max-width:520px;">{{ params.description }}</div>
+                {% if params.cta|length %}
+                    <a href="{{ params.cta.url }}" class="button button-full w-full lg:w-auto xl:mr-8 lg:inline-block">{{ params.cta.title }}</a>
+                {% endif %}
+                {% if params.cta2|length %}
+                    <a href="{{ params.cta2.url }}" class="button button-empty w-full lg:w-auto lg:inline-block">{{ params.cta2.title }}</a>
+                {% endif %}
+            </div>
+            <div class="col-12 lg:col-5 xl:col-4">
+                <div class="h6 title relative lg:px-14 pt-10 pb-8 lg:bg-arcticsilver lg:mb-10">{{ params.caption }}</div>
+                {% if params.number %}
+                <div class="lg:px-14 mb-1 flex lg:block justify-center">
+                <div class="relative py-4 lg:py-0">
+                <div class="lg:hidden absolute top-0 bottom-0 right-1/2 w-screen -z-1 bg-arcticsilver"></div>
+                <span class="lg-number number-mask inline-block">{{ params.number.title }}</span>
+                {% if params.number.isPercentage == true %}
+                <span class="h1 large-title inline-block text-peppermint ">%</span>
+                {% endif %}
+                {% if params.number.caption %}
+                <div class="h5 title text-peppermint">{{ params.number.caption }}</div>
+                {% endif %}
+                </div>
+                </div><!-- number -->
+                {% endif %}
+            </div>
+        </div>
+    </div>
+ 
+
+</div>

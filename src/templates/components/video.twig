@@ -1,0 +1,24 @@
+{#
+    Section with video. video could be html or yt embeded
+
+    @param {string}  id|url       yt video id OR html5 player url
+    @param {string}  caption
+#}
+
+{# Output #}
+<section class="c-video container">
+    <div class="row">
+        <div class="col-12 lg:col-8 xl:col-6 mx-auto mb-4 lg:mb-8">
+            {% if params.id %}
+            <div class="yt-video-wrapper">
+                <div id="video-{{ params.id }}" data-yt-video="{{ params.id }}" class="yt-video max-w-full"></div>
+            </div>
+            {% elseif params.url %}
+            <div>
+                <video width="640" height="480" class="w-full h-auto" onmouseover="this.setAttribute('controls', 'controls');" onmouseleave="this.removeAttribute('controls');">
+                <source src="{{ params.url }}" type="video/mp4">
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>

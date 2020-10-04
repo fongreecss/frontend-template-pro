@@ -1,0 +1,21 @@
+<svg width="316" height="332" viewBox="0 0 316 332" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M281.386 120.668L311.455 284.716L165.511 326L6.00004 293.754L49.6364 120.668L165.511 5.99999L281.386 120.668Z" fill="url(#paint0_angular)" fill-opacity="0.7"/>
+<line opacity="0.1" x1="165.011" y1="192.173" x2="165.011" y2="9.25383" stroke="#EAEFF5"/>
+<line opacity="0.1" y1="-0.5" x2="132.564" y2="-0.5" transform="matrix(0.851976 -0.523581 0.534447 0.845202 165.511 192.173)" stroke="#EAEFF5"/>
+<line opacity="0.1" y1="-0.5" x2="169.56" y2="-0.5" transform="matrix(0.843417 0.53726 -0.54818 0.83636 165.511 192.173)" stroke="#EAEFF5"/>
+<line opacity="0.1" x1="166.011" y1="192.173" x2="166.011" y2="322.312" stroke="#EAEFF5"/>
+<line opacity="0.1" y1="-0.5" x2="185.974" y2="-0.5" transform="matrix(-0.843904 0.536494 -0.547411 -0.836864 165.511 192.173)" stroke="#EAEFF5"/>
+<path opacity="0.1" d="M165.316 192.478L108.845 157.412L52.3745 122.347" stroke="#EAEFF5"/>
+<circle cx="165" cy="6" r="5" stroke="#54BAB3" stroke-width="2"/>
+<circle cx="50" cy="120" r="5" stroke="#54BAB3" stroke-width="2"/>
+<circle cx="6" cy="294" r="5" stroke="#54BAB3" stroke-width="2"/>
+<circle cx="166" cy="326" r="5" stroke="#54BAB3" stroke-width="2"/>
+<circle cx="310" cy="284" r="5" stroke="#54BAB3" stroke-width="2"/>
+<circle cx="281" cy="120" r="5" stroke="#54BAB3" stroke-width="2"/>
+<defs>
+<radialGradient id="paint0_angular" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(165.511 192.172) rotate(147.429) scale(163.173 162.212)">
+<stop stop-color="#EAEFF5"/>
+<stop offset="1" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg>

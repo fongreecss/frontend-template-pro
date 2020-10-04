@@ -1,0 +1,29 @@
+{#
+  Section with text
+
+  We set a class .article to the div that contains wysiwyg content.
+  We have to extact styles in the css for the layout, so the html in
+  the content can be naked.
+
+  @param {string}  title
+  @param {wysiwyg} text
+  @param {object} cta 
+  {
+        @param {string}  title
+        @param {string}  url
+  }
+#}
+
+{# Output #}
+<section class="c-text container">
+  <div class="row">
+    <div class="col-12 lg:col-8 xl:col-6 mx-auto article items-center text-center">
+      {% if params.title %}
+      <h2 class="text-4xl lg:text-5xl mb-3 lg:mb-5 leading-tight text-taupe font-brothers mx-auto max-w-xxs3 lg:max-w-none md:w-auto">{{ params.title }}</h2>
+      {% endif %}
+      {% if params.text %}
+      <div class="font-malaga-bold-italic text-gray-111 text-lg leading-tight">{{ params.text|raw }}</div>
+      {% endif %}
+    </div>
+  </div>
+</section>

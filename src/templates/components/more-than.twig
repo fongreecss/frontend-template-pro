@@ -1,0 +1,35 @@
+{#
+  More than
+
+
+  @param {string}  title
+  @param {string}  text
+  @param {string}  image
+  @param {array}   categories
+  {
+    @param {string}  title
+  }
+#}
+
+{# Output #}
+<section class="c-more-than w-full relative overflow-hidden">
+    <div class="container">
+        <div class="row xl:pl-8 xl:pr-8">
+            <div class="lg:col-6 pt-20 pb-20 xl:pl-0 border-blue-200 border-solid border-t-2 border-b-2">
+                <div class="inline-block">
+                    <div class="uppercase text-gray-666 text-sm font-bold">{{ params.item1.sup }}</div>
+                    <div class="uppercase text-gray-100 text-6xl font-bold">{{ params.item1.number }}</div>
+                    <div class="text-gray-100 text-base text-right font-bold">{{ params.item1.sub }}</div>
+                </div>
+            </div>
+            <div class="lg:col-6 pt-20 pb-20 border-blue-200 border-solid border-l-0 lg:border-l-2 border-t-0 lg:border-t-2 border-b-2 flex lg:justify-center">
+                <div class="inline-block">
+                    <div class="uppercase text-gray-666 text-sm font-bold">{{ params.item2.sup }}</div>
+                    <div class="uppercase text-gray-100 text-6xl font-bold">{{ params.item2.number }}</div>
+                    <div class="text-gray-100  text-base text-right font-bold">{{ params.item2.sub }}</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

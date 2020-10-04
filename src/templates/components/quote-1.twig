@@ -1,0 +1,29 @@
+{#
+  Section quote and cta - version 1
+
+  We have to extact styles in the css for the layout, so the html in
+  the content can be naked.
+
+  @param {string}  title
+  @param {object}  cta 
+  {
+    @param {string} title
+    @param {string} url
+  }
+#}
+
+{# Output #}
+<section class="c-quote c-quote-1 container-only-lg">
+  <div class="row">
+    <div class="col-12">
+      <div class="text-center lg:mx-auto mw-none-mobile" style="max-width:672px;">
+        {% if params.title %}
+        <h2 class="medium-quote lg:large-quote text-textgray mb-8 lg:mb-6">{{ params.title }}</h2>
+        {% endif %}
+        {% if params.cta %}
+        <a href="{{ params.cta.url }}" class="button button-full medium-button w-full lg:w-auto">{{ params.cta.title }}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>

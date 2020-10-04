@@ -1,0 +1,180 @@
+{% extends '/templates/layouts/base.twig' %}
+{% set headerItems = { 
+    "header_class" : "invest-product-2-header",
+    "logo" : "assets/images/Realestate-logo-dark.svg",
+    "background_image_class" : "mountain-bg-image",
+    "background_image_desktop" : "assets/images/main-bg-2.jpg",
+    "background_image_mobile" : "assets/images/main-bg-2-mobile.jpg",
+	"title": "Upravljalci alternativnih investicijski skladov", 
+	"description": "Making more possible.", 
+	"cta" : { 
+		"title" : "Želim svetovanje", 
+		"url" : "#" 
+	} 
+} %}
+
+{% set imageAsideItems = {
+	"title": "Ste pravi tip vlagatelja za invest?",
+	"description": "Our investment board observes the market, our products, educates our consultants and in doing so,
+our clients as well.",
+	"cta" : {
+		"title" : "Spoznajte zdaj",
+		"url" : "#"
+	},
+	"image" : "assets/images/mansuit.jpg"
+} %}
+
+{% set imageAsideItems2 = {
+	"title": "An attractive entry point, [note] somehow we need to transition into how JM manages and guides?",
+	"description": "Podjetje, ki je del Skupine Vzajemci. Cilj podjetja je graditi projekte, ki imajo visoko dodano vrednost, in ki bodo pustili pozitiven pečat v slovenski družbi.",
+	"logo" : "assets/images/Realestate-logo-1.svg",
+	"cta" : {
+		"title" : "Izvejte več",
+		"url" : "#"
+	},
+	"image" : "assets/images/people-working-large.png",
+	"image2" : "assets/images/people-working-large.png"
+} %}
+
+{% set imageAsideItems3 = {
+	"title": "Investment structure.",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+	"cta" : {
+		"title" : "Želim svetovanje",
+		"url" : "#"
+	},
+	"image" : "assets/images/bricks.png",
+    "textItem1" : "Lastna sredstva",
+    "textItem2" : "Sredstva vlagateljev",
+    "textItem3" : "Bančno financiranje"
+} %}
+
+{% set textBoxItems = { 
+
+"items" : [
+	{ 
+		"title": "More is possible", 
+		"description": "JonatanMars is a spin-off company of VZAJEMCI Group, and is a result of its extensive presence and influence in the field of finance in the past 18 years.", 
+		"cta" : { "title" : "Izvejte več", "url" : "#" },
+		"number": 78,
+		"percentage": true,
+		"title2": "Startup-ov namerava zaposlit novi kader",
+	},
+	{ 
+		"title": "Nepremičnine", 
+		"description": "Podjetje, ki je del Skupine Vzajemci. Cilj podjetja je graditi projekte, ki imajo visoko dodano vrednost, in ki bodo pustili pozitiven pečat v slovenski družbi.", 
+		"cta" : { "title" : "Izvejte več", "url" : "#" },
+		"number": 42,
+		"title2": "Stanovanj" 
+	}
+] 
+
+} %}
+
+{% set advancedSectionItems = {
+	"title": "Naložbeni odbor",
+	"description": "Our investment board observes the market, our products, educates our consultants and in doing so,
+our clients as well.",
+	"cta" : {
+		"title" : "Spoznajte zdaj",
+		"url" : "#"
+	},
+	"cta2" : {
+		"title" : "Naročite svetovalca",
+		"url" : "#"
+	},
+	"image" : "assets/images/people-working.jpg",
+	"caption": "Stranke, ki so sodelovale z našimi svetovalci, so v zadnjem letu v povprečju ustvarile",
+	"number": {
+		"title": 17,
+		"caption": "Donosnost",
+		"isPercentage": true,
+	}
+} %}
+
+
+{% set bannerItems = {
+	"title": "Make more possible. ",
+	"cta" : {
+		"title" : "Želim svetovanje",
+		"url" : "#",
+        "caption" : "Or learn more about us"
+	},
+    "cta2" : {
+		"title" : "Video klic v živo",
+		"url" : "#",
+        "caption" : "3 trenutno aktivni"
+	},
+} %}
+
+{% set testimonialItems1 = {
+	"quote": "Key statement about the product and how exciting it is, or some other manner of interesting quote.",
+	"name" : "Uroš Raspet",
+	"jobtitle" : "CEO & Majority Shareholder",
+	"image" : "assets/images/guy-left.png",
+	"image_first" : true,
+} %}
+
+{% set testimonialItems2 = {
+	"quote": "Key statement about the product and how exciting it is, or some other manner of interesting quote.",
+	"name" : "Dr. David Vegelj",
+	"jobtitle" : "Cheif investment offiecer",
+	"image" : "assets/images/guy-right.png",
+} %}
+
+{% set quoteItems = {
+	"title": "We don’t just build to sell, we wish to add value to the community.",
+	"cta" : {
+		"title" : "Želim svetovanje",
+		"url" : "#"
+	},
+} %}
+
+{% set bannerAdvancedItems = {
+	"stitle": "Best in class realestate projects.",
+	"title": "Vila Destino",
+	"description" : "Pomen imena Vile Destino je zadnja pot, saj se po investitorjevem mnenju enkrat vselite in tam tudi ostanete.",
+	"cta" : {
+		"title" : "Obiščite stran projekta",
+		"url" : "#"
+	},
+	"text_first" : true,
+	"image" : "assets/images/penthouse1.jpg",
+	"image_mobile" : "assets/images/penthouse1-mobile.jpg",
+} %}
+
+{% set bannerAdvancedItems2 = {
+	"title": "Soseka Sereno",
+	"description" : "Pomen imena Vile Destino je zadnja pot, saj se po investitorjevem mnenju enkrat vselite in tam tudi ostanete.",
+	"cta" : {
+		"title" : "Obiščite stran projekta",
+		"url" : "#"
+	},
+	"image" : "assets/images/penthouse2.jpg",
+	"image_mobile" : "assets/images/penthouse2-mobile.jpg",
+} %}
+
+{% block content %}
+	<main role="main" class="p-invest-landing">
+        {% include "/templates/components/header-invest-2.twig" with { params: headerItems } %}
+        <div class="mb-20 lg:mb-0"></div>
+        <div class="mb-12 lg:mb-10"></div>
+        {% include "/templates/components/banner-advanced-1.twig"   with { params: bannerAdvancedItems } %}
+        <div class="mb-16 lg:mb-10"></div>
+        {% include "/templates/components/quote-1.twig"         with { params: quoteItems } %}
+        <div class="mb-12 lg:mb-10"></div>
+		{% include "/templates/components/banner-advanced-1.twig"   with { params: bannerAdvancedItems2 } %}
+		<div class="mb-32 lg:mb-36"></div>
+		{% include "/templates/components/image-aside-4.twig"   with { params: imageAsideItems3 } %}
+		<div class="mb-32 lg:mb-36"></div>
+		{% include "/templates/components/image-aside-3.twig"   with { params: imageAsideItems2 } %}
+		<div class="mb-32 lg:mb-36"></div>
+		{% include "/templates/components/testimonial-1.twig"   with { params: testimonialItems1 } %}
+		{% include "/templates/components/testimonial-1.twig"   with { params: testimonialItems2 } %}
+		<div class="mb-32 lg:mb-36"></div>
+        {% include "/templates/components/banner-2.twig"        with { params: bannerItems } %}
+		<div class="mb-32 lg:mb-36"></div>
+		{% include "/templates/components/image-aside-2.twig"   with { params: imageAsideItems } %}
+		<div class="mb-32 lg:mb-36"></div>
+	</main>
+{% endblock %}

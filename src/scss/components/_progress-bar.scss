@@ -1,0 +1,104 @@
+.c-progress-bar-1 {
+    [class*=" number-"] {
+        transition: width 1s ease 0.5s;
+    }
+    @for $i from 1 through 100 {
+        .number-#{$i} {
+            width : $i * 1%;
+            
+        }
+       
+    }
+    .percent {
+        position: absolute;
+        right: 24px;
+        top: 16px;
+        bottom: auto;
+    }
+    .number {
+        position: absolute;
+        top: 110px;
+        right:auto;
+        left: calc(50% - 20px);
+        transform: translateX(-50%);
+    }
+
+    .bg-image-left-container {
+        position: absolute;
+        height: 275px;
+        width: 296px;
+        top:-141px;
+        left: -113px;
+        z-index:-1;
+    }
+    @screen lg {
+        .bg-image-left-container {
+            top:-100px;
+            left: -112px;
+        }
+        .number {
+            top: 110px;
+            right: 24%;
+            left: auto;
+            transform: none;
+        }
+        .percent {
+            top: auto;
+            bottom: 16px;
+        }
+    }
+}
+
+
+.c-progress-bar-2 {
+    [class*=" number-"] {
+        transition: width 1s ease 0.5s;
+    }
+    @for $i from 1 through 100 {
+        .number-#{$i} {
+            width : $i * 1%;
+            
+        }
+       
+    }
+
+    .number {
+        position: absolute;
+        top: 110px;
+        right:auto;
+        left: calc(50% - 20px);
+        transform: translateX(-50%);
+    }
+
+    .bg-image-right-container {
+        position: absolute;
+        height: 304px;
+        width: 296px;
+        top:auto;
+        bottom: -150px;
+        left: auto;
+        right: -220px;
+        z-index: -1;
+        
+    }
+    @screen lg {
+        .bg-image-right-container {
+            bottom: -150px;
+            left: auto;
+            right: 0;
+            top: auto;
+            z-index:1;
+
+        }
+        .number {
+            top: 110px;
+            left: calc(100% + 20px);
+            right: auto;
+            transform: none;
+        }
+        .percent {
+            top: auto;
+            bottom: 16px;
+        }
+    }
+}

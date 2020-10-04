@@ -1,0 +1,61 @@
+{#
+  Section with order form
+#}
+
+{# Output #}
+<form class="c-masked-picture mr-gutter ml-gutter md:max-w-md md:mr-auto md:ml-auto pb-16 pt-12 md:pt-16 md:pb-20 px-5 md:px-15 bg-pink-200 -mt-15 md:-mt-30 mb-16 md:mb-40 relative">
+  <div class="text-center">
+    <h2 class="form-title text-center text-gray-111 text-4xl font-brothers leading-none mb-16 lg:hidden">Personalize Their Gift Card</h2>
+    <h5 class="block mx-auto text-base font-malaga-italic w-56 text-center mb-6 text-gray-111"><b class="font-malaga-bold-italic">How long</b> would you like them to enjoy the membership?</h5>
+    <div>
+      {% include "/templates/components/radio-label.twig" with { class : "md:mr-5 mb-4 md:mb-16", checked: true, name : "membership_duration", value : "half", text : "half a year<hr><b>€108</b>" } %}
+      {% include "/templates/components/radio-label.twig" with { class : "mb-12 md:mb-16", name : "membership_duration", value : "year", text : "1 year<hr><b>€216</b>" } %}
+    </div>
+    <h5 class="block mx-auto text-base font-malaga-italic text-center mb-6 text-gray-111"><b class="font-malaga-bold-italic">What kind of card</b> would you like?</h5>
+    <div>
+      {% include "/templates/components/radio-label.twig" with { class : "md:mr-5 mb-4 md:mb-16" , checked: true, name : "membership_card", value : "digital", text : "digital gift card" } %}
+      {% include "/templates/components/radio-label.twig" with { class : "mb-12 md:mb-16", name : "membership_card", value : "handwritten", text : "Handwritten Physical Gift Card" } %}
+    </div>
+    <h5 class="block mx-auto text-base font-malaga-italic w-56 text-center mb-6 text-gray-111"><b class="font-malaga-bold-italic">Where</b> would you like the card to be sent?</h5>
+    <div>
+      {% include "/templates/components/radio-label.twig" with { class : "md:mr-5 mb-4 md:mb-10", checked: true, name : "membership_recipient", value : "me", text : "send to me" } %}
+      {% include "/templates/components/radio-label.twig" with { class : "mb-10 md:mb-10", name : "membership_recipient", value : "them", text : "<div>send to them</div><small>(you must provide their email and home address)</small>" } %}
+    </div>
+    <p class="text-xs font-malaga-italic text-center max-w-sm2 leading-tight mx-auto mb-10" style="color:#979797;">At the moment we ship to all European Union (EU) countries and the United States, with the exception of the following states: Alabama, Alaska, Arkansas, Delaware, Hawaii, Kentucky, Massachusetts, North Dakota, Oklahoma, Pennsylvania, South Dakota, Texas and Utah. Unfortunately, we also cannot ship to Canada, PO Boxes and APO addresses.</p>
+    <hr class="mb-12 border-t border-pink-300 border-solid block">
+    {# end upper section. #}
+    
+    <div class="sender-details flex flex-col items-center" data-form-block="1">
+      <h5 class="block mx-auto text-base font-malaga-italic w-56 text-center mb-4 text-gray-111">
+        <div data-form-option="1">Enter <b class="font-malaga-bold-italic">your</b> personal details:</div>
+        <div data-form-option="2">Enter <b class="font-malaga-bold-italic">your</b> details first:</div>
+      </h5>
+      <input type="text" maxlength="32" class="text-input w-full md:max-w-xxs2" required name="sender_name" id="sender_name" placeholder="First and Last Name">
+      <input type="email" data-form-option="1" class="text-input mt-4 w-full md:max-w-xxs2" required name="sender_email" id="sender_email" placeholder="Email Address">
+    </div>
+    <div class="recipient-details  flex flex-col items-center" data-form-block="2" style="display:none;">
+      <h5 class="block mx-auto text-base font-malaga-italic w-56 text-center text-gray-111 mt-12 mb-6 lg:mb-4">Now enter <b class="font-malaga-bold-italic">their</b> details:</h5>
+      <input type="email" data-form-option="2" class="text-input w-full md:max-w-xxs2" name="recipient_email" id="recipient_email" placeholder="Recipient’s Email Address">
+      <input type="text" maxlength="32" data-form-option="3" class="text-input mt-4 w-full md:max-w-xxs2" name="recipient_name" id="recipient_name" placeholder="First and Last Name">
+      <input type="text" maxlength="64" data-form-option="3" class="text-input mt-4 w-full md:max-w-xxs2" name="recipient_address" id="recipient_address" placeholder="Address">
+      <input type="text" maxlength="64" data-form-option="3" class="text-input mt-4 w-full md:max-w-xxs2" name="recipient_city" id="recipient_city" placeholder="City">
+      <input type="text" maxlength="64" data-form-option="3" class="text-input mt-4 w-full md:max-w-xxs2" name="recipient_country" id="recipient_country" placeholder="Country">
+      <h5 class="block mx-auto text-base font-malaga-italic w-56 text-center text-gray-111 mt-12 mb-6 lg:mb-4">
+        <div data-form-option="4"><b class="font-malaga-bold-italic">When</b> would you like us to send the gift card:</div>
+        <div data-form-option="5"><b class="font-malaga-bold-italic">When</b> would you like us to send the gift card:<br><div style="color:#9e9090">(5-7 days delivery)</div></div>
+      </h5>
+      <label class="caret-down">
+      <input id="pikaday" readonly="readonly" type="text" data-form-option="2" class="pickr-date  text-input mt-4 w-full md:max-w-xxs2" name="shipping_date" id="shipping_date" autocomplete="off" placeholder="Month / Day / Year">
+      </label>
+    </div>
+    <div class="message-details flex flex-col items-center">
+      <h5 class="block mx-auto text-base font-malaga-italic w-56 text-center text-gray-111 mt-12 mb-6 lg:mb-4">Add a <b class="font-malaga-bold-italic">personal</b> message (optional):</h5>
+      <input type="text" class="text-input mb-5 lg:mb-4 w-full md:max-w-xxs2" required name="recipient_name_only" id="recipient_name_only" placeholder="Recipient’s Name">
+      <label class="relative mb-10 w-full md:max-w-xxs2">
+        <textarea rows="7" class="text-input w-full" name="message" id="message" placeholder="Write something nice…"></textarea>
+        <span class="absolute bottom-4 right-3 font-nitti text-xs text-formtext uppercase cursor-pointer underline generate-message">Generate a message</span>
+      </label>
+    </div>
+    <input type="submit" class="submit-button" value="Continue to checkout">
+  </div>
+</form>

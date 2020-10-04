@@ -1,0 +1,82 @@
+{
+    "post": {
+        "title": "Vzajemci Invest Landing",
+        "thumbnail": "",
+        "date": "",
+        "author": {
+            "first_name": "Janez",
+            "last_name": "Novak"
+        }
+    },
+    "investLanding": {
+        "content": [
+            {
+                "acf_fc_layout" : "header-v1",
+                "background_image" : "",
+                "title" : "Vaš partner pri doseganju finančnih ciljev",
+                "cta1" : {
+                    "title" : "Naročite svetovalca",
+                    "url" : "#",
+                    "sub" : "Or <b>learn more</b> about us"
+                },
+                "cta2" : {
+                    "title" : "Video klic v živo",
+                    "url" : "#",
+                    "sub" : "3 trenutno aktivni"
+                }
+            },
+            {
+                "acf_fc_layout" : "more-than",
+                "item1" : {
+                    "sup" : "Več kot",
+                    "number" : "100.000.000",
+                    "sub" : "evrov vloženih sredstev strank"
+                },
+                "item2" : {
+                    "sup" : "Več kot",
+                    "number" : "20.000",
+                    "sub" : "strank"
+                }
+            },
+            {
+                "acf_fc_layout" : "profitability",
+                "title" : "Donosnost",
+                "percent" : "17%",
+                "description" : "Stranke, ki so sodelovale z našimi svetovalci, so v zadnjem letu v povprečju ustvarile"
+            },
+            {
+                "acf_fc_layout" : "we-offer",
+                "title" : "We offer",
+                "items" : [
+                    {
+                        "title" : "Balance",
+                        "description": "We examine the risk and cost ratio of every potential investment you are interested in and advise on its viability and worth.",
+                        "image" : "//via.placeholder.com/600x400",
+                        "cta" : {
+                            "title" : "Schedule a consultant",
+                            "url" : "#"
+                        }
+                    },
+                    {
+                        "title" : "Familiarity",
+                        "description": "Through our consultancy efforts we achieve an understanding of your personal risk profile, and tailor our recommendations & guidance.",
+                        "image" : "//via.placeholder.com/600x400",
+                        "cta" : {
+                            "title" : "Schedule a consultant",
+                            "url" : "#"
+                        }
+                    },
+                    {
+                        "title" : "Impartiality",
+                        "description": "Not sales, but consultancy. Our interests are in providing excellent advice and mentorship for our clients.",
+                        "image" : "//via.placeholder.com/600x400",
+                        "cta" : {
+                            "title" : "Schedule a consultant",
+                            "url" : "#"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}
