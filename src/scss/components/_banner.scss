@@ -84,3 +84,48 @@
     }
   }
 }
+
+
+.c-banner-advanced-2 {
+  .paralax-section {
+      width: 2180px;
+      height: 400px;
+      [class*=" text-"] {
+          position: absolute;
+      }
+      .text-1 {
+        top:20px;
+        left:-50px;
+      }
+      .text-2 {
+        top:calc(50% - 12px);
+        left:0;
+        width: 100%;
+        text-align:center;
+      }
+      .text-3 {
+        bottom: 20px;
+        right: -50px;
+      }
+  }
+  @screen lg {
+    .paralax-section {
+      width: 2180px;
+      height: 400px;
+      .text-1 {
+        top:20px;
+        left:-100px;
+      }
+      .text-2 {
+        top:calc(50% - 12px);
+        left:0;
+        width: 100%;
+        text-align:center;
+      }
+      .text-3 {
+        bottom: 20px;
+        right: -100px;
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{#
+  Section with banner ADVANCED. Version 2
+
+  This one is WITH paralax
+
+  @param {string}  description
+  @param {object}  cta 
+  {
+    @param {string} title
+    @param {string} url
+  }
+  @param {string} textItem1
+  @param {string} textItem2
+  @param {string} textItem3
+  @param {string} image
+  @param {string} image_mobile
+  @param {bool} mode - dark or light
+#}
+
+{# Output #}
+
+<div class="c-banner-advanced c-banner-advanced-2 {{ params.mode == "light" ? "bg-arcticsilver" : "bg-coalblack" }} overflow-hidden relative pt-12 pb-12 lg:pt-12 lg:pb-16">
+    <div class="container-only-lg">
+        {% if params.description %}
+        <div class="hidden lg:flex flex-wrap -mx-5">
+            <div class="col-12 lg:col-5">
+                <div class="lg:h4 title {{ params.mode == "light" ? "text-textgray" : "text-white" }}  lg:mb-20">{{ params.description }}</div>
+            </div>
+        </div>
+        {% endif %}
+        <div class="flex flex-wrap -mx-10 lg:-mx-5 lg:mb-14">
+            <div class="col-12 lg:col-11 lg:offset-1 relative">
+                <div class="paralax-section lg:relative">
+                    <img class="w-full h-full object-cover" src="{{ params.image }}" alt="">
+                    {% if params.textItem1 %}
+                    <div class="text-1 h5 lg:h1 title {{ params.mode == "light" ? "text-coalblack" : "text-white" }}">{{ params.textItem1 }}</div>
+                    {% endif %}
+                    {% if params.textItem2 %}
+                    <div class="text-2 h5 lg:h1 title {{ params.mode == "light" ? "text-coalblack" : "text-white" }}">{{ params.textItem2 }}</div>
+                    {% endif %}
+                    {% if params.textItem3 %}
+                    <div class="text-3 h5 lg:h1 title {{ params.mode == "light" ? "text-coalblack" : "text-white" }}">{{ params.textItem3 }}</div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="hidden lg:flex flex-wrap -mx-5">
+            <div class="col-12 lg:text-right">
+              {% if params.cta %}
+                <a href="{{ params.cta.url }}" class="button button-full medium-button w-full lg:w-auto lg:inline-block">{{ params.cta.title }}</a>
+              {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

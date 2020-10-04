@@ -1,13 +1,20 @@
-<header class="header-invest-v1 w-full min-h-screen relative overflow-hidden flex justify-center items-center" style="{{ params.background_image ? "background-image: url(" ~ params.background_image ~ ");" : "" }}">
+<header class="c-header c-header-invest-1 w-full pt-8 lg:pt-0 lg:min-h-screen relative lg:flex lg:justify-center lg:items-center">
     <div class="container-only-lg">
         <div class="row">
-            <div class="col-12 lg:col-5 lg:offset-2">
+            <div class="col-12 lg:col-7 xl:col-5 xl:offset-2">
                 <h1 class="h4 lg:h1 title text-coalblack mb-6 lg:mb-3">{{ params.title }}</h1>
                 <h1 class="medium-paragraph lg:large-paragraph text-textgray mb-6 lg:mb-8">{{ params.description }}</h1>
-                <div class="">
+                <div class="lg:mb-72">
                     <a href="{{ params.cta.url }}" class="button button-full medium-button w-full lg:w-auto">{{ params.cta.title }}</a>
                 </div>
             </div>
         </div>
+    </div>
+    
+    <div class="invest-graph">
+        <div class="carousel absolute">
+        lala
+        </div>
+        {% include "/templates/components/invest-graph.twig" %}
     </div>
 </header>

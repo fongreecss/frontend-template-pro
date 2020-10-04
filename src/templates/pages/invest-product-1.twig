@@ -141,10 +141,26 @@ our clients as well.",
 	},
 } %}
 
+{% set bannerAdvancedItems = {
+
+	"description": "Več kot samo financiranje razvoja. Za investitorje, ki želijo",
+	"textItem1" : "Pustiti pečat",
+	"textItem2" : "Ustvarjati delovna mesta",
+	"textItem3" : "Vzpodbujeno rast",
+	"cta" : {
+		"title" : "Želim svetovanje",
+		"url" : "#",
+	},
+	"image" : "assets/images/trak-cityclouds.png",
+	"mode" : "light",
+} %}
+
 
 {% block content %}
 	<main role="main" class="p-invest-landing">
         {% include "/templates/components/header-invest-2.twig" with { params: headerItems } %}
+		<div class="mb-20 lg:mb-0"></div>
+		{% include "/templates/components/banner-advanced-2.twig" with { params: bannerAdvancedItems } %}
 		<div class="mb-32 lg:mb-36"></div>
 		{% include "/templates/components/text-with-note-1.twig" with { params: noteItems } %}
 		<div class="mb-12 lg:mb-50"></div>

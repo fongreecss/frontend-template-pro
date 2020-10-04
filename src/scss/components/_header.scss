@@ -1,7 +1,10 @@
-.header-v1 {
-    background: linear-gradient(176.02deg, #FFFFFF 65.7%, rgba(255, 255, 255, 0) 96.75%);
-    background-size: cover;
-    background-repeat: no-repeat;
+.c-header-invest-1 {
+    
+    height: 212vw;
+    height: 680px;
+    @screen lg {
+        height: auto;
+    }
 }
 
 .mountain-bg-image {
@@ -17,4 +20,20 @@
     h1, p {
         color:#FFFFFF;
     }
+}
+
+.invest-graph {
+    position: absolute;
+    top: auto;
+    bottom: 0px;
+    left: calc(50% - 420px);
+    width: 973px;
+    @screen lg {
+        left: 0;
+        transform: none;
+        top: calc(50% + 80px);
+        bottom: auto;
+        width: 100%;
+    }
+    
 }
