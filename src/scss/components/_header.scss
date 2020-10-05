@@ -22,18 +22,3 @@
     }
 }
 
-.invest-graph {
-    position: absolute;
-    top: auto;
-    bottom: 0px;
-    left: calc(50% - 420px);
-    width: 973px;
-    @screen lg {
-        left: 0;
-        transform: none;
-        top: calc(50% + 80px);
-        bottom: auto;
-        width: 100%;
-    }
-    
-}

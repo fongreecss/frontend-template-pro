@@ -1,0 +1,33 @@
+.invest-graph {
+    position: absolute;
+    top: auto;
+    bottom: 0px;
+    left: calc(50% - 472px);
+    width: 973px;
+    @screen lg {
+        left: 0;
+        transform: none;
+        top: calc(50% + 80px);
+        bottom: auto;
+        width: 100%;
+    }
+    
+}
+.landing-carousel {
+    left: 485px;
+    top: -115px;
+    position: absolute;
+    .carousel-item-image {
+        width:115px;
+        height:115px;
+    }
+    @screen lg {
+        top:-211px;
+        left: 73%;
+        .carousel-item-image {
+            width:211px;
+            height:211px;
+        }
+    }
+    
+}

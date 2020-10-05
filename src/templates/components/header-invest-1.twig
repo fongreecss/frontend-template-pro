@@ -12,8 +12,17 @@
     </div>
     
     <div class="invest-graph">
-        <div class="carousel absolute">
-        lala
+        <div class="landing-carousel">
+            {% for item in params.items %}
+            <div class="carousel-item relative">
+                <div class="carousel-item-image mb-0 lg:mb-3">
+                    <img class="object-cover w-full h-full" src="{{ item.image }}" alt="">
+                </div>
+                <div class="bg-peppermint w-full mb-1 lg:mb-4" style="height:2px;"></div>
+                <div class="carousel-item-number carousel-title-small lg:carousel-title-large text-coalblack" style="color:#13151C;">{{ item.number }}</div>
+                <div class="carousel-item-caption small-paragraph" style="color:#74767B;">{{ item.caption }}</div>
+            </div>
+            {% endfor %}
         </div>
         {% include "/templates/components/invest-graph.twig" %}
     </div>

@@ -1,3 +1,4 @@
+
 h1.title {
   /* H1.Title */
   font-family: "Tiempos Headline";
@@ -241,6 +242,26 @@ h1.title {
   /* or 133% */
 }
 
+.carousel-title-large {
+  font-family: "Tiempos Headline";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 42px;
+  letter-spacing: -0.857143px;
+}
+
+.carousel-title-small {
+  font-family: "Tiempos Headline";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 24px;
+  /* identical to box height, or 100% */
+
+  letter-spacing: -0.857143px;
+}
+
 /**
  * LG
  *
@@ -479,4 +500,23 @@ h1.title {
     line-height: 32px;
     /* or 133% */
   }
+
+  .lg\:carousel-title-large {
+    font-family: "Tiempos Headline";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 42px;
+    letter-spacing: -0.857143px;
+  }
+  .lg\:carousel-title-small {
+    font-family: "Tiempos Headline";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 24px;
+    /* identical to box height, or 100% */
+    letter-spacing: -0.857143px;
+  }
+
 }
