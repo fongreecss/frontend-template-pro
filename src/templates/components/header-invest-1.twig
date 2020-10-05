@@ -14,7 +14,7 @@
     <div class="invest-graph">
         <div class="landing-carousel">
             {% for item in params.items %}
-            <div class="carousel-item relative">
+            <div class="carousel-item absolute {{ loop.index == 1 ? "" : "invisible" }}">
                 <div class="carousel-item-image mb-0 lg:mb-3">
                     <img class="object-cover w-full h-full" src="{{ item.image }}" alt="">
                 </div>
