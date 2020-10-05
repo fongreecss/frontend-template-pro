@@ -262,6 +262,96 @@ h1.title {
   letter-spacing: -0.857143px;
 }
 
+.arboria-large-subheader {
+  font-family: "Arboria", "Tiempos Headline";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+  /* identical to box height, or 133% */
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+.arboria-medium-subheader {
+  font-family: "Arboria", "Tiempos Headline";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 32px;
+  /* identical to box height, or 178% */
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.arboria-small-subheader {
+  font-family: "Arboria", "Tiempos Headline";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.under-name-title {
+  font-family: "Arboria", "Tiempos Headline";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  /* identical to box height, or 171% */
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.big-tag {
+  font-family: "Arboria", "Tiempos Headline";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+}
+
+.small-tag {
+  font-family: "Arboria", "Tiempos Headline";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  /* identical to box height, or 114% */
+}
+
+.tiny-tag {
+  font-family: "Arboria", "Tiempos Headline";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  /* identical to box height, or 133% */
+}
+.arboria-navigation-button {
+  font-family: "Arboria", "Tiempos Headline";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.arboria-main-button {
+  font-family: "Arboria", "Tiempos Headline";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 24px;
+  /* identical to box height, or 171% */
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
 /**
  * LG
  *
@@ -519,4 +609,105 @@ h1.title {
     letter-spacing: -0.857143px;
   }
 
+  .lg\:arboria-large-subheader {
+    font-family: "Arboria", "Tiempos Headline";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+    /* identical to box height, or 133% */
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+  .lg\:arboria-medium-subheader {
+    font-family: "Arboria", "Tiempos Headline";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 32px;
+    /* identical to box height, or 178% */
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+  
+  .lg\:arboria-small-subheader {
+    font-family: "Arboria", "Tiempos Headline";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+  }
+  
+  .lg\:under-name-title {
+    font-family: "Arboria", "Tiempos Headline";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    /* identical to box height, or 171% */
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  .lg\:big-tag {
+    font-family: "Arboria", "Tiempos Headline";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+  }
+  
+  .lg\:small-tag {
+    font-family: "Arboria", "Tiempos Headline";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    /* identical to box height, or 114% */
+  }
+  
+  .lg\:tiny-tag {
+    font-family: "Arboria", "Tiempos Headline";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    /* identical to box height, or 133% */
+  }
+
+  .lg\:arboria-navigation-button {
+    font-family: "Arboria", "Tiempos Headline";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  .lg\:arboria-main-button {
+    font-family: "Arboria", "Tiempos Headline";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 24px;
+    /* identical to box height, or 171% */
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+}
+
+
+.font-tiempos-headline {
+  font-family: "Tiempos Headline";
+}
+
+.font-tiempos-text {
+  font-family: "Tiempos Text";
 }
