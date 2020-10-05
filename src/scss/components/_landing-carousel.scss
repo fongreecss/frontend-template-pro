@@ -17,6 +17,9 @@
     left: 485px;
     top: -115px;
     position: absolute;
+    .carousel-vertical-line {
+        height:150px;
+    }
     .carousel-item-image {
         width:115px;
         height:115px;
@@ -27,6 +30,9 @@
         .carousel-item-image {
             width:211px;
             height:211px;
+        }
+        .carousel-vertical-line {
+            height:11vw;
         }
     }
     
