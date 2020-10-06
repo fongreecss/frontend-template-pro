@@ -20,24 +20,26 @@
 #}
 
 {# Output #}
-<section class="c-banner c-banner-2 container-only-lg">
-  <div class="row">
-    <div class="col-12 gradient-coalblack lg:bg-none">
-        <div class="lg:gradient-coalblack ">
-            <div class="mx-auto py-16 lg:py-32 text-left mw-none-mobile" style="max-width:500px;">
-                <h2 class="h4 lg:h2 title text-white mb-6 lg:mb-10">{{ params.title }}</h2>
-                <div class="lg:inline-block mb-8 lg:mb-0 lg:mr-12">
-                    <a href="{{ params.cta.url }}" class="button button-full-gold w-full lg:w-auto medium-button block mb-4">{{ params.cta.title }}</a>
-                    <div class="medium-paragraph text-white">{{ params.cta.caption }}</div>
-                </div>
-                {% if params.cta2 %}
-                <div class="lg:inline-block">
-                    <a href="{{ params.cta2.url }}"  class="button button-empty-gold w-full lg:w-auto medium-button block mb-4">{{ params.cta2.title }}</a>
-                    <div class="medium-paragraph text-white chat-bullet chat-inactive-bullet">{{ params.cta2.caption}}</div>
-                </div>
-                {% endif %}
-            </div>
-        </div>
+<section class="c-banner c-banner-2">
+  <div class="container-only-lg">
+    <div class="flex flex-wrap -mx-5">
+      <div class="col-12 gradient-coalblack lg:bg-none">
+          <div class="lg:gradient-coalblack ">
+              <div class="mx-auto py-16 lg:py-32 text-left mw-none-mobile" style="max-width:500px;">
+                  <h2 class="h4 lg:h2 title text-white mb-6 lg:mb-10">{{ params.title }}</h2>
+                  <div class="lg:inline-block mb-8 lg:mb-0 lg:mr-12">
+                      <a href="{{ params.cta.url }}" class="button button-full-gold w-full lg:w-auto medium-button block mb-4">{{ params.cta.title }}</a>
+                      <div class="medium-paragraph text-white">{{ params.cta.caption }}</div>
+                  </div>
+                  {% if params.cta2 %}
+                  <div class="lg:inline-block">
+                      <a href="{{ params.cta2.url }}"  class="button button-empty-gold w-full lg:w-auto medium-button block mb-4">{{ params.cta2.title }}</a>
+                      <div class="medium-paragraph text-white chat-bullet chat-inactive-bullet">{{ params.cta2.caption}}</div>
+                  </div>
+                  {% endif %}
+              </div>
+          </div>
+      </div>
     </div>
   </div>
 </section>

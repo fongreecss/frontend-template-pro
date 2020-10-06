@@ -16,41 +16,43 @@
 #}
 
 {# Output #}
-<section class="c-image-aside c-image-aside-3 container-only-lg">
-  <div class="row">
-    <div class="col-12 lg:col-4 xl:col-4 relative mb-8 lg:mb-0">
-        {% if params.image %}
-            <div class="left-image-container">
-                <img src="{{ params.image }}" loading="lazy" alt="" class="object-cover w-full h-full" >
-            </div>
-        {% endif %}
-    </div>
-    <div class="col-12 lg:col-6 xl:col-6">
-      {% if params.title %}
-      <h2 class="h5 lg:h3 title mb-6 lg:mb-18 lg:pt-28">{{ params.title }}</h2>
-      {% endif %}
-      <div class="xl:offset-2 mw-none-mobile" style="max-width:370px;">
-        {% if params.logo %}
-            <div>
-                <img class="mb-8 lg:mb-6 w-40 h-auto" src="{{ params.logo }}" loading="lazy" alt="">
-            </div>
-        {% endif %}
-        {% if params.description %}
-        <div class="medium-paragraph lg:large-paragraph mb-8 lg:mb-6">{{ params.description|raw }}</div>
-        {% endif %}
-        {% if params.cta %}
-        <div class="mb-8 lg:mb-0">
-            <a href="{{ params.cta.url }}" class="button button-full medium-button w-full lg:w-auto">{{ params.cta.title }}</a>
-        </div>
-        {% endif %}
+<section class="c-image-aside c-image-aside-3">
+  <div class="container-only-lg">
+    <div class="flex flex-wrap -mx-5">
+      <div class="col-12 lg:col-4 xl:col-4 relative mb-8 lg:mb-0">
+          {% if params.image %}
+              <div class="left-image-container">
+                  <img src="{{ params.image }}" loading="lazy" alt="" class="object-cover w-full h-full" >
+              </div>
+          {% endif %}
       </div>
-    </div>
-    <div class="col-12 lg:col-2 xl:col-2 relative">
-        {% if params.image2 %}
-            <div class="right-image-container">
-                <img src="{{ params.image2 }}" loading="lazy" alt="" class="object-cover w-full h-full" >
-            </div>
+      <div class="col-12 lg:col-6 xl:col-6">
+        {% if params.title %}
+        <h2 class="h5 lg:h3 title mb-6 lg:mb-18 lg:pt-28">{{ params.title }}</h2>
         {% endif %}
+        <div class="xl:offset-2 mw-none-mobile" style="max-width:370px;">
+          {% if params.logo %}
+              <div>
+                  <img class="mb-8 lg:mb-6 w-40 h-auto" src="{{ params.logo }}" loading="lazy" alt="">
+              </div>
+          {% endif %}
+          {% if params.description %}
+          <div class="medium-paragraph lg:large-paragraph mb-8 lg:mb-6">{{ params.description|raw }}</div>
+          {% endif %}
+          {% if params.cta %}
+          <div class="mb-8 lg:mb-0">
+              <a href="{{ params.cta.url }}" class="button button-full medium-button w-full lg:w-auto">{{ params.cta.title }}</a>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      <div class="col-12 lg:col-2 xl:col-2 relative">
+          {% if params.image2 %}
+              <div class="right-image-container">
+                  <img src="{{ params.image2 }}" loading="lazy" alt="" class="object-cover w-full h-full" >
+              </div>
+          {% endif %}
+      </div>
     </div>
   </div>
 </section>

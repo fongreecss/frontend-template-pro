@@ -6,7 +6,7 @@
     <div style="{{ params.background_image_mobile ? "background-image: url(" ~ params.background_image_mobile ~ ");" : "" }}" class="{{ params.background_image_class ? params.background_image_class : "" }} lg:hidden absolute top-0 left-0 w-full h-full bg-no-repeat"></div>
     {% endif %}
     <div class="container-only-lg">
-        <div class="row">
+        <div class="flex flex-wrap -mx-5">
             <div class="col-12 lg:col-9 xl:col-8 xl:offset-1">
                 {% if params.logo %}
                     <div>

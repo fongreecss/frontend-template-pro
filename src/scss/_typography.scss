@@ -122,6 +122,16 @@ h1.title {
   /* identical to box height, or 150% */
 }
 
+.small-subheader {
+  /* Small subheader */
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  /* identical to box height, or 171% */
+}
+
 .lg-number {
   font-family: "Tiempos Headline";
   font-style: normal;
@@ -479,6 +489,16 @@ h1.title {
     font-size: 16px;
     line-height: 24px;
     /* identical to box height, or 150% */
+  }
+
+  .lg\:small-subheader {
+    /* Small subheader */
+    font-family: "Roboto Condensed";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    /* identical to box height, or 171% */
   }
 
   .lg\:lg-number {

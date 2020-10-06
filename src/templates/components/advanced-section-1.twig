@@ -28,24 +28,24 @@
 {# Output #}
 <div class="c-advanced-section c-advanced-section-1 overflow-hidden relative">
     <div class="container-only-lg">
-        <div class="row">
+        <div class="flex flex-wrap -mx-5">
             <div class="col-12 xl:col-11 xl:offset-1">
                 <h2 class="h4 lg:h1 title">{{ params.title }}</h2>
             </div>
         </div>
-        <div class="row">
+        <div class="flex flex-wrap -mx-5">
             <div class="lg:col-5 lg:offset-7 xl:col-4 xl:offset-7">
                 <div class="pb-3 lg:pb-12 lg:bg-arcticsilver"></div>
             </div>
         </div>
-        <div class="row">
+        <div class="flex flex-wrap -mx-5">
             <div class="col-12">
                 <div class="w-full h-50 md:h-130">
                     <img src="{{ params.image }}" alt="{{ params.caption }}" class="object-cover w-full h-full">
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="flex flex-wrap -mx-5">
             <div class="col-12 lg:col-7 xl:col-6 xl:offset-1">
                 <div class="medium-paragraph lg:large-paragraph pt-3 lg:pt-10 mb-8 lg:mb-8 mw-none-mobile" style="max-width:520px;">{{ params.description }}</div>
                 {% if params.cta|length %}
@@ -74,6 +74,4 @@
             </div>
         </div>
     </div>
- 
-
 </div>

@@ -10,12 +10,14 @@
 #}
 
 {# Output #}
-<section class="c-card-list container">
-  <div class="row">
-    {% for item in params.items %}
-    <div class="col-12 lg:col-4 mb-12 lg:mb-0">
-      {% include '/templates/components/card.twig' with { params: item } %}
+<section class="c-card-list">
+  <div class="container-only-lg">
+    <div class="flex flex-wrap -mx-5">
+      {% for item in params.items %}
+      <div class="col-12 lg:col-4 mb-12 lg:mb-0">
+        {% include '/templates/components/card.twig' with { params: item } %}
+      </div>
+      {% endfor %}
     </div>
-    {% endfor %}
   </div>
 </section>

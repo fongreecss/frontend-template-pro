@@ -39,6 +39,10 @@ body {
   overflow-x: hidden;
 }
 
+img, svg a, a:visited, a:hover, a:active, a:focus {
+  outline: none!important;
+}
+
 main {
   
 }
