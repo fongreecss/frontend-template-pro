@@ -6,7 +6,9 @@
  */
 export default class InViewport {
     constructor(activeClass) {
+        window.inviewportTriggers = [];
         this.activeClass = ( "string" == typeof activeClass ) ? activeClass : 'js-inviewport';
+        
         this.activeElements = document.querySelectorAll("[data-inviewport]");
         window.addEventListener("scroll", this.scrollHandler.bind(this), {
             passive: true
@@ -29,9 +31,14 @@ export default class InViewport {
     }
 
     scrollHandler() {
+        
         this.activeElements.forEach(function(el){
             if(this.isVisible(el)) {
                 el.classList.add(this.activeClass);
+                if(el.hasAttribute('data-inviewport-trigger') && el.id && ("undefined" == typeof window.inviewportTriggers[el.id])) {
+                    window.inviewportTriggers[el.id] = true;
+                    window[el.dataset.inviewportTrigger]();
+                }
             } else if( !this.onlyOnce(el) ){
                 el.classList.remove(this.activeClass);
             }

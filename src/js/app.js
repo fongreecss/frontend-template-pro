@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   new TinySlider();
   new Parallax();
   new OrderForm();
+  new InViewport();
   var picker = new Pikaday({ 
     field: document.getElementById('pikaday'),
     format: 'MMM / DD / YYYY',
