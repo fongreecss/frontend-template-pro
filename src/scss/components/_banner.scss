@@ -1,8 +1,7 @@
 .c-banner-1 {
   .tns-outer {
-    width:calc(100% - 100px);
-    margin-left: auto;
-    margin-right:auto;
+    width: calc(100%);
+    padding: 0 60px !important;
   }
   .tns-ovh {
     overflow: visible;
@@ -20,8 +19,6 @@
     transform: translate(-165px,0);
     
   }
-
-  
 
   .chart-number-top {
     top: -30%;
