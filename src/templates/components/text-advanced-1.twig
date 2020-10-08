@@ -1,0 +1,56 @@
+{#
+  Section with advanced text. Version 1
+  left side: text with cta 
+  middle: items (numbers, and captions)
+  right: image with some background element
+
+  @param {string}  title
+  @param {string} description
+  @param {object}  cta 
+  {
+    @param {string} title
+    @param {string} url
+  }
+  @param {string} image
+  @param {string} image_mobile
+  @param {array} items 
+  {
+      @param {string} suptitle
+      @param {string} title
+      @param {string} caption
+  }
+#}
+
+{# Output #}
+<section class="c-text-advanced c-text-advanced-1">
+  <div class="container-only-lg">
+    <div class="flex flex-wrap -mx-5">
+      <div class="col-12 lg:col-4 xl:col-5">
+          <h2 class="lg:h1 title text-coalblack lg:mb-4">{{ params.title }}</h2>
+            <p class="lg:medium-paragraph text-coalblack lg:mb-8 mw-none-mobile" style="max-width:408px;">{{ params.description }}</p>
+            <div class="hidden lg:block">
+                <a href="{{ params.cta.url }}" class="button button-full medium-button w-full lg:w-auto">{{ params.cta.title }}</a>
+            </div>
+      </div>
+      <div class="col-12 lg:col-4 xl:col-3">
+            <ul class="lg:mt-36">
+                {% for item in params.items %}
+                    <li class="lg:mb-9 lg:pl-10 relative">
+                        <div class="lg:big-tag text-textgray">{{ item.suptitle }}</div>
+                        <h5 class="lg:h3 title text-coalblack">{{ item.title }}</h5>
+                        <p class="lg:small-paragraph text-textgray">{{ item.caption }}</p>
+                        <div class="absolute left-0 w-4 h-4 border-2 border-solid border-peppermint" style="border-radius:50%; top:calc(50% - 8px);"></div>
+                    </li>
+                {% endfor %}
+            </ul>
+      </div>
+      <div class="hidden lg:block lg:col-3 xl:col-3 lg:offset-1 xl:offset-1 relative">
+        <div style="width:364px; height: 552px;" class="relative lg:mt-3 pb-16">
+            <img src="{{ params.image }}" class="object-cover w-full h-full" alt="">
+        </div>
+        <div style="width:476px; height:344px; left:-92px; background-image:url({{ manifest('assets/images/pattern-3.svg') }})" class="absolute bottom-0 lg:-z-1 bg-no-repeat bg-left-top">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

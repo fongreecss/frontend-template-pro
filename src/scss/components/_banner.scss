@@ -1,7 +1,16 @@
 .c-banner-1 {
+  .chart-container-mobile-row * {
+    user-select: none;
+    
+  }
+
+  .chart-container-mobile-row {
+    touch-action: pan-y;
+  }
+
   .tns-outer {
     width: calc(100%);
-    padding: 0 60px !important;
+    //padding: 0 60px !important;
   }
   .tns-ovh {
     overflow: visible;
@@ -16,8 +25,12 @@
   .chart-container-mobile {
     width:320px;
     height: 305px;
-    transform: translate(-165px,0);
-    
+    transform: translate(-225px,0);
+    transition: transform 1s ease 0.4s;
+  }
+
+  .tns-slide-active .chart-container-mobile {
+    transform: translate(-125px,0);
   }
 
   .chart-number-top {

@@ -1,0 +1,31 @@
+<header class="c-header c-header-consult-2 w-full lg:min-h-screen relative lg:pt-36">
+    <div class="container-only-lg">
+        <div class="flex flex-wrap -mx-5">
+            <div class="col-12 lg:col-6 xl:col-5 xl:offset-1">
+                <div class="mt-9 lg:mt-14 lg:h6 title mb-1 lg:mb-2 text-peppermint">{{ params.suptitle }}</div>
+                <h1 class="h4 lg:h1 title text-coalblack mb-2 lg:mb-3">{{ params.title }}</h1>
+                <p class="medium-paragraph lg:large-paragraph text-textgray mb-9 lg:mb-8">{{ params.description }}</p>
+                <div class="hidden lg:block">
+                    <a href="{{ params.cta.url }}" class="button button-full medium-button w-full lg:w-auto">{{ params.cta.title }}</a>
+                </div>
+            </div>
+            <div class="hidden lg:block lg:col-6 xl:col-5">
+                <div class="w-full lg:mx-0 lg:h-180 relative">
+                    <img src="{{ params.image }}" alt="" class="object-cover w-full h-full hidden lg:block z-10">
+                    <img src="{{ manifest('assets/images/pattern-1.svg') }}" class="absolute h-auto max-w-none -z-1" style="width:632px; bottom:60px; left:0;" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="flex lg:hidden flex-wrap -mx-10">
+            <div class="col-12 h-100 sm:h-130 md:h-160 mb-6">
+                <img src="{{ params.image_mobile }}" alt="" class="object-cover w-full h-full block">
+                <img src="{{ manifest('assets/images/pattern-1-mobile.svg') }}" class="absolute h-auto max-w-none -z-1" style="width:140px; top:-16px; right:40px;" alt="">
+            </div>
+        </div>
+        <div class="flex lg:hidden flex-wrap -mx-5">
+             <div class="col-12">
+                <a href="{{ params.cta.url }}" class="button button-full medium-button w-full lg:w-auto">{{ params.cta.title }}</a>
+            </div>
+        </div>
+    </div>
+</header>
