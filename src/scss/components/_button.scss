@@ -1,7 +1,7 @@
 .button {
   outline:none;
   @apply outline-none border-2 uppercase border-transparent border-solid text-white px-8 py-4 inline-block text-center font-bold text-base;
-  line-height:24px;
+  line-height: 24px;
   @screen lg {
     @apply text-base;
     //min-width: 240px;
@@ -29,7 +29,7 @@
 }
 
 .button-empty {
-  @apply bg-white text-peppermint border-peppermint;
+  @apply bg-transparent text-peppermint border-peppermint;
 }
 
 .chat-active-bullet,

@@ -48,10 +48,10 @@
         <div class="flex flex-wrap -mx-5">
             <div class="col-12 lg:col-7 xl:col-6 xl:offset-1">
                 <div class="medium-paragraph lg:large-paragraph pt-3 lg:pt-10 mb-8 lg:mb-8 mw-none-mobile" style="max-width:520px;">{{ params.description }}</div>
-                {% if params.cta|length %}
-                    <a href="{{ params.cta.url }}" class="button button-full medium-button w-full lg:w-auto xl:mr-8 lg:inline-block">{{ params.cta.title }}</a>
+                {% if params.cta %}
+                    <a href="{{ params.cta.url }}" class="button button-full medium-button w-full lg:w-auto mb-4 lg:mb-0 xl:mr-8 lg:inline-block">{{ params.cta.title }}</a>
                 {% endif %}
-                {% if params.cta2|length %}
+                {% if params.cta2 %}
                     <a href="{{ params.cta2.url }}" class="button button-empty medium-button w-full lg:w-auto lg:inline-block">{{ params.cta2.title }}</a>
                 {% endif %}
             </div>

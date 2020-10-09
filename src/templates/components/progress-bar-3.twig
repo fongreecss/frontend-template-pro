@@ -24,9 +24,9 @@
       </div>
       <div class="col-12 lg:col-4">
           <div class="w-full -ml-10 sm:ml-0 sm:text-center">       
-              <div class="lg2-number inline-block text-coalblack relative">
+              <div class="lg2-number inline-block text-coalblack relative" style="-webkit-text-stroke-width: 1px; -webkit-text-stroke-color: white;">
                   {{ params.number }}
-                  <div class="absolute bottom-0 left-0 right-0 overflow-hidden number number-{{params.number}}" style="-webkit-text-stroke-width: 1px; -webkit-text-stroke-color: white;">
+                  <div class="absolute bottom-0 left-0 right-0 overflow-hidden number number-{{params.number}}">
                       <div class="absolute bottom-0 left-0 right-0 lg2-number inline-block text-peppermint">{{ params.number }}</div>
                   </div>
                   {% if params.is_percent == true %}

@@ -6,7 +6,7 @@
   the content can be naked.
 
   @param {string}  title
-  @param {wysiwyg} text
+  @param {wysiwyg} description
   @param {object} cta 
   {
         @param {string}  title
@@ -22,8 +22,8 @@
         {% if params.title %}
         <h2 class="text-4xl lg:text-5xl mb-3 lg:mb-5 leading-tight text-taupe font-brothers mx-auto max-w-xxs3 lg:max-w-none md:w-auto">{{ params.title }}</h2>
         {% endif %}
-        {% if params.text %}
-        <div class="font-malaga-bold-italic text-gray-111 text-lg leading-tight">{{ params.text|raw }}</div>
+        {% if params.description %}
+        <div class="font-malaga-bold-italic description-gray-111 text-lg leading-tight">{{ params.text|raw }}</div>
         {% endif %}
       </div>
     </div>

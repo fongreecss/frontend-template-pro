@@ -1,12 +1,24 @@
 {% extends '/templates/layouts/base.twig' %}
 {% set headerItems = { 
-    "image" : "assets/images/woman-sitting.png",
-    "image_mobile" : "assets/images/women-talking-mobile.png",
-	"title": "Services", 
+    "image" : "assets/images/men-talking.png",
+    "image_mobile" : "assets/images/men-talking-mobile.png",
+	"title": "Naložbeno svetovanje", 
 	"description": "Namen naložbenega svetovanja je, da stranka oz. vlagatelj doseže zastavljeni naložbeni cilj z izpostavljanjem čim nižjem tveganju.", 
 	"suptitle" : "Certified expertise",
 	"cta" : { 
 		"title" : "Naročite svetovalca", 
+		"url" : "#" 
+	} 
+} %}
+
+{% set textSimpleItems = { 
+	"title": "Naše stranke z naložbenim svetovanjem pridobijo sigurnost za dosego zastavljenega naložbenega cilja v zastavljenem časovnem okviru in ob nižjem naložbenem tveganju.", 
+	"cta" : { 
+		"title" : "Naročite svetovalca", 
+		"url" : "#" 
+	},
+	"cta2" : { 
+		"title" : "Video klic v živo", 
 		"url" : "#" 
 	} 
 } %}
@@ -39,6 +51,7 @@
 	"image_mobile" : "assets/images/mansuit2.png",
 } %}
 
+
 {% set contactInfoItems = {
 	"title" : "Full set of great features to make your product fresh and clean.",
 	"description" : "Vsi registrirani uporabniki ste enkrat letno upravičeni do brezplačnega pregleda portfelja.",
@@ -62,12 +75,11 @@
 	}
 } %}
 
-
-
-
 {% block content %}
-	<main role="main" class="p-consult-4">
+	<main role="main" class="p-consult-5">
         {% include "/templates/components/header-consult-2.twig" with { params: headerItems } %}
+        <div class="mb-14 lg:-mb-15"></div>
+        {% include "/templates/components/text-simple-2.twig" with { params: textSimpleItems } %}
 		<div class="mb-14 lg:mb-50"></div>
 		{% include "/templates/components/text-advanced-1.twig" with { params: textAdvancedItems } %}
 		<div class="mb-32 lg:mb-36"></div>
