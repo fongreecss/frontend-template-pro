@@ -1,0 +1,54 @@
+{#
+  Section with contact info. Version 1
+  left side: text with cta 
+  middle: items (numbers, and captions)
+  right: image with some background element
+
+  @param {string}  title
+  @param {object}  cta 
+  {
+    @param {string} title
+    @param {string} url
+  }
+  @param {array} items - contact items
+  {
+      @param {string} title
+      @param {string} url
+  }
+#}
+
+{# Output #}
+<section class="c-contact-info c-contact-info-1 bg-coalblack pt-10 pb-12 lg:pt-30 lg:pb-30">
+  <div class="container-only-lg">
+   <div class="flex flex-wrap -mx-5">
+      <div class="col-12 lg:col-7 xl:col-6 xl:offset-1">
+            <h3 class="h4 lg:h2 title text-white mb-5 lg:mb-18">{{ params.title }}</h3>
+      </div><!-- .col -->
+    </div>
+    <div class="flex flex-wrap -mx-5">
+      <div class="col-12 lg:col-7 xl:col-6 xl:offset-1">
+            <ul class="mb-4 lg:mb-17 lg:flex lg:flex-row">
+            {% for item in params.items %}
+                <li class="">
+                    <a href="{{ item.url }}" class="block contact-info-link lg:medium-paragraph text-white pt-4 pb-5 lg:pt-0 lg:pb-0 lg:pl-6 lg:pr-6 border-midtonegray lg:border-r border-solid relative {{ loop.index == 1 ? "lg:border-l" : "border-t lg:border-t-0"}}">
+                    {{ item.title }}
+                    <img src="{{ manifest('assets/images/caret-right.svg') }}" class="absolute inline-block lg:hidden right-0" alt="" style="top:calc(50% - 7px);">
+                    </a>
+                </li>
+            {% endfor %}
+            </ul>
+      </div><!-- .col -->
+      <div class="col-12 lg:col-4 lg:offset-1 xl:col-3 xl:offset-1">
+          <div class="mb-4 w-8 h-1 bg-peppermint"></div>
+          <div class="small-paragraph lg:medium-paragraph text-white mb-7 lg:mb-0">{{ params.description }}</div>
+      </div><!-- .col -->
+    </div>
+    <div class="flex flex-wrap -mx-5">
+      <div class="col-12 lg:col-7 xl:col-6 xl:offset-1">
+            <div class="block">
+                <a href="{{ params.cta.url }}" class="button button-full medium-button w-full lg:w-auto">{{ params.cta.title }}</a>
+            </div>
+      </div><!-- .col -->
+    </div>
+  </div>
+</section>

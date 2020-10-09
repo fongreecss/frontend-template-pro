@@ -362,6 +362,14 @@ h1.title {
   letter-spacing: 0.02em;
   text-transform: uppercase;
 }
+
+.contact-info-link {
+  font-family: "Tiempos Text";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+}
 /**
  * LG
  *
@@ -719,6 +727,14 @@ h1.title {
     /* identical to box height, or 171% */
     letter-spacing: 0.02em;
     text-transform: uppercase;
+  }
+
+  .lg\:contact-info-link {
+    font-family: "Tiempos Text";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
   }
 
 }
