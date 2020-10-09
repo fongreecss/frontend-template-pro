@@ -75,12 +75,77 @@
 	}
 } %}
 
+{% set imageAsideItems1 = {
+	"title": "Naložbeno svetovanje",
+	"description": "Through our consultancy efforts we achieve an understanding of your personal risk profile, and tailor our recommendations & guidance.",
+	"cta" : {
+		"title" : "Naročite svetovalca",
+		"url" : "#"
+	},
+	"image" : "assets/images/men-talking-mobile.png",
+    "layout" : 1,
+} %}
+
+{% set imageAsideItems2 = {
+	"title": "Pokojninsko svetovanje",
+	"description": "Not sales, but consultancy. Our interests are in providing excellent advice and mentorship for our clients.",
+	"cta" : {
+		"title" : "Naročite svetovalca",
+		"url" : "#"
+	},
+	"image" : "assets/images/office-empty-mobile.png",
+    "layout" : 2,
+} %}
+
+{% set imageAsideItems3 = {
+	"title": "Izdelava in spremljanje portfelja",
+	"description": "Through our consultancy efforts we achieve an understanding of your personal risk profile, and tailor our recommendations & guidance.",
+	"cta" : {
+		"title" : "Naročite svetovalca",
+		"url" : "#"
+	},
+	"image" : "assets/images/man-behind-mobile.png",
+    "layout" : 3,
+} %}
+
+{% set imageAsideItems4 = {
+	"title": "Optimizacija zavarovalnih polic",
+	"description": "We examine the risk and cost ratio of every potential investment you are interested in and advise on its viability and worth.",
+	"cta" : {
+		"title" : "Naročite svetovalca",
+		"url" : "#"
+	},
+	"image" : "assets/images/office-empty-mobile.png",
+    "layout" : 4,
+} %}
+
+{% set imageAsideItems5 = {
+	"title": "Posredovanje pri bančnih storitvah",
+	"description": "We examine the risk and cost ratio of every potential investment you are interested in and advise on its viability and worth.",
+	"cta" : {
+		"title" : "Naročite svetovalca",
+		"url" : "#"
+	},
+	"image" : "assets/images/man-behind-mobile.png",
+    "layout" : 5,
+} %}
+
 {% block content %}
 	<main role="main" class="p-consult-5">
         {% include "/templates/components/header-consult-2.twig" with { params: headerItems } %}
         <div class="mb-14 lg:-mb-15"></div>
         {% include "/templates/components/text-simple-2.twig" with { params: textSimpleItems } %}
-		<div class="mb-14 lg:mb-50"></div>
+		<div class="mb-14 lg:mb-30"></div>
+        {% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems1 } %}
+        <div class="mb-14 lg:mb-36"></div>
+        {% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems2 } %}
+        <div class="mb-14 lg:mb-24"></div>
+        {% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems3 } %}
+        <div class="mb-14 lg:mb-16"></div>
+        {% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems4 } %}
+        <div class="mb-14 lg:mb-24"></div>
+        {% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems5 } %}
+        <div class="mb-14 lg:mb-50"></div>
 		{% include "/templates/components/text-advanced-1.twig" with { params: textAdvancedItems } %}
 		<div class="mb-32 lg:mb-36"></div>
 		{% include "/templates/components/contact-info-1.twig" with { params: contactInfoItems } %}
