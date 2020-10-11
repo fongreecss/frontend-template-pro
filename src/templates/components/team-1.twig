@@ -13,7 +13,7 @@
 #}
 
 {# Output #}
-{% if params.items|length %}
+{% if params.items %}
 <section class="c-slider">
   <div class="container-only-lg">
     <div class="flex flex-wrap -mx-5">
@@ -25,9 +25,7 @@
           {% for item in params.items %}
           <div class="w-full px-10 lg:px-5 lg:w-1/5">
             <div class="mb-4 w-full h-0 pb-full relative">
-                <div class="absolute top-0 left-0 w-full h-full">
-                    <img class="object-cover w-full h-full" src="{{ item.image }}" >
-                </div>
+                <img class="absolute top-0 left-0 object-cover w-full h-full" src="{{ item.image }}" >
                 <img src="{{ manifest('assets/images/pattern-6.svg') }}" class="absolute -z-1" style="width:60%; top:23%; left:20%;" alt="">
             </div>
              <div class="h5 title text-coalblack -mx-5 lg:mx-0 text-center mb-8 lg:mb-0">{{ item.title }}</div>

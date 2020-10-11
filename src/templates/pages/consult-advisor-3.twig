@@ -1,0 +1,147 @@
+{% extends '/templates/layouts/base.twig' %}
+{% set headerItems = { 
+    "image" : "assets/images/vegelj-big.png",
+    "image_mobile" : "assets/images/vegelj-big.png",
+	"title": "Myhajlo Todurov", 
+    "title_contact" : "Contact Myhajlo",
+	"description": "V začetku leta 2008 se je pridružil Vzajemcem ter ob študiju na Ekonomski fakulteti nadaljeval svoje izobraževanje v finančni sferi.", 
+	"breadcrumbs" : [
+        {
+            "title" : "Svetovalec",
+            "url" : "#"
+        },
+        {
+            "title" : "Vodja uredništva",
+            "url" : "#"
+        }
+    ],
+    "items" : [
+        {
+            "title" : "080 35 08",
+            "icon" : "assets/images/ic-phone.svg",
+            "url" : "#"
+        },
+        {
+            "title" : "miha.todurov@vzajemci.com",
+            "icon" : "assets/images/ic-mail.svg",
+            "url" : "mailto:miha.todurov@vzajemci.com"
+        },
+        {
+            "title" : "Linkedin",
+            "icon" : "assets/images/ic-linkedin.svg",
+            "url" : "#"
+        },
+    ],
+	"cta" : { 
+		"title" : "Naročite svetovalca", 
+		"url" : "#" 
+	},
+    "cta2" : { 
+		"title" : "Video klic v živo", 
+		"url" : "#" 
+	} 
+} %}
+
+{% set cardsAdvancedItems = {
+	"title" : "Articles written by Myhajlo Todurov",
+    "suptitle" : "Academy contributions",
+	"description" : "Vsi registrirani uporabniki ste enkrat letno upravičeni do brezplačnega pregleda portfelja.",
+    "cta" : {
+        "title" : "Naročite svetovalca",
+        "url" : "#"
+    },
+	"items" : [
+		{
+			"title" : "Drugo mnenje: Ne bom investiral, saj je pred nami nova recesija",
+            "url" : "#",
+            "tags" : [
+                {
+                    "title" : "Investicije",
+                    "url" : "#"
+                },
+                {
+                    "title" : "Finance",
+                    "url" : "#"
+                }
+            ],
+            "date" : "12.12.2020",
+            "author" : "Myhajlo Todurov",
+            "author_url" : "#",
+            "image" : "assets/images/girl-playing-article.png"
+		},
+		{
+			"title" : "Lekcija zadnje krize: pasivni ali aktivni pristop k investiranju?",
+            "url" : "#",
+            "tags" : [
+                {
+                    "title" : "Investicije",
+                    "url" : "#"
+                },
+                {
+                    "title" : "Finance",
+                    "url" : "#"
+                }
+            ],
+            "date" : "12.12.2020",
+            "author" : "Myhajlo Todurov",
+            "author_url" : "#",
+            "image" : "assets/images/guy-stairs-article.png"
+		},
+        {
+			"title" : "Lekcija zadnje krize: pasivni ali aktivni pristop k investiranju?",
+            "url" : "#",
+            "tags" : [
+                {
+                    "title" : "Investicije",
+                    "url" : "#"
+                },
+                {
+                    "title" : "Finance",
+                    "url" : "#"
+                }
+            ],
+            "date" : "12.12.2020",
+            "author" : "Myhajlo Todurov",
+            "author_url" : "#",
+            "image" : "assets/images/guys-talking-article.png"
+		}
+	]
+} %}
+
+
+{% set contactInfoItems = {
+	"title" : "Full set of great features to make your product fresh and clean.",
+	"description" : "Vsi registrirani uporabniki ste enkrat letno upravičeni do brezplačnega pregleda portfelja.",
+	"items" : [
+		{
+			"title" : "080 35 08",
+			"url" : "tel:00386803508"
+		},
+		{
+			"title" : "Kontakti in lokacija",
+			"url" : "#"
+		},
+		{
+			"title" : "info@vzajemci.com",
+			"url" : "#"
+		}
+	],
+	"cta" : {
+		"title" : "Naročite svetovalca",
+		"url" : "#",
+	}
+} %}
+
+
+
+
+{% block content %}
+	<main role="main" class="p-consult-4">
+        {% include "/templates/components/header-consult-3.twig" with { params: headerItems } %}
+		<div class="mb-14 lg:mb-50"></div>
+		{% include "/templates/components/cards-advanced-1.twig" with { params: cardsAdvancedItems } %}
+		<div class="mb-32 lg:mb-36"></div>
+		{% include "/templates/components/contact-info-1.twig" with { params: contactInfoItems } %}
+		
+	</main>
+{% endblock %}
