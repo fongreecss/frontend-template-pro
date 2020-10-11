@@ -1,0 +1,175 @@
+{% extends '/templates/layouts/base.twig' %}
+{% set headerItems = { 
+    "image" : "assets/images/chairs.png",
+    "image_mobile" : "assets/images/chairs-mobile.png",
+	"title": "Naložbeni odbor", 
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut nunc lectus. Duis molestie augue quis sagittis semper.", 
+	"suptitle" : "Certified expertise",
+	"cta" : { 
+		"title" : "Naročite svetovalca", 
+		"url" : "#" 
+	} 
+} %}
+
+{% set contactInfoItems = {
+	"title" : "Full set of great features to make your product fresh and clean.",
+	"description" : "Vsi registrirani uporabniki ste enkrat letno upravičeni do brezplačnega pregleda portfelja.",
+	"items" : [
+		{
+			"title" : "080 35 08",
+			"url" : "tel:00386803508"
+		},
+		{
+			"title" : "Kontakti in lokacija",
+			"url" : "#"
+		},
+		{
+			"title" : "info@vzajemci.com",
+			"url" : "#"
+		}
+	],
+	"cta" : {
+		"title" : "Naročite svetovalca",
+		"url" : "#",
+	}
+} %}
+
+{% set imageAsideItems1 = {
+	"title": "Spremljanje trga in priprava smernic",
+	"description": "We examine the risk and cost ratio of every potential investment you are interested in and advise on its viability and worth.",
+	"cta" : {
+		"title" : "Naročite svetovalca",
+		"url" : "#"
+	},
+	"image" : "assets/images/men-talking-mobile.png",
+    "layout" : 1,
+} %}
+
+{% set imageAsideItems2 = {
+	"title": "Razvoj novih produktov",
+	"description": "Through our consultancy efforts we achieve an understanding of your personal risk profile, and tailor our recommendations & guidance.",
+	"cta" : {
+		"title" : "Naročite svetovalca",
+		"url" : "#"
+	},
+	"image" : "assets/images/office-empty-mobile.png",
+    "layout" : 2,
+} %}
+
+{% set imageAsideItems3 = {
+	"title": "Ocena in analiza obstoječih in novih naložbenih produktov",
+	"description": "We examine the risk and cost ratio of every potential investment you are interested in and advise on its viability and worth.",
+	"cta" : {
+		"title" : "Naročite svetovalca",
+		"url" : "#"
+	},
+	"image" : "assets/images/man-behind-mobile.png",
+    "layout" : 3,
+} %}
+
+{% set imageAsideItems4 = {
+	"title": "Neodvisno svetovanje za večje stranke",
+	"description": "Through our consultancy efforts we achieve an understanding of your personal risk profile, and tailor our recommendations & guidance.",
+	"cta" : {
+		"title" : "Naročite svetovalca",
+		"url" : "#"
+	},
+	"image" : "assets/images/office-empty-mobile.png",
+    "layout" : 4,
+} %}
+
+{% set imageAsideItems5 = {
+	"title": "Izobraževanje svetovalcev in strank,",
+	"description": "We examine the risk and cost ratio of every potential investment you are interested in and advise on its viability and worth.",
+	"cta" : {
+		"title" : "Naročite svetovalca",
+		"url" : "#"
+	},
+	"image" : "assets/images/man-behind-mobile.png",
+    "layout" : 5,
+} %}
+
+{% set imageAsideItems6 = {
+	"title": "Grajenje blagovne znamke",
+	"description": "Through our consultancy efforts we achieve an understanding of your personal risk profile, and tailor our recommendations & guidance.",
+	"cta" : {
+		"title" : "Naročite svetovalca",
+		"url" : "#"
+	},
+	"image" : "assets/images/office-empty-mobile.png",
+    "layout" : 4,
+} %}
+
+{%
+	set titleItems = {
+		"title" : "Funkcije"
+	}
+%}
+
+{% set advancedSectionItems = {
+	"title": "Mesečne smernice",
+	"description": "We examine the risk and cost ratio of every potential investment you are interested in and advise on its viability and worth.",
+	"cta" : {
+		"title" : "Spoznajte zdaj",
+		"url" : "#"
+	},
+	"image" : "assets/images/office-empty-2.png",
+	"image_mobile" : "assets/images/office-empty-2-mobile.png",
+} %}
+
+{% set teamItems = {
+	"title": "Člani odbora",
+	"cta" : {
+		"title" : "Želim svetovanje",
+		"url" : "#"
+	},
+	"items" : [
+		{
+			"title" : "Myhajlo Todurov",
+			"image" : "assets/images/vegelj-small.png"
+		},
+		{
+			"title" : "Myhajlo Todurov",
+			"image" : "assets/images/vegelj-small.png"
+		},
+		{
+			"title" : "Myhajlo Todurov",
+			"image" : "assets/images/vegelj-small.png"
+		},
+		{
+			"title" : "Myhajlo Todurov",
+			"image" : "assets/images/vegelj-small.png"
+		},
+		{
+			"title" : "Myhajlo Todurov",
+			"image" : "assets/images/vegelj-small.png"
+		}
+	]
+} %}
+
+{% block content %}
+	<main role="main" class="p-consult-5">
+        {% include "/templates/components/header-consult-2.twig" with { params: headerItems } %}
+        <div class="mb-14 lg:mb-27"></div>
+		{% include "/templates/components/title-1.twig" with { params: titleItems } %}
+		<div class="mb-14 lg:mb-16"></div>
+        {% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems1 } %}
+        <div class="mb-14 lg:mb-36"></div>
+        {% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems2 } %}
+        <div class="mb-14 lg:mb-24"></div>
+        {% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems3 } %}
+        <div class="mb-14 lg:mb-16"></div>
+        {% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems4 } %}
+        <div class="mb-14 lg:mb-24"></div>
+        {% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems5 } %}
+		<div class="mb-14 lg:mb-28"></div>
+        {% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems6 } %}
+		<div class="mb-14 lg:mb-30"></div>
+		{% include "/templates/components/advanced-section-2.twig" with { params: advancedSectionItems } %}
+        <div class="mb-14 lg:mb-30"></div>
+		{% include "/templates/components/team-1.twig" with { params: teamItems } %}
+		<div class="mb-14 lg:mb-30"></div>
+		{% include "/templates/components/contact-info-1.twig" with { params: contactInfoItems } %}
+		
+	</main>
+{% endblock %}
