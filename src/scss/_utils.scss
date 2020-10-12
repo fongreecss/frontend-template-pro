@@ -1,0 +1,85 @@
+/**
+ * scrool snap
+ **/
+
+ .scroll-snap-align-center {
+    scroll-snap-align: center;
+}
+
+@screen lg {
+    .lg\:scroll-snap-align-center {
+        scroll-snap-align: center;
+    }
+}
+
+.scroll-snap-align-start {
+    scroll-snap-align: start;
+}
+
+@screen lg {
+    .lg\:scroll-snap-align-start {
+        scroll-snap-align: start;
+    }
+}
+
+.scroll-snap-align-none {
+    scroll-snap-align: none;
+}
+
+@screen lg {
+    .lg\:scroll-snap-align-none {
+        scroll-snap-align: none;
+    }
+}
+
+.scroll-snap-type-x-proximity {
+    scroll-snap-type: x proximity;
+}
+
+@screen lg {
+    .lg\:scroll-snap-type-x-proximity {
+        scroll-snap-type: x proximity;
+    }
+}
+
+.scroll-snap-type-x-mandatory {
+    scroll-snap-type: x mandatory;
+}
+
+@screen lg {
+    .lg\:scroll-snap-type-x-mandatory {
+        scroll-snap-type: x mandatory;
+    }
+}
+
+.scroll-snap-type-none {
+    scroll-snap-type: none;
+}
+
+@screen lg {
+    .lg\:scroll-snap-type-none {
+        scroll-snap-type: none;
+    }
+}
+
+
+@media (max-width: 1023px) {
+  .max-width-none-mobile,
+  .mw-none-mobile {
+    max-width: none!important;
+  }
+}
+
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}

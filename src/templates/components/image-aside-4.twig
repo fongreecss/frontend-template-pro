@@ -1,8 +1,8 @@
 {#
   Section with text and image aside. Version 4
 
-  We have to extact styles in the css for the layout, so the html in
-  the content can be naked.
+  Left side: Text (title, desc, cta)
+  Right side: Image with 3 text items. they should be Animated on scroll effect.
 
   @param {string}  title
   @param {wysiwyg} description
@@ -11,8 +11,11 @@
     @param {string} title
     @param {string} url
   }
-  @param {string} image     image url
-  @param {string} image_first       default set on false
+  @param {string} image  -  image url
+  @param {string} image_first - Should image be shown before text. default set on false
+  @param {string} textItem1 - text on top
+  @param {string} textItem2 - text in the middle
+  @param {string} textItem3 - text on bottom
 #}
 
 {# Output #}
@@ -36,13 +39,13 @@
         {% if params.image %}
           <div class="bg-image relative bg-no-repeat bg-center -mx-5 lg:mx-0" style="{{ params.image ? "background-image: url(" ~ params.image ~ ");" : "" }}">
               {% if params.textItem2 %}
-              <div class="text-item text-item-1 h4 lg:h2 title text-peppermint pt-13 mb-38 lg:mb-38 lg:pt-22">{{ params.textItem1}}</div>
+              <div class="text-item text-item-1 h4 lg:h2 title text-peppermint pt-13 mb-38 lg:mb-38 lg:pt-22">{{ params.textItem1 }}</div>
               {% endif %}
               {% if params.textItem2 %}
-              <div class="text-item text-item-2 h4 lg:h2 title text-peppermint mb-48 lg:mb-44">{{ params.textItem2}}</div>
+              <div class="text-item text-item-2 h4 lg:h2 title text-peppermint mb-48 lg:mb-44">{{ params.textItem2 }}</div>
               {% endif %}
               {% if params.textItem2 %}
-              <div class="text-item text-item-3 h4 lg:h2 title text-peppermint pb-12 lg:pb-22">{{ params.textItem3}}</div>
+              <div class="text-item text-item-3 h4 lg:h2 title text-peppermint pb-12 lg:pb-22">{{ params.textItem3 }}</div>
               {% endif %}
           </div>
         {% endif %}

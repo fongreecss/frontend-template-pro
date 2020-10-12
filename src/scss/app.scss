@@ -13,13 +13,14 @@
 @import 'typography';
 @import 'colors';
 @import "scrollspy";
+@import 'utils';
 @import "yt-player";
 @import "animation";
 @import "./components/header";
 @import "./components/landing-carousel";
 @import "./components/we-offer";
 @import "./components/button";
-@import "./components/card";
+@import "./components/card-list";
 @import "./components/input";
 @import "./components/text";
 @import "./components/text-with-note";
@@ -76,14 +77,4 @@ body {
       max-width: 1408px;
   }
 }
-
-@media (max-width: 1023px) {
-  .max-width-none-mobile,
-  .mw-none-mobile {
-    max-width: none!important;
-  }
-}
-
-
-
 

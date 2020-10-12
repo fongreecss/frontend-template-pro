@@ -1,3 +1,21 @@
+{#
+  Section with header. Header consult 2
+  Left side: info about page. title, desc, cta buttons, and super title
+  Right side: image with pattern behind
+
+  @param {string}  image
+  @param {string}  image_mobile
+  @param {string}  suptitle - text above normal title
+  @param {string}  title - header main title 
+  @param {string}  description
+  @param {object}  cta - left full button
+  {
+    @param {string} title
+    @param {string} url
+  }
+#}
+
+{# Output #}
 <header class="c-header c-header-consult-2 w-full relative lg:pt-36">
     <div class="container-only-lg">
         <div class="flex flex-wrap -mx-5">
@@ -11,17 +29,19 @@
             </div>
             <div class="hidden lg:block lg:col-6 xl:col-5">
                 <div class="w-full lg:mx-0 lg:h-180 relative">
-                    <img src="{{ params.image }}" alt="" class="object-cover w-full h-full hidden lg:block z-10">
-                    <img src="{{ manifest('assets/images/pattern-1.svg') }}" class="absolute h-auto max-w-none -z-1" style="width:632px; bottom:60px; left:0;" alt="">
+                    <img src="{{ manifest('assets/images/pattern-1.svg') }}" class="absolute h-auto max-w-none" style="width:632px; bottom:60px; left:0;" alt="">
+                    <img src="{{ params.image }}" alt="" class="absolute left-0 top-0 object-cover w-full h-full">
                 </div>
             </div>
         </div>
+        {% if params.image_mobile %}
         <div class="flex lg:hidden flex-wrap -mx-10">
             <div class="col-12 h-100 sm:h-130 md:h-160 mb-6">
-                <img src="{{ params.image_mobile }}" alt="" class="object-cover w-full h-full block">
-                <img src="{{ manifest('assets/images/pattern-1-mobile.svg') }}" class="absolute h-auto max-w-none -z-1" style="width:140px; top:-16px; right:40px;" alt="">
+                <img src="{{ manifest('assets/images/pattern-1-mobile.svg') }}" class="absolute h-auto max-w-none" style="width:140px; top:-16px; right:40px;" alt="">
+                <img src="{{ params.image_mobile }}" alt="" class="absolute left-0 top-0 object-cover w-full h-full">
             </div>
         </div>
+        {% endif %}
         <div class="flex lg:hidden flex-wrap -mx-5">
              <div class="col-12">
                 <a href="{{ params.cta.url }}" class="button button-full medium-button w-full lg:w-auto">{{ params.cta.title }}</a>

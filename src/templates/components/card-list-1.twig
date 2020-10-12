@@ -1,23 +1,79 @@
 {#
-  Card List
+  Card list - Version 1
+  this one ony has three featured articles
 
-  Data is passed onto each card
+  @param {string} suptitle
+  @param {string} title 
 
-  @param {array}  items
+  @param {array}  items -cards 
   {
-    See card.twig
+    @param {string} image
+    @param {string} url
+    @param {string} title 
+    @param {string} description
+  }
+
+  @param {object} featuredItem 
+  {
+    @param {string} image
+    @param {string} url
+    @param {string} title 
+    @param {string} description
   }
 #}
 
 {# Output #}
-<section class="c-card-list">
+<section class="c-card-list c-card-list-1">
   <div class="container-only-lg">
     <div class="flex flex-wrap -mx-5">
-      {% for item in params.items %}
-      <div class="col-12 lg:col-4 mb-12 lg:mb-0">
-        {% include '/templates/components/card.twig' with { params: item } %}
+      <div class="col-12 xl:offset-1 xl:col-7">
+        <div class="text-peppermint h6 lg:h6 title mb-1 lg:mb-0">{{ params.suptitle }}</div>
+        <h2 class="h4 lg:h1 title text-coalblack mb-4 lg:mb-10">{{ params.title }}</h2>
       </div>
+    </div><!-- flex row -->
+    <div class="flex flex-no-wrap lg:flex-wrap -mx-5 lg:-mx-5 mb-2 lg:mb-0 overflow-x-scroll smooth-scroll hide-scrollbar scroll-snap-type-x-mandatory lg:scroll-snap-type-none">
+      {% for item in params.items %}
+      <a href="{{ item.url }}" class="card h-75 lg:h-100 select-none scroll-snap-align-start lg:scroll-snap-align-none mb-2 lg:mb-10">
+          <div class="flex relative items-end w-full h-full bg-arcticsilver">
+              <div class="px-4 py-8 lg:px-10 lg:py-10">
+                  <h5 class="h5 lg:h4 title text-coalblack mb-2 lg:mb-2">{{ item.title }}</h5>
+                  <p class="text-textgray small-paragraph">{{ item.description }}</p>
+              </div>
+          </div>
+      </a>
       {% endfor %}
-    </div>
-  </div>
+      {% if params.featured_item %}
+      <a href="{{ params.featured_item.url }}" class="hidden lg:block card card-featured h-75 lg:h-100 lg:mb-10">
+          <div class="flex relative items-end w-full h-full">
+              <img src="{{ params.featured_item.image }}" class="absolute top-0 left-0 object-contain w-full h-full">
+              <div class="card-featured-bg absolute w-full h-full top-0 left-0"></div>
+              <div class="px-4 py-8 lg:px-10 lg:py-10 lg:pb-15 z-10">
+                  <svg class="inline-block mb-5" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.586 7L6.293 1.707 7.707.293 15.414 8l-7.707 7.707-1.414-1.414L11.586 9H0V7h11.586z" fill="#54BAB3"/>
+                  </svg>
+                  <h5 class="h5 lg:h4 title text-white mb-2 lg:mb-2">{{ params.featured_item.title }}</h5>
+              </div>
+          </div>
+      </a>
+      {% endif %}
+    </div><!-- .row -->
+    
+        {% if params.featured_item %}
+        <div class="flex flex-wrap -mx-5 ">
+          <a href="{{ params.featured_item.url }}" class="block lg:hidden card-featured w-full h-0 pb-full select-none relative">
+              <div class="flex items-end w-full h-full absolute top-0 left-0">
+                  <img src="{{ params.featured_item.image }}" class="absolute top-0 left-0 object-contain w-full h-full">
+                  <div class="card-featured-bg absolute w-full h-full top-0 left-0"></div>
+                  <div class="px-4 py-8 z-10">
+                    <svg class="inline-block mb-5" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M11.586 7L6.293 1.707 7.707.293 15.414 8l-7.707 7.707-1.414-1.414L11.586 9H0V7h11.586z" fill="#54BAB3"/>
+                    </svg>
+                    <h5 class="h5  title text-white mb-2">{{ params.featured_item.title }}</h5>
+                  </div>
+              </div>
+          </a>
+        </div>
+        {% endif %}
+      
+  </div><!-- container -->
 </section>

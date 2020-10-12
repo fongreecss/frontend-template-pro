@@ -42,7 +42,7 @@
 	} 
 } %}
 
-{% set cardsAdvancedItems = {
+{% set articleListItems = {
 	"title" : "Articles written by Myhajlo Todurov",
     "suptitle" : "Academy contributions",
 	"description" : "Vsi registrirani uporabniki ste enkrat letno upravičeni do brezplačnega pregleda portfelja.",
@@ -67,7 +67,8 @@
             "date" : "12.12.2020",
             "author" : "Myhajlo Todurov",
             "author_url" : "#",
-            "image" : "assets/images/girl-playing-article.png"
+            "image" : "assets/images/girl-playing-article.png",
+            "image_mobile" : "assets/images/girl-playing-article.png",
 		},
 		{
 			"title" : "Lekcija zadnje krize: pasivni ali aktivni pristop k investiranju?",
@@ -85,7 +86,8 @@
             "date" : "12.12.2020",
             "author" : "Myhajlo Todurov",
             "author_url" : "#",
-            "image" : "assets/images/guy-stairs-article.png"
+            "image" : "assets/images/guy-stairs-article.png",
+            "image_mobile" : "assets/images/guy-stairs-article.png"
 		},
         {
 			"title" : "Lekcija zadnje krize: pasivni ali aktivni pristop k investiranju?",
@@ -103,7 +105,8 @@
             "date" : "12.12.2020",
             "author" : "Myhajlo Todurov",
             "author_url" : "#",
-            "image" : "assets/images/guys-talking-article.png"
+            "image" : "assets/images/guys-talking-article.png",
+            "image_mobile": "assets/images/guys-talking-article.png"
 		}
 	]
 } %}
@@ -132,16 +135,73 @@
 	}
 } %}
 
+{%
+    set personInfoItems = {
+       "image" : "assets/images/vegelj4-big.png",
+       "image_mobile": "assets/images/vegelj4-big.png",
+       "title": "Dr. David Vegelj",
+       "jobtitle" : "Cheif investment officer",
+       "quote" : "Key statement about the product and how exciting it is, or some other manner of interesting quote.",
+       "description" : "Vsi registrirani uporabniki ste enkrat letno upravičeni do brezplačnega pregleda portfelja. Vsi registrirani uporabniki ste enkrat letno upravičeni do brezplačnega pregleda portfelja.",
+       "cta" : {
+           "title" : "NAROČITE SVETOVALCA",
+           "url" : "#"
+       }
+    }
+%}
 
+{%
+    set cardListItems = {
+       
+       "title": "Best in class services",
+       "suptitle" : "Consulting",
+       "items" : [
+           {
+               "title" : "Naložbeno svetovanje",
+               "url" : "#",
+               "description" : "Very short description, should not cross the threshold of two lines on this median screen width."
+           },
+           {
+               "title" : "Pokojninsko svetovanje",
+               "url" : "#",
+               "description" : "Very short description, should not cross the threshold of two lines on this median screen width."
+           },
+           {
+               "title" : "Izdelava in spremljanje portfelja",
+               "url" : "#",
+               "description" : "Very short description, should not cross the threshold of two lines on this median screen width."
+           },
+           {
+               "title" : "Optimizacija zavarovalnih polic",
+               "url" : "#",
+               "description" : "Very short description, should not cross the threshold of two lines on this median screen width."
+           },
+           {
+               "title" : "Posredovanje pri bančnih storitvah",
+               "url" : "#",
+               "description" : "Very short description, should not cross the threshold of two lines on this median screen width."
+           }
+       ],
+       "featured_item" : {
+               "title" : "Naročite termin z svetovalcem",
+               "url" : "#featured",
+               "image" : "assets/images/vegelj-big.png",
+               "is_featured" : true
+        },
+    }
+%}
 
 
 {% block content %}
 	<main role="main" class="p-consult-4">
-        {% include "/templates/components/header-consult-3.twig" with { params: headerItems } %}
+		{% include "/templates/components/header-consult-3.twig" with { params: headerItems } %}
 		<div class="mb-14 lg:mb-50"></div>
-		{% include "/templates/components/cards-advanced-1.twig" with { params: cardsAdvancedItems } %}
+		{% include "/templates/components/article-list-1.twig" with { params: articleListItems } %}
+		<div class="mb-16 lg:mb-30"></div>
+		{% include "/templates/components/person-info-1.twig" with { params: personInfoItems } %}
 		<div class="mb-32 lg:mb-36"></div>
+        {% include "/templates/components/card-list-1.twig" with { params: cardListItems } %}
+        <div class="mb-2 lg:mb-24"></div>
 		{% include "/templates/components/contact-info-1.twig" with { params: contactInfoItems } %}
-		
 	</main>
 {% endblock %}
