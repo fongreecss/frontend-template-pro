@@ -1,43 +1,12 @@
 {% extends '/templates/layouts/base.twig' %}
 {% set headerItems = { 
-    "image" : "assets/images/vegelj-big.png",
-    "image_mobile" : "assets/images/vegelj-big.png",
-	"title": "Myhajlo Todurov", 
-    "title_contact" : "Contact Myhajlo",
-	"description": "V začetku leta 2008 se je pridružil Vzajemcem ter ob študiju na Ekonomski fakulteti nadaljeval svoje izobraževanje v finančni sferi.", 
-	"breadcrumbs" : [
-        {
-            "title" : "Svetovalec",
-            "url" : "#"
-        },
-        {
-            "title" : "Vodja uredništva",
-            "url" : "#"
-        }
-    ],
-    "items" : [
-        {
-            "title" : "080 35 08",
-            "icon" : "assets/images/ic-phone.svg",
-            "url" : "#"
-        },
-        {
-            "title" : "miha.todurov@vzajemci.com",
-            "icon" : "assets/images/ic-mail.svg",
-            "url" : "mailto:miha.todurov@vzajemci.com"
-        },
-        {
-            "title" : "Linkedin",
-            "icon" : "assets/images/ic-linkedin.svg",
-            "url" : "#"
-        },
-    ],
+    "image" : "assets/images/mansuit2.png",
+    "image_mobile" : "assets/images/mansuit2.png",
+	"title": "Svetovalci", 
+	"description": "Through our consultancy efforts we achieve an understanding of your personal risk profile, and tailor our recommendations & guidance.", 
+	"suptitle" : "Certified expertise",
 	"cta" : { 
 		"title" : "Naročite svetovalca", 
-		"url" : "#" 
-	},
-    "cta2" : { 
-		"title" : "Video klic v živo", 
 		"url" : "#" 
 	} 
 } %}
@@ -135,20 +104,6 @@
 	}
 } %}
 
-{%
-    set personInfoItems = {
-       "image" : "assets/images/Vegelj4-big.png",
-       "image_mobile": "assets/images/Vegelj4-big.png",
-       "title": "Dr. David Vegelj",
-       "jobtitle" : "Cheif investment officer",
-       "quote" : "Key statement about the product and how exciting it is, or some other manner of interesting quote.",
-       "description" : "Vsi registrirani uporabniki ste enkrat letno upravičeni do brezplačnega pregleda portfelja. Vsi registrirani uporabniki ste enkrat letno upravičeni do brezplačnega pregleda portfelja.",
-       "cta" : {
-           "title" : "NAROČITE SVETOVALCA",
-           "url" : "#"
-       }
-    }
-%}
 
 {%
     set cardListItems = {
@@ -194,11 +149,11 @@
 
 {% block content %}
 	<main role="main" class="p-consult-4">
-		{% include "/templates/components/header-consult-3.twig" with { params: headerItems } %}
+		{% include "/templates/components/header-consult-2.twig" with { params: headerItems } %}
 		<div class="mb-14 lg:mb-50"></div>
-		{% include "/templates/components/article-list-1.twig" with { params: articleListItems } %}
+
 		<div class="mb-16 lg:mb-30"></div>
-		{% include "/templates/components/person-info-1.twig" with { params: personInfoItems } %}
+
 		<div class="mb-32 lg:mb-36"></div>
         {% include "/templates/components/card-list-1.twig" with { params: cardListItems } %}
         <div class="mb-2 lg:mb-24"></div>
