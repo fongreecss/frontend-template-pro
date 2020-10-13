@@ -28,7 +28,7 @@
       <div class="col-12 lg:col-4 xl:col-5">
             <h2 class="h4 lg:h1 title text-coalblack mb-6 lg:mb-4">{{ params.title }}</h2>
             {% if params.image_mobile %}
-            <div class="lg:hidden relative h-0 pb-full w-full mb-10 -ml-5" style="width:calc(100% + 40px);">
+            <div class="lg:hidden relative h-0 w-full mb-10 -ml-5" style="width:calc(100% + 40px); padding-bottom:calc(100% + 40px);">
                 <img loading="lazy" src="{{ params.image_mobile }}" class="absolute top-0 left-0 object-cover w-full h-full" alt="">
                 <img loading="lazy" src="{{ manifest('assets/images/pattern-1-mobile.svg') }}" class="absolute -bottom-6 -z-1 right-4" alt="">
             </div>
@@ -41,7 +41,7 @@
       <div class="col-12 lg:col-4 xl:col-3">
             <ul class="lg:mt-36">
                 {% for item in params.items %}
-                    <li class="mb-6 lg:mb-9 pl-9 lg:pl-10 relative">
+                    <li class="mb-6 lg:mb-10 pl-9 lg:pl-10 relative">
                         <div class="small-tag lg:big-tag text-textgray mb-1 lg:mb-0">{{ item.suptitle }}</div>
                         <h5 class="h4 lg:h3 title text-coalblack mb-0 lg:mb-0">{{ item.title }}</h5>
                         <p class="lg:small-paragraph text-textgray">{{ item.caption }}</p>
@@ -54,8 +54,8 @@
             </div>
       </div>
       <div class="hidden lg:block lg:col-3 xl:col-3 lg:offset-1 xl:offset-1 relative">
-        <div style="width:364px; height: 552px;" class="relative lg:mt-3 pb-16">
-            <div style="width:476px; height:344px; left:-92px; background-image:url({{ manifest('assets/images/pattern-3.svg') }})" class="absolute bottom-0 lg:-z-1 bg-no-repeat bg-left-top">
+        <div style="width:364px; height: 552px;" class="relative lg:mt-3 mb-16">
+            <div style="width:476px; height:344px; left:-112px; background-image:url({{ manifest('assets/images/pattern-3.svg') }})" class="absolute -bottom-16 lg:-z-1 bg-no-repeat bg-left-top">
             </div>
             <img loading="lazy" src="{{ params.image }}" class="object-cover w-full h-full" alt="">
         </div>

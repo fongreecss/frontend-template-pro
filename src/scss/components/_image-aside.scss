@@ -117,3 +117,48 @@
         }
     }
 }
+
+.c-image-aside-5 {
+    .background-block-coalblack {
+        position: absolute;
+        left:-204px;
+        height:100%;
+        right:-400px;
+        top:0;
+        z-index: -10;
+        @apply bg-coalblack;
+    }
+
+    .pattern-behind-block {
+        @apply absolute max-w-none h-auto;
+        width: 184px;
+        right:0;
+        bottom:-36px;
+        z-index: 0;
+        @screen lg { 
+            width: 216px;
+            left: calc(-204px - 216px + 40px);
+            bottom: 40px;
+            right:auto;
+             z-index: -1;
+        }
+    }
+
+    .image-container {
+        position: relative;
+        margin-bottom:44px;
+        margin-left: -50px;;
+        width:100%;
+        @screen lg {
+            position: absolute;
+            width: 588px;
+            width: 825px;
+            height: 460px;
+            top: -80px;
+            left: calc(-204px - 825px + 70px);
+            margin-bottom:0;
+            margin-left:0;
+        }
+        
+    }
+}

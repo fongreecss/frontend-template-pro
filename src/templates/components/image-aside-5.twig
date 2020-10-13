@@ -1,0 +1,41 @@
+{#
+  Section with text and image aside. Version 5
+
+  @param {string}  title
+  @param {wysiwyg} description
+  @param {object}  cta 
+  {
+    @param {string} title
+    @param {string} url
+  }
+  @param {string} image  -  image url
+#}
+
+{# Output #}
+<section class="c-image-aside c-image-aside-5 bg-coalblack lg:bg-transparent pt-10 lg:pt-20">
+  <div class="container-only-lg">
+    <div class="flex flex-wrap -mx-5 mb-9 lg:mb-0">
+      <div class="col-12 lg:col-6 xl:col-5 lg:offset-6 xl:offset-6 lg:pt-28 lg:pb-36 relative">
+        <div class="hidden lg:block background-block-coalblack"></div>
+        <img loading="lazy" src="{{ manifest('assets/images/pattern-6.svg') }}" class="pattern-behind-block" style="" alt="">
+        {% if params.title %}
+        <h2 class="h4 lg:h2 title mb-3 lg:mb-2 text-white">{{ params.title }}</h2>
+        {% endif %}
+        {% if params.description %}
+        <div class="medium-paragraph lg:medium-paragraph mb-6 lg:mb-8 mw-none-mobile text-white" style="max-width:408px;">{{ params.description|raw }}</div>
+        {% endif %}
+        {% if params.cta %}
+        <div class="mb-8 lg:mb-0">
+          <a href="{{ params.cta.url }}" class="button button-full medium-button w-full lg:w-auto">{{ params.cta.title }}</a>
+        </div>
+        {% endif %}
+
+        {% if params.image %}
+            <div class="image-container">
+            <img src="{{ params.image }}" loading="lazy" alt="" class="object-cover h-full w-full" >
+            </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>

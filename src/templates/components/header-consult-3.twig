@@ -29,6 +29,7 @@
       @param {string} icon - icon image path
       @param {string} url - url of contact info
   }
+   lg:flex lg:items-end lg:min-h-screen
 #}
 
 {# Output #}
@@ -53,7 +54,7 @@
                     <div class="col-12 mb-8 overflow-hidden">
                         <div class="relative w-full h-0 pb-full">
                             <img loading="lazy" src="{{ manifest('assets/images/pattern-6.svg') }}" class="absolute h-auto max-w-none" style="width:60%; top:20%; left:20%;" alt="">
-                            <img  loading="lazy" src="{{ params.image_mobile }}" alt="" class="absolute top-0 left-0 object-cover w-full h-full">
+                            <img  loading="lazy" src="{{ params.image_mobile }}" alt="" class="absolute top-0 left-0 object-cover object-bottom w-full h-full">
                         </div>
                     </div>
                 </div>
@@ -72,7 +73,7 @@
 
                 <div class="hidden lg:block">
                 {% if params.cta %}
-                    <a href="{{ params.cta.url }}" class="block lg:inline-block button button-full medium-button w-full lg:w-auto lg:mr-8">{{ params.cta.title }}</a>
+                    <a href="{{ params.cta.url }}" class="block lg:inline-block button button-full medium-button w-full lg:w-auto lg:mr-1 xl:mr-8">{{ params.cta.title }}</a>
                 {% endif %}
                 {% if params.cta2 %}
                     <a href="{{ params.cta2.url }}" class="block lg:inline-block button button-empty medium-button w-full lg:w-auto">{{ params.cta2.title }}</a>
@@ -83,7 +84,7 @@
             <div class="hidden lg:block lg:col-6 xl:col-6">
                 <div class="w-full relative overflow-hidden" style="height:720px;">
                     <img loading="lazy" src="{{ manifest('assets/images/pattern-6.svg') }}" class="absolute h-auto max-w-none" style="width:60%; top:36%; left:20%;" alt="">
-                    <img loading="lazy" src="{{ params.image }}" alt="" class="absolute left-0 top-0 object-cover w-full h-full">
+                    <img loading="lazy" src="{{ params.image }}" alt="" class="absolute left-0 top-0 object-contain object-bottom w-full h-full">
                 </div>
             </div>
         </div>

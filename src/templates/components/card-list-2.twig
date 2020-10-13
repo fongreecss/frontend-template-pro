@@ -1,0 +1,59 @@
+{#
+  Card list - Version 1
+  this one ony has three featured articles
+
+  @param {array}  items -cards 
+  {
+    @param {string} title
+    @param {string} jobtitle
+    @param {string} url
+    @param {string} image
+  }
+
+Sample: 
+  set cardList = {
+      "items" : [
+          {
+              "title" : "Myhajlo Todurov",
+              "jobtitle" : "Svetovalec, Vodja uredništva",
+              "url" : "#",
+              "image" : "assets/images/vegelj-big.png"
+          },
+          {
+              "title" : "Myhajlo Todurov",
+              "jobtitle" : "Svetovalec, Vodja uredništva",
+              "url" : "#",
+              "image" : "assets/images/vegelj-big.png"
+          },
+      ]
+  }
+
+#}
+
+{# Output #}
+<section class="c-card-list c-card-list-2">
+  <div class="container-only-lg">
+    <div class="flex flex-wrap -mx-1 lg:-mx-5">
+      {% for item in params.items %}
+      <div class="w-1/2 px-1 lg:w-1/3 lg:px-5">
+            <a href="{{ item.url }}" class="mb-6 lg:mb-10 block w-full  relative">
+                <div class="image-container pb-full w-full h-0 lg:pb-7/10 lg:w-7/10 lg:mx-auto relative">
+                    <img src="{{ item.image }}" class="absolute w-full h-full object-cover object-bottom" alt="">
+                </div>
+                <div class="relative w-full h-full ">
+                    <div class="pl-3 pr-3 pb-10 pt-3 lg:pl-6 lg:pr-6 lg:pt-6 lg:pb-7 bg-arcticsilver">
+                        <h5 class="h6 lg:h5 title text-coalblack mb-1 lg:mb-1">{{ item.title }}</h5>
+                        <p class="text-peppermint tiny-paragraph lg:small-paragraph">{{ item.jobtitle }}</p>
+                        <svg class="inline-block absolute bottom-4 right-4 lg:bottom-9 lg:right-7" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M16.586 11l-5.293-5.293 1.414-1.414L20.414 12l-7.707 7.707-1.414-1.414L16.586 13H5v-2h11.586z" fill="#1A262E"/>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+      </div>
+      {% endfor %}
+    </div><!-- .row -->
+  </div><!-- container -->
+</section>
+
+
