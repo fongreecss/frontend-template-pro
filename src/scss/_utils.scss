@@ -74,12 +74,19 @@
   scroll-behavior: smooth;
 }
 
-.hide-scrollbar {
+.tns-ovh, .hide-scrollbar {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
+.tns-ovh::-webkit-scrollbar,
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
+}
+
+[data-tns-overflow-visible] {
+    .tns-ovh {
+        overflow: visible;
+    }
 }

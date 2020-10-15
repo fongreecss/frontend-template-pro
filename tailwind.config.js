@@ -319,8 +319,10 @@ module.exports = {
       auto: 'auto',
       'full' : '100%',
       '100vw': '100vw',
+      'screen' : '100vw',
+      '-screen' : '-100vw',
       '100vh': '100vh',
-      'gutter' : '29px',
+      'gutter' : '20px',
     },
     letterSpacing: {
       tighter: '-0.05em',

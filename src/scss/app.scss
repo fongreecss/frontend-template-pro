@@ -26,6 +26,7 @@
 @import "./components/text-with-note";
 @import "./components/progress-bar";
 @import "./components/image-aside";
+@import "./components/timeline";
 @import "./components/banner";
 @import "./components/footer";
 
@@ -40,7 +41,7 @@ body {
   overflow-x: hidden;
 }
 
-img, svg a, a:visited, a:hover, a:active, a:focus {
+a:visited, a:hover, a:active, a:focus, * {
   outline: none!important;
 }
 

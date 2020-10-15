@@ -1,0 +1,85 @@
+{#
+    Section with client list.
+
+
+    @param {string}  title
+    @param {object} description
+    @param {array} items  [
+        {
+            @param {string} title
+            @param {string} description
+        }
+    ]
+
+    Note: 
+
+    Example: 
+    {%
+    set clientListItems = {
+        "suptitle" : "We worked with",
+        "title" : "Our Clients",
+        "description" : "Some text that describes how the company uses its position to help communities with donations & outreach programs.",
+        "items" : [
+            {
+                "image" : "assets/images/slack.png",
+
+                "url" : "#"
+            },
+            {
+                "image" : "assets/images/stripe.png",
+                "url" : "#"
+            },
+            {
+                "image" : "assets/images/airbnb.png",
+                "url" : "#"
+            },
+            {
+                "image" : "assets/images/linkedin.png",
+                "url" : "#"
+            },
+            {
+                "image" : "assets/images/dropbox.png",
+                "url" : "#"
+            },
+            {
+                "image" : "assets/images/google.png",
+                "url" : "#"
+            },
+            {
+                "image" : "assets/images/uber.png",
+                "url" : "#"
+            },
+            {
+                "image" : "assets/images/nike.png",
+                "url" : "#"
+            }
+        ]
+    }
+    %}
+#}
+
+{# Output #}
+<section class="c-client-list c-client-list-1">
+    <div class="container-only-lg">
+        <div class="flex flex-wrap -mx-5 lg:mb-24">
+            <div class="col-12 lg:col-6 xl:col-5 xl:offset-1">
+                <h2 class="h4 lg:h2 title text-coalblack mb-6">{{ params.title }}</h2>
+            </div>
+            <div class="col-12 lg:offset-1 lg:col-5 xl:col-4 xl:offset-1">
+                <div class="text-peppermint lg:h6 title lg:mb-3 lg:pt-7">{{ params.suptitle }}</div>
+                <p class="small-paragraph lg:medium-paragraph text-textgray mb-4 lg:mb-0">{{ params.description }}</p>
+            </div>
+        </div>
+        <div class="flex flex-wrap -mx-5 lg:mx-auto" style="max-width:989px">
+            
+                {% for item in params.items %}
+                <div class="col-6 lg:col-3">
+                    <div class="relative w-full mb-4 lg:mb-18">
+                        <img class="relative w-auto h-auto" src="{{ item.image }}" alt="">
+                    </div>
+                </div>
+                {% endfor %}
+            
+        </div>
+    </div>
+</section>

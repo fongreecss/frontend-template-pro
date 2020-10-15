@@ -1,0 +1,86 @@
+{#
+    Section with timeline. Sliders, should be animated..
+
+    @param {string}  title
+    @param {array}  items [
+        {
+            @param {string} year
+            @param {string} month - in words
+        }
+    ]
+    @param {string} description
+
+    Slider container should have width specified. else it will act strange
+
+#}
+
+{# Output #}
+<section class="c-timeline c-timeline-1 bg-coalblack pt-12 pb-10 lg:pt-28 lg:pb-28">
+    <div class="container-only-lg">
+        <div class="flex flex-wrap -mx-5">
+            <div class="col-12 xl:col-11 xl:offset-1">
+                <h2 class="h4 lg:h1 title text-white mb-6 lg:mb-11">{{ params.title }}</h2>
+            </div>
+        </div>
+    </div>
+    <div class="container-only-lg">
+        <div class="timeline-container relative">
+        <ul id="slider-timeline" class="flex flex-wrap -mx-5 w-full tns-slider cursor-pointer" data-tns-next-button=".c-timeline-1 .tns-next-button" data-tns-prev-button=".c-timeline-1 .tns-prev-button" data-tns-controls data-tns-autowidth data-tns-mouse-drag>
+            {% for item in params.items %}
+            <li class="col-6 lg:col-4 {{ loop.index == 1 ? "xl:offset-1" : "" }} lg:px-5 select-none">
+                <div class="relative pb-26 lg:pb-32 timer-upper">
+                    <p class="text-peppermint tiny-tag lg:arboria-small-subheader">{{ item.month }}</p>
+                    <h5 class="h5 lg:h4 title text-white">{{ item.year }}</h5>
+                    <div class="timeline-bullet" style="border-radius:50%;"></div>
+                </div>
+                
+                {% if item.description %}
+                <div class="timeline-description">
+                    <div class="bg-peppermint h-1 w-8 mb-3 lg:mb-4"></div>
+                    <p class="small-paragraph lg:medium-paragraph text-white lg:mb-11">{{ item.description }}</p>
+                </div>
+                {% else %}
+                <div>
+                    <div class="bg-transparent h-1 w-8 mb-3 lg:mb-4"></div>
+                    <p class="small-paragraph lg:medium-paragraph text-transparent lg:mb-11">xx</p>
+                </div>
+                {% endif %}
+                
+            </li>
+            {% endfor %}
+            <li class="col-6 lg:col-4 lg:px-5 select-none">
+                <div class="relative pb-11 lg:pb-32 timer-upper">
+                    <p class="text-transparent tiny-tag lg:arboria-small-subheader">xx</p>
+                    <h5 class="h5 lg:h4 title text-transparent">xx</h5>
+                </div>
+                <div class="">
+                    <div class="bg-transparent h-1 w-8 mb-3 lg:mb-4"></div>
+                    <p class="small-paragraph lg:medium-paragraph text-transparent lg:mb-11">xx</p>
+                </div>
+            </li>
+            <li class="col-6 lg:col-4 lg:px-5 select-none">
+                <div class="relative pb-11 lg:pb-32 timer-upper">
+                    <p class="text-transparent tiny-tag lg:arboria-small-subheader">xx</p>
+                    <h5 class="h5 lg:h4 title text-transparent">xx</h5>
+                </div>
+                <div class="">
+                    <div class="bg-transparent h-1 w-8 mb-3 lg:mb-4"></div>
+                    <p class="small-paragraph lg:medium-paragraph text-transparent lg:mb-11">xx</p>
+                </div>
+            </li>
+        </ul>
+        <div class="timeline-buttons">
+            <button class="tns-prev-button">
+                <svg class="inline-block" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.293 5.293l1.414 1.414L10.414 12l5.293 5.293-1.414 1.414L7.586 12l6.707-6.707z" fill="white"/>
+                </svg>
+            </button>
+            <button class="tns-next-button">
+                <svg class="inline-block" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9 18.707l-1.414-1.414L12.879 12 7.586 6.707 9 5.293 15.707 12 9 18.707z" fill="white"/>
+                </svg>
+            </button>
+        </div>
+        </div>
+    </div>
+</section>

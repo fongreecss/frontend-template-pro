@@ -1,0 +1,154 @@
+{% extends '/templates/layouts/base.twig' %}
+{% set headerItems = { 
+    "image" : "assets/images/man-suit-3.png",
+    "image_mobile" : "assets/images/man-suit-3-mobile.png",
+	"title": "Nagovor direktorja", 
+	"description": "Namen naložbenega svetovanja je, da stranka oz. vlagatelj doseže zastavljeni naložbeni cilj z izpostavljanjem čim nižjem tveganju. Z ustrezno pripravo, vzpostavitvijo ter spremljanjem naložbenega portfelja s strani certificiranih.", 
+	"suptitle" : "Certified expertise",
+	"cta" : { 
+		"title" : "Naročite svetovalca", 
+		"url" : "#" 
+	} 
+} %}
+
+{% set contactInfoItems = {
+	"title" : "Full set of great features to make your product fresh and clean.",
+	"description" : "Vsi registrirani uporabniki ste enkrat letno upravičeni do brezplačnega pregleda portfelja.",
+	"items" : [
+		{
+			"title" : "080 35 08",
+			"url" : "tel:00386803508"
+		},
+		{
+			"title" : "Kontakti in lokacija",
+			"url" : "#"
+		},
+		{
+			"title" : "info@vzajemci.com",
+			"url" : "#"
+		}
+	],
+	"cta" : {
+		"title" : "Naročite svetovalca",
+		"url" : "#",
+	}
+} %}
+
+{%
+    set timelineItems = {
+        "title" : "Timeline",
+        
+        "items" : [
+            {
+                "year" : "2015",
+                "month" : "Oktober",
+                "description" : "Prevzem vodilnega mesta med finančno posredniškimi hišami v Sloveniji. Prevzem vodilnega mesta med finančno posredniškimi hišami v Sloveniji.",
+            },
+            {
+                "year" : "2016",
+                "month" : "November",
+                "description" : "November Prevzem vodilnega mesta med finančno posredniškimi hišami v Sloveniji. Prevzem vodilnega mesta med finančno posredniškimi hišami v Sloveniji.",
+            },
+            {
+                "year" : "2017",
+                "month" : "May",
+                "description" : "Prevzem vodilnega mesta med finančno posredniškimi hišami v Sloveniji. Prevzem vodilnega mesta med finančno posredniškimi hišami v Sloveniji.",
+            },
+            {
+                "year" : "2018",
+                "month" : "May",
+                "description" : "Prevzem vodilnega mesta med finančno posredniškimi hišami v Sloveniji. Prevzem vodilnega mesta med finančno posredniškimi hišami v Sloveniji.",
+            },
+            {
+                "year" : "2019",
+                "month" : "December"
+            },
+            {
+                "year" : "2019",
+                "month" : "May"
+            },
+
+        ]
+    }
+%}
+
+{%
+    set horizontalListItems = {
+        "title" : "Our core principles",
+        "cta" : {
+            "title" : "Naroči svetovalca",
+            "url" : "#"
+        },
+        "items" : [
+            {
+                "title" : "Personalized",
+                "description" : "All base UI elements are made using Nested Symbols and shared styles that are connected with one another."
+            },
+            {
+                "title" : "Ethical",
+                "description" : "All base UI elements are made using Nested Symbols and shared styles that are connected with one another."
+            },
+            {
+                "title" : "Unbiased",
+                "description" : "All base UI elements are made using Nested Symbols and shared styles that are connected with one another."
+            }
+        ]
+    }
+%}
+
+ {%
+    set clientListItems = {
+        "suptitle" : "We worked with",
+        "title" : "Our Clients",
+        "description" : "Some text that describes how the company uses its position to help communities with donations & outreach programs.",
+        "items" : [
+            {
+                "image" : "assets/images/slack.svg",
+                "url" : "#"
+            },
+            {
+                "image" : "assets/images/stripe.svg",
+                "url" : "#"
+            },
+            {
+                "image" : "assets/images/airbnb.svg",
+                "url" : "#"
+            },
+            {
+                "image" : "assets/images/linkedin.svg",
+                "url" : "#"
+            },
+            {
+                "image" : "assets/images/dropbox.svg",
+                "url" : "#"
+            },
+            {
+                "image" : "assets/images/google.svg",
+                "url" : "#"
+            },
+            {
+                "image" : "assets/images/uber.svg",
+                "url" : "#"
+            },
+            {
+                "image" : "assets/images/nike.svg",
+                "url" : "#"
+            }
+        ]
+    }
+    %}
+
+
+{% block content %}
+	<main role="main" class="p-consult-5">
+        {% include "/templates/components/header-consult-2.twig" with { params: headerItems } %}
+        <div class="pb-14 lg:pb-0 lg:-mb-15"></div>
+        {% include "/templates/components/timeline-1.twig" with { params: timelineItems } %}
+        <div class="pb-16 lg:pb-32"></div>
+        {% include "/templates/components/horizontal-list-1.twig" with { params: horizontalListItems  } %}
+		<div class="pb-18 lg:pb-40"></div>
+        {% include "/templates/components/client-list-1.twig" with { params: clientListItems  } %}
+        <div class="pb-4 lg:pb-22"></div>
+		{% include "/templates/components/contact-info-1.twig" with { params: contactInfoItems } %}
+	</main>
+{% endblock %}
