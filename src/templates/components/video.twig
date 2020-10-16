@@ -6,19 +6,22 @@
 #}
 
 {# Output #}
-<section class="c-video container-only-lg">
-    <div class="flex flex-wrap -mx-5">
-        <div class="col-12 lg:col-8 xl:col-6 mx-auto mb-4 lg:mb-8">
-            {% if params.id %}
-            <div class="yt-video-wrapper">
-                <div id="video-{{ params.id }}" data-yt-video="{{ params.id }}" class="yt-video max-w-full"></div>
-            </div>
-            {% elseif params.url %}
-            <div>
-                <video width="640" height="480" class="w-full h-auto" onmouseover="this.setAttribute('controls', 'controls');" onmouseleave="this.removeAttribute('controls');">
-                <source src="{{ params.url }}" type="video/mp4">
-            </div>
-            {% endif %}
-        </div>
-    </div>
+<section class="c-video">
+	<div class="container-only-lg">
+		<div class="flex flex-wrap -mx-5">
+			<div class="col-12 lg:col-8 xl:col-6 mx-auto mb-4 lg:mb-8">
+				{% if params.id %}
+					<div class="yt-video-wrapper">
+						<div id="video-{{ params.id }}" data-yt-video="{{ params.id }}" class="yt-video max-w-full"></div>
+					</div>
+				{% elseif params.url %}
+					<div>
+						<video width="640" height="480" class="w-full h-auto" onmouseover="this.setAttribute('controls', 'controls');" onmouseleave="this.removeAttribute('controls');">
+							<source src="{{ params.url }}" type="video/mp4">
+						</video>
+					</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
 </section>

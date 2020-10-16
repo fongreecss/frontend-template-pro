@@ -1,28 +1,42 @@
 {#
-  Section quote and cta - version 1
 
-  @param {string}  title
-  @param {object}  cta 
-  {
-    @param {string} title
-    @param {string} url
-  }
+Section quote and cta - version 1
+
+@param {string}  title
+@param {object}  cta 
+{
+  @param {string} title
+  @param {string} url
+}
+
+Example:
+
+    {% 
+      set quoteItems = {
+        "title": "We don’t just build to sell, we wish to add value to the community.",
+        "cta" : {
+          "title" : "Želim svetovanje",
+          "url" : "#"
+        }
+      } 
+    %}
+
 #}
 
 {# Output #}
 <section class="c-quote c-quote-1">
-  <div class="container-only-lg">
-    <div class="flex flex-wrap -mx-5">
-      <div class="col-12">
-        <div class="text-center lg:mx-auto mw-none-mobile" style="max-width:672px;">
-          {% if params.title %}
-          <h2 class="medium-quote lg:large-quote text-textgray mb-8 lg:mb-6">{{ params.title }}</h2>
-          {% endif %}
-          {% if params.cta %}
-          <a href="{{ params.cta.url }}" class="button button-full medium-button w-full lg:w-auto">{{ params.cta.title }}</a>
-          {% endif %}
-        </div>
-      </div>
-    </div>
-  </div>
+	<div class="container-only-lg">
+		<div class="flex flex-wrap -mx-5">
+			<div class="col-12">
+				<div class="text-center lg:mx-auto mw-none-mobile" style="max-width:672px;">
+					{% if params.title %}
+						<h2 class="medium-quote lg:large-quote text-textgray mb-8 lg:mb-6">{{ params.title }}</h2>
+					{% endif %}
+					{% if params.cta %}
+						<a href="{{ params.cta.url }}" class="button button-full medium-button w-full lg:w-auto">{{ params.cta.title }}</a>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
 </section>

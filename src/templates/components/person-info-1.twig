@@ -1,67 +1,70 @@
 {#
-  Person info - version 1
-  Left: image with pattern
-  Right: text. Name, job title, quote, description and cta
 
-  @param {string} image - person's image
-  @param {string} image_mobile - mobile image
-  @param {string} title - name of person
-  @param {string} jobtitle - position of person
-  @param {string} quote - her/his quote
-  @param {string} description
-  @param {object}  cta 
-  {
-    @param {string} title
-    @param {string} url
-  }
+Person info - version 1
+Left: image with pattern
+Right: text. Name, job title, quote, description and cta
 
-  Sample: 
+@param {string} image - person's image
+@param {string} image_mobile - mobile image
+@param {string} title - name of person
+@param {string} jobtitle - position of person
+@param {string} quote - her/his quote
+@param {string} description
+@param {object}  cta 
+{
+  @param {string} title
+  @param {string} url
+}
 
-  set personInfo = {
-      "image" : "assets/images/nekineki.png",
-      "image_mobile": "assets/images/nekineki-mobile.png",
-      "title": "Title",
-      "jobtitle" : "blacksmith",
-      "quote" : "nekinekiquote",
-      "description" : "description",
-      "cta" : {
-          "title" : "title",
-          "url" : "#"
+Example: 
+
+  {%
+      set personInfoItems = {
+        "image" : "assets/images/Vegelj4-big.png",
+        "image_mobile": "assets/images/Vegelj4-big.png",
+        "title": "Dr. David Vegelj",
+        "jobtitle" : "Cheif investment officer",
+        "quote" : "Key statement about the product and how exciting it is, or some other manner of interesting quote.",
+        "description" : "Vsi registrirani uporabniki ste enkrat letno upravičeni do brezplačnega pregleda portfelja. Vsi registrirani uporabniki ste enkrat letno upravičeni do brezplačnega pregleda portfelja.",
+        "cta" : {
+            "title" : "NAROČITE SVETOVALCA",
+            "url" : "#"
+        }
       }
-  }
+  %}
 
 #}
 
 {# Output #}
 <section class="c-person-info c-person-info-1 lg:bg-arcticsilver lg:pt-34">
-  <div class="container-only-lg">
-    <div class="flex flex-wrap -mx-5">
-      <div class="col-12 lg:col-6 xl:offset-1 xl:col-5 bg-arcticsilver lg:bg-transparent">
-        <div class="hidden lg:block w-full relative overflow-hidden" style="height:620px;">
-            <img loading="lazy" src="{{ manifest('assets/images/pattern-6.svg') }}" class="absolute h-auto max-w-none" style="width:60%; top:22%; left:20%;" alt="">
-            <img loading="lazy" src="{{ params.image }}" alt="" class="absolute left-0 top-0 object-contain object-bottom w-full h-full">
-        </div>
-        {% if params.image_mobile %}
-        <div class="lg:hidden w-full h-0 pb-full relative mt-15">
-            <img loading="lazy" src="{{ manifest('assets/images/pattern-6.svg') }}" class="absolute h-auto max-w-none" style="width:60%; top:15%; left:20%;" alt="">
-            <img loading="lazy" src="{{ params.image_mobile }}" alt="" class="absolute top-0 left-0 object-contain object-bottom w-full h-full">
-        </div>
-        {% endif %}
-      </div>
-      <div class="col-12 lg:col-6 xl:col-5">
-          <div class="h-1 w-8 bg-peppermint mt-8 lg:mt-0 mb-2"></div>
-          <h5 class="h5 lg:h5 title text-coalblack">{{ params.title }}</h5>
-          <p class="arboria-main-button text-midtonegray mb-3 lg:mb-7">{{ params.jobtitle }}</p>
-          {% if params.quote %}
-          <p class="regular-quote lg:leading-quote text-coalblack mb-4 lg:mb-5">{{ params.quote }}</p>
-          {% endif %}
-          <p class="medium-paragraph lg:medium-paragraph text-textgray mb-8 lg:mb-10">{{ params.description }}</p>
-          {% if params.cta %}
-          <div class="">
-            <a href="{{ params.cta.url }}" class="button button-full medium-button w-full lg:w-auto">{{ params.cta.title }}</a>
-          </div>
-          {% endif %}
-      </div>
-    </div>
-  </div>
+	<div class="container-only-lg">
+		<div class="flex flex-wrap -mx-5">
+			<div class="col-12 lg:col-6 xl:offset-1 xl:col-5 bg-arcticsilver lg:bg-transparent">
+				<div class="hidden lg:block w-full relative overflow-hidden" style="height:620px;">
+					<img loading="lazy" src="{{ manifest('assets/images/pattern-6.svg') }}" class="absolute h-auto max-w-none" style="width:60%; top:22%; left:20%;" alt="">
+					<img loading="lazy" src="{{ params.image }}" alt="" class="absolute left-0 top-0 object-contain object-bottom w-full h-full">
+				</div>
+				{% if params.image_mobile %}
+					<div class="lg:hidden w-full h-0 pb-full relative mt-15">
+						<img loading="lazy" src="{{ manifest('assets/images/pattern-6.svg') }}" class="absolute h-auto max-w-none" style="width:60%; top:15%; left:20%;" alt="">
+						<img loading="lazy" src="{{ params.image_mobile }}" alt="" class="absolute top-0 left-0 object-contain object-bottom w-full h-full">
+					</div>
+				{% endif %}
+			</div>
+			<div class="col-12 lg:col-6 xl:col-5">
+				<div class="h-1 w-8 bg-peppermint mt-8 lg:mt-0 mb-2"></div>
+				<h5 class="h5 lg:h5 title text-coalblack">{{ params.title }}</h5>
+				<p class="arboria-main-button text-midtonegray mb-3 lg:mb-7">{{ params.jobtitle }}</p>
+				{% if params.quote %}
+					<p class="regular-quote lg:leading-quote text-coalblack mb-4 lg:mb-5">{{ params.quote }}</p>
+				{% endif %}
+				<p class="medium-paragraph lg:medium-paragraph text-textgray mb-8 lg:mb-10">{{ params.description }}</p>
+				{% if params.cta %}
+					<div class="">
+						<a href="{{ params.cta.url }}" class="button button-full medium-button w-full lg:w-auto">{{ params.cta.title }}</a>
+					</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
 </section>

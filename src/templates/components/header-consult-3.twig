@@ -1,92 +1,139 @@
 {#
-  Section with header. Header consult 3
-  Left side: info about person and his contact data.
-  Right side: image
 
-  @param {string}  image
-  @param {string}  image_mobile
-  @param {string}  title - header main title 
-  @param {string}  description
-  @param {object}  cta - left full button
-  {
+Section with header. Header consult 3
+Left side: info about person and his contact data.
+Right side: image
+
+@param {string}  image
+@param {string}  image_mobile
+@param {string}  title - header main title 
+@param {string}  description
+@param {object}  cta - left full button
+{
+  @param {string} title
+  @param {string} url
+}
+@param {object}  cta2 - right empty button
+{
+  @param {string} title
+  @param {string} url
+}
+@param {array} breadcrumbs - on the top
+{
     @param {string} title
     @param {string} url
-  }
-  @param {object}  cta2 - right empty button
-  {
-    @param {string} title
-    @param {string} url
-  }
-  @param {array} breadcrumbs - on the top
-  {
-      @param {string} title
-      @param {string} url
-  }
-  @param {string} title_contact - title above contact items
-  @param {array} items - array of objects 
-  {
-      @param title - contact title 
-      @param {string} icon - icon image path
-      @param {string} url - url of contact info
-  }
-   lg:flex lg:items-end lg:min-h-screen
+}
+@param {string} title_contact - title above contact items
+@param {array} items - array of objects 
+{
+    @param title - contact title 
+    @param {string} icon - icon image path
+    @param {string} url - url of contact info
+}
+
+Example:
+
+    {% set headerItems = { 
+        "image" : "assets/images/vegelj-big.png",
+        "image_mobile" : "assets/images/vegelj-big.png",
+        "title": "Myhajlo Todurov", 
+        "title_contact" : "Contact Myhajlo",
+        "description": "V začetku leta 2008 se je pridružil Vzajemcem ter ob študiju na Ekonomski fakulteti nadaljeval svoje izobraževanje v finančni sferi.", 
+        "breadcrumbs" : [
+            {
+                "title" : "Svetovalec",
+                "url" : "#"
+            },
+            {
+                "title" : "Vodja uredništva",
+                "url" : "#"
+            }
+        ],
+        "items" : [
+            {
+                "title" : "080 35 08",
+                "icon" : "assets/images/ic-phone.svg",
+                "url" : "#"
+            },
+            {
+                "title" : "miha.todurov@vzajemci.com",
+                "icon" : "assets/images/ic-mail.svg",
+                "url" : "mailto:miha.todurov@vzajemci.com"
+            },
+            {
+                "title" : "Linkedin",
+                "icon" : "assets/images/ic-linkedin.svg",
+                "url" : "#"
+            },
+        ],
+        "cta" : { 
+            "title" : "Naročite svetovalca", 
+            "url" : "#" 
+        },
+        "cta2" : { 
+            "title" : "Video klic v živo", 
+            "url" : "#" 
+        } 
+    } %}
+   
+    lg:flex lg:items-end lg:min-h-screen
 #}
 
 {# Output #}
 <header class="c-header c-header-consult-3 w-full relative lg:pt-50">
-    <div class="container-only-lg">
-        <div class="flex flex-wrap -mx-5">
-            <div class="col-12 lg:col-6 xl:col-5 xl:offset-1">
-                <ul class="header-breadcrumbs mt-9 lg:mt-14 mb-2 lg:mb-2 flex flex-row items-center">
-                    {% for crumb in params.breadcrumbs %}
-                        <li>
-                            <a href="{{ crumb.url }}" class="h6 lg:h6 title text-peppermint">{{ crumb.title }}</a>
-                        </li>
-                        {% if not loop.last %}
-                        <div class="mx-4 h-2 w-2 bg-peppermint" style="border-radius:50%;"></div>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-                <h1 class="h4 lg:h1 title text-coalblack mb-1 lg:mb-3">{{ params.title }}</h1>
-                <p class="medium-paragraph lg:medium-paragraph text-coalgray mb-2 lg:mb-16 mw-none-mobile" style="max-width:408px;">{{ params.description }}</p>
-                {% if params.image_mobile %}
-                <div class="flex lg:hidden flex-wrap -mx-10">
-                    <div class="col-12 mb-8 overflow-hidden">
-                        <div class="relative w-full h-0 pb-full">
-                            <img loading="lazy" src="{{ manifest('assets/images/pattern-6.svg') }}" class="absolute h-auto max-w-none" style="width:60%; top:20%; left:20%;" alt="">
-                            <img  loading="lazy" src="{{ params.image_mobile }}" alt="" class="absolute top-0 left-0 object-cover object-bottom w-full h-full">
-                        </div>
-                    </div>
-                </div>
-                {% endif %}
-                <p class="h5 lg:h5 title text-coalblack mb-3 lg:mb-2">{{ params.title_contact }}</p>
-                <ul class="contact-items lg:mb-20 mw-none-mobile" style="max-width:300px;">
-                    {% for item in params.items %}
-                        <li>
-                            <a href="{{ item.url }}" class="pl-9 relative flex items-center py-4 border-solid border-lighttonegray {{ loop.index == 1 ? "" : "border-t" }}">
-                                <img loading="lazy" src="{{ item.icon }}" class="absolute left-0" alt="">
-                                <div class="medium-paragraph lg:medium-paragraph text-coalblack">{{ item.title }}</div>
-                            </a>
-                        </li>
-                    {% endfor %}
-                </ul>
+	<div class="container-only-lg">
+		<div class="flex flex-wrap -mx-5">
+			<div class="col-12 lg:col-6 xl:col-5 xl:offset-1">
+				<ul class="header-breadcrumbs mt-9 lg:mt-14 mb-2 lg:mb-2 flex flex-row items-center">
+					{% for crumb in params.breadcrumbs %}
+						<li>
+							<a href="{{ crumb.url }}" class="h6 lg:h6 title text-peppermint">{{ crumb.title }}</a>
+						</li>
+						{% if not loop.last %}
+							<div class="mx-4 h-2 w-2 bg-peppermint" style="border-radius:50%;"></div>
+						{% endif %}
+					{% endfor %}
+				</ul>
+				<h1 class="h4 lg:h1 title text-coalblack mb-1 lg:mb-3">{{ params.title }}</h1>
+				<p class="medium-paragraph lg:medium-paragraph text-coalgray mb-2 lg:mb-16 mw-none-mobile" style="max-width:408px;">{{ params.description }}</p>
+				{% if params.image_mobile %}
+					<div class="flex lg:hidden flex-wrap -mx-10">
+						<div class="col-12 mb-8 overflow-hidden">
+							<div class="relative w-full h-0 pb-full">
+								<img loading="lazy" src="{{ manifest('assets/images/pattern-6.svg') }}" class="absolute h-auto max-w-none" style="width:60%; top:20%; left:20%;" alt="">
+								<img loading="lazy" src="{{ params.image_mobile }}" alt="" class="absolute top-0 left-0 object-cover object-bottom w-full h-full">
+							</div>
+						</div>
+					</div>
+				{% endif %}
+				<p class="h5 lg:h5 title text-coalblack mb-3 lg:mb-2">{{ params.title_contact }}</p>
+				<ul class="contact-items lg:mb-20 mw-none-mobile" style="max-width:300px;">
+					{% for item in params.items %}
+						<li>
+							<a href="{{ item.url }}" class="pl-9 relative flex items-center py-4 border-solid border-lighttonegray {{ loop.index == 1 ? " " : " border-t" }}">
+								<img loading="lazy" src="{{ item.icon }}" class="absolute left-0" alt="">
+								<div class="medium-paragraph lg:medium-paragraph text-coalblack">{{ item.title }}</div>
+							</a>
+						</li>
+					{% endfor %}
+				</ul>
 
-                <div class="hidden lg:block">
-                {% if params.cta %}
-                    <a href="{{ params.cta.url }}" class="block lg:inline-block button button-full medium-button w-full lg:w-auto lg:mr-1 xl:mr-8">{{ params.cta.title }}</a>
-                {% endif %}
-                {% if params.cta2 %}
-                    <a href="{{ params.cta2.url }}" class="block lg:inline-block button button-empty medium-button w-full lg:w-auto">{{ params.cta2.title }}</a>
-                {% endif %}
-                </div>
-                
-            </div>
-            <div class="hidden lg:block lg:col-6 xl:col-6">
-                <div class="w-full relative overflow-hidden" style="height:720px;">
-                    <img loading="lazy" src="{{ manifest('assets/images/pattern-6.svg') }}" class="absolute h-auto max-w-none" style="width:60%; top:36%; left:20%;" alt="">
-                    <img loading="lazy" src="{{ params.image }}" alt="" class="absolute left-0 top-0 object-contain object-bottom w-full h-full">
-                </div>
-            </div>
-        </div>
-    </div>
+				<div class="hidden lg:block">
+					{% if params.cta %}
+						<a href="{{ params.cta.url }}" class="block lg:inline-block button button-full medium-button w-full lg:w-auto lg:mr-1 xl:mr-8">{{ params.cta.title }}</a>
+					{% endif %}
+					{% if params.cta2 %}
+						<a href="{{ params.cta2.url }}" class="block lg:inline-block button button-empty medium-button w-full lg:w-auto">{{ params.cta2.title }}</a>
+					{% endif %}
+				</div>
+
+			</div>
+			<div class="hidden lg:block lg:col-6 xl:col-6">
+				<div class="w-full relative overflow-hidden" style="height:720px;">
+					<img loading="lazy" src="{{ manifest('assets/images/pattern-6.svg') }}" class="absolute h-auto max-w-none" style="width:60%; top:36%; left:20%;" alt="">
+					<img loading="lazy" src="{{ params.image }}" alt="" class="absolute left-0 top-0 object-contain object-bottom w-full h-full">
+				</div>
+			</div>
+		</div>
+	</div>
 </header>

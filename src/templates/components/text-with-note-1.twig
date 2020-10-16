@@ -1,34 +1,47 @@
 {#
-  Section text with note - version 1
 
+Section text with note - version 1
 
-  @param {string}  title
-  @param {string}  description
-  @param {string}  note_number
-  @param {string}  note
+@param {string}  title
+@param {string}  description
+@param {string}  note_number
+@param {string}  note
+
+Example:
+
+    {% 
+      set noteItems = {
+        "title": "What does research say for companies in alternative investment funds?",
+        "description": "91% of startups globally felt their business was impacted by the recent crisis, but despite this:",
+        "note" : "[1] Based on research by Station F, measuring 120 alternative funds.",
+        "note_number" : "[1]"
+      } 
+    %}
+
 #}
 
 {# Output #}
 <section class="c-text-with-note c-text-with-note-1">
-  <div class="container-only-lg">
-    <div class="flex flex-wrap -mx-5">
-      <div class="col-12 lg:col-7 xl:col-5 xl:offset-1 mb-2 lg:mb-16">
-          {% if params.title %}
-          <h2 class="h5 lg:h3 title text-coalblack inline">{{ params.title }}</h2><span class="note-number medium-button text-coalgray inline-block">{{ params.note_number }}</span>
-          {% endif %}
-      </div>
-    </div>
-    <div class="flex flex-wrap -mx-5">
-      <div class="col-12 lg:col-8 xl:col-6 xl:offset-1">
-          {% if params.description %}
-          <p class="small-paragraph lg:leading-paragraph mb-8 lg:mb-0 text-textgray">{{ params.description }}</p>
-          {% endif %}
-      </div>
-      <div class="col-8 offset-4 lg:offset-1 lg:col-3 xl:col-2 xl:offset-2">
-        {% if params.note %}
-          <p class="medium-subheader lg:medium-subheader text-midtonegray">{{ params.note }}</p>
-          {% endif %}
-      </div>
-    </div>
-  </div>
+	<div class="container-only-lg">
+		<div class="flex flex-wrap -mx-5">
+			<div class="col-12 lg:col-7 xl:col-5 xl:offset-1 mb-2 lg:mb-16">
+				{% if params.title %}
+					<h2 class="h5 lg:h3 title text-coalblack inline">{{ params.title }}</h2>
+					<span class="note-number medium-button text-coalgray inline-block">{{ params.note_number }}</span>
+				{% endif %}
+			</div>
+		</div>
+		<div class="flex flex-wrap -mx-5">
+			<div class="col-12 lg:col-8 xl:col-6 xl:offset-1">
+				{% if params.description %}
+					<p class="small-paragraph lg:leading-paragraph mb-8 lg:mb-0 text-textgray">{{ params.description }}</p>
+				{% endif %}
+			</div>
+			<div class="col-8 offset-4 lg:offset-1 lg:col-3 xl:col-2 xl:offset-2">
+				{% if params.note %}
+					<p class="medium-subheader lg:medium-subheader text-midtonegray">{{ params.note }}</p>
+				{% endif %}
+			</div>
+		</div>
+	</div>
 </section>

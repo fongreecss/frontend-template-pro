@@ -1,36 +1,47 @@
 {#
-  Section with progress bar - version 2
 
-  this one is made for percents 
+Section with progress bar - version 2
 
-  @param {string}  number - percents or not
-  @params {bool} is_percent - true or false
-  @param {wysiwyg} description
+this one is made for percents 
+
+@param {string}  number
+@params {bool} is_percent - true or false - default false
+@param {wysiwyg} description
+
+Example:
+
+    {% 
+      set progressBarItems2 = {
+        "number": "80",
+        "is_percent" : true,
+        "description": "have adapted to be more cost efficient and modernized.",
+      } 
+    %}
 #}
 
 {# Output #}
 <section class="c-progress-bar c-progress-bar-2">
-  <div class="container-only-lg">
-    <div class="flex flex-wrap -mx-10 lg:-mx-5">
-      <div class="col-12 px-0 lg:px-5">
-          <div class="bg-image-right-container">
-              <img src="{{ manifest("assets/images/three-small-right-2.png") }}" class="object-cover h-full w-full" alt="">
-          </div>
-          <div class="w-full bg-arcticsilver h-75 lg:h-75 overflow-hidden relative">
-              <div class="progress-bar number-{{ params.number }} bg-peppermint h-full absolute right-0 top-0"></div>         
-              <div class="lg3-number number mask-number bg-white" style="background-image: url({{manifest("assets/images/mask1.svg")}});">{{ params.number }}</div>
-              {% if params.is_percent == true %}
-                <div class="percent h2 lg:h1 title text-midtonegray">%</div>
-              {% endif %}
-          </div>
-      </div>
-    </div>
-    <div class="flex flex-wrap -mx-5">
-      <div class="col-12 xl:offset-3 xl:col-4">
-          {% if params.description %}
-          <p class="my-6 lg:mt-6 lg:mb-0 leading-paragraph text-midtonegray">{{ params.description }}</p>
-          {% endif %}
-      </div>
-    </div>
-  </div>
+	<div class="container-only-lg">
+		<div class="flex flex-wrap -mx-10 lg:-mx-5">
+			<div class="col-12 px-0 lg:px-5">
+				<div class="bg-image-right-container">
+					<img src="{{ manifest("assets/images/three-small-right-2.png") }}" class="object-cover h-full w-full" alt="">
+				</div>
+				<div class="w-full bg-arcticsilver h-75 lg:h-75 overflow-hidden relative">
+					<div class="progress-bar number-{{ params.number }} bg-peppermint h-full absolute right-0 top-0"></div>
+					<div class="lg3-number number mask-number bg-white" style="background-image: url({{manifest(" assets/images/mask1.svg")}});">{{ params.number }}</div>
+					{% if params.is_percent == true %}
+						<div class="percent h2 lg:h1 title text-midtonegray">%</div>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+		<div class="flex flex-wrap -mx-5">
+			<div class="col-12 xl:offset-3 xl:col-4">
+				{% if params.description %}
+					<p class="my-6 lg:mt-6 lg:mb-0 leading-paragraph text-midtonegray">{{ params.description }}</p>
+				{% endif %}
+			</div>
+		</div>
+	</div>
 </section>

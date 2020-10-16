@@ -10,7 +10,8 @@
   border: 1px solid #beb5ab;
   background-color: #f9f7f4;
   padding: 15px 11px;
-  &:focus, &:active {
+  &:focus,
+  &:active {
     border: 1px solid #b27e6e;
     outline: none;
   }
@@ -18,25 +19,25 @@
     color: #9e9090;
     opacity: 1; /* Firefox */
   }
-  
+
   &:-ms-input-placeholder {
     /* Internet Explorer 10-11 */
     color: #9e9090;
-    opacity: 1; 
+    opacity: 1;
   }
-  
+
   &::-ms-input-placeholder {
     /* Microsoft Edge */
     color: #9e9090;
-    opacity: 1; 
+    opacity: 1;
   }
 }
 
 .hide {
-  width:0;
-  height:0;
-  margin:0;
-  padding:0;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
   opacity: 0;
   display: none;
 }
@@ -63,30 +64,28 @@
 }
 
 .caret-down {
-    position: relative;
-    display:inline;
-    &:after {
-      content: "";
-      display:inline-block;
-      position: absolute;
-      right: 8px;
-      top: calc(50% - 4px);
-      width:8px;
-      height:8px;
-      border-top:8px solid transparent;
-      border-right:8px solid #b27e6e;;
-      transform: rotate(-315deg);
-    }
-    
+  position: relative;
+  display: inline;
+  &:after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    right: 8px;
+    top: calc(50% - 4px);
+    width: 8px;
+    height: 8px;
+    border-top: 8px solid transparent;
+    border-right: 8px solid #b27e6e;
+    transform: rotate(-315deg);
+  }
 }
 
 .radio-label-card {
-  
   display: inline-flex;
   vertical-align: middle;
   align-items: stretch;
   cursor: pointer;
-  min-height : 100px;
+  min-height: 100px;
   width: 100%;
   @screen md {
     width: 180px;
@@ -100,7 +99,7 @@
     padding: 0 20px;
     width: 100%;
     min-height: 100%;
-    &>div {
+    & > div {
       font-family: Nitti;
       font-weight: normal;
       text-transform: uppercase;
@@ -108,12 +107,10 @@
       color: #a67e6e;
       font-size: 16px;
       display: block;
-      width:100%;
+      width: 100%;
     }
     @screen md {
-      
     }
-    
   }
   b,
   strong {
@@ -137,7 +134,7 @@
     margin-bottom: 9px;
   }
   input ~ img {
-    display:none;
+    display: none;
   }
   input:checked ~ img {
     display: block;
@@ -145,7 +142,7 @@
 
   input:checked ~ .radio-label-card__text {
     border: 2px solid #b27e6e;
-  } 
+  }
   @screen md {
   }
 }
@@ -159,13 +156,13 @@ label > input[type="radio"] {
 .form-title {
   position: relative;
   &:before {
-    content:"";
+    content: "";
     position: absolute;
-    bottom: - 17px;
+    bottom: -17px;
     height: 2px;
-    left:50%;
+    left: 50%;
     width: 50px;
     transform: translateX(-50%);
-    background-color:     #c29c78;
+    background-color: #c29c78;
   }
 }

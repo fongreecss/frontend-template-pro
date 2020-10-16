@@ -1,20 +1,21 @@
 {#
-    Section with horizontal list.
+    
+Section with horizontal list.
 
-
-    @param {string}  title
-    @param {object} cta {
+@param {string}  title
+@param {object} cta {
+    @param {string} title
+    @param {string} url
+}
+@param {array} items - max 3 [
+    {
         @param {string} title
-        @param {string} url
+        @param {string} description
     }
-    @param {array} items - max 3 [
-        {
-            @param {string} title
-            @param {string} description
-        }
-    ]
+]
 
-    Example: 
+Example: 
+
     {%
     set horizontalListItems = {
         "title" : "Our core principles",
@@ -42,39 +43,39 @@
 
 {# Output #}
 <section class="c-horizontal-list c-horizontal-list-1">
-    <div class="container-only-lg">
-        <div class="flex flex-wrap -mx-5 lg:mb-20 lg:items-center">
-            <div class="col-12 lg:col-8 xl:col-7 xl:offset-1">
-                <h2 class="h5 lg:h1 title text-coalblack mb-6">{{ params.title }}</h2>
-            </div>
-            {% if params.cta %}
-            <div class="hidden lg:block col-12 lg:col-4 xl:col-3 ">
-                <div class="text-right">
-                    <a href="{{ params.cta.url }}" class="block lg:inline-block button button-full medium-button w-full lg:w-auto">{{ params.cta.title }}</a>
-                </div>
-            </div>
-            {% endif %}
-        </div>
-        <div class="flex flex-wrap -mx-5 relative">
-            <div class="border-l lg:border-t lg:border-l-0 border-dashed border-peppermint absolute bottom-0 top-0 lg:bottom-auto left-9 lg:-right-screen lg:-left-screen" style=""></div>
-            {% for item in params.items %}
-                <div class="col-12 xl:offset-1 lg:col-4 xl:col-3">
-                    <div class="pl-12 lg:pl-0 lg:pt-9 relative">
-                        <div class="absolute left-0 lg:-top-4 h-8 w-8 flex items-center justify-center border-2 bg-white border-peppermint border-solid small-button" style="border-radius:50%">{{ loop.index }}</div>
-                        <h4 class="h5 lg:h4 title text-coalblack mb-1 lg:mb-3">{{ item.title }}</h4>
-                        <p class="small-paragraph lg:medium-paragraph text-textgray {{ loop.last == true ? "" : "mb-8" }} lg:mb-0">{{ item.description }}</p>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
-        <div class="flex flex-wrap -mx-5 relative">
-         {% if params.cta %}
-            <div class="lg:hidden col-12">
-                <div class="">
-                    <a href="{{ params.cta.url }}" class="block button button-full medium-button w-full mt-5">{{ params.cta.title }}</a>
-                </div>
-            </div>
-            {% endif %}
-        </div>
-    </div>
+	<div class="container-only-lg">
+		<div class="flex flex-wrap -mx-5 lg:mb-20 lg:items-center">
+			<div class="col-12 lg:col-8 xl:col-7 xl:offset-1">
+				<h2 class="h5 lg:h1 title text-coalblack mb-6">{{ params.title }}</h2>
+			</div>
+			{% if params.cta %}
+				<div class="hidden lg:block col-12 lg:col-4 xl:col-3 ">
+					<div class="text-right">
+						<a href="{{ params.cta.url }}" class="block lg:inline-block button button-full medium-button w-full lg:w-auto">{{ params.cta.title }}</a>
+					</div>
+				</div>
+			{% endif %}
+		</div>
+		<div class="flex flex-wrap -mx-5 relative">
+			<div class="border-l lg:border-t lg:border-l-0 border-dashed border-peppermint absolute bottom-0 top-0 lg:bottom-auto left-9 lg:-right-screen lg:-left-screen" style=""></div>
+			{% for item in params.items %}
+				<div class="col-12 xl:offset-1 lg:col-4 xl:col-3">
+					<div class="pl-12 lg:pl-0 lg:pt-9 relative">
+						<div class="absolute left-0 lg:-top-4 h-8 w-8 flex items-center justify-center border-2 bg-white border-peppermint border-solid small-button" style="border-radius:50%">{{ loop.index }}</div>
+						<h4 class="h5 lg:h4 title text-coalblack mb-1 lg:mb-3">{{ item.title }}</h4>
+						<p class="small-paragraph lg:medium-paragraph text-textgray {{ loop.last == true ? " " : " mb-8" }} lg:mb-0">{{ item.description }}</p>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+		<div class="flex flex-wrap -mx-5 relative">
+			{% if params.cta %}
+				<div class="lg:hidden col-12">
+					<div class="">
+						<a href="{{ params.cta.url }}" class="block button button-full medium-button w-full mt-5">{{ params.cta.title }}</a>
+					</div>
+				</div>
+			{% endif %}
+		</div>
+	</div>
 </section>

@@ -6,11 +6,11 @@
 #}
 
 {# Output #}
-<section class="c-picture">
+<section class="c-picture c-picture-1">
   <div class="container-only-lg">
     <div class="flex flex-wrap -mx-5">
       <div class="col-12 lg:col-8 xl:col-6 mx-auto mb-4 lg:mb-8">
-        <img src="{{ params.image }}" loading="lazy" alt="" class="" >
+        <img src="{{ params.image }}" loading="lazy" alt="{{ params.caption ? params.caption : "" }}" class="" >
       </div>
     </div>
   </div>

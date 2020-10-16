@@ -1,13 +1,13 @@
 .c-card h4 {
-    position: relative;
-    &:after {
-        content:"";
-        position: absolute;
-        bottom:0;
-        border:1px solid #ddd6ce;;
-        width: 50px;
-        height: 2px;
-        left:50%;
-        transform: translate3d(-50%,0,0);
-    }
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    border: 1px solid #ddd6ce;
+    width: 50px;
+    height: 2px;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+  }
 }

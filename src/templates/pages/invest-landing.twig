@@ -38,27 +38,27 @@ our clients as well.",
 	"image" : "assets/images/mansuit.jpg"
 } %}
 
-{% set textBoxItems = { 
-
-"items" : [
-	{ 
-		"title": "More is possible", 
-		"description": "JonatanMars is a spin-off company of VZAJEMCI Group, and is a result of its extensive presence and influence in the field of finance in the past 18 years.", 
-		"cta" : { "title" : "Izvejte več", "url" : "#" },
-		"number": 78,
-		"percentage": true,
-		"title2": "Startup-ov namerava zaposlit novi kader",
-	},
-	{ 
-		"title": "Nepremičnine", 
-		"description": "Podjetje, ki je del Skupine Vzajemci. Cilj podjetja je graditi projekte, ki imajo visoko dodano vrednost, in ki bodo pustili pozitiven pečat v slovenski družbi.", 
-		"cta" : { "title" : "Izvejte več", "url" : "#" },
-		"number": 42,
-		"title2": "Stanovanj" 
-	}
-] 
-
-} %}
+{% 
+	set textBoxItems = { 
+		"items" : [
+			{ 
+				"title": "More is possible", 
+				"description": "JonatanMars is a spin-off company of VZAJEMCI Group, and is a result of its extensive presence and influence in the field of finance in the past 18 years.", 
+				"cta" : { "title" : "Izvejte več", "url" : "#" },
+				"number": 78,
+				"percentage": true,
+				"title2": "Startup-ov namerava zaposlit novi kader",
+			},
+			{ 
+				"title": "Nepremičnine", 
+				"description": "Podjetje, ki je del Skupine Vzajemci. Cilj podjetja je graditi projekte, ki imajo visoko dodano vrednost, in ki bodo pustili pozitiven pečat v slovenski družbi.", 
+				"cta" : { "title" : "Izvejte več", "url" : "#" },
+				"number": 42,
+				"title2": "Stanovanj" 
+			}
+		]
+	} 
+%}
 
 {% set advancedSectionItems = {
 	"title": "Naložbeni odbor",
@@ -119,7 +119,7 @@ our clients as well.",
 
 {% block content %}
 	<main role="main" class="p-invest-landing">
-        {% include "/templates/components/header-invest-1.twig" with { params: headerItems } %}
+		{% include "/templates/components/header-invest-1.twig" with { params: headerItems } %}
 		<div class="pb-0 lg:pb-36"></div>
 		{% include "/templates/components/textbox-double.twig" with { params: textBoxItems } %}
 		<div class="pb-32 lg:pb-36"></div>

@@ -1,5 +1,5 @@
 .button {
-  outline:none;
+  outline: none;
   @apply outline-none border-2 uppercase border-transparent border-solid text-white px-8 py-4 inline-block text-center font-bold text-base;
   line-height: 24px;
   @screen lg {
@@ -12,15 +12,25 @@
 .button-full {
   @apply bg-peppermint text-white;
   &:hover {
-    background-color:#308278;
+    background-color: #308278;
   }
 }
 
 .button-full-gold {
   @apply text-white;
-  background: linear-gradient(180deg, rgba(70, 44, 42, 0.0001) 0%, rgba(65, 39, 14, 0.38) 100%), #87764E;
+  background: linear-gradient(
+      180deg,
+      rgba(70, 44, 42, 0.0001) 0%,
+      rgba(65, 39, 14, 0.38) 100%
+    ),
+    #87764e;
   &:hover {
-    background:linear-gradient(180deg, rgba(70, 44, 42, 0.0001) 0%, rgba(63, 29, 10, 0.47) 100%), #6C5E3E;
+    background: linear-gradient(
+        180deg,
+        rgba(70, 44, 42, 0.0001) 0%,
+        rgba(63, 29, 10, 0.47) 100%
+      ),
+      #6c5e3e;
   }
 }
 
@@ -39,11 +49,11 @@
   &:before {
     position: absolute;
     content: "";
-    left:0;
-    top:50%;
-    width:8px;
-    height:8px;
-    transform:translateY(-50%);
+    left: 0;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    transform: translateY(-50%);
     border-radius: 50%;
   }
 }
@@ -55,9 +65,9 @@
 }
 
 .shadow-button {
-  filter: drop-shadow(0px 4px 0px rgba(0,0,0,0.75));
+  filter: drop-shadow(0px 4px 0px rgba(0, 0, 0, 0.75));
 }
 
 .text-shadow-button {
-  text-shadow: 0px 1px 0px #0F364C;
+  text-shadow: 0px 1px 0px #0f364c;
 }

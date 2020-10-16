@@ -1,45 +1,63 @@
 {#
-  Simple section with text. 
-  Text sections. SHould only contain text. Without images. 
-  Version 2
 
+Simple section with text. - Version 2
+Text sections. SHould only contain text. Without images. 
+
+
+@param {string}  title
+@param {wysiwyg} description
+@param {object} cta 
+{
   @param {string}  title
-  @param {wysiwyg} description
-  @param {object} cta 
-  {
-        @param {string}  title
-        @param {string}  url
-  }
-  @param {object} cta2
-  {
-        @param {string}  title
-        @param {string}  url
-  }
+  @param {string}  url
+}
+@param {object} cta2
+{
+  @param {string}  title
+  @param {string}  url
+}
+
+Example:
+
+    {% 
+      set textSimpleItems = { 
+        "title": "Naše stranke z naložbenim svetovanjem pridobijo sigurnost za dosego zastavljenega naložbenega cilja v zastavljenem časovnem okviru in ob nižjem naložbenem tveganju.", 
+        "cta" : { 
+          "title" : "Naročite svetovalca", 
+          "url" : "#" 
+        },
+        "cta2" : { 
+          "title" : "Video klic v živo", 
+          "url" : "#" 
+        } 
+      } 
+    %}
+
 #}
 
 {# Output #}
 <section class="c-text-simple c-text-simple-2 pt-10 lg:pt-44 pb-14 lg:pb-40 bg-coalblack">
-  <div class="container-only-lg">
-    <div class="flex flex-wrap -mx-5 mb-6 lg:mb-20">
-      <div class="col-12 lg:col-8 xl:col-8 xl:offset-1">
-        {% if params.title %}
-        <h2 class="h5 lg:h3 title text-white">{{ params.title }}</h2>
-        {% endif %}
-      </div>
-    </div>
-    <div class="flex flex-wrap -mx-5">
-      <div class="col-12 lg:col-8 xl:col-8 xl:offset-1">
-        {% if params.cta %}
-            <div class="block lg:inline-block mb-4 lg:mb-0 lg:mr-8">
-              <a href="{{ params.cta.url }}" class="button button-full medium-button w-full lg:w-auto">{{ params.cta.title }}</a>
-            </div>
-        {% endif %}
-        {% if params.cta2 %}
-            <div class="block lg:inline-block mb-0 lg:mb-0 lg:mr-8">
-              <a href="{{ params.cta2.url }}" class="button button-empty medium-button w-full lg:w-auto">{{ params.cta2.title }}</a>
-            </div>
-        {% endif %}
-      </div>
-    </div>
-  </div>
+	<div class="container-only-lg">
+		<div class="flex flex-wrap -mx-5 mb-6 lg:mb-20">
+			<div class="col-12 lg:col-8 xl:col-8 xl:offset-1">
+				{% if params.title %}
+					<h2 class="h5 lg:h3 title text-white">{{ params.title }}</h2>
+				{% endif %}
+			</div>
+		</div>
+		<div class="flex flex-wrap -mx-5">
+			<div class="col-12 lg:col-8 xl:col-8 xl:offset-1">
+				{% if params.cta %}
+					<div class="block lg:inline-block mb-4 lg:mb-0 lg:mr-8">
+						<a href="{{ params.cta.url }}" class="button button-full medium-button w-full lg:w-auto">{{ params.cta.title }}</a>
+					</div>
+				{% endif %}
+				{% if params.cta2 %}
+					<div class="block lg:inline-block mb-0 lg:mb-0 lg:mr-8">
+						<a href="{{ params.cta2.url }}" class="button button-empty medium-button w-full lg:w-auto">{{ params.cta2.title }}</a>
+					</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
 </section>

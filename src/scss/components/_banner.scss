@@ -1,7 +1,6 @@
 .c-banner-1 {
   .chart-container-mobile-row * {
     user-select: none;
-    
   }
 
   .chart-container-mobile-row {
@@ -23,19 +22,19 @@
   }
 
   .chart-container-mobile {
-    width:320px;
+    width: 320px;
     height: 305px;
-    transform: translate(-225px,0);
+    transform: translate(-225px, 0);
     transition: transform 1s ease 0.4s;
   }
 
   .tns-slide-active .chart-container-mobile {
-    transform: translate(-125px,0);
+    transform: translate(-125px, 0);
   }
 
   .chart-number-top {
     top: -30%;
-    right:47%;
+    right: 47%;
     text-align: right;
   }
 
@@ -76,9 +75,9 @@
   }
   .chart-number-2 {
     top: 13%;
-    left: calc(100vw + 88%); 
+    left: calc(100vw + 88%);
     text-align: right;
-    transition: all 1s ease 0.4s;   
+    transition: all 1s ease 0.4s;
   }
 
   .tns-slide-active .chart-number-2 {
@@ -90,7 +89,7 @@
     top: 13%;
     right: 82%;
     text-align: right;
-    transition: all 1s ease 0.4s;  
+    transition: all 1s ease 0.4s;
   }
 
   .tns-slide-active .chart-number-3 {
@@ -102,7 +101,7 @@
     top: 79%;
     right: 103%;
     text-align: right;
-    transition: all 0.8s ease 0.3s;  
+    transition: all 0.8s ease 0.3s;
   }
 
   .tns-slide-active .chart-number-4 {
@@ -113,17 +112,16 @@
   .chart-image {
     width: 100%;
     height: 100%;
-    outline: none!important;
-    border:0!important;
+    outline: none !important;
+    border: 0 !important;
   }
   @screen lg {
-
     .chart-number,
     .chart-number-top,
     .chart-number-bottom {
-      transition:none;
+      transition: none;
     }
-    
+
     .chart-image {
       width: 443px;
       height: auto;
@@ -132,14 +130,14 @@
     }
 
     .chart-number-1 {
-        top: -35px;
-        left: 70px;
-        right: auto;
+      top: -35px;
+      left: 70px;
+      right: auto;
     }
 
     .chart-number-2 {
       top: -50px;
-      left: 315px; 
+      left: 315px;
       right: auto;
       div {
         display: inline;
@@ -156,8 +154,8 @@
     .chart-number-4 {
       top: 430px;
       left: 325px;
-      right:auto;
-      text-align:left;
+      right: auto;
+      text-align: left;
       div {
         display: inline;
       }
@@ -193,51 +191,49 @@
   }
 }
 
-
 .c-banner-advanced-1 {
   .image-container {
     @screen xl {
-      width:1300px;
+      width: 1300px;
     }
   }
 }
 
-
 .c-banner-advanced-2 {
   .paralax-section {
-      width: 2180px;
-      height: 400px;
-      [class*=" text-"] {
-          position: absolute;
-      }
-      .text-1 {
-        top:20px;
-        left:-50px;
-      }
-      .text-2 {
-        top:calc(50% - 12px);
-        left:0;
-        width: 100%;
-        text-align:center;
-      }
-      .text-3 {
-        bottom: 20px;
-        right: -50px;
-      }
+    width: 2180px;
+    height: 400px;
+    [class*=" text-"] {
+      position: absolute;
+    }
+    .text-1 {
+      top: 20px;
+      left: -50px;
+    }
+    .text-2 {
+      top: calc(50% - 12px);
+      left: 0;
+      width: 100%;
+      text-align: center;
+    }
+    .text-3 {
+      bottom: 20px;
+      right: -50px;
+    }
   }
   @screen lg {
     .paralax-section {
       width: 2180px;
       height: 400px;
       .text-1 {
-        top:20px;
-        left:-100px;
+        top: 20px;
+        left: -100px;
       }
       .text-2 {
-        top:calc(50% - 12px);
-        left:0;
+        top: calc(50% - 12px);
+        left: 0;
         width: 100%;
-        text-align:center;
+        text-align: center;
       }
       .text-3 {
         bottom: 20px;

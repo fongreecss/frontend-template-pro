@@ -1,31 +1,81 @@
+{#
+
+Section with header. Landing version 1. Custom header with GRAPH
+
+@param {string}  title
+@param {string}  description
+@param {object}  cta 
+{
+    @param {string} title
+    @param {string} url
+}
+@param {array} items
+{
+    @param {string} image
+    @param {string} number
+    @param {string} caption
+}
+
+Example:
+
+    {% set headerItems = { 
+        "title": "Ustvarjeno za vas", 
+        "description": "Our investment board observes the market, our products, educates our consultants and in doing so,
+    our clients as well.", 
+        "cta" : { 
+            "title" : "Spoznajte odbor", 
+            "url" : "#" 
+        },
+        "items" : [
+            {
+                "image" : "assets/images/man1.jpg",
+                "number" : "12%",
+                "caption" : "odstotkov več"
+            },
+            {
+                "image" : "assets/images/man1.jpg",
+                "number" : "16%",
+                "caption" : "odstotkov več"
+            },
+            {
+                "image" : "assets/images/man1.jpg",
+                "number" : "121%",
+                "caption" : "odstotkov več"
+            }
+        ]
+    } %}
+
+#}
+
+{# Output #}
 <header class="c-header c-header-invest-1 w-full pt-8 lg:pt-0 lg:min-h-screen relative lg:flex lg:justify-center lg:items-center">
-    <div class="container-only-lg">
-        <div class="flex flex-wrap -mx-5">
-            <div class="col-12 lg:col-7 xl:col-5 xl:offset-2">
-                <h1 class="h4 lg:h1 title text-coalblack mb-6 lg:mb-3">{{ params.title }}</h1>
-                <p class="medium-paragraph lg:large-paragraph text-textgray mb-6 lg:mb-8">{{ params.description }}</p>
-                <div class="lg:mb-72">
-                    <a href="{{ params.cta.url }}" class="button button-full medium-button w-full lg:w-auto">{{ params.cta.title }}</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="invest-graph">
-        <div class="landing-carousel">
-            {% for item in params.items %}
-            <div class="carousel-item absolute {{ loop.index == 1 ? "" : "invisible" }}">
-                <div class="carousel-item-image mb-0 lg:mb-3">
-                    <img class="object-cover w-full h-full" src="{{ item.image }}" alt="">
-                </div>
-                <div class="bg-peppermint w-full mb-1 lg:mb-4 relative" style="height:2px;">
-                    <div class="carousel-vertical-line bg-peppermint absolute left-0 top-2 lg:top-4" style="width:2px;"></div>
-                </div>
-                <div class="ml-2 lg:ml-5 carousel-item-number carousel-title-small lg:carousel-title-large text-coalblack" style="color:#13151C;">{{ item.number }}</div>
-                <div class="ml-2 lg:ml-5 carousel-item-caption small-paragraph" style="color:#74767B;">{{ item.caption }}</div>
-            </div>
-            {% endfor %}
-        </div>
-        {% include "/templates/components/invest-graph.twig" %}
-    </div>
+	<div class="container-only-lg">
+		<div class="flex flex-wrap -mx-5">
+			<div class="col-12 lg:col-7 xl:col-5 xl:offset-2">
+				<h1 class="h4 lg:h1 title text-coalblack mb-6 lg:mb-3">{{ params.title }}</h1>
+				<p class="medium-paragraph lg:large-paragraph text-textgray mb-6 lg:mb-8">{{ params.description }}</p>
+				<div class="lg:mb-72">
+					<a href="{{ params.cta.url }}" class="button button-full medium-button w-full lg:w-auto">{{ params.cta.title }}</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="invest-graph">
+		<div class="landing-carousel">
+			{% for item in params.items %}
+				<div class="carousel-item absolute {{ loop.index == 1 ? " " : " invisible" }}">
+					<div class="carousel-item-image mb-0 lg:mb-3">
+						<img class="object-cover w-full h-full" src="{{ item.image }}" alt="">
+					</div>
+					<div class="bg-peppermint w-full mb-1 lg:mb-4 relative" style="height:2px;">
+						<div class="carousel-vertical-line bg-peppermint absolute left-0 top-2 lg:top-4" style="width:2px;"></div>
+					</div>
+					<div class="ml-2 lg:ml-5 carousel-item-number carousel-title-small lg:carousel-title-large text-coalblack" style="color:#13151C;">{{ item.number }}</div>
+					<div class="ml-2 lg:ml-5 carousel-item-caption small-paragraph" style="color:#74767B;">{{ item.caption }}</div>
+				</div>
+			{% endfor %}
+		</div>
+		{% include "/templates/components/invest-graph.twig" %}
+	</div>
 </header>

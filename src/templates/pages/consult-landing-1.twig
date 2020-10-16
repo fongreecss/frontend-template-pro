@@ -1,0 +1,314 @@
+{% extends '/templates/layouts/base.twig' %}
+{% set headerItems = { 
+    "image" : "assets/images/girl-working-on-computer.jpg",
+    "image_mobile" : "assets/images/girl-working-on-computer-mobile.jpg",
+    "suptitle" : "Vaš partner pri doseganju",
+	"title": "Finančnih ciljev", 
+	"cta" : { 
+		"title" : "Naročite svetovalca", 
+		"url" : "#" 
+	},
+    "cta2" : {
+        "title" : "Video klic v živo", 
+		"url" : "#" 
+    }
+} %}
+
+{% set contactInfoItems = {
+	"title" : "Full set of great features to make your product fresh and clean.",
+	"description" : "Vsi registrirani uporabniki ste enkrat letno upravičeni do brezplačnega pregleda portfelja.",
+	"items" : [
+		{
+			"title" : "080 35 08",
+			"url" : "tel:00386803508"
+		},
+		{
+			"title" : "Kontakti in lokacija",
+			"url" : "#"
+		},
+		{
+			"title" : "info@vzajemci.com",
+			"url" : "#"
+		}
+	],
+	"cta" : {
+		"title" : "Naročite svetovalca",
+		"url" : "#",
+	}
+} %}
+
+{% set imageAsideItems1 = {
+	"title": "Spremljanje trga in priprava smernic",
+	"description": "We examine the risk and cost ratio of every potential investment you are interested in and advise on its viability and worth.",
+	"cta" : {
+		"title" : "Naročite svetovalca",
+		"url" : "#"
+	},
+	"image" : "assets/images/men-talking-mobile.png",
+    "layout" : 1,
+} %}
+
+{% set imageAsideItems2 = {
+	"title": "Razvoj novih produktov",
+	"description": "Through our consultancy efforts we achieve an understanding of your personal risk profile, and tailor our recommendations & guidance.",
+	"cta" : {
+		"title" : "Naročite svetovalca",
+		"url" : "#"
+	},
+	"image" : "assets/images/office-empty-mobile.png",
+    "layout" : 2,
+} %}
+
+{% set imageAsideItems3 = {
+	"title": "Ocena in analiza obstoječih in novih naložbenih produktov",
+	"description": "We examine the risk and cost ratio of every potential investment you are interested in and advise on its viability and worth.",
+	"cta" : {
+		"title" : "Naročite svetovalca",
+		"url" : "#"
+	},
+	"image" : "assets/images/man-behind-mobile.png",
+    "layout" : 3,
+} %}
+
+{% set imageAsideItems4 = {
+	"title": "Neodvisno svetovanje za večje stranke",
+	"description": "Through our consultancy efforts we achieve an understanding of your personal risk profile, and tailor our recommendations & guidance.",
+	"cta" : {
+		"title" : "Naročite svetovalca",
+		"url" : "#"
+	},
+	"image" : "assets/images/office-empty-mobile.png",
+    "layout" : 4,
+} %}
+
+{% set imageAsideItems5 = {
+	"title": "Izobraževanje svetovalcev in strank,",
+	"description": "We examine the risk and cost ratio of every potential investment you are interested in and advise on its viability and worth.",
+	"cta" : {
+		"title" : "Naročite svetovalca",
+		"url" : "#"
+	},
+	"image" : "assets/images/man-behind-mobile.png",
+    "layout" : 5,
+} %}
+
+{% set imageAsideItems6 = {
+	"title": "Grajenje blagovne znamke",
+	"description": "Through our consultancy efforts we achieve an understanding of your personal risk profile, and tailor our recommendations & guidance.",
+	"cta" : {
+		"title" : "Naročite svetovalca",
+		"url" : "#"
+	},
+	"image" : "assets/images/office-empty-mobile.png",
+    "layout" : 4,
+} %}
+
+{%
+	set titleItems = {
+		"title" : "Funkcije"
+	}
+%}
+
+{% set advancedSectionItems = {
+	"title": "Naložbeni odbor",
+	"description": "Our investment board observes the market, our products, educates our consultants and in doing so,
+our clients as well.",
+	"cta" : {
+		"title" : "Spoznajte zdaj",
+		"url" : "#"
+	},
+	"cta2" : {
+		"title" : "Naročite svetovalca",
+		"url" : "#"
+	},
+	"image" : "assets/images/office-empty-2.png",
+	"image_mobile" : "assets/images/office-empty-2-mobile.png",
+	"caption": "Stranke, ki so sodelovale z našimi svetovalci, so v zadnjem letu v povprečju ustvarile",
+	"number": {
+		"title": 17,
+		"caption": "Donosnost",
+		"isPercentage": true,
+	}
+} %}
+
+{% set teamItems = {
+	"title": "Člani odbora",
+	"cta" : {
+		"title" : "Želim svetovanje",
+		"url" : "#"
+	},
+	"items" : [
+		{
+			"title" : "Myhajlo Todurov",
+			"image" : "assets/images/vegelj-small.png"
+		},
+		{
+			"title" : "Myhajlo Todurov",
+			"image" : "assets/images/vegelj-small.png"
+		},
+		{
+			"title" : "Myhajlo Todurov",
+			"image" : "assets/images/vegelj-small.png"
+		},
+		{
+			"title" : "Myhajlo Todurov",
+			"image" : "assets/images/vegelj-small.png"
+		},
+		{
+			"title" : "Myhajlo Todurov",
+			"image" : "assets/images/vegelj-small.png"
+		}
+	]
+} %}
+
+{% set textAdvancedItems = {
+    "title" : "Our experience",
+    "description": "Potrditev dolgoletnega kvalitetnega dela na področju naložbenega svetovanja smo prejeli s strani največje svetovne medijske organizacije za naložbene profesionalce Citywire, ki je s povabilom na elitno konferenco v Montreuxju Vzajemce uvrstil med sto najboljših investicijsko svetovalnih družb v Evropi",
+    "items" : [
+      {
+        "title" : "100.000.000",
+        "suptitle" : "Več kot",
+        "caption" : "evrov vloženih sredstev strank"
+      },
+      {
+        "title" : "20.000",
+        "suptitle" : "Več kot",
+        "caption" : "strank"
+      },
+      {
+        "title" : "17%",
+        "suptitle" : "Več kot",
+        "caption" : "donosnost"
+      }
+    ],
+    "cta" : {
+      "title" : "Naročite svetovalca",
+      "url" : "#",
+    },
+    "image" : "assets/images/mansuit2.png",
+    "image_mobile" : "assets/images/mansuit2.png",
+  } %}
+
+{%
+    set horizontalListItems = {
+        "title" : "Our core principles",
+        "cta" : {
+            "title" : "Naroči svetovalca",
+            "url" : "#"
+        },
+        "items" : [
+            {
+                "title" : "Personalized",
+                "description" : "All base UI elements are made using Nested Symbols and shared styles that are connected with one another."
+            },
+            {
+                "title" : "Ethical",
+                "description" : "All base UI elements are made using Nested Symbols and shared styles that are connected with one another."
+            },
+            {
+                "title" : "Unbiased",
+                "description" : "All base UI elements are made using Nested Symbols and shared styles that are connected with one another."
+            }
+        ]
+    }
+%}
+
+{%
+    set cardListItems = {
+    "title": "Best in class services",
+    "suptitle" : "Consulting",
+    "items" : [
+        {
+            "title" : "Naložbeno svetovanje",
+            "url" : "#",
+            "description" : "Very short description, should not cross the threshold of two lines on this median screen width."
+        },
+        {
+            "title" : "Pokojninsko svetovanje",
+            "url" : "#",
+            "description" : "Very short description, should not cross the threshold of two lines on this median screen width."
+        },
+        {
+            "title" : "Izdelava in spremljanje portfelja",
+            "url" : "#",
+            "description" : "Very short description, should not cross the threshold of two lines on this median screen width."
+        },
+        {
+            "title" : "Optimizacija zavarovalnih polic",
+            "url" : "#",
+            "description" : "Very short description, should not cross the threshold of two lines on this median screen width."
+        },
+        {
+            "title" : "Posredovanje pri bančnih storitvah",
+            "url" : "#",
+            "description" : "Very short description, should not cross the threshold of two lines on this median screen width."
+        }
+    ],
+    "featured_item" : {
+            "title" : "Naročite termin z svetovalcem",
+            "url" : "#featured",
+            "image" : "assets/images/vegelj-big.png",
+            "is_featured" : true
+    },
+    }
+%}
+
+{%
+    set cardListItems3 = {
+      
+      "title": "Best in class services",
+      "suptitle" : "Consulting",
+      "items" : [
+          {
+              "title" : "Naložbeno svetovanje",
+              "url" : "#",
+              "description" : "Very short description, should not cross the threshold of two lines on this median screen width."
+          },
+          {
+              "title" : "Pokojninsko svetovanje",
+              "url" : "#",
+              "description" : "Very short description, should not cross the threshold of two lines on this median screen width."
+          },
+          {
+              "title" : "Izdelava in spremljanje portfelja",
+              "url" : "#",
+              "description" : "Very short description, should not cross the threshold of two lines on this median screen width."
+          },
+          {
+              "title" : "Optimizacija zavarovalnih polic",
+              "url" : "#",
+              "description" : "Very short description, should not cross the threshold of two lines on this median screen width."
+          }
+      ]
+    }
+%}
+{% block content %}
+	<main role="main" class="p-consult-5">
+        {% include "/templates/components/header-consult-1.twig" with { params: headerItems } %}
+        <div class="pb-14 lg:pb-30"></div>
+		{% include "/templates/components/text-advanced-2.twig" with { params: textAdvancedItems } %}
+		<div class="pb-14 lg:pb-16"></div>
+        {% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems1 } %}
+        <div class="pb-14 lg:pb-36"></div>
+        {% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems2 } %}
+        <div class="pb-14 lg:pb-24"></div>
+        {% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems3 } %}
+        <div class="pb-14 lg:pb-16"></div>
+        {% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems4 } %}
+        <div class="pb-14 lg:pb-24"></div>
+        {% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems5 } %}
+		<div class="pb-14 lg:pb-28"></div>
+        {% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems6 } %}
+		<div class="pb-14 lg:pb-30"></div>
+		{% include "/templates/components/advanced-section-1.twig" with { params: advancedSectionItems } %}
+		<div class="pb-14 lg:pb-30"></div>
+		{% include "/templates/components/horizontal-list-1.twig" with { params: horizontalListItems  } %}
+		<div class="pb-14 lg:pb-30"></div>
+		{% include "/templates/components/card-list-1.twig" with { params: cardListItems } %}
+		<div class="pb-14 lg:pb-30"></div>
+		{% include "/templates/components/card-list-3.twig" with { params: cardListItems3 } %}
+		<div class="pb-14 lg:pb-30"></div>
+		{% include "/templates/components/contact-info-1.twig" with { params: contactInfoItems } %}
+		
+	</main>
+{% endblock %}

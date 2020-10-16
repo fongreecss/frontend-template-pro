@@ -1,47 +1,64 @@
 {#
-  Section with text and image aside. Version 2
 
-  We have to extact styles in the css for the layout, so the html in
-  the content can be naked.
+Section with text and image aside. Version 2
 
-  @param {string}  title
-  @param {wysiwyg} description
-  @param {object}  cta 
-  {
-    @param {string} title
-    @param {string} url
-  }
-  @param {string} image  -  image url
-  @param {string} image_first - Should image be shown before text. default set on false
+We have to extact styles in the css for the layout, so the html in
+the content can be naked.
+
+@param {string}  title
+@param {wysiwyg} description
+@param {object}  cta 
+{
+  @param {string} title
+  @param {string} url
+}
+@param {string} image  -  image url
+@param {string} image_first - Should image be shown before text. default set on false
+
+Example:
+
+    {% 
+      set imageAsideItems = {
+        "title": "Ste pravi tip vlagatelja za invest?",
+        "description": "Our investment board observes the market, our products, educates our consultants and in doing so,
+      our clients as well.",
+        "cta" : {
+          "title" : "Spoznajte zdaj",
+          "url" : "#"
+        },
+        "image" : "assets/images/mansuit.jpg"
+      } 
+    %}
+
 #}
 
 {# Output #}
 <section class="c-image-aside c-image-aside-2">
-  <div class="container-only-lg">
-    <div class="flex flex-wrap -mx-5 items-center">
-      <div class="col-12 lg:col-6 xl:col-5 xl:offset-1 order-0 {{ params.image_first == true ? 'lg:order-1' : 'lg:order-0'}}">
-        {% if params.title %}
-        <h2 class="h4 lg:h2 title mb-3 lg:mb-6">{{ params.title }}</h2>
-        {% endif %}
-        {% if params.description %}
-        <div class="medium-paragraph lg:medium-paragraph mb-8 lg:mb-6 mw-none-mobile" style="max-width:408px;">{{ params.description|raw }}</div>
-        {% endif %}
-        {% if params.cta %}
-        <div class="mb-8 lg:mb-0">
-          <a href="{{ params.cta.url }}" class="button button-full medium-button w-full lg:w-auto">{{ params.cta.title }}</a>
-        </div>
-        {% endif %}
-      </div>
-      <div class="col-12 lg:col-6 order-1 {{ params.image_first == true ? 'lg:order-0' : 'lg:order-1'}}">
-        {% if params.image %}
-          <div class="relative lg:my-30">
-              <div class="background-block-bright-teal"></div>
-              <div class="w-full h-0 pb-full mb-15 lg:mb-0">
-                  <img src="{{ params.image }}" loading="lazy" alt="" class="absolute top-0 left-0 object-cover w-full h-full" >
-              </div>
-          </div>
-        {% endif %}
-      </div>
-    </div>
-  </div>
+	<div class="container-only-lg">
+		<div class="flex flex-wrap -mx-5 items-center">
+			<div class="col-12 lg:col-6 xl:col-5 xl:offset-1 order-0 {{ params.image_first == true ? 'lg:order-1' : 'lg:order-0'}}">
+				{% if params.title %}
+					<h2 class="h4 lg:h2 title mb-3 lg:mb-6">{{ params.title }}</h2>
+				{% endif %}
+				{% if params.description %}
+					<div class="medium-paragraph lg:medium-paragraph mb-8 lg:mb-6 mw-none-mobile" style="max-width:408px;">{{ params.description|raw }}</div>
+				{% endif %}
+				{% if params.cta %}
+					<div class="mb-8 lg:mb-0">
+						<a href="{{ params.cta.url }}" class="button button-full medium-button w-full lg:w-auto">{{ params.cta.title }}</a>
+					</div>
+				{% endif %}
+			</div>
+			<div class="col-12 lg:col-6 order-1 {{ params.image_first == true ? 'lg:order-0' : 'lg:order-1'}}">
+				{% if params.image %}
+					<div class="relative lg:my-30">
+						<div class="background-block-bright-teal"></div>
+						<div class="w-full h-0 pb-full mb-15 lg:mb-0">
+							<img src="{{ params.image }}" loading="lazy" alt="" class="absolute top-0 left-0 object-cover w-full h-full">
+						</div>
+					</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
 </section>

@@ -1,20 +1,84 @@
 {#
-  Section with header. Header consult 1
-  Top: title and suptitle
-  Middle : image with pattern
-  Bottom : cta1 and 2 buttons. Should be inside image. bottom left
-  !!! in this case suptitle and title should be joined. just visualy should look diff
-  Right side: image with pattern behind
 
-  @param {string}  image
-  @param {string}  image_mobile
-  @param {string}  suptitle - text above normal title
-  @param {string}  title - header main title 
-  @param {object}  cta - left full button
-  {
-    @param {string} title
-    @param {string} url
+Section with header. Header consult 1
+Top: title and suptitle
+Middle : image with pattern
+Bottom : cta1 and 2 buttons. Should be inside image. bottom left
+!!! in this case suptitle and title should be joined. just visualy should look diff
+Right side: image with pattern behind
+
+@param {string}  image
+@param {string}  image_mobile
+@param {string}  suptitle - text above normal title
+@param {string}  title - header main title 
+@param {object}  cta - left full button
+{
+  @param {string} title
+  @param {string} url
+}
+@param {object} cta - right empty button 
+{
+  @param {string} title
+  @param {string} url
+}
+
+Example:
+
+{% set headerItems = { 
+  "image" : "assets/images/girl-working-on-computer.jpg",
+  "image_mobile" : "assets/images/girl-working-on-computer-mobile.jpg",
+  "suptitle" : "Vaš partner pri doseganju",
+  "title": "Finančnih ciljev", 
+  "cta" : { 
+    "title" : "Naročite svetovalca", 
+    "url" : "#" 
+  },
+  "cta2" : {
+    "title" : "Video klic v živo", 
+    "url" : "#" 
   }
+} %}
+
 #}
 
 {# Output #}
+<header class="c-header c-header-consult-1 w-full relative lg:pt-36">
+	<div class="container-only-lg">
+		<div class="flex flex-wrap -mx-5">
+			<div class="col-12 lg:col-12 xl:col-8 xl:offset-1">
+				<div class="h6 lg:h2 title text-peppermint pt-24 lg:pt-0 lg:mb-2">{{ params.suptitle }}</div>
+			</div>
+		</div>
+		<div class="flex flex-wrap -mx-5">
+			<div class="col-12 lg:col-11 lg:offset-1 xl:col-8 xl:offset-2">
+				<h1 class="h3 title lg:h1 large-title mb-12 lg:mb-11">
+					<span class="absolute block" style="top:-999999px; left:-99999px;">{{ params.suptitle }}</span>
+					{{ params.title}}</h1>
+			</div>
+		</div>
+		<div class="flex flex-wrap -mx-5 relative">
+			<div class="col-12 mb-4 lg:mb-0 relative">
+				<div class="hidden lg:block relative h-140">
+					<img src="{{ manifest('assets/images/pattern-3.svg') }}" class="absolute h-auto max-w-none lg:right-0 xl:right-18" style="width:296px; top:-56px;" alt="">
+					<img src="{{ params.image }}" alt="" class="absolute left-0 top-0 object-cover w-full h-full">
+				</div>
+				{% if params.image_mobile %}
+					<div class="lg:hidden relative h-0 w-full -ml-5 mb-4" style="width:calc(100% + 40px); padding-bottom:calc(100% + 40px);">
+						<img src="{{ manifest('assets/images/pattern-1-mobile.svg') }}" class="absolute h-auto max-w-none" alt="">
+						<img src="{{ params.image_mobile }}" alt="" class="absolute left-0 top-0 object-cover w-full h-full">
+					</div>
+				{% endif %}
+				<div class="cta-container relative lg:absolute lg:bottom-0 lg:left-5 lg:pr-24 lg:pt-11 lg:pb-10 lg:pl-28 lg:bg-white ">
+					<div class="relative">
+						{% if params.cta %}
+							<a href="{{ params.cta.url }}" class="button button-full medium-button w-full lg:w-auto mb-4 lg:mb-0 xl:mr-8 lg:inline-block">{{ params.cta.title }}</a>
+						{% endif %}
+						{% if params.cta2 %}
+							<a href="{{ params.cta2.url }}" class="button button-empty medium-button w-full lg:w-auto lg:inline-block">{{ params.cta2.title }}</a>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>

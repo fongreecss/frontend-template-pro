@@ -117,59 +117,62 @@
 	"image_mobile" : "assets/images/office-empty-2-mobile.png",
 } %}
 
-{% set teamItems = {
-	"title": "Člani odbora",
-	"cta" : {
-		"title" : "Želim svetovanje",
-		"url" : "#"
-	},
-	"items" : [
-		{
-			"title" : "Myhajlo Todurov",
-			"image" : "assets/images/vegelj-small.png"
+{% 
+
+	set teamItems = {
+		"title": "Člani odbora",
+		"cta" : {
+			"title" : "Želim svetovanje",
+			"url" : "#"
 		},
-		{
-			"title" : "Myhajlo Todurov",
-			"image" : "assets/images/vegelj-small.png"
-		},
-		{
-			"title" : "Myhajlo Todurov",
-			"image" : "assets/images/vegelj-small.png"
-		},
-		{
-			"title" : "Myhajlo Todurov",
-			"image" : "assets/images/vegelj-small.png"
-		},
-		{
-			"title" : "Myhajlo Todurov",
-			"image" : "assets/images/vegelj-small.png"
-		}
-	]
-} %}
+		"items" : [
+			{
+				"title" : "Myhajlo Todurov",
+				"image" : "assets/images/vegelj-small.png"
+			},
+			{
+				"title" : "Myhajlo Todurov",
+				"image" : "assets/images/vegelj-small.png"
+			},
+			{
+				"title" : "Myhajlo Todurov",
+				"image" : "assets/images/vegelj-small.png"
+			},
+			{
+				"title" : "Myhajlo Todurov",
+				"image" : "assets/images/vegelj-small.png"
+			},
+			{
+				"title" : "Myhajlo Todurov",
+				"image" : "assets/images/vegelj-small.png"
+			}
+		]
+	} 
+%}
 
 {% block content %}
 	<main role="main" class="p-consult-5">
-        {% include "/templates/components/header-consult-2.twig" with { params: headerItems } %}
-        <div class="pb-14 lg:pb-27"></div>
+		{% include "/templates/components/header-consult-2.twig" with { params: headerItems } %}
+		<div class="pb-14 lg:pb-27"></div>
 		{% include "/templates/components/title-1.twig" with { params: titleItems } %}
 		<div class="pb-14 lg:pb-16"></div>
-        {% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems1 } %}
-        <div class="pb-14 lg:pb-36"></div>
-        {% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems2 } %}
-        <div class="pb-14 lg:pb-24"></div>
-        {% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems3 } %}
-        <div class="pb-14 lg:pb-16"></div>
-        {% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems4 } %}
-        <div class="pb-14 lg:pb-24"></div>
-        {% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems5 } %}
+		{% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems1 } %}
+		<div class="pb-14 lg:pb-36"></div>
+		{% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems2 } %}
+		<div class="pb-14 lg:pb-24"></div>
+		{% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems3 } %}
+		<div class="pb-14 lg:pb-16"></div>
+		{% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems4 } %}
+		<div class="pb-14 lg:pb-24"></div>
+		{% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems5 } %}
 		<div class="pb-14 lg:pb-28"></div>
-        {% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems6 } %}
+		{% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems6 } %}
 		<div class="pb-14 lg:pb-30"></div>
 		{% include "/templates/components/advanced-section-2.twig" with { params: advancedSectionItems } %}
-        <div class="pb-14 lg:pb-30"></div>
+		<div class="pb-14 lg:pb-30"></div>
 		{% include "/templates/components/team-1.twig" with { params: teamItems } %}
 		<div class="pb-14 lg:pb-30"></div>
 		{% include "/templates/components/contact-info-1.twig" with { params: contactInfoItems } %}
-		
+
 	</main>
 {% endblock %}

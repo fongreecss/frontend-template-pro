@@ -1,121 +1,118 @@
 .c-progress-bar-1,
 .c-progress-bar-2 {
-    [class*=" number-"] {
-        transition: width 1s ease 0.5s;
+  [class*=" number-"] {
+    transition: width 1s ease 0.5s;
+  }
+  @for $i from 1 through 100 {
+    .number-#{$i} {
+      width: $i * 1%;
     }
-    @for $i from 1 through 100 {
-        .number-#{$i} {
-            width : $i * 1%;
-            
-        }
-       
-    }
-    .percent {
-        position: absolute;
-        right: 24px;
-        top: 16px;
-        bottom: auto;
-    }
-    .number {
-        position: absolute;
-        top: 110px;
-        right:auto;
-        left: calc(50% - 20px);
-        transform: translateX(-50%);
-    }
+  }
+  .percent {
+    position: absolute;
+    right: 24px;
+    top: 16px;
+    bottom: auto;
+  }
+  .number {
+    position: absolute;
+    top: 110px;
+    right: auto;
+    left: calc(50% - 20px);
+    transform: translateX(-50%);
+  }
 
+  .bg-image-left-container {
+    position: absolute;
+    height: 275px;
+    width: 296px;
+    top: -141px;
+    left: -113px;
+    z-index: -1;
+  }
+  .bg-image-right-container {
+    position: absolute;
+    height: 304px;
+    width: 296px;
+    top: auto;
+    bottom: -150px;
+    left: auto;
+    right: -220px;
+    z-index: -1;
+  }
+  @screen lg {
     .bg-image-left-container {
-        position: absolute;
-        height: 275px;
-        width: 296px;
-        top:-141px;
-        left: -113px;
-        z-index:-1;
+      top: -100px;
+      left: -112px;
     }
     .bg-image-right-container {
-        position: absolute;
-        height: 304px;
-        width: 296px;
-        top:auto;
-        bottom: -150px;
-        left: auto;
-        right: -220px;
-        z-index: -1;
+      bottom: -150px;
+      left: auto;
+      right: 0;
+      top: auto;
+      z-index: 1;
     }
-    @screen lg {
-        .bg-image-left-container {
-            top:-100px;
-            left: -112px;
-        }
-        .bg-image-right-container {
-            bottom: -150px;
-            left: auto;
-            right: 0;
-            top: auto;
-            z-index:1;
-        }
-        .number {
-            top: 110px;
-            right: 24%;
-            left: auto;
-            transform: none;
-        }
-        .percent {
-            top: auto;
-            bottom: 16px;
-        }
+    .number {
+      top: 110px;
+      right: 24%;
+      left: auto;
+      transform: none;
     }
+    .percent {
+      top: auto;
+      bottom: 16px;
+    }
+  }
 }
 
-
 .c-progress-bar-2 {
+  .percent {
+    position: absolute;
+    left: 24px;
+    right: auto;
+    top: 16px;
+    bottom: auto;
+  }
+  @screen lg {
     .percent {
-        position: absolute;
-        left: 24px;
-        right: auto;
-        top: 16px;
-        bottom: auto;
+      top: auto;
+      bottom: 16px;
     }
-    @screen lg {
-        .percent {
-            top: auto;
-            bottom: 16px;
-        }
-        .number {
-            top: 110px;
-            right: auto;
-            left: 21%;
-            transform: none;
-        }
+    .number {
+      top: 110px;
+      right: auto;
+      left: 21%;
+      transform: none;
     }
+  }
 }
 
 .c-progress-bar-3 {
-    @for $i from 1 through 100 {
-        .number-#{$i} {
-            height : $i * 1%;
-        }
+  @for $i from 1 through 100 {
+    .number-#{$i} {
+      height: $i * 1%;
     }
-    .percent {
-        position: absolute;
-        bottom: 0;
-        left: calc(100% + 4px);
-    }
+  }
+  .percent {
+    position: absolute;
+    bottom: 0;
+    left: calc(100% + 4px);
+  }
 
-    @screen lg {
-        .bg-image-left-container {
-            position: absolute;
-            width: 184px;
-            height: 379px;
-            top:0;
-            left: 0;
-        }
-        .bg-image-right-container {
-            position: absolute;
-            width: 184px;
-            height: 291px;
-            right:0;
-            top: 124px;
-        }
+  @screen lg {
+    .bg-image-left-container {
+      position: absolute;
+      width: 184px;
+      height: 379px;
+      top: 0;
+      left: 0;
     }
+    .bg-image-right-container {
+      position: absolute;
+      width: 184px;
+      height: 291px;
+      right: 0;
+      top: 124px;
+    }
+  }
 }

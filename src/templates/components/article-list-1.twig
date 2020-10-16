@@ -1,16 +1,16 @@
 {#
-  Article list - Version 1
-  this one ony has three featured articles
+Article list - Version 1
+this one ony has three featured articles
 
-  @param {string} suptitle
-  @param {string} title 
-  @param {object} cta
-  {
-      @param {string} title
-      @param {string} url
-  }
-  @param {array}  items -cards 
-  {
+@param {string} suptitle
+@param {string} title 
+@param {object} cta
+{
+    @param {string} title
+    @param {string} url
+}
+@param {array}  items -cards 
+{
     @param {string} image
     @param {string} url
     @param {string} title 
@@ -21,8 +21,80 @@
     @param {string} date
     @param {string} author
     @param {string} author_url
-  }
+}
+
+Example: 
+{% set articleListItems = {
+	"title" : "Articles written by Myhajlo Todurov",
+    "suptitle" : "Academy contributions",
+	"description" : "Vsi registrirani uporabniki ste enkrat letno upravičeni do brezplačnega pregleda portfelja.",
+    "cta" : {
+        "title" : "Naročite svetovalca",
+        "url" : "#"
+    },
+	"items" : [
+		{
+			"title" : "Drugo mnenje: Ne bom investiral, saj je pred nami nova recesija",
+            "url" : "#",
+            "tags" : [
+                {
+                    "title" : "Investicije",
+                    "url" : "#"
+                },
+                {
+                    "title" : "Finance",
+                    "url" : "#"
+                }
+            ],
+            "date" : "12.12.2020",
+            "author" : "Myhajlo Todurov",
+            "author_url" : "#",
+            "image" : "assets/images/girl-playing-article.png",
+            "image_mobile" : "assets/images/girl-playing-article.png",
+		},
+		{
+			"title" : "Lekcija zadnje krize: pasivni ali aktivni pristop k investiranju?",
+            "url" : "#",
+            "tags" : [
+                {
+                    "title" : "Investicije",
+                    "url" : "#"
+                },
+                {
+                    "title" : "Finance",
+                    "url" : "#"
+                }
+            ],
+            "date" : "12.12.2020",
+            "author" : "Myhajlo Todurov",
+            "author_url" : "#",
+            "image" : "assets/images/guy-stairs-article.png",
+            "image_mobile" : "assets/images/guy-stairs-article.png"
+		},
+        {
+			"title" : "Lekcija zadnje krize: pasivni ali aktivni pristop k investiranju?",
+            "url" : "#",
+            "tags" : [
+                {
+                    "title" : "Investicije",
+                    "url" : "#"
+                },
+                {
+                    "title" : "Finance",
+                    "url" : "#"
+                }
+            ],
+            "date" : "12.12.2020",
+            "author" : "Myhajlo Todurov",
+            "author_url" : "#",
+            "image" : "assets/images/guys-talking-article.png",
+            "image_mobile": "assets/images/guys-talking-article.png"
+		}
+	]
+} %}
 #}
+
+{# Output #}
 <section class="c-article-list c-article-list-1">
 	{% if params.title or params.cta %}
 		<div class="container-only-lg">

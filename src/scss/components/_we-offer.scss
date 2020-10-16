@@ -1,11 +1,10 @@
 .c-we-offer {
-    .image-container {
-        width: 100%;
-        height: auto;
-        @screen xl {
-            width: 600px;
-            height: 400px;
-        }
-        
+  .image-container {
+    width: 100%;
+    height: auto;
+    @screen xl {
+      width: 600px;
+      height: 400px;
     }
+  }
 }

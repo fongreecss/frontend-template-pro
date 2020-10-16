@@ -1,24 +1,23 @@
 .c-header-invest-1 {
-    
-    height: 212vw;
-    height: 680px;
-    @screen lg {
-        height: auto;
-    }
+  height: 212vw;
+  height: 680px;
+  @screen lg {
+    height: auto;
+  }
 }
 
 .mountain-bg-image {
+  background-position: center;
+  background-size: cover;
+  @screen lg {
     background-position: center;
     background-size: cover;
-    @screen lg {
-        background-position: center;
-        background-size: cover;
-    }
+  }
 }
 
 .invest-product-2-header {
-    h1, p {
-        color:#FFFFFF;
-    }
+  h1,
+  p {
+    color: #ffffff;
+  }
 }
-

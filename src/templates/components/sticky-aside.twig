@@ -1,22 +1,26 @@
 {#
-    Section with sticky element on left or right side. 
-    Non-sticky side can have many sections with content (image, title, text, cta). 
-    Sticky side can have scrollspy navigation if enabled.
 
-    @param {string} title 
-    @param {string} text
-    @param {bool}   enable_scrollspy - default set on false 
-    @param {bool}   sticky_first - default set on false
-    @param {array}  items
-    {
+Section with sticky element on left or right side. 
+Non-sticky side can have many sections with content (image, title, text, cta). 
+Sticky side can have scrollspy navigation if enabled.
+
+@param {string} title 
+@param {string} text
+@param {bool}   enable_scrollspy - default set on false 
+@param {bool}   sticky_first - default set on false
+@param {array}  items
+{
+    @param {string}   title
+    @param {wysiwyg}  text
+    @param {string}   image - image url
+    @param {object}   cta {
         @param {string}   title
-        @param {wysiwyg}  text
-        @param {string}   image - image url
-        @param {object}   cta {
-            @param {string}   title
-            @param {string}   link
-        }
+        @param {string}   link
     }
+}
+
+Example:
+
 #}
 
 {# Output #}

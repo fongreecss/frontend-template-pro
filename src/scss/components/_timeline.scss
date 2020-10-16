@@ -1,115 +1,109 @@
 .c-timeline-1 {
-    .tns-ovh {
-        overflow: visible;
+  .tns-ovh {
+    overflow: visible;
+  }
+
+  .timeline-buttons {
+    position: relative;
+    justify-content: flex-end;
+    //top:calc(100%);
+    bottom: 0;
+    right: 0;
+    z-index: 9999;
+    display: flex;
+    padding-top: 64px;
+    @screen lg {
+      position: absolute;
+      padding-top: 0px;
     }
 
-    .timeline-buttons {
-        position: relative;
-        justify-content: flex-end;
-        //top:calc(100%);
-        bottom:0;
-        right:0;
-        z-index: 9999;
-        display: flex;
-        padding-top: 64px;
-        @screen lg {
-            position: absolute;
-            padding-top:0px;
-        }
-        
-
-        button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height:56px;
-            width:56px;
-            border:2px solid;
-            border-radius: 50%;
-            @apply border-peppermint;
-            text-align: center;
-            outline: none;
-            @screen lg {
-                height:64px;
-                width:64px;
-            }
-        }
-        button:nth-child(1) {
-            @screen lg {
-                margin-right: 24px;
-            }
-            margin-right: 40px;
-        }
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 56px;
+      width: 56px;
+      border: 2px solid;
+      border-radius: 50%;
+      @apply border-peppermint;
+      text-align: center;
+      outline: none;
+      @screen lg {
+        height: 64px;
+        width: 64px;
+      }
     }
-    .timeline-bullet {
-        width:24px;
-        height: 24px;
-        position: absolute;
-        top: calc(64px + 15px);
-        left: 0px;
-        border-radius: 50%;
-        background-color: transparent;
-        transition: background-color 1s ease 0s;
-        @screen lg {
-            top:calc(106px + 0px);
-        }
+    button:nth-child(1) {
+      @screen lg {
+        margin-right: 24px;
+      }
+      margin-right: 40px;
     }
-    .timeline-bullet:after {
-        content:"";
-        width: 100%;
-        height: 100%;
-        background-color: transparent;
-        position: absolute;
-        top:0;
-        left:0;
-        border:2px solid;
-        @apply border-peppermint;
-        border-radius: 50%;
-        transform: scale(1);
-        transform-origin: center;
-        transition: transform 1s ease 0s;
+  }
+  .timeline-bullet {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: calc(64px + 15px);
+    left: 0px;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: background-color 1s ease 0s;
+    @screen lg {
+      top: calc(106px + 0px);
     }
+  }
+  .timeline-bullet:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 2px solid;
+    @apply border-peppermint;
+    border-radius: 50%;
+    transform: scale(1);
+    transform-origin: center;
+    transition: transform 1s ease 0s;
+  }
 
+  .tns-s-active .timeline-bullet:after {
+    border: 1px solid;
+    @apply border-peppermint;
+    transform: scale(1.7);
+  }
 
-    .tns-s-active .timeline-bullet:after  {
-        border:1px solid;
-        @apply border-peppermint;
-        transform: scale(1.7);
+  .timeline-description {
+    opacity: 0;
+    transform: translate(0, 50px);
+    transition: opacity 1s ease 0s, transform 1s ease 0s;
+    width: calc(100vw - 40px);
+    @screen lg {
+      width: auto;
     }
+  }
 
+  .tns-s-active .timeline-description {
+    opacity: 1;
+    transform: translate(0, 0px);
+  }
+  .tns-s-active .timeline-bullet {
+    background-color: #fff;
+    left: 0px;
+  }
 
-    .timeline-description {
-        opacity:0;
-        transform: translate(0, 50px);
-        transition: opacity 1s ease 0s, transform 1s ease 0s;
-        width: calc(100vw - 40px);
-        @screen lg {
-            width: auto;
-        }
+  .timeline-container::before {
+    content: "";
+    border-bottom: 1px dashed;
+    @apply border-peppermint;
+    position: absolute;
+    left: -100vw;
+    right: -100vw;
+    top: calc(92px + 15px);
+    @screen lg {
+      top: calc(134px + 0px);
     }
-
-    .tns-s-active .timeline-description {
-        opacity: 1;
-        transform: translate(0, 0px);
-    }
-    .tns-s-active .timeline-bullet {
-        background-color: #fff;
-        left:0px;
-    }
-
-    
-
-    .timeline-container::before {
-        content:"";
-        border-bottom: 1px dashed;
-        @apply border-peppermint;
-        position: absolute;
-        left: -100vw;
-        right: -100vw;
-        top: calc(92px + 15px);
-        @screen lg {
-            top: calc(134px + 0px);
-        }
-        
-    }
+  }
 }

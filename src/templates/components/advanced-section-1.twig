@@ -1,77 +1,101 @@
 {#
-  Advanced section version 1
 
-  Data is loaded from a custom post
+Advanced section version 1
 
-  @param {string}  title
-  @param {string}  description
-  @param {string}  image
-  @param {string}  caption  - image caption
-  @param {object}  cta
-  {
+@param {string}  title
+@param {string}  description
+@param {string}  image
+@param {string}  caption  - image caption
+@param {object}  cta
+{
     @param {string}  title
     @param {string}  url
-  }
-  @param {object}  cta2 
-  {
-      @param {string}  title
-      @param {string}  url
-  }
-  @param {object} number 
-  {
-      @param {string} title
-      @param {string} caption
-      @param {bool} isPercentage
-  }
+}
+@param {object}  cta2 
+{
+    @param {string}  title
+    @param {string}  url
+}
+@param {object} number 
+{
+    @param {string} title
+    @param {string} caption
+    @param {bool} isPercentage
+}
+
+Example:
+    {% set advancedSectionItems = {
+        "title": "Naložbeni odbor",
+        "description": "Our investment board observes the market, our products, educates our consultants and in doing so,
+    our clients as well.",
+        "cta" : {
+            "title" : "Spoznajte zdaj",
+            "url" : "#"
+        },
+        "cta2" : {
+            "title" : "Naročite svetovalca",
+            "url" : "#"
+        },
+        "image" : "assets/images/office-empty-2.png",
+        "image_mobile" : "assets/images/office-empty-2-mobile.png",
+        "caption": "Stranke, ki so sodelovale z našimi svetovalci, so v zadnjem letu v povprečju ustvarile",
+        "number": {
+            "title": 17,
+            "caption": "Donosnost",
+            "isPercentage": true,
+        }
+    } %}
 #}
 
 {# Output #}
 <div class="c-advanced-section c-advanced-section-1 overflow-hidden relative">
-    <div class="container-only-lg">
-        <div class="flex flex-wrap -mx-5">
-            <div class="col-12 xl:col-11 xl:offset-1">
-                <h2 class="h4 lg:h1 title">{{ params.title }}</h2>
-            </div>
-        </div>
-        <div class="flex flex-wrap -mx-5">
-            <div class="lg:col-5 lg:offset-7 xl:col-4 xl:offset-7">
-                <div class="pb-3 lg:pb-12 lg:bg-arcticsilver"></div>
-            </div>
-        </div>
-        <div class="flex flex-wrap -mx-10 lg:-mx-5">
-            <div class="col-12">
-                <div class="w-full h-50 sm:h-100 md:h-130">
-                    <img src="{{ params.image }}" alt="{{ params.caption }}" class="object-cover w-full h-full">
-                </div>
-            </div>
-        </div>
-        <div class="flex flex-wrap -mx-5">
-            <div class="col-12 lg:col-7 xl:col-6 xl:offset-1">
-                <div class="medium-paragraph lg:large-paragraph pt-3 lg:pt-10 mb-8 lg:mb-8 mw-none-mobile" style="max-width:520px;">{{ params.description }}</div>
-                {% if params.cta %}
-                    <a href="{{ params.cta.url }}" class="button button-full medium-button w-full lg:w-auto mb-4 lg:mb-0 xl:mr-8 lg:inline-block">{{ params.cta.title }}</a>
-                {% endif %}
-                {% if params.cta2 %}
-                    <a href="{{ params.cta2.url }}" class="button button-empty medium-button w-full lg:w-auto lg:inline-block">{{ params.cta2.title }}</a>
-                {% endif %}
-            </div>
-            <div class="col-12 lg:col-5 xl:col-4">
-                <div class="h6 title relative lg:px-14 pt-10 pb-8 lg:bg-arcticsilver lg:mb-10">{{ params.caption }}</div>
-                {% if params.number %}
-                <div class="lg:px-14 mb-1 flex lg:block justify-center">
-                <div class="relative py-4 lg:py-0">
-                <div class="lg:hidden absolute top-0 bottom-0 right-1/2 w-screen -z-1 bg-arcticsilver"></div>
-                <span class="lg-number number-mask inline-block" style="background-image: url({{manifest("assets/images/mask1.svg")}});">{{ params.number.title }}</span>
-                {% if params.number.isPercentage == true %}
-                <span class="h1 large-title inline-block text-peppermint ">%</span>
-                {% endif %}
-                {% if params.number.caption %}
-                <div class="h5 title text-peppermint">{{ params.number.caption }}</div>
-                {% endif %}
-                </div>
-                </div><!-- number -->
-                {% endif %}
-            </div>
-        </div>
-    </div>
+	<div class="container-only-lg">
+		<div class="flex flex-wrap -mx-5">
+			<div class="col-12 xl:col-11 xl:offset-1">
+				<h2 class="h4 lg:h1 title">{{ params.title }}</h2>
+			</div>
+		</div>
+		<div class="flex flex-wrap -mx-5">
+			<div class="lg:col-5 lg:offset-7 xl:col-4 xl:offset-7">
+				<div class="pb-3 lg:pb-12 lg:bg-arcticsilver"></div>
+			</div>
+		</div>
+		<div class="flex flex-wrap -mx-10 lg:-mx-5">
+			<div class="col-12">
+				<div class="w-full h-50 sm:h-100 md:h-130">
+					<img src="{{ params.image }}" alt="{{ params.caption }}" class="hidden lg:block object-cover w-full h-full">
+					<img src="{{ params.image_mobile }}" alt="{{ params.caption }}" class="lg:hidden object-cover w-full h-full">
+				</div>
+			</div>
+		</div>
+		<div class="flex flex-wrap -mx-5">
+			<div class="col-12 lg:col-7 xl:col-6 xl:offset-1">
+				<div class="medium-paragraph lg:large-paragraph pt-3 lg:pt-10 mb-8 lg:mb-8 mw-none-mobile" style="max-width:520px;">{{ params.description }}</div>
+				{% if params.cta %}
+					<a href="{{ params.cta.url }}" class="button button-full medium-button w-full lg:w-auto mb-4 lg:mb-0 xl:mr-8 lg:inline-block">{{ params.cta.title }}</a>
+				{% endif %}
+				{% if params.cta2 %}
+					<a href="{{ params.cta2.url }}" class="button button-empty medium-button w-full lg:w-auto lg:inline-block">{{ params.cta2.title }}</a>
+				{% endif %}
+			</div>
+			<div class="col-12 lg:col-5 xl:col-4">
+				<div class="h6 title relative lg:px-14 pt-10 pb-8 lg:bg-arcticsilver lg:mb-10">{{ params.caption }}</div>
+				{% if params.number %}
+					<div class="lg:px-14 mb-1 flex lg:block justify-center">
+						<div class="relative py-4 lg:py-0">
+							<div class="lg:hidden absolute top-0 bottom-0 right-1/2 w-screen -z-1 bg-arcticsilver"></div>
+							<span class="lg-number number-mask inline-block" style="background-image: url({{manifest(" assets/images/mask1.svg")}});">{{ params.number.title }}</span>
+							{% if params.number.isPercentage == true %}
+								<span class="h1 large-title inline-block text-peppermint ">%</span>
+							{% endif %}
+							{% if params.number.caption %}
+								<div class="h5 title text-peppermint">{{ params.number.caption }}</div>
+							{% endif %}
+						</div>
+					</div>
+					<!-- number -->
+				{% endif %}
+			</div>
+		</div>
+	</div>
 </div>
