@@ -1,0 +1,28 @@
+{#
+    Section with title and description very simple. just title
+
+    @param {string}  title
+    @param {string}  description 
+
+    {%
+        set titleWithDescription = {
+            "title" : "We offer",
+            "description" : "Through our consultancy efforts we achieve an understanding of your personal risk profile, and tailor our recommendations & guidance."
+        }
+    %}
+#}
+
+{# Output #}
+<section class="c-title-with-description c-title-with-description-1">
+    <div class="container-only-lg">
+        <div class="flex flex-wrap -mx-5">
+            <div class="col-12 lg:col-8 xl:col-7 xl:offset-1">
+                <h2 class="h4 lg:h1 title text-coalblack mb-5 lg:mb-3">{{ params.title }}</h2>
+            </div>
+            <div class="col-12 lg:col-6 xl:col-4 xl:offset-1">
+                <p class="medium-paragraph lg:medium-paragraph text-textgray">{{ params.description }}</p>
+            </div>
+        </div>
+        
+    </div>
+</section>

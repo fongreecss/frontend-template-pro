@@ -96,16 +96,17 @@ Example:
 				</ul>
 				<h1 class="h4 lg:h1 title text-coalblack mb-1 lg:mb-3">{{ params.title }}</h1>
 				<p class="medium-paragraph lg:medium-paragraph text-coalgray mb-2 lg:mb-16 mw-none-mobile" style="max-width:408px;">{{ params.description }}</p>
-				{% if params.image_mobile %}
-					<div class="flex lg:hidden flex-wrap -mx-10">
-						<div class="col-12 mb-8 overflow-hidden">
-							<div class="relative w-full h-0 pb-full">
-								<img loading="lazy" src="{{ manifest('assets/images/pattern-6.svg') }}" class="absolute h-auto max-w-none" style="width:60%; top:20%; left:20%;" alt="">
-								<img loading="lazy" src="{{ params.image_mobile }}" alt="" class="absolute top-0 left-0 object-cover object-bottom w-full h-full">
-							</div>
+
+				<!-- .mobile image -->
+				<div class="flex lg:hidden flex-wrap -mx-10">
+					<div class="col-12 mb-8 overflow-hidden">
+						<div class="relative w-full h-0 pb-full">
+							<img loading="lazy" src="{{ manifest('assets/images/pattern-6.svg') }}" class="absolute h-auto max-w-none" style="width:60%; top:20%; left:20%;" alt="">
+							<img loading="lazy" src="{{ params.image_mobile is defined ? params.image_mobile : params.image }}" alt="" class="absolute top-0 left-0 object-cover object-bottom w-full h-full">
 						</div>
 					</div>
-				{% endif %}
+				</div>
+
 				<p class="h5 lg:h5 title text-coalblack mb-3 lg:mb-2">{{ params.title_contact }}</p>
 				<ul class="contact-items lg:mb-20 mw-none-mobile" style="max-width:300px;">
 					{% for item in params.items %}

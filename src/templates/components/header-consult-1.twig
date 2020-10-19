@@ -57,17 +57,17 @@ Example:
 			</div>
 		</div>
 		<div class="flex flex-wrap -mx-5 relative">
-			<div class="col-12 mb-4 lg:mb-0 relative">
+			<div class="col-12 mb-0 lg:mb-0 relative">
 				<div class="hidden lg:block relative h-140">
 					<img src="{{ manifest('assets/images/pattern-3.svg') }}" class="absolute h-auto max-w-none lg:right-0 xl:right-18" style="width:296px; top:-56px;" alt="">
 					<img src="{{ params.image }}" alt="" class="absolute left-0 top-0 object-cover w-full h-full">
 				</div>
-				{% if params.image_mobile %}
-					<div class="lg:hidden relative h-0 w-full -ml-5 mb-4" style="width:calc(100% + 40px); padding-bottom:calc(100% + 40px);">
-						<img src="{{ manifest('assets/images/pattern-1-mobile.svg') }}" class="absolute h-auto max-w-none" alt="">
-						<img src="{{ params.image_mobile }}" alt="" class="absolute left-0 top-0 object-cover w-full h-full">
-					</div>
-				{% endif %}
+
+				<div class="lg:hidden relative h-0 w-full -ml-5 mb-4" style="width:calc(100% + 40px); padding-bottom:calc(100% + 40px);">
+					<img src="{{ manifest('assets/images/pattern-1-mobile.svg') }}" class="absolute h-auto max-w-none" alt="">
+					<img src="{{ params.image_mobile is defined ? params.image_mobile : params.image }}" alt="" class="absolute left-0 top-0 object-cover w-full h-full">
+				</div>
+
 				<div class="cta-container relative lg:absolute lg:bottom-0 lg:left-5 lg:pr-24 lg:pt-11 lg:pb-10 lg:pl-28 lg:bg-white ">
 					<div class="relative">
 						{% if params.cta %}

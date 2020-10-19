@@ -38,9 +38,8 @@ Example:
 			<div class="col-12">
 				<div class="w-full h-120 lg:h-140 mb-4 lg:mb-11">
 					<img src="{{ params.image }}" alt="" class="hidden lg:block object-cover w-full h-full">
-					{% if params.image_mobile %}
-						<img src="{{ params.image_mobile }}" alt="" class="lg:hidden object-cover w-full h-full">
-					{% endif %}
+					<!-- .mobile -->
+					<img src="{{ params.image_mobile is defined ? params.image_mobile : params.image }}" alt="" class="lg:hidden object-cover w-full h-full">
 				</div>
 			</div>
 		</div>

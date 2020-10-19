@@ -1,0 +1,85 @@
+{# 
+
+Section with double text boxes. Version 1. Numbers are optional
+
+section has exactly two items 
+@param {array} items - only two items. left and right
+{
+    @param {string}  title
+    @param {string}  text
+    @param {string}  image
+    @param {array}   categories
+    {
+      @param {string}  title
+    }
+}
+
+Example:
+
+    {% 
+      set textBoxItems = { 
+        "items" : [
+          { 
+            "title": "More is possible", 
+            "description": "JonatanMars is a spin-off company of VZAJEMCI Group, and is a result of its extensive presence and influence in the field of finance in the past 18 years.", 
+            "cta" : { "title" : "Izvejte več", "url" : "#" },
+            "number": 78,
+            "percentage": true,
+            "title2": "Startup-ov namerava zaposlit novi kader",
+          },
+          { 
+            "title": "Nepremičnine", 
+            "description": "Podjetje, ki je del Skupine Vzajemci. Cilj podjetja je graditi projekte, ki imajo visoko dodano vrednost, in ki bodo pustili pozitiven pečat v slovenski družbi.", 
+            "cta" : { "title" : "Izvejte več", "url" : "#" },
+            "number": 42,
+            "title2": "Stanovanj" 
+          }
+        ]
+      } 
+    %}
+
+#}
+
+{# Output #}
+<section class="c-textbox-double c-textbox-double-2 w-full relative">
+	<div class="container-only-lg">
+		<div class="flex flex-wrap -mx-5 mb-40">
+			<div class="col-12 lg:col-6 xl:offset-1 xl:col-5 bg-coalblack lg:bg-transparent mb-14 lg:mb-0 relative">
+				<div class="lg:bg-coalblack pt-9 lg:pt-15 lg:pb-14 h-full lg:h-135">
+					<div class="upper-text-block md:mx-auto lg:pl-5 mw-none-mobile" style="max-width:408px;">
+                        <h3 class="h4 lg:h3 title mb-3 text-white">{{params.items[0].title}}</h3>
+						<div class="small-paragraph lg:medium-paragraph mb-8 text-white">{{params.items[0].description}}</div>
+						<div class="mb-14 lg:mb-22">
+							<a class="button button-full medium-button w-full lg:w-auto" href="{{ params.items[0].cta.url }}" class="button button-full">{{ params.items[0].cta.title }}</a>
+						</div>
+                        <div class="lg:absolute lg:bottom-15  h5 lg:h4 title text-white mw-none-mobile" style="max-width:408px;">{{ params.items[0].title2 }}</div>
+					</div>
+				</div>
+                <div class="absolute lg:-bottom-40 lg:-right-8">
+                    <div class="lg2-number lg:xl-number  number-mask" style="background-image: url({{manifest(" assets/images/mask1.svg")}});">{{ params.items[0].number }}</div>
+                </div>
+			</div>
+			<!-- col -->
+			<div class="col-12 lg:col-6 xl:col-5 bg-coalblack lg:bg-transparent relative">
+				<div class="lg:bg-coalblack pt-9 lg:pt-15 lg:pb-14 h-full lg:h-135">
+					<div class="upper-text-block md:mx-auto lg:pr-10 mw-none-mobile" style="max-width:408px;">
+						<h3 class="h4 lg:h3 title mb-3 text-white">{{params.items[1].title}}</h3>
+						<div class="small-paragraph lg:medium-paragraph mb-8 text-white">{{params.items[1].description}}</div>
+						<div class="mb-14 lg:mb-22">
+							<a class="button button-full medium-button w-full lg:w-auto" href="{{ params.items[1].cta.url }}" class="button button-full">{{ params.items[1].cta.title }}</a>
+						</div>
+                        <div class="lg:absolute lg:bottom-15 h5 lg:h4 title text-white mw-none-mobile" style="max-width:408px;">{{ params.items[1].title2 }}</div>
+					</div>
+                    
+				</div>
+                <div class="absolute lg:-bottom-40 lg:-right-30">
+                    <div class="lg2-number lg:xl-number number-mask" style="background-image: url({{manifest(" assets/images/mask1.svg")}});">{{ params.items[1].number }}</div>
+                </div>
+			</div>
+			<!-- col -->
+		</div>
+		<!-- flex flex-wrap -mx-5 -->
+        
+	</div>
+	<!-- container -->
+</section>

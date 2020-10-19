@@ -1,7 +1,7 @@
 {% extends '/templates/layouts/base.twig' %}
 {% set headerItems = { 
     "image" : "assets/images/girl-working-on-computer.jpg",
-    "image_mobile" : "assets/images/girl-working-on-computer-mobile.jpg",
+    
     "suptitle" : "Vaš partner pri doseganju",
 	"title": "Finančnih ciljev", 
 	"cta" : { 
@@ -162,8 +162,7 @@ our clients as well.",
 } %}
 
 {% set textAdvancedItems = {
-    "title" : "Our experience",
-    "description": "Potrditev dolgoletnega kvalitetnega dela na področju naložbenega svetovanja smo prejeli s strani največje svetovne medijske organizacije za naložbene profesionalce Citywire, ki je s povabilom na elitno konferenco v Montreuxju Vzajemce uvrstil med sto najboljših investicijsko svetovalnih družb v Evropi",
+    "title" : "During our time in the field of financial consultancy",
     "items" : [
       {
         "title" : "100.000.000",
@@ -185,8 +184,8 @@ our clients as well.",
       "title" : "Naročite svetovalca",
       "url" : "#",
     },
-    "image" : "assets/images/mansuit2.png",
-    "image_mobile" : "assets/images/mansuit2.png",
+    "image" : "assets/images/money-guy.png",
+    "image_mobile" : "assets/images/money-guy-mobile.png",
   } %}
 
 {%
@@ -282,32 +281,74 @@ our clients as well.",
       ]
     }
 %}
+
+{%
+        set titleWithDescription = {
+            "title" : "We offer",
+            "description" : "Through our consultancy efforts we achieve an understanding of your personal risk profile, and tailor our recommendations & guidance."
+        }
+%}
+
+{%
+        set numberWithDescription = {
+            "number" : "17",
+            "title" : "donosnosti",
+            "suptitle" : "procentov",
+            "description" : "so ustvarile stranke, ki so sodelovale z našimi svetovalci v zadnjem letu."
+        }
+
+%}
+
+
+{% 
+	set textBoxItems = { 
+		"items" : [
+			{ 
+				"title": "More is possible", 
+				"description": "JonatanMars is a spin-off company of VZAJEMCI Group, and is a result of its extensive presence and influence in the field of finance in the past 18 years.", 
+				"cta" : { "title" : "Izvejte več", "url" : "#" },
+				"number": 78,
+				"percentage": true,
+				"title2": "Startup-ov namerava zaposlit novi kader",
+			},
+			{ 
+				"title": "Nepremičnine", 
+				"description": "Podjetje, ki je del Skupine Vzajemci. Cilj podjetja je graditi projekte, ki imajo visoko dodano vrednost, in ki bodo pustili pozitiven pečat v slovenski družbi.", 
+				"cta" : { "title" : "Izvejte več", "url" : "#" },
+				"number": 42,
+				"title2": "Stanovanj" 
+			}
+		]
+	} 
+%}
+
+
 {% block content %}
 	<main role="main" class="p-consult-5">
         {% include "/templates/components/header-consult-1.twig" with { params: headerItems } %}
         <div class="pb-14 lg:pb-30"></div>
 		{% include "/templates/components/text-advanced-2.twig" with { params: textAdvancedItems } %}
-		<div class="pb-14 lg:pb-16"></div>
+		<div class="pb-14 lg:pb-30"></div>
+        {% include "/templates/components/title-with-description-1.twig" with { params: titleWithDescription } %}
+        <div class="pb-8 lg:pb-16"></div>
         {% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems1 } %}
-        <div class="pb-14 lg:pb-36"></div>
+        <div class="pb-10 lg:pb-36"></div>
         {% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems2 } %}
-        <div class="pb-14 lg:pb-24"></div>
+        <div class="pb-10 lg:pb-24"></div>
         {% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems3 } %}
-        <div class="pb-14 lg:pb-16"></div>
-        {% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems4 } %}
-        <div class="pb-14 lg:pb-24"></div>
-        {% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems5 } %}
-		<div class="pb-14 lg:pb-28"></div>
-        {% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems6 } %}
 		<div class="pb-14 lg:pb-30"></div>
 		{% include "/templates/components/advanced-section-1.twig" with { params: advancedSectionItems } %}
-		<div class="pb-14 lg:pb-30"></div>
+		<div class="pb-16 lg:pb-44"></div>
 		{% include "/templates/components/horizontal-list-1.twig" with { params: horizontalListItems  } %}
-		<div class="pb-14 lg:pb-30"></div>
+		<div class="pb-16 lg:pb-50"></div>
 		{% include "/templates/components/card-list-1.twig" with { params: cardListItems } %}
-		<div class="pb-14 lg:pb-30"></div>
+		<div class="pb-13 lg:pb-48"></div>
 		{% include "/templates/components/card-list-3.twig" with { params: cardListItems3 } %}
-		<div class="pb-14 lg:pb-30"></div>
+        <div class="pb-2 lg:pb-22"></div>
+        {% include "/templates/components/number-with-description-1.twig" with { params: numberWithDescription } %}
+        <div class="pb-14 lg:pb-20"></div>
+        {% include "/templates/components/textbox-double-2.twig" with { params: textBoxItems } %}
+		<div class="pb-14 lg:pb-32"></div>
 		{% include "/templates/components/contact-info-1.twig" with { params: contactInfoItems } %}
 		
 	</main>

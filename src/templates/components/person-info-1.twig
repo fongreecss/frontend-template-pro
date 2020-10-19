@@ -44,12 +44,12 @@ Example:
 					<img loading="lazy" src="{{ manifest('assets/images/pattern-6.svg') }}" class="absolute h-auto max-w-none" style="width:60%; top:22%; left:20%;" alt="">
 					<img loading="lazy" src="{{ params.image }}" alt="" class="absolute left-0 top-0 object-contain object-bottom w-full h-full">
 				</div>
-				{% if params.image_mobile %}
-					<div class="lg:hidden w-full h-0 pb-full relative mt-15">
-						<img loading="lazy" src="{{ manifest('assets/images/pattern-6.svg') }}" class="absolute h-auto max-w-none" style="width:60%; top:15%; left:20%;" alt="">
-						<img loading="lazy" src="{{ params.image_mobile }}" alt="" class="absolute top-0 left-0 object-contain object-bottom w-full h-full">
-					</div>
-				{% endif %}
+			
+				<div class="lg:hidden w-full h-0 pb-full relative mt-15">
+					<img loading="lazy" src="{{ manifest('assets/images/pattern-6.svg') }}" class="absolute h-auto max-w-none" style="width:60%; top:15%; left:20%;" alt="">
+					<img loading="lazy" src="{{ params.image_mobile is defined ? params.image_mobile : params.image }}" alt="" class="absolute top-0 left-0 object-contain object-bottom w-full h-full">
+				</div>
+				
 			</div>
 			<div class="col-12 lg:col-6 xl:col-5">
 				<div class="h-1 w-8 bg-peppermint mt-8 lg:mt-0 mb-2"></div>

@@ -1,0 +1,50 @@
+{#
+    Section with number and description. Advanced version 1
+
+    @param {string}  number
+    @param {string}  suptitle
+    @param {string}  title
+    @param {string}  description 
+
+    {%
+        set numberWithDescription = {
+            "number" : "17",
+            "title" : "donosnosti",
+            "suptitle" : "procentov",
+            "description" : "so ustvarile stranke, ki so sodelovale z našimi svetovalci v zadnjem letu."
+        }
+    %}
+#}
+
+{# Output #}
+<section class="c-number-with-description c-number-with-description-1 overflow-hidden">
+    <div class="container-only-lg">
+        <div class="flex flex-wrap -mx-5">
+            <div class="col-12 lg:col-10 xl:col-8 xl:offset-1">
+                <div class="bg-arcticsilver lg:flex lg:items-center pt-16 lg:pt-24 pb-24 lg:pb-26 -mx-5 lg:mx-0 relative">
+                    <div class="col-12 lg:col-5 lg:offset-1 text-center lg:text-right mb-4 lg:mb-0">
+                        <div class="lg-number lg:lg3-number number-mask bg-arcticsilver" style="background-image: url({{manifest("assets/images/mask1.svg")}});">{{ params.number }}</div>
+                    </div>
+                    
+                    <div class="col-12 lg:col-6 text-center lg:text-left">
+                        <div class="text-peppermint arboria-main-button">{{ params.suptitle }}</div>
+                        <h2 class="h4 lg:h4 title text-coalblack lg:pb-10">{{ params.title }}</h2>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-wrap -mx-5 lg:-mt-45">
+            <div class="col-12 lg:col-7 xl:col-6 lg:offset-5 xl:offset-5  relative">
+                <img src="{{ manifest('assets/images/pattern-6.svg') }}" class="absolute right-5 -top-10 lg:-top-20 lg:right-18 xl:right-34 w-50 lg:w-56" alt="">
+                <div class="relative bg-coalblack pt-9 pb-7 lg:pt-24 lg:pb-26 -mx-5 lg:mx-0">
+                    <div class="mw-none-mobile lg:mx-auto px-5 lg:px-0" style="max-width:408px;">
+                        <div class="h-1 w-8 bg-peppermint mb-4"></div>
+                        <p class="h5 lg:h5 title text-white">{{ params.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
