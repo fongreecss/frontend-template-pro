@@ -50,6 +50,7 @@ has chart as image in center (on desktop)
 #}
 
 {# Output #}
+{% set sliderId = random() %}
 <section class="c-banner c-banner-1">
 	<div class="container-only-lg">
 		<div class="flex flex-wrap -mx-5">
@@ -92,7 +93,6 @@ has chart as image in center (on desktop)
 		</div>
 		<!-- .flex .flex-wrap -->
 		<div class="chart-container-mobile-row flex flex-wrap lg:hidden -mx-5 gradient-coalblack">
-			{% set sliderId = random() %}
 			<div id="slider_{{ sliderId }}" class="tns-slider chart-container py-38" data-tns-speed="800" data-inviewport="once" data-inviewport-offsety="60">
 				<div class="">&nbsp;</div>
 				<div class="relative">
@@ -128,10 +128,3 @@ has chart as image in center (on desktop)
 		</div>
 	</div>
 </section>
-<script>
-	function trigger_slider_ {{ sliderId }}() {
-if (typeof window.tnsSliders['slider_ {{ sliderId }}'] != "undefined") {
-window.tnsSliders['slider_ {{ sliderId }}'].goTo('next');
-}
-};
-</script>

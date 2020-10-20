@@ -5,6 +5,7 @@ Advanced section version 1
 @param {string}  title
 @param {string}  description
 @param {string}  image
+@param {string}  image_mobile
 @param {string}  caption  - image caption
 @param {object}  cta
 {
@@ -64,7 +65,7 @@ Example:
 			<div class="col-12">
 				<div class="w-full h-50 sm:h-100 md:h-130">
 					<img src="{{ params.image }}" alt="{{ params.caption }}" class="hidden lg:block object-cover w-full h-full">
-					<img src="{{ params.image_mobile }}" alt="{{ params.caption }}" class="lg:hidden object-cover w-full h-full">
+					<img src="{{ params.image_mobile is defined ? params.image_mobile : params.image }}" alt="{{ params.caption }}" class="lg:hidden object-cover w-full h-full">
 				</div>
 			</div>
 		</div>

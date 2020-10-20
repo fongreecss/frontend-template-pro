@@ -56,7 +56,8 @@ Example:
 #}
 
 {# Output #}
-<section class="c-timeline c-timeline-1 bg-coalblack pt-12 pb-10 lg:pt-28 lg:pb-28">
+{% set randomNumber = random() %}
+<section id="c-timeline-id-{{ randomNumber }}" class="c-timeline c-timeline-1 bg-coalblack pt-12 pb-10 lg:pt-28 lg:pb-28">
 	<div class="container-only-lg">
 		<div class="flex flex-wrap -mx-5">
 			<div class="col-12 xl:col-11 xl:offset-1">
@@ -66,7 +67,7 @@ Example:
 	</div>
 	<div class="container-only-lg">
 		<div class="timeline-container relative">
-			<ul id="slider-timeline" class="flex flex-wrap -mx-5 w-full tns-slider cursor-pointer" data-tns-next-button=".c-timeline-1 .tns-next-button" data-tns-prev-button=".c-timeline-1 .tns-prev-button" data-tns-controls data-tns-autowidth data-tns-mouse-drag>
+			<ul id="slider-timeline-{{ randomNumber }}" class="flex flex-wrap -mx-5 w-full tns-slider cursor-pointer" data-tns-next-button="#c-timeline-id-{{ randomNumber }} .tns-next-button" data-tns-prev-button="#c-timeline-id-{{ randomNumber }} .tns-prev-button" data-tns-controls data-tns-autowidth data-tns-mouse-drag>
 				{% for item in params.items %}
 					<li class="col-6 lg:col-4 {{ loop.index == 1 ? " xl:offset-1" : " " }} lg:px-5 select-none">
 						<div class="relative pb-26 lg:pb-32 timer-upper">
