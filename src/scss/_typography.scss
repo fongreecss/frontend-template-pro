@@ -763,3 +763,19 @@ h1.title {
 .font-tiempos-text {
   font-family: "Tiempos Text";
 }
+
+
+@screen xl {
+
+  .xl\:arboria-medium-subheader {
+    font-family: "Arboria", "Tiempos Headline";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 32px;
+    /* identical to box height, or 178% */
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+}

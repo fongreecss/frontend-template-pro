@@ -62,16 +62,72 @@
 	}
 } %}
 
-
+{% set listSliderItems = {
+    "title" : "We offer",
+	"description": "Through our consultancy efforts we achieve an understanding of your personal risk profile, and tailor our recommendations & guidance.",
+    "items" : [
+        {
+            "title" : "Naložbeno svetovanje",
+            "description" : "Through our consultancy efforts we achieve an understanding of your personal risk profile, and tailor our recommendations & guidance.",
+            "image" : "assets/images/men-talking.png",
+            "image_mobile" : "assets/images/men-talking-mobile.png",
+            "cta" : {
+                "title" : "izvejte več",
+                "url" : "#",
+            }
+        },
+        {
+            "title" : "Pokojninsko svetovanje",
+            "description" : "The primary value of Augmented reality is that it brings components of the digital world into a person's perception of the real world, and does so not as a simple display of data, but through the integration of immersive sensations that are perceived as natural parts of an environment. ",
+            "image" : "assets/images/office-empty-mobile.png",
+            "image_mobile" : "assets/images/office-empty-mobile.png",
+            "cta" : {
+                "title" : "izvejte več",
+                "url" : "#",
+            }
+        },
+        {
+            "title" : "Izdelava in spremljanje portfelja",
+            "description" : "Through our consultancy efforts we achieve an understanding of your personal risk profile, and tailor our recommendations & guidance.",
+            "image" : "assets/images/man-behind-mobile.png",
+            "image_mobile" : "assets/images/man-behind-mobile.png",
+            "cta" : {
+                "title" : "izvejte več",
+                "url" : "#",
+            }
+        },
+        {
+            "title" : "Optimizacija zavarovalnih polic",
+            "description" : "We examine the risk and cost ratio of every potential investment you are interested in and advise on its viability and worth.",
+            "image" : "assets/images/office-empty-mobile.png",
+            "image_mobile" : "assets/images/office-empty-mobile.png",
+            "cta" : {
+                "title" : "izvejte več",
+                "url" : "#",
+            }
+        },
+        {
+            "title" : "Posredovanje pri bančnih storitvah",
+            "description" : "Through our consultancy efforts we achieve an understanding of your personal risk profile, and tailor our recommendations & guidance.",
+            "image" : "assets/images/man-behind-mobile.png",
+            "image_mobile" : "assets/images/man-behind-mobile.png",
+            "cta" : {
+                "title" : "izvejte več",
+                "url" : "#",
+            }
+        }
+    ]
+} %}
 
 
 {% block content %}
 	<main role="main" class="p-consult-4">
         {% include "/templates/components/header-consult-2.twig" with { params: headerItems } %}
+		<div class="pb-14 lg:pb-32"></div>
+		{% include "/templates/components/list-slider-1.twig" with { params: listSliderItems} %}
 		<div class="pb-14 lg:pb-50"></div>
 		{% include "/templates/components/text-advanced-1.twig" with { params: textAdvancedItems } %}
 		<div class="pb-24 lg:pb-0"></div>
 		{% include "/templates/components/contact-info-1.twig" with { params: contactInfoItems } %}
-		
 	</main>
 {% endblock %}

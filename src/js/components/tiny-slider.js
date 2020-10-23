@@ -5,9 +5,9 @@ import { tns } from "tiny-slider/src/tiny-slider";
 export default class TinySlider {
 
   addClassName(slider, sel, info) {
-      var sel1= '[id*="-item' + info.index + '"]';
+      var sel1= '.tns-item:nth-child(' + (info.index + 1) + ')';
       var sel2 = sel + " " + sel1;
-      var sel3 = sel + " " + '[id*="-item"]';
+      var sel3 = sel + " " + '.tns-item';
       try {
         document.querySelectorAll(sel3).forEach(el => {
           el.classList.remove('tns-s-active');
@@ -17,6 +17,33 @@ export default class TinySlider {
 
       }
       
+  }
+
+  setActiveElementConnectedList(slider, index) {
+      var listItems;
+      if(!(this.connectedMenu && (listItems = document.querySelectorAll(this.connectedMenu + '>*')))) {
+        return false;
+      }
+      
+      listItems.forEach((item, ind) => {
+          item.classList.remove('active');
+          if(index == ind) {
+            item.classList.add('active');
+          } 
+      });
+  }
+
+  buttonOnClick(slider) {
+    var listItems;
+    if(!(this.connectedMenu && (listItems = document.querySelectorAll(this.connectedMenu + '>*')))) {
+      return false;
+    }
+   
+    listItems.forEach((item, ind) => {
+      item.addEventListener('click', (ev) => {
+        slider.goTo(ind);
+      });
+    });
   }
 
   constructor() {
@@ -34,6 +61,7 @@ export default class TinySlider {
       var tnsMouseDrag = el.hasAttribute('data-tns-mouse-drag') ? true : false;
       var tnsPrevButton = el.dataset.tnsPrevButton ? document.querySelector(el.dataset.tnsPrevButton) : document.querySelector(sel + " .tns-prev-button");
       var tnsNextButton = el.dataset.tnsNextButton ? document.querySelector(el.dataset.tnsNextButton) : document.querySelector(sel + " .tns-next-button");
+      this.connectedMenu = el.dataset.tnsConnectedMenu ? el.dataset.tnsConnectedMenu : "";
       var tnsMode = el.hasAttribute('data-tns-gallery') ? "gallery" : "carousel";
       var options = {
         container: sel,
@@ -52,8 +80,10 @@ export default class TinySlider {
         speed: tnsSpeed,
         onInit : (info) => {
           this.addClassName(this, sel, info);
+          this.setActiveElementConnectedList(temp, info.displayIndex - 1);
         },
       }
+
       if(tnsItems) {
         options = { ...options, items : tnsItems };
       }
@@ -61,7 +91,11 @@ export default class TinySlider {
       var temp = tns(options);
       temp.events.on("indexChanged", (info, eventName) => {
         this.addClassName(temp, sel, info);
+        this.setActiveElementConnectedList(temp, info.displayIndex - 1);
       });
+
+      window.temp = temp;
+      this.buttonOnClick(temp);
       
       
       

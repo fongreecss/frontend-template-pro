@@ -1,24 +1,23 @@
 
 {% set randomNumber = random() %}
-<section id="c-person-info-id-{{ randomNumber }}" class="c-person-info-slider c-person-info-slider-1 lg:bg-arcticsilver lg:pt-26">
+<section id="c-person-info-id-{{ randomNumber }}" class="c-person-info-slider c-person-info-slider-1 bg-arcticsilver pt-14 lg:pt-26 pb-10 lg:pb-0">
 	<div class="container-only-lg relative">
 		<div class="flex flex-wrap -mx-5">
 			<div class="col-12 xl:offset-1 lg:col-6 xl:col-4 relative">
-				<h2 class="lg:h2 title text-coalblack lg:mb-3">{{ params.title }}</h2>
-				<p class="small-paragraph lg:small-paragraph text-textgray lg:mb-5" style="max-width:296px;">{{ params.description }}</p>
+				<h2 class="h4 lg:h2 title text-coalblack mb-2 lg:mb-3">{{ params.title }}</h2>
+				<p class="small-paragraph lg:small-paragraph text-textgray mb-8 lg:mb-5" style="max-width:296px;">{{ params.description }}</p>
 				{% if params.cta %}
 					<div class="">
 						<a href="{{ params.cta.url }}" class="button button-full medium-button w-full lg:w-auto">{{ params.cta.title }}</a>
 					</div>
 				{% endif %}
-
 			</div>
-		</div>
-		<div id="person-slider-{{ randomNumber }}" class="flex flex-wrap relative w-full lg:-mt-56 tns-slider cursor-pointer" data-tns-loop  data-tns-gallery data-tns-items="1">
+		</div><!-- .row -->
+		<div id="person-slider-{{ randomNumber }}" class="flex flex-wrap relative w-full lg:mx-0 lg:-mt-56 tns-slider cursor-pointer" data-tns-loop  data-tns-gallery data-tns-items="1">
 			{% for item in params.items %}
 				<div class="col-12 relative select-none">
-					<div class="flex flex-wrap -mx-5">
-						<div class="col-12 lg:col-3 xl:col-3">
+					<div class="flex flex-wrap -mx-10 lg:-mx-5">
+						<div class="hidden lg:block col-12 lg:col-3 xl:col-3">
                             <div class="absolute lg:bottom-16 lg:-right-5 flex">
                                 <button class="tns-prev-button flex items-center" onClick="(function(){ prevButton_{{ randomNumber }}(); })();">
                                     <svg class="inline-block mr-2" width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -46,15 +45,31 @@
 							<h5 class="h5 lg:h5 title text-coalblack">{{ item.title }}</h5>
 							<p class="arboria-main-button text-midtonegray mb-3 lg:mb-7">{{ item.jobtitle }}</p>
 							{% if item.quote %}
-								<p class="regular-quote lg:regular-quote text-coalblack mb-4 lg:mb-5">{{ item.quote }}</p>
+								<p class="regular-quote lg:regular-quote text-coalblack mb-10 lg:mb-5">{{ item.quote }}</p>
 							{% endif %}
 
-                            <div class="lg:absolute lg:bottom-16 flex">
+                            <div class="lg:absolute lg:bottom-16 flex justify-end lg:justify-start">
+								<button class="tns-prev-button flex lg:hidden items-center" onClick="(function(){ prevButton_{{ randomNumber }}(); })();">
+                                    <svg class="hidden lg:inline-block mr-2" width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.293 5.293l1.414 1.414L10.414 12l5.293 5.293-1.414 1.414L7.586 12l6.707-6.707z" fill="#1A262E"/>
+                                    </svg>
+                                    <span class="hidden lg:inline-block text-coalblack arboria-main-button">{{ params.items[loop.index0 - 1].title is defined ? params.items[loop.index0 - 1].title : params.items[loop.length - 1].title  }}</span>
+									<!-- .mobile button -->
+									<svg class="inline-block lg:hidden mr-6" width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M30.293 21.293l1.414 1.414L26.414 28l5.293 5.293-1.414 1.414L23.586 28l6.707-6.707z" fill="#1A262E"/>
+										<circle cx="28" cy="28" r="27" stroke="#54BAB3" stroke-width="2" stroke-linecap="round"/>
+									</svg>
+								</button>
+                                <!-- prev button -->
                                 <button class="tns-next-button flex items-center" onClick="(function(){ nextButton_{{ randomNumber }}(); })();">
-                                    <span class="inline-block text-coalblack arboria-main-button">{{ params.items[loop.index0 + 1].title is defined ? params.items[loop.index0 + 1].title : params.items[0].title  }}</span>
-                                    <svg class="inline-block ml-2" width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <span class="hidden lg:inline-block text-coalblack arboria-main-button">{{ params.items[loop.index0 + 1].title is defined ? params.items[loop.index0 + 1].title : params.items[0].title  }}</span>
+                                    <svg class="hidden lg:inline-block ml-2" width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M9 18.707l-1.414-1.414L12.879 12 7.586 6.707 9 5.293 15.707 12 9 18.707z" fill="#1A262E"/>
                                     </svg>
+									<svg class="lg:hidden inline-block mr-5" width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<circle cx="28" cy="28" r="27" stroke="#54BAB3" stroke-width="2" stroke-linecap="round"/>
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M25 34.707l-1.414-1.414L28.879 28l-5.293-5.293L25 21.293 31.707 28 25 34.707z" fill="#1A262E"/>
+									</svg>
                                 </button>
                                 <!-- .next-button -->
                             </div>

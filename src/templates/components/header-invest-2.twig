@@ -2,42 +2,41 @@
 
 Section with header. Landing version 2
 
+@param {string}  mode - dark or light - default light
 @param {string}  logo
-@param {string}  background_image_class
-@param {string}  background_image_desktop
-@param {string}  background_image_mobile
+@param {string}  image
+@param {string}  image_mobile
 @param {string}  title
 @param {string}  description
 @param {object}  cta 
 {
-  @param {string} title
-  @param {string} url
+    @param {string} title
+    @param {string} url
 }
 
 Example:
 
     {% set headerItems = { 
-        "logo" : "assets/images/JonatanMars-logo.svg",
-        "background_image_class" : "mountain-bg-image",
-        "background_image_desktop" : "assets/images/main-bg-1.jpg",
-        "background_image_mobile" : "assets/images/main-bg-1-mobile.jpg",
-        "title": "Upravljalci alternativnih investicijski skladov", 
-        "description": "Making more possible.", 
-        "cta" : { 
-            "title" : "Želim svetovanje", 
-            "url" : "#" 
-        } 
-    } %}
+    "mode" : "dark",
+    "logo" : "assets/images/Realestate-logo-dark.svg",
+    "image" : "assets/images/main-bg-2.jpg",
+    "image_mobile" : "assets/images/main-bg-2-mobile.jpg",
+	"title": "Upravljalci alternativnih investicijski skladov", 
+	"description": "Making more possible.", 
+	"cta" : { 
+		"title" : "Želim svetovanje", 
+		"url" : "#" 
+	} 
 
 #}
 
 {# Output #}
-<header class="c-header c-header-invest-2 {{ params.header_class }} w-full  relative overflow-hidden flex pt-18 lg:pt-0 pb-72 lg:pb-0 lg:justify-center lg:items-center lg:min-h-screen">
-	{% if params.background_image_desktop %}
-		<div style="{{ params.background_image_desktop ? "background-image: url(" ~ params.background_image_desktop ~ ");" : "" }}" class="{{ params.background_image_class ? params.background_image_class : "" }} hidden lg:block absolute top-0 left-0 w-full h-full bg-no-repeat"></div>
+<header class="c-header c-header-invest-2 {{ params.mode == "dark" ? "invest-product-2-header" : "" }} w-full  relative overflow-hidden flex pt-18 lg:pt-0 pb-72 lg:pb-0 lg:justify-center lg:items-center lg:min-h-screen">
+	{% if params.image %}
+		<div style="{{ params.image ? "background-image: url(" ~ params.image ~ ");" : "" }}" class="mountain-bg-image hidden lg:block absolute top-0 left-0 w-full h-full bg-no-repeat"></div>
 	{% endif %}
-	{% if params.background_image_mobile %}
-		<div style="{{ params.background_image_mobile ? "background-image: url(" ~ params.background_image_mobile ~ ");" : "" }}" class="{{ params.background_image_class ? params.background_image_class : "" }} lg:hidden absolute top-0 left-0 w-full h-full bg-no-repeat"></div>
+	{% if params.image_mobile %}
+		<div style="{{ params.image_mobile ? "background-image: url(" ~ params.image_mobile ~ ");" : "" }}" class="mountain-bg-image lg:hidden absolute top-0 left-0 w-full h-full bg-no-repeat"></div>
 	{% endif %}
 	<div class="container-only-lg">
 		<div class="flex flex-wrap -mx-5">

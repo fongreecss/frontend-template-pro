@@ -21,18 +21,18 @@ Right side: Image with 3 text items. they should be Animated on scroll effect.
 Example:
 
     {% 
-      set imageAsideItems3 = {
-        "title": "Investment structure.",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "cta" : {
-          "title" : "Želim svetovanje",
-          "url" : "#"
-        },
-        "image" : "assets/images/bricks.png",
-          "textItem1" : "Lastna sredstva",
-          "textItem2" : "Sredstva vlagateljev",
-          "textItem3" : "Bančno financiranje"
-      } 
+		set imageAsideItems3 = {
+			"title": "Investment structure.",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+			"cta" : {
+				"title" : "Želim svetovanje",
+				"url" : "#"
+			},
+			"image" : "assets/images/bricks.png",
+			"textItem1" : "Lastna sredstva",
+			"textItem2" : "Sredstva vlagateljev",
+			"textItem3" : "Bančno financiranje"
+		} 
     %}
 
 #}
@@ -42,12 +42,8 @@ Example:
 	<div class="container-only-lg">
 		<div class="flex flex-wrap -mx-5 items-center">
 			<div class="col-12 lg:col-6 xl:col-5 xl:offset-1 order-0 {{ params.image_first == true ? 'lg:order-1' : 'lg:order-0'}}">
-				{% if params.title %}
-					<h2 class="h4 lg:h2 title mb-3 lg:mb-6">{{ params.title }}</h2>
-				{% endif %}
-				{% if params.description %}
-					<div class="small-paragraph lg:medium-paragraph mb-8 lg:mb-6 mw-none-mobile" style="max-width:408px;">{{ params.description|raw }}</div>
-				{% endif %}
+				<h2 class="h4 lg:h2 title mb-3 lg:mb-6">{{ params.title }}</h2>
+				<div class="small-paragraph lg:medium-paragraph mb-8 lg:mb-6 mw-none-mobile" style="max-width:408px;">{{ params.description|raw }}</div>
 				{% if params.cta %}
 					<div class="mb-6 lg:mb-0">
 						<a href="{{ params.cta.url }}" class="button button-full medium-button w-full lg:w-auto">{{ params.cta.title }}</a>

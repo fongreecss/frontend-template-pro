@@ -26,7 +26,9 @@ Example:
       "url" : "#"
     },
     "image" : "assets/images/people-working-large.png",
-    "image2" : "assets/images/people-working-large.png"
+	"image_mobile" : "assets/images/people-working-large.png",
+    "image2" : "assets/images/people-working-large.png",
+	"image2_mobile" : "assets/images/people-working-large.png"
   } %}
 
 #}
@@ -38,23 +40,24 @@ Example:
 			<div class="col-12 lg:col-4 xl:col-4 relative mb-8 lg:mb-0">
 				{% if params.image %}
 					<div class="left-image-container">
-						<img src="{{ params.image }}" loading="lazy" alt="" class="object-cover w-full h-full">
+						<img src="{{ params.image }}" loading="lazy" alt="" class="hidden lg:block absolute top-0 left-0 object-cover w-full h-full">
+						<img src="{{ params.image_mobile is defined ? params.image_mobile : params.image }}" loading="lazy" alt="" class="lg:hidden absolute top-0 left-0 object-cover w-full h-full">
 					</div>
 				{% endif %}
 			</div>
 			<div class="col-12 lg:col-6 xl:col-6">
-				{% if params.title %}
-					<h2 class="h5 lg:h3 title mb-6 lg:mb-18 lg:pt-28">{{ params.title }}</h2>
-				{% endif %}
+
+				<h2 class="h5 lg:h3 title mb-6 lg:mb-18 lg:pt-28">{{ params.title }}</h2>
+
 				<div class="xl:offset-2 mw-none-mobile" style="max-width:370px;">
 					{% if params.logo %}
 						<div>
 							<img class="mb-8 lg:mb-6 w-40 h-auto" src="{{ params.logo }}" loading="lazy" alt="">
 						</div>
 					{% endif %}
-					{% if params.description %}
-						<div class="medium-paragraph lg:large-paragraph mb-8 lg:mb-6">{{ params.description|raw }}</div>
-					{% endif %}
+
+					<div class="medium-paragraph lg:large-paragraph mb-8 lg:mb-6">{{ params.description|raw }}</div>
+
 					{% if params.cta %}
 						<div class="mb-8 lg:mb-0">
 							<a href="{{ params.cta.url }}" class="button button-full medium-button w-full lg:w-auto">{{ params.cta.title }}</a>
@@ -65,7 +68,8 @@ Example:
 			<div class="col-12 lg:col-2 xl:col-2 relative">
 				{% if params.image2 %}
 					<div class="right-image-container">
-						<img src="{{ params.image2 }}" loading="lazy" alt="" class="object-cover w-full h-full">
+						<img src="{{ params.image2 }}" loading="lazy" alt="" class="hidden lg:block absolute top-0 left-0 object-cover w-full h-full">
+						<img src="{{ params.image2_mobile is defined ? params.image2_mobile : params.image2 }}" loading="lazy" alt="" class="lg:hidden absolute top-0 left-0 object-cover w-full h-full">
 					</div>
 				{% endif %}
 			</div>

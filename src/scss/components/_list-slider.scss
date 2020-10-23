@@ -1,0 +1,39 @@
+.c-list-slider-1 {
+    .list-slider-item svg {
+        opacity:0;
+    }
+    .list-slider-item.active svg {
+        opacity:1;
+    }
+
+    .list-slider-item.active span {
+        @apply text-peppermint relative;
+
+        &:after {
+            content:"";
+            width: 100%;
+            height:2px;
+            bottom:0px;
+            position: absolute;
+            @apply bg-peppermint;
+            left:0;
+        }
+        @screen lg {
+            @apply text-coalblack relative pb-0;
+            &:after {
+                content:none;
+            }
+        }
+    }
+
+    .image-container {
+        @apply relative w-screen h-0 pb-screen -ml-5 mb-4;
+        @screen lg {
+            @apply mb-0 pb-0 absolute left-5 top-0 h-full;
+            width: calc(100% + 160px);
+        }
+        @screen xl {
+            width: calc(100% + 68px);
+        }
+    }
+}

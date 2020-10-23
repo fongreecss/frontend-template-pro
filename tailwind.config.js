@@ -69,6 +69,8 @@ module.exports = {
       '60' : '15rem',
       '64': '16rem',
       '68' : '17rem',
+      '69' : '17.25rem',
+      '70' : '17.5rem',
       '72' : '18rem',
       '75' : '18.75rem',
       '80' : '20rem',
@@ -109,6 +111,7 @@ module.exports = {
       '-1/20' : '-5%',
       'gutter' : '20px',
       'full' : '100%',
+      'screen' : '100vw',
       
     },
     backgroundColor: theme => theme('colors'),

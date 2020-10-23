@@ -44,7 +44,8 @@
 		"title" : "Naročite svetovalca",
 		"url" : "#"
 	},
-	"image" : "assets/images/men-talking-mobile.png",
+	"image" : "assets/images/men-talking.png",
+	"image_mobile" : "assets/images/men-talking-mobile.png",
     "layout" : 1,
 } %}
 
@@ -56,6 +57,7 @@
 		"url" : "#"
 	},
 	"image" : "assets/images/office-empty-mobile.png",
+	"image_mobile" : "assets/images/office-empty-mobile.png",
     "layout" : 2,
 } %}
 
@@ -326,11 +328,7 @@ our clients as well.",
 
 {%
     set personInfoSliderItems = {
-       "image" : "assets/images/Vegelj4-big.png",
-       "image_mobile": "assets/images/Vegelj4-big.png",
        "title": "Naši finančni svetovalci",
-       "jobtitle" : "Cheif investment officer",
-       "quote" : "Key statement about the product and how exciting it is, or some other manner of interesting quote.",
        "description" : "Vsi registrirani uporabniki ste enkrat letno upravičeni do brezplačnega pregleda portfelja.",
        "cta" : {
            "title" : "NAROČITE SVETOVALCA",
@@ -345,14 +343,14 @@ our clients as well.",
                "image_mobile": "assets/images/Vegelj4-big.png",
 		   },
 		   {
-			   "title" : "Dr. David Vegelj 2",
+			   "title" : "Dr. Radovan Obal",
 			   "quote" : "Key statement about the product and how exciting it is, or some other manner of interesting quote. 2",
 			   "jobtitle" : "Cheif investment officer 2",
 			   "image" : "assets/images/Vegelj4-big.png",
                "image_mobile": "assets/images/Vegelj4-big.png",
 		   },
 		   {
-			   "title" : "Dr. David Vegelj 3",
+			   "title" : "Dr. Aleksander Fras",
 			   "quote" : "Key statement about the product and how exciting it is, or some other manner of interesting quote. 3",
 			   "jobtitle" : "Cheif investment officer 3",
 			   "image" : "assets/images/Vegelj4-big.png",
@@ -385,7 +383,7 @@ our clients as well.",
 		{% include "/templates/components/card-list-3.twig" with { params: cardListItems3 } %}
         <div class="pb-2 lg:pb-22"></div>
         {% include "/templates/components/number-with-description-1.twig" with { params: numberWithDescription } %}
-		<div class="pb-14 lg:pb-20"></div>
+		<div class="pb-2 lg:pb-20"></div>
 		{% include "/templates/components/person-info-slider-1.twig" with { params: personInfoSliderItems } %}
         <div class="pb-14 lg:pb-32"></div>
         {% include "/templates/components/textbox-double-2.twig" with { params: textBoxItems } %}

@@ -1,0 +1,172 @@
+{#
+
+Section with slider. Version 1
+
+On the left there is list of items. On click it triggers the slider to move. 
+
+On the right there is slider with button. should act like gallery. 
+
+@param {string}  title
+@param {string}  description
+@param {array} items [
+    @parra {string} image
+    @param {string} image_mobile
+    @param {string} title
+    @param {string} description
+    @param {object} cta {
+        @param {string} title
+        @param {string} url
+    }
+] 
+
+Example: 
+
+{% set listSliderItems = {
+    "title" : "We offer",
+	"description": "Through our consultancy efforts we achieve an understanding of your personal risk profile, and tailor our recommendations & guidance.",
+    "items" : [
+        {
+            "title" : "Naložbeno svetovanje",
+            "description" : "Through our consultancy efforts we achieve an understanding of your personal risk profile, and tailor our recommendations & guidance.",
+            "image" : "assets/images/men-talking.png",
+            "image_mobile" : "assets/images/men-talking-mobile.png",
+            "cta" : {
+                "title" : "izvejte več",
+                "url" : "#",
+            }
+        },
+        {
+            "title" : "Pokojninsko svetovanje",
+            "description" : "The primary value of Augmented reality is that it brings components of the digital world into a person's perception of the real world, and does so not as a simple display of data, but through the integration of immersive sensations that are perceived as natural parts of an environment. ",
+            "image" : "assets/images/office-empty.png",
+            "image_mobile" : "assets/images/office-empty-mobile.png",
+            "cta" : {
+                "title" : "izvejte več",
+                "url" : "#",
+            }
+        },
+        {
+            "title" : "Izdelava in spremljanje portfelja",
+            "description" : "Through our consultancy efforts we achieve an understanding of your personal risk profile, and tailor our recommendations & guidance.",
+            "image" : "assets/images/man-behind-mobile.png",
+            "image_mobile" : "assets/images/man-behind-mobile.png",
+            "cta" : {
+                "title" : "izvejte več",
+                "url" : "#",
+            }
+        },
+        {
+            "title" : "Optimizacija zavarovalnih polic",
+            "description" : "We examine the risk and cost ratio of every potential investment you are interested in and advise on its viability and worth.",
+            "image" : "assets/images/office-empty.png",
+            "image_mobile" : "assets/images/office-empty-mobile.png",
+            "cta" : {
+                "title" : "izvejte več",
+                "url" : "#",
+            }
+        },
+        {
+            "title" : "Posredovanje pri bančnih storitvah",
+            "description" : "Through our consultancy efforts we achieve an understanding of your personal risk profile, and tailor our recommendations & guidance.",
+            "image" : "assets/images/man-behind-mobile.png",
+            "image_mobile" : "assets/images/man-behind-mobile.png",
+            "cta" : {
+                "title" : "izvejte več",
+                "url" : "#",
+            }
+        },
+    ]
+} %}
+
+#}
+
+{# Output #}
+{% set randomNumber = random() %}
+<div id="c-list-slider-id-{{ randomNumber }}" class="c-list-slider c-list-slider-1">
+	<div class="container-only-lg">
+
+		<div class="flex flex-wrap -mx-5">
+			<div class="col-12 lg:col-4">
+				<div class="h4 lg:h1 title text-coalblack mb-2 lg:mb-3">{{ params.title }}</div>
+			</div>
+		</div>
+
+		<div class="flex flex-wrap -mx-5">
+			<div class="col-12 lg:col-5">
+				<div class="medium-paragraph lg:medium-paragraph text-textgray mb-7 lg:mb-26 mw-none-mobile" style="max-with:408px;">{{ params.description }}</div>
+				<div class="lg:hidden -mx-5 bg-arcticsilver w-screen mb-3" style="height:1px;"></div>
+                <ul class="list-slider-items-menu flex flex-no-wrap -mx-5 lg:mx-0 pl-5 lg:pl-0 lg:block lg:flex-wrap mb-3 lg:mb-0 overflow-x-scroll smooth-scroll hide-scrollbar scroll-snap-type-x-mandatory lg:scroll-snap-type-none">
+					{% for item in params.items %}
+						<li class="list-slider-item inline-flex lg:block select-none scroll-snap-align-none">
+							<button class="relative lg:mb-8 mr-4 lg:mr-0">
+								<svg class="hidden lg:inline-block absolute left-0" style="top:calc(50% - 12px);" width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M16.586 11l-5.293-5.293 1.414-1.414L20.414 12l-7.707 7.707-1.414-1.414L16.586 13H5v-2h11.586z" fill="#54BAB3"/>
+								</svg>
+ 								<span class="text-left arboria-main-button xl:arboria-medium-subheader inline-block lg:pl-12 text-coalblack whitespace-no-wrap lg:whitespace-normal">{{ item.title }}</span>
+							</button>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+			<div class="col-12 lg:col-7">
+				<div class="w-full relative">
+                    <div class="hidden lg:block lg:w-130 xl:w-170 lg:h-69  absolute bottom-0 -left-5" >
+						<button onClick="(function(){ nextButton_{{ randomNumber }}(); })();" class="button-prev h-18 w-18 flex items-center justify-center bg-peppermint absolute left-full top-0" style="z-index:999;">
+							<svg class="inline-block" width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M9 18.707l-1.414-1.414L12.879 12 7.586 6.707 9 5.293 15.707 12 9 18.707z" fill="#1A262E"/>
+							</svg>
+						</button>
+						<button onClick="(function(){ prevButton_{{ randomNumber }}(); })();" class="button-next h-18 w-18 flex items-center justify-center bg-coalblack absolute left-full top-18" style="z-index:999;">
+							<svg class="inline-block" width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M14.293 5.293l1.414 1.414L10.414 12l5.293 5.293-1.414 1.414L7.586 12l6.707-6.707z" fill="white"/>
+							</svg>
+						</button>
+					</div>
+					<ul id="list-slider-{{ randomNumber }}" class="flex flex-wrap relative lg:h-150 tns-slider cursor-pointer" data-tns-connected-menu="#c-list-slider-id-{{ randomNumber }} .list-slider-items-menu" data-tns-loop data-tns-gallery data-tns-items="1">
+						
+                        {% for item in params.items %}
+							<li class="w-full h-full relative">
+								<div class="image-container">
+									<img src="{{ item.image }}" class="absolute top-0 left-0 object-cover w-full h-full" alt="">
+								</div>
+
+								<div class="relative flex flex-wrap bg-white -mx-5 lg:absolute lg:bottom-0 lg:left-0 slider-text-container lg:pt-10 xl:pt-14 lg:pr-10 xl:pr-20 lg:w-130 xl:w-170 lg:h-69" >
+									<div class="col-12 lg:col-6 xl:col-5">
+										<h4 class="h5 lg:h4 title text-coalblack mb-2 lg:mb-8">{{ item.title }}</h4>
+										<p class="small-paragraph text-textgray lg:hidden mb-5">{{ item.description }}</p>
+										{% if item.cta %}
+											<div class="relative">
+												<a href="{{ item.cta.url }}" class="button button-full medium-button w-full lg:w-auto">{{ item.cta.title }}</a>
+											</div>
+										{% endif %}
+									</div>
+									<div class="col-12 lg:col-6 xl:col-7 hidden lg:block">
+										<p class="lg:small-paragraph xl:medium-paragraph text-textgray">{{ item.description }}</p>
+									</div>
+								</div>
+							</li>
+						{% endfor %}
+					</ul>
+                    
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+    function nextButton_{{ randomNumber }}() {
+        var slider =  document.querySelector("#list-slider-{{ randomNumber }}");
+        if(typeof slider.tnsSlider != "undefined" ) {
+            slider.tnsSlider.goTo('next');
+        }
+    }
+    function prevButton_{{ randomNumber }}() {
+        var slider =  document.querySelector("#list-slider-{{ randomNumber }}");
+        if(typeof slider.tnsSlider != "undefined" ) {
+            slider.tnsSlider.goTo('prev');
+        }
+    }
+
+
+</script>

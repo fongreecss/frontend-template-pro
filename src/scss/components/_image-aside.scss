@@ -48,7 +48,8 @@
   }
   .left-image-container,
   .right-image-container {
-    @apply relative -mx-5 h-50;
+    @apply relative -mx-5 h-0;
+    padding-bottom: calc(73%);
   }
   @screen lg {
     .left-image-container {
@@ -56,6 +57,7 @@
       right: 56px;
       height: 710px;
       width: 680px;
+      padding-bottom:0;
       @apply mx-0;
     }
     .right-image-container {
@@ -64,6 +66,7 @@
       width: 572px;
       left: -40px;
       bottom: 0;
+      padding-bottom:0;
     }
   }
 }
