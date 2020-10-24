@@ -130,6 +130,7 @@ our clients as well.",
 		"title": 17,
 		"caption": "Donosnost",
 		"is_percentage": true,
+		"percentage_text" : "procentov"
 	}
 } %}
 
@@ -367,31 +368,83 @@ our clients as well.",
 {% block content %}
 	<main role="main" class="p-consult-5">
         {% include "/templates/components/header-consult-1.twig" with { params: headerItems } %}
-        <div class="pb-14 lg:pb-30"></div>
+
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "53", "desktop" : "144" } } %}
+		{# end spacer #}
+        
 		{% include "/templates/components/text-advanced-2.twig" with { params: textAdvancedItems } %}
-		<div class="pb-14 lg:pb-30"></div>
+
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "53", "desktop" : "120" } } %}
+		{# end spacer #}
+
         {% include "/templates/components/title-with-description-1.twig" with { params: titleWithDescription } %}
-        <div class="pb-8 lg:pb-16"></div>
+
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "64", "desktop" : "66" } } %}
+		{# end spacer #}
+
         {% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems1 } %}
-        <div class="pb-10 lg:pb-36"></div>
+        
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "40", "desktop" : "142" } } %}
+		{# end spacer #}
+
         {% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems2 } %}
-        <div class="pb-10 lg:pb-24"></div>
+
+        {# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "44", "desktop" : "96" } } %}
+		{# end spacer #}
+
         {% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems3 } %}
-		<div class="pb-14 lg:pb-30"></div>
-		{% include "/templates/components/advanced-section-1.twig" with { params: advancedSectionItems } %}
-		<div class="pb-16 lg:pb-44"></div>
+		
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "61", "desktop" : "122" } } %}
+		{# end spacer #}
+
+		{% include "/templates/components/advanced-section-1_2.twig" with { params: advancedSectionItems } %}
+		
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "65", "desktop" : "176" } } %}
+		{# end spacer #}
+
 		{% include "/templates/components/horizontal-list-1.twig" with { params: horizontalListItems  } %}
-		<div class="pb-16 lg:pb-50"></div>
+
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "58", "desktop" : "188" } } %}
+		{# end spacer #}
+
 		{% include "/templates/components/card-list-1.twig" with { params: cardListItems } %}
-		<div class="pb-13 lg:pb-48"></div>
+		
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "54", "desktop" : "170" } } %}
+		{# end spacer #}
+
 		{% include "/templates/components/card-list-3.twig" with { params: cardListItems3 } %}
-        <div class="pb-2 lg:pb-22"></div>
+
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "60", "desktop" : "88" } } %}
+		{# end spacer #}
+
         {% include "/templates/components/number-with-description-1.twig" with { params: numberWithDescription } %}
-		<div class="pb-2 lg:pb-20"></div>
+		
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "8", "desktop" : "80" } } %}
+		{# end spacer #}
+
 		{% include "/templates/components/person-info-slider-1.twig" with { params: personInfoSliderItems } %}
-        <div class="pb-14 lg:pb-32"></div>
+        
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "58", "desktop" : "128" } } %}
+		{# end spacer #}
+
         {% include "/templates/components/textbox-double-2.twig" with { params: textBoxItems } %}
-		<div class="pb-7 lg:pb-36"></div>
+		
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "56", "desktop" : "148" } } %}
+		{# end spacer #}
+
 		{% include "/templates/components/contact-info-1.twig" with { params: contactInfoItems } %}
 	</main>
 {% endblock %}
