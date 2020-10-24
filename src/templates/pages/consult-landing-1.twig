@@ -129,7 +129,7 @@ our clients as well.",
 	"number": {
 		"title": 17,
 		"caption": "Donosnost",
-		"isPercentage": true,
+		"is_percentage": true,
 	}
 } %}
 
@@ -163,32 +163,36 @@ our clients as well.",
 	]
 } %}
 
-{% set textAdvancedItems = {
-    "title" : "During our time in the field of financial consultancy",
-    "items" : [
-      {
-        "title" : "100.000.000",
-        "suptitle" : "Več kot",
-        "caption" : "evrov vloženih sredstev strank"
-      },
-      {
-        "title" : "20.000",
-        "suptitle" : "Več kot",
-        "caption" : "strank"
-      },
-      {
-        "title" : "17%",
-        "suptitle" : "Več kot",
-        "caption" : "donosnost"
-      }
-    ],
-    "cta" : {
-      "title" : "Naročite svetovalca",
-      "url" : "#",
-    },
-    "image" : "assets/images/money-guy.png",
-    "image_mobile" : "assets/images/money-guy-mobile.png",
-  } %}
+{% 
+
+	set textAdvancedItems = {
+		"title" : "During our time in the field of financial consultancy",
+		"items" : [
+		{
+			"title" : "100.000.000",
+			"suptitle" : "Več kot",
+			"caption" : "evrov vloženih sredstev strank"
+		},
+		{
+			"title" : "20.000",
+			"suptitle" : "Več kot",
+			"caption" : "strank"
+		},
+		{
+			"title" : "17%",
+			"suptitle" : "Več kot",
+			"caption" : "donosnost"
+		}
+		],
+		"cta" : {
+		"title" : "Naročite svetovalca",
+		"url" : "#",
+		},
+		"image" : "assets/images/money-guy.png",
+		"image_mobile" : "assets/images/money-guy-mobile.png",
+	} 
+
+%}
 
 {%
     set horizontalListItems = {

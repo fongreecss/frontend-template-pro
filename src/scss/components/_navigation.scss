@@ -1,0 +1,26 @@
+.n-navigation-1 {
+    @screen lg {
+        padding-top: 24px;
+        padding-bottom: 24px;
+        @apply fixed left-0 right-0 bg-white;
+        .logo {
+            width: 188px;
+            height: auto;
+            transition: width 0.4s ease 0s;
+        }
+        z-index:9999;
+        transition: padding-top 0.4s ease 0s, padding-bottom 0.4s ease 0s, box-shadow 0.4s ease 0s;
+    }
+    
+}
+
+.n-navigation-1.sticky {
+    @screen lg {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        .logo {
+            width: 160px;
+        }
+        box-shadow: 0 0 6px 0 rgba(0,0,0,0.2);
+    }
+}

@@ -1,0 +1,24 @@
+{# 
+
+Section spacer. mobile and desktop spacer. units are in px. future - can be negative
+
+@param {string} mobile
+@param {string} desktop
+
+
+Example:
+
+    {% 
+      set spacer = { 
+		"mobile": "10",
+		"desktop" : "20"
+      }
+    %}
+
+#}
+
+{# Output #}
+<div class="c-spacer c-spacer-1">
+    <div style="padding-bottom:{{ params.mobile }}px;" class="lg:hidden"></div>
+    <div style="padding-bottom:{{ params.desktop }}px;" class="hidden lg:block"></div>
+</div>

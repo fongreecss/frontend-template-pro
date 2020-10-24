@@ -1,9 +1,8 @@
 {% extends '/templates/layouts/base.twig' %}
 {% set headerItems = { 
-    "mode" : "dark",
-    "logo" : "assets/images/Realestate-logo-dark.svg",
-    "image" : "assets/images/main-bg-2.jpg",
-    "image_mobile" : "assets/images/main-bg-2-mobile.jpg",
+    "logo" : "assets/images/Realestate-logo-1.svg",
+    "image" : "assets/images/realestate-bright.png",
+    "image_mobile" : "assets/images/realestate-bright-mobile.png",
 	"title": "Upravljalci alternativnih investicijski skladov", 
 	"description": "Making more possible.", 
 	"cta" : { 
@@ -12,65 +11,60 @@
 	} 
 } %}
 
-{% set imageAsideItems = {
-	"title": "Ste pravi tip vlagatelja za invest?",
-	"description": "Our investment board observes the market, our products, educates our consultants and in doing so,
-our clients as well.",
-	"cta" : {
-		"title" : "Spoznajte zdaj",
-		"url" : "#"
-	},
-	"image" : "assets/images/mansuit.jpg"
-} %}
+{% 
+	set imageAsideItems2 = {
+		"title": "An attractive entry point, [note] somehow we need to transition into how JM manages and guides?",
+		"description": "Podjetje, ki je del Skupine Vzajemci. Cilj podjetja je graditi projekte, ki imajo visoko dodano vrednost, in ki bodo pustili pozitiven pečat v slovenski družbi.",
+		"logo" : "assets/images/Realestate-logo-1.svg",
+		"cta" : {
+			"title" : "Izvejte več",
+			"url" : "#"
+		},
+		"image" : "assets/images/people-working-large.png",
+		"image2" : "assets/images/people-working-large.png"
+	} 
+%}
 
-{% set imageAsideItems2 = {
-	"title": "An attractive entry point, [note] somehow we need to transition into how JM manages and guides?",
-	"description": "Podjetje, ki je del Skupine Vzajemci. Cilj podjetja je graditi projekte, ki imajo visoko dodano vrednost, in ki bodo pustili pozitiven pečat v slovenski družbi.",
-	"logo" : "assets/images/Realestate-logo-1.svg",
-	"cta" : {
-		"title" : "Izvejte več",
-		"url" : "#"
-	},
-	"image" : "assets/images/people-working-large.png",
-	"image2" : "assets/images/people-working-large.png"
-} %}
+{% 
+	set imageAsideItems3 = {
+		"title": "Investment structure.",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+		"cta" : {
+			"title" : "Želim svetovanje",
+			"url" : "#"
+		},
+		"image" : "assets/images/bricks.png",
+		"textItem1" : "Lastna sredstva",
+		"textItem2" : "Sredstva vlagateljev",
+		"textItem3" : "Bančno financiranje"
+	} 
+%}
 
-{% set imageAsideItems3 = {
-	"title": "Investment structure.",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-	"cta" : {
-		"title" : "Želim svetovanje",
-		"url" : "#"
-	},
-	"image" : "assets/images/bricks.png",
-    "textItem1" : "Lastna sredstva",
-    "textItem2" : "Sredstva vlagateljev",
-    "textItem3" : "Bančno financiranje"
-} %}
+{# 
+	set textBoxItems = { 
 
-{% set textBoxItems = { 
+	"items" : [
+		{ 
+			"title": "More is possible", 
+			"description": "JonatanMars is a spin-off company of VZAJEMCI Group, and is a result of its extensive presence and influence in the field of finance in the past 18 years.", 
+			"cta" : { "title" : "Izvejte več", "url" : "#" },
+			"number": 78,
+			"percentage": true,
+			"title2": "Startup-ov namerava zaposlit novi kader",
+		},
+		{ 
+			"title": "Nepremičnine", 
+			"description": "Podjetje, ki je del Skupine Vzajemci. Cilj podjetja je graditi projekte, ki imajo visoko dodano vrednost, in ki bodo pustili pozitiven pečat v slovenski družbi.", 
+			"cta" : { "title" : "Izvejte več", "url" : "#" },
+			"number": 42,
+			"title2": "Stanovanj" 
+		}
+	] 
 
-"items" : [
-	{ 
-		"title": "More is possible", 
-		"description": "JonatanMars is a spin-off company of VZAJEMCI Group, and is a result of its extensive presence and influence in the field of finance in the past 18 years.", 
-		"cta" : { "title" : "Izvejte več", "url" : "#" },
-		"number": 78,
-		"percentage": true,
-		"title2": "Startup-ov namerava zaposlit novi kader",
-	},
-	{ 
-		"title": "Nepremičnine", 
-		"description": "Podjetje, ki je del Skupine Vzajemci. Cilj podjetja je graditi projekte, ki imajo visoko dodano vrednost, in ki bodo pustili pozitiven pečat v slovenski družbi.", 
-		"cta" : { "title" : "Izvejte več", "url" : "#" },
-		"number": 42,
-		"title2": "Stanovanj" 
-	}
-] 
+	} 
+#}
 
-} %}
-
-{% set advancedSectionItems = {
+{# set advancedSectionItems = {
 	"title": "Naložbeni odbor",
 	"description": "Our investment board observes the market, our products, educates our consultants and in doing so,
 our clients as well.",
@@ -87,59 +81,67 @@ our clients as well.",
 	"number": {
 		"title": 17,
 		"caption": "Donosnost",
-		"isPercentage": true,
+		"is_percentage": true,
 	}
-} %}
+} #}
 
 
-{% set bannerItems = {
-	"title": "Make more possible. ",
-	"cta" : {
-		"title" : "Želim svetovanje",
-		"url" : "#",
-        "caption" : "Or learn more about us"
-	},
-    "cta2" : {
-		"title" : "Video klic v živo",
-		"url" : "#",
-        "caption" : "3 trenutno aktivni"
-	},
-} %}
+{# 
+	set bannerItems = {
+		"title": "Make more possible. ",
+		"cta" : {
+			"title" : "Želim svetovanje",
+			"url" : "#",
+			"caption" : "Or learn more about us"
+		},
+		"cta2" : {
+			"title" : "Video klic v živo",
+			"url" : "#",
+			"caption" : "3 trenutno aktivni"
+		},
+	} 
+#}
 
-{% set quoteItems = {
-	"title": "We don’t just build to sell, we wish to add value to the community.",
-	"cta" : {
-		"title" : "Želim svetovanje",
-		"url" : "#"
-	}
-} %}
+{% 
+	set quoteItems = {
+		"title": "We don’t just build to sell, we wish to add value to the community.",
+		"cta" : {
+			"title" : "Želim svetovanje",
+			"url" : "#"
+		}
+	} 
+%}
 
-{% set bannerAdvancedItems = {
-	"stitle": "Best in class realestate projects.",
-	"title": "Vila Destino",
-	"description" : "Pomen imena Vile Destino je zadnja pot, saj se po investitorjevem mnenju enkrat vselite in tam tudi ostanete.",
-	"cta" : {
-		"title" : "Obiščite stran projekta",
-		"url" : "#"
-	},
-	"text_first" : true,
-	"image" : "assets/images/penthouse1.jpg",
-	"image_mobile" : "assets/images/penthouse1-mobile.jpg",
-} %}
+{% 
+	set bannerAdvancedItems = {
+		"stitle": "Best in class realestate projects.",
+		"title": "Vila Destino",
+		"description" : "Pomen imena Vile Destino je zadnja pot, saj se po investitorjevem mnenju enkrat vselite in tam tudi ostanete.",
+		"cta" : {
+			"title" : "Obiščite stran projekta",
+			"url" : "#"
+		},
+		"text_first" : true,
+		"image" : "assets/images/penthouse1.jpg",
+		"image_mobile" : "assets/images/penthouse1-mobile.jpg",
+	} 
+%}
 
 
-{% set bannerAdvancedItems2 = {
-	"title": "Soseka Sereno",
-	"description" : "Pomen imena Vile Destino je zadnja pot, saj se po investitorjevem mnenju enkrat vselite in tam tudi ostanete.",
-	"cta" : {
-		"title" : "Obiščite stran projekta",
-		"url" : "#"
-	},
-	"image" : "assets/images/penthouse2.jpg",
-	"image_mobile" : "assets/images/penthouse2-mobile.jpg",
-} %}
+{% 
+	set bannerAdvancedItems2 = {
+		"title": "Soseka Sereno",
+		"description" : "Pomen imena Vile Destino je zadnja pot, saj se po investitorjevem mnenju enkrat vselite in tam tudi ostanete.",
+		"cta" : {
+			"title" : "Obiščite stran projekta",
+			"url" : "#"
+		},
+		"image" : "assets/images/penthouse2.jpg",
+		"image_mobile" : "assets/images/penthouse2-mobile.jpg",
+	} 
+%}
 
-{% set bannerAdvancedItems3 = {
+{# set bannerAdvancedItems3 = {
 
 	"description": "investicija, ki je odporna na gibanje trga. Za investitorje, ki želijo ",
 	"textItem1" : "Stabilnost",
@@ -151,27 +153,110 @@ our clients as well.",
 	},
 	"image" : "assets/images/trak-penthouse.png",
 	"mode" : "dark",
-} %}
+} #}
+
+{%
+    set timelineItems = {
+        "title" : "Več kot samo financiranje razvoja. Za investitorje, ki želijo",
+                
+        "items" : [
+            {
+                "title" : "Pustiti pečat",
+                "description" : "Vsi registrirani uporabniki ste enkrat letno upravičeni do brezplačnega pregleda portfelja.",
+            },
+            {
+                "title" : "Ustvarjati delovna mesta",
+                "description" : "November Prevzem vodilnega mesta med finančno posredniškimi hišami v Sloveniji. Prevzem vodilnega mesta med finančno posredniškimi hišami v Sloveniji.",
+            },
+            {
+                "title" : "Vzpodbujeno rast",
+                "description" : "Prevzem vodilnega mesta med finančno posredniškimi hišami v Sloveniji. Prevzem vodilnega mesta med finančno posredniškimi hišami v Sloveniji.",
+            },
+        ]
+    }
+%}
+
+{% 
+
+	set contactInfoItems = {
+		"title" : "Full set of great features to make your product fresh and clean.",
+		"description" : "Vsi registrirani uporabniki ste enkrat letno upravičeni do brezplačnega pregleda portfelja.",
+		"items" : [
+			{
+				"title" : "080 35 08",
+				"url" : "tel:00386803508"
+			},
+			{
+				"title" : "Kontakti in lokacija",
+				"url" : "#"
+			},
+			{
+				"title" : "info@vzajemci.com",
+				"url" : "#"
+			}
+		],
+		"cta" : {
+			"title" : "Naročite svetovalca",
+			"url" : "#",
+		}
+	} 
+%}
+
+{% 
+	set imageAsideItems = {
+		"title": "Ste pravi tip vlagatelja za invest?",
+		"description": "Not sales, but consultancy. Our interests are in providing excellent advice and mentorship for our clients.",
+		"cta" : {
+			"title" : "Naročite svetovalca",
+			"url" : "#"
+		},
+		"layout" : 6,
+		"image" : "assets/images/mansuit.jpg",
+		"image_mobile" : "assets/images/mansuit.jpg",
+	} 
+%}
 
 {% block content %}
-	<main role="main" class="p-invest-landing">
-        {% include "/templates/components/header-invest-2.twig" with { params: headerItems } %}
-        <div class="pb-20 lg:pb-0"></div>
-		{% include "/templates/components/banner-advanced-2.twig" with { params: bannerAdvancedItems3 } %}
-        <div class="pb-12 lg:pb-10"></div>
-        {% include "/templates/components/banner-advanced-1.twig"   with { params: bannerAdvancedItems } %}
-        <div class="pb-16 lg:pb-10"></div>
-        {% include "/templates/components/quote-1.twig"         with { params: quoteItems } %}
-        <div class="pb-12 lg:pb-10"></div>
+	<main role="main" class="p-invest-product-2">
+        {% include "/templates/components/header-invest-3.twig" with { params: headerItems } %}
+        <div class="pb-14 lg:pb-0 lg:-mb-15"></div>
+        {% include "/templates/components/timeline-2.twig" with { params: timelineItems } %}
+        
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "96", "desktop" : "120" } } %}
+		{# end spacer #}
+
+		{% include "/templates/components/banner-advanced-1.twig"   with { params: bannerAdvancedItems } %}
+		
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "80", "desktop" : "128" } } %}
+		{# end spacer #}
+
+		{% include "/templates/components/quote-1.twig"         with { params: quoteItems } %}
+
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "88", "desktop" : "128" } } %}
+		{# end spacer #}
+
 		{% include "/templates/components/banner-advanced-1.twig"   with { params: bannerAdvancedItems2 } %}
-		<div class="pb-32 lg:pb-36"></div>
+		
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "64", "desktop" : "144" } } %}
+		{# end spacer #}
+
 		{% include "/templates/components/image-aside-4.twig"   with { params: imageAsideItems3 } %}
-		<div class="pb-32 lg:pb-36"></div>
+		
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "144", "desktop" : "144" } } %}
+		{# end spacer #}
+
 		{% include "/templates/components/image-aside-3.twig"   with { params: imageAsideItems2 } %}
-		<div class="pb-32 lg:pb-36"></div>
-        {% include "/templates/components/banner-2.twig"        with { params: bannerItems } %}
-		<div class="pb-32 lg:pb-36"></div>
-		{% include "/templates/components/image-aside-2.twig"   with { params: imageAsideItems } %}
-		<div class="pb-0 lg:pb-36"></div>
+		
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "96", "desktop" : "140" } } %}
+		{# end spacer #}
+
+		{% include "/templates/components/contact-info-1.twig" with { params: contactInfoItems } %}
+		
 	</main>
 {% endblock %}

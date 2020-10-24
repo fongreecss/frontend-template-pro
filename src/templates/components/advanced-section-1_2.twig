@@ -1,6 +1,6 @@
 {#
 
-Advanced section version 1
+Slightly altered advanced section version 1. version 1_2
 
 @param {string}  title
 @param {string}  description
@@ -44,6 +44,7 @@ Example:
             "title": 17,
             "caption": "Donosnost",
             "is_percentage": true,
+			"percentage_text" : "procentov"
         }
     } %}
 #}
@@ -66,14 +67,14 @@ Example:
 				<div class="hidden lg:block w-full h-130 relative">
 					<img src="{{ params.image }}" alt="{{ params.caption }}" class="absolute top-0 left-0 object-cover w-full h-full">
 				</div>
-				<div class="lg:hidden w-full h-0 relative" style="padding-bottom:calc(150%);">
+				<div class="lg:hidden w-full h-0 relative" style="padding-bottom:calc(100%);">
 					<img src="{{ params.image_mobile is defined ? params.image_mobile : params.image }}" alt="{{ params.caption }}" class="absolute top-0 left-0 object-cover w-full h-full">
 				</div>
 			</div>
 		</div>
 		<div class="flex flex-wrap -mx-5">
-			<div class="col-12 lg:col-7 xl:col-6 xl:offset-1">
-				<div class="medium-paragraph lg:large-paragraph pt-3 lg:pt-10 mb-8 lg:mb-8 mw-none-mobile" style="max-width:520px;">{{ params.description }}</div>
+			<div class="col-12 lg:col-7 xl:col-6 xl:offset-1 order-1 lg:order-0">
+				<div class="medium-paragraph lg:large-paragraph pt-3 lg:pt-10 mb-4 lg:mb-8 mw-none-mobile" style="max-width:520px;">{{ params.description }}</div>
 				{% if params.cta %}
 					<a href="{{ params.cta.url }}" class="button button-full medium-button w-full lg:w-auto mb-4 lg:mb-0 xl:mr-8 lg:inline-block">{{ params.cta.title }}</a>
 				{% endif %}
@@ -81,23 +82,28 @@ Example:
 					<a href="{{ params.cta2.url }}" class="button button-empty medium-button w-full lg:w-auto lg:inline-block">{{ params.cta2.title }}</a>
 				{% endif %}
 			</div>
-			<div class="col-12 lg:col-5 xl:col-4">
-				<div class="h6 title relative lg:px-14 pt-10 pb-8 lg:bg-arcticsilver lg:mb-10">{{ params.caption }}</div>
+			<div class="col-12 lg:col-5 xl:col-4 order-0 lg:order-1">
+				<div class="hidden lg:block h6 title relative lg:px-14 pt-10 pb-8 lg:bg-arcticsilver lg:mb-10">{{ params.caption }}</div>
 				{% if params.number %}
-					<div class="lg:px-14 mb-1 flex lg:block justify-center">
-						<div class="relative py-4 lg:py-0">
-							<div class="lg:hidden absolute top-0 bottom-0 right-1/2 w-screen -z-1 bg-arcticsilver"></div>
-							<span class="lg-number number-mask inline-block" style="background-image: url({{manifest(" assets/images/mask1.svg")}});">{{ params.number.title }}</span>
+					<div class="px-8 pb-9 lg:pb-0 lg:px-14 flex lg:block relative">
+						<div class="lg:hidden absolute left-0 -right-5 h-full tpp-0 bg-arcticsilver -z-1"></div>
+						<div class="relative -mt-15 lg:mt-0">
+							<span class="lg-number number-mask inline-block" style="background-image: url({{manifest(" assets/images/mask17.svg")}});">{{ params.number.title }}</span>
 							{% if params.number.is_percentage == true %}
-								<span class="h1 large-title inline-block text-peppermint ">%</span>
+								<span class="h1 large-title hidden lg:inline-block text-peppermint ">%</span>
+								{% if params.number.percentage_text %}
+								<p class="lg:hidden mt-3 text-peppermint arboria-main-button">{{ params.number.percentage_text }}</p>
+								{% endif %}
 							{% endif %}
 							{% if params.number.caption %}
-								<div class="h5 title text-peppermint">{{ params.number.caption }}</div>
+								<div class="h4 lg:h5 title mb-6 lg:mb-0 text-coalblack lg:text-peppermint">{{ params.number.caption }}</div>
 							{% endif %}
+							<div class="lg:hidden h6 title text-coalblack">{{ params.caption }}</div>
 						</div>
 					</div>
 					<!-- number -->
 				{% endif %}
+				
 			</div>
 		</div>
 	</div>

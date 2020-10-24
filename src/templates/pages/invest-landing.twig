@@ -1,43 +1,49 @@
-{% set title = "neki neki" %}
 {% extends '/templates/layouts/base.twig' %}
-{% set headerItems = { 
-	"title": "Ustvarjeno za vas", 
-	"description": "Our investment board observes the market, our products, educates our consultants and in doing so,
-our clients as well.", 
-	"cta" : { 
-		"title" : "Spoznajte odbor", 
-		"url" : "#" 
-	},
-	"items" : [
-		{
-			"image" : "assets/images/man1.jpg",
-			"number" : "12%",
-			"caption" : "odstotkov več"
-		},
-		{
-			"image" : "assets/images/man1.jpg",
-			"number" : "16%",
-			"caption" : "odstotkov več"
-		},
-		{
-			"image" : "assets/images/man1.jpg",
-			"number" : "121%",
-			"caption" : "odstotkov več"
-		}
-	]
-} %}
 
-{% set imageAsideItems = {
-	"title": "Ste pravi tip vlagatelja za invest?",
-	"description": "Our investment board observes the market, our products, educates our consultants and in doing so,
-our clients as well.",
-	"cta" : {
-		"title" : "Spoznajte zdaj",
-		"url" : "#"
-	},
-	"image" : "assets/images/mansuit.jpg",
-	"image_mobile" : "assets/images/mansuit.jpg",
-} %}
+{% 
+
+	set headerItems = { 
+		"title": "Ustvarjeno za vas", 
+		"description": "Our investment board observes the market, our products, educates our consultants and in doing so,
+	our clients as well.", 
+		"cta" : { 
+			"title" : "Spoznajte odbor", 
+			"url" : "#" 
+		},
+		"items" : [
+			{
+				"image" : "assets/images/man1.jpg",
+				"number" : "12%",
+				"caption" : "odstotkov več"
+			},
+			{
+				"image" : "assets/images/man1.jpg",
+				"number" : "16%",
+				"caption" : "odstotkov več"
+			},
+			{
+				"image" : "assets/images/man1.jpg",
+				"number" : "121%",
+				"caption" : "odstotkov več"
+			}
+		]
+	} 
+
+%}
+
+{% 
+	set imageAsideItems = {
+		"title": "Ste pravi tip vlagatelja za invest?",
+		"description": "Not sales, but consultancy. Our interests are in providing excellent advice and mentorship for our clients.",
+		"cta" : {
+			"title" : "Naročite svetovalca",
+			"url" : "#"
+		},
+		"layout" : 6,
+		"image" : "assets/images/mansuit.jpg",
+		"image_mobile" : "assets/images/mansuit.jpg",
+	} 
+%}
 
 {% 
 	set textBoxItems = { 
@@ -61,75 +67,133 @@ our clients as well.",
 	} 
 %}
 
-{% set advancedSectionItems = {
-	"title": "Naložbeni odbor",
-	"description": "Our investment board observes the market, our products, educates our consultants and in doing so,
-our clients as well.",
-	"cta" : {
-		"title" : "Spoznajte zdaj",
-		"url" : "#"
-	},
-	"cta2" : {
+{% 
+
+	set advancedSectionItems = {
+		"title": "Naložbeni odbor",
+		"description": "Our investment board observes the market, our products, educates our consultants and in doing so,
+	our clients as well.",
+		"cta" : {
+			"title" : "Spoznajte odbor",
+			"url" : "#"
+		},
+		"cta2" : {
+			"title" : "Naročite svetovalca",
+			"url" : "#"
+		},
+		"image" : "assets/images/office-empty-2.png",
+		"image_mobile" : "assets/images/office-empty-2-mobile.png",
+		"caption": "Stranke, ki so sodelovale z našimi svetovalci, so v zadnjem letu v povprečju ustvarile",
+		"number": {
+			"title": 17,
+			"caption": "Donosnosti",
+			"is_percentage": true,
+			"percentage_text" : "Procentov"
+		}
+	} 
+
+%}
+
+
+{# 
+
+	set bannerItems = {
+		"title": "During our time in the field of financial consultancy",
+		"cta" : {
+			"title" : "Želim svetovanje",
+			"url" : "#"
+		},
+		"chartItems" : [
+			{
+				"number" : "100.000.000",
+				"caption": "evrov vloženih sredstev strank"
+			}, 
+			{
+				"number" : "20.000",
+				"caption": "strank, ki nam zaupajo"
+			},
+			{
+				"number" : "18",
+				"caption": "let na trgu"
+			},
+			{
+				"number" : "40",
+				"caption": "poslovnih partnerjev"
+			},
+			{
+				"number" : "700",
+				"caption": "objavljenih člankov"
+			},
+			{
+				"number" : "15",
+				"caption": "svetovalcev"
+			},
+		],
+	} 
+
+#}
+
+{% 
+
+	set textAdvancedItems = {
+		"title" : "During our time in the field of financial consultancy",
+		"items" : [
+		{
+			"title" : "100.000.000",
+			"suptitle" : "Več kot",
+			"caption" : "evrov vloženih sredstev strank"
+		},
+		{
+			"title" : "20.000",
+			"suptitle" : "Več kot",
+			"caption" : "strank"
+		},
+		{
+			"title" : "17%",
+			"suptitle" : "Več kot",
+			"caption" : "donosnost"
+		}
+		],
+		"cta" : {
 		"title" : "Naročite svetovalca",
-		"url" : "#"
-	},
-	"image" : "assets/images/people-working.jpg",
-	"image_mobile" : "assets/images/people-working.jpg",
-	"caption": "Stranke, ki so sodelovale z našimi svetovalci, so v zadnjem letu v povprečju ustvarile",
-	"number": {
-		"title": 17,
-		"caption": "Donosnost",
-		"isPercentage": true,
-	}
-} %}
+		"url" : "#",
+		},
+		"image" : "assets/images/money-guy.png",
+		"image_mobile" : "assets/images/money-guy-mobile.png",
+	} 
 
-
-{% set bannerItems = {
-	"title": "During our time in the field of financial consultancy",
-	"cta" : {
-		"title" : "Želim svetovanje",
-		"url" : "#"
-	},
-	"chartItems" : [
-		{
-			"number" : "100.000.000",
-			"caption": "evrov vloženih sredstev strank"
-		}, 
-		{
-			"number" : "20.000",
-			"caption": "strank, ki nam zaupajo"
-		},
-		{
-			"number" : "18",
-			"caption": "let na trgu"
-		},
-		{
-			"number" : "40",
-			"caption": "poslovnih partnerjev"
-		},
-		{
-			"number" : "700",
-			"caption": "objavljenih člankov"
-		},
-		{
-			"number" : "15",
-			"caption": "svetovalcev"
-		},
-	],
-} %}
-
+%}
 
 {% block content %}
 	<main role="main" class="p-invest-landing">
 		{% include "/templates/components/header-invest-1.twig" with { params: headerItems } %}
-		<div class="pb-0 lg:pb-36"></div>
-		{% include "/templates/components/textbox-double-1.twig" with { params: textBoxItems } %}
-		<div class="pb-32 lg:pb-36"></div>
-		{% include "/templates/components/image-aside-2.twig" with { params: imageAsideItems } %}
-		<div class="pb-32 lg:pb-32"></div>
-		{% include "/templates/components/advanced-section-1.twig" with { params: advancedSectionItems } %}
-		<div class="pb-32 lg:pb-32"></div>
-		{% include "/templates/components/banner-1.twig" with { params: bannerItems } %}
-		<div class="pb-0 lg:pb-38"></div>
+
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "0", "desktop" : "148" } } %}
+		{# end spacer #}
+
+		{% include "/templates/components/textbox-double-2.twig" with { params: textBoxItems } %}
+
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "96", "desktop" : "210" } } %}
+		{# end spacer #}
+
+		{% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems } %}
+
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "101", "desktop" : "130" } } %}
+		{# end spacer #}
+
+		{% include "/templates/components/advanced-section-1_2.twig" with { params: advancedSectionItems } %}
+
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "100", "desktop" : "130" } } %}
+		{# end spacer #}
+
+		{% include "/templates/components/text-advanced-2.twig" with { params: textAdvancedItems } %}
+		
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "0", "desktop" : "80" } } %}
+		{# end spacer #}
 	</main>
 {% endblock %}

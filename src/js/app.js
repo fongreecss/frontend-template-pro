@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('body').classList.add('dom-ready');
   document.querySelector('html').classList.remove('no-js');
   //new CookieNotice();
-  //new Navigation();
+  new Navigation();
   new TinySlider();
   new Parallax();
   new OrderForm();

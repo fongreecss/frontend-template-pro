@@ -1,6 +1,7 @@
 # Frontend
 
 DEMO RAZREZA: http://vzajemci.alfra.si/
+Ure: 142 ur dp 19.oktober
 
 ## Features
 - Templating using Twig

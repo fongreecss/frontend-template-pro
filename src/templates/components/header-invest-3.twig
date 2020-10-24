@@ -6,7 +6,7 @@ Right side: image with pattern behind
 
 @param {string}  image
 @param {string}  image_mobile
-@param {string}  suptitle - text above normal title
+@param {string}  logo
 @param {string}  title - header main title 
 @param {string}  description
 @param {object}  cta - left full button
@@ -16,28 +16,35 @@ Right side: image with pattern behind
 }
 
 Example: 
-    {% set headerItems = { 
-      "image" : "assets/images/woman-sitting.png",
-      "image_mobile" : "assets/images/women-talking-mobile.png",
-    	"title": "Services", 
-    	"description": "Namen naložbenega svetovanja je, da stranka oz. vlagatelj doseže zastavljeni naložbeni cilj z izpostavljanjem čim nižjem tveganju.", 
-    	"suptitle" : "Certified expertise",
-    	"cta" : { 
-    		"title" : "Naročite svetovalca", 
-    		"url" : "#" 
-    	} 
-    } %}
+
+    {%
+        set headerItems = { 
+            "logo" : "assets/images/JonatanMars-logo.svg",
+            "image" : "assets/images/main-bg-1.jpg",
+            "image_mobile" : "assets/images/main-bg-1-mobile.jpg",
+            "title": "Upravljalci alternativnih investicijski skladov", 
+            "description": "Making more possible.", 
+            "cta" : { 
+                "title" : "Želim svetovanje", 
+                "url" : "#" 
+            } 
+        }
+    %} 
 #}
 
 {# Output #}
-<header class="c-header c-header-consult-2 w-full relative lg:pt-36">
+<header class="c-header c-header-invest-3 w-full relative pt-16 lg:pt-36">
 	<div class="container-only-lg">
 		<div class="flex flex-wrap -mx-5">
 
 			<div class="col-12 lg:col-6 xl:col-5 xl:offset-1">
-				<div class="mt-9 lg:mt-14 lg:h6 title mb-1 lg:mb-2 text-peppermint">{{ params.suptitle }}</div>
-				<h1 class="h4 lg:h1 title text-coalblack mb-2 lg:mb-3">{{ params.title }}</h1>
-				<p class="medium-paragraph lg:large-paragraph text-textgray mb-9 lg:mb-8 mw-none-mobile" style="max-width:408px;">{{ params.description }}</p>
+                {% if params.logo %}
+					<div class="lg:mt-14 mb-2 lg:mb-4">
+						<img class="header-logo w-40 h-auto" src="{{ params.logo }}" alt="">
+					</div>
+				{% endif %}
+				<h1 class="h5 lg:h2 title text-coalblack mb-2 lg:mb-3">{{ params.title }}</h1>
+				<p class="medium-paragraph lg:large-paragraph text-textgray mb-8 lg:mb-8 mw-none-mobile" style="max-width:408px;">{{ params.description }}</p>
 				<div class="hidden lg:block">
 					<a href="{{ params.cta.url }}" class="button button-full medium-button w-full lg:w-auto">{{ params.cta.title }}</a>
 				</div>

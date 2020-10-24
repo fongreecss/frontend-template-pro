@@ -17,7 +17,8 @@
   &.layout-2 .image-container,
   &.layout-3 .image-container,
   &.layout-4 .image-container,
-  &.layout-5 .image-container {
+  &.layout-5 .image-container,
+  &.layout-6 .image-container {
     @apply w-full h-0 pb-full mb-4;
     @screen lg {
       @apply mb-0;
@@ -35,6 +36,47 @@
   &.layout-1 .title {
     @screen lg {
       @apply mt-10;
+    }
+  }
+
+  .pattern-container {
+    position: absolute;
+    @screen lg {
+      width:182px;
+      height:182px;
+    }
+  }
+  @screen lg {
+    &.layout-1 .pattern-container 
+    {
+        bottom:65px;
+        left:-64px;
+    }
+    &.layout-2 .pattern-container 
+    {
+        top:-40px;
+        right:-40px;
+    }
+    &.layout-3 .pattern-container 
+    {
+        bottom:-40px;
+        right:40px;
+    }
+    &.layout-4 .pattern-container 
+    {
+        bottom:64px;
+        right:-64px;
+    }
+    &.layout-5 .pattern-container 
+    {
+        bottom:144px;
+        left:-64px;
+        transform: scale(-1,1);
+    }
+    &.layout-6 .pattern-container 
+    {
+        top:-54px;
+        left:96px;
     }
   }
 }

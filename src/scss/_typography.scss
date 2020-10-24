@@ -175,12 +175,12 @@ h1.title {
   font-style: normal;
   font-weight: 500;
   font-size: 456px;
-  line-height: 320px;
+  line-height: 342px;
   /* identical to box height, or 70% */
   letter-spacing: -1px;
 }
 
-.medium-button {
+.medium-button-bu {
   /* Medium button */
   font-family: "Roboto Condensed";
   font-style: normal;
@@ -189,6 +189,17 @@ h1.title {
   line-height: 24px;
   /* identical to box height, or 150% */
   letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.medium-button {
+  font-family: "Arboria";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 24px;
+  /* identical to box height, or 171% */
+  letter-spacing: 0.02em;
   text-transform: uppercase;
 }
 
@@ -561,20 +572,19 @@ h1.title {
     font-style: normal;
     font-weight: 500;
     font-size: 456px;
-    line-height: 320px;
+    line-height: 342px;
     /* identical to box height, or 70% */
     letter-spacing: -1px;
   }
 
   .lg\:medium-button {
-    /* Medium button */
-    font-family: "Roboto Condensed";
+    font-family: "Arboria";
     font-style: normal;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 24px;
-    /* identical to box height, or 150% */
-    letter-spacing: 0.04em;
+    /* identical to box height, or 171% */
+    letter-spacing: 0.02em;
     text-transform: uppercase;
   }
 
@@ -764,9 +774,7 @@ h1.title {
   font-family: "Tiempos Text";
 }
 
-
 @screen xl {
-
   .xl\:arboria-medium-subheader {
     font-family: "Arboria", "Tiempos Headline";
     font-style: normal;
@@ -777,5 +785,4 @@ h1.title {
     letter-spacing: 0.02em;
     text-transform: uppercase;
   }
-
 }

@@ -8,6 +8,14 @@
   }
 }
 
+.button-narrow {
+  padding-top:11px;
+  padding-bottom:13px;
+  padding-left:24px;
+  padding-right:24px;
+  
+}
+
 .button-main,
 .button-full {
   @apply bg-peppermint text-white;

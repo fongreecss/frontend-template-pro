@@ -1,13 +1,12 @@
 {#
     
-Section with timeline. Sliders, should be animated..
+Section with timeline. Version 2. Sliders, should be animated..
 
 @param {string}  title
 @param {array}  items [
     {
-        @param {string} year
-        @param {string} month - in words
-		@param {string} description
+        @param {string} title
+        @param {string} description
     }
 ]
 
@@ -18,38 +17,21 @@ Example:
 
         {%
             set timelineItems = {
-                "title" : "Timeline",
+                "title" : "Več kot samo financiranje razvoja. Za investitorje, ki želijo",
                 
                 "items" : [
                     {
-                        "year" : "2015",
-                        "month" : "Oktober",
-                        "description" : "Prevzem vodilnega mesta med finančno posredniškimi hišami v Sloveniji. Prevzem vodilnega mesta med finančno posredniškimi hišami v Sloveniji.",
+                        "title" : "pustiti pečat",
+                        "description" : "Vsi registrirani uporabniki ste enkrat letno upravičeni do brezplačnega pregleda portfelja.",
                     },
                     {
-                        "year" : "2016",
-                        "month" : "November",
+                        "title" : "Ustvarjati delovna mesta",
                         "description" : "November Prevzem vodilnega mesta med finančno posredniškimi hišami v Sloveniji. Prevzem vodilnega mesta med finančno posredniškimi hišami v Sloveniji.",
                     },
                     {
-                        "year" : "2017",
-                        "month" : "May",
+                        "title" : "Vzpodbujeno rast",
                         "description" : "Prevzem vodilnega mesta med finančno posredniškimi hišami v Sloveniji. Prevzem vodilnega mesta med finančno posredniškimi hišami v Sloveniji.",
                     },
-                    {
-                        "year" : "2018",
-                        "month" : "May",
-                        "description" : "Prevzem vodilnega mesta med finančno posredniškimi hišami v Sloveniji. Prevzem vodilnega mesta med finančno posredniškimi hišami v Sloveniji.",
-                    },
-                    {
-                        "year" : "2019",
-                        "month" : "December"
-                    },
-                    {
-                        "year" : "2019",
-                        "month" : "May"
-                    },
-
                 ]
             }
         %}
@@ -58,22 +40,21 @@ Example:
 
 {# Output #}
 {% set randomNumber = random() %}
-<section id="c-timeline-id-{{ randomNumber }}" class="c-timeline c-timeline-1 bg-coalblack pt-12 pb-10 lg:pt-28 lg:pb-28">
+<section id="c-timeline-2-id-{{ randomNumber }}" class="c-timeline c-timeline-2 bg-coalblack pt-12 pb-10 lg:pt-28 lg:pb-28">
 	<div class="container-only-lg">
 		<div class="flex flex-wrap -mx-5">
-			<div class="col-12 xl:col-11 xl:offset-1">
-				<h2 class="h4 lg:h1 title text-white mb-6 lg:mb-11">{{ params.title }}</h2>
+			<div class="col-12 lg:col-7 xl:col-5 xl:offset-1">
+				<h2 class="h5 lg:h4 title text-white mb-6 lg:mb-20">{{ params.title }}</h2>
 			</div>
 		</div>
 	</div>
 	<div class="container-only-lg">
 		<div class="timeline-container relative">
-			<ul id="slider-timeline-{{ randomNumber }}" class="flex flex-wrap -mx-5 w-full tns-slider cursor-pointer" data-tns-next-button="#c-timeline-id-{{ randomNumber }} .tns-next-button" data-tns-prev-button="#c-timeline-id-{{ randomNumber }} .tns-prev-button" data-tns-controls data-tns-autowidth data-tns-mouse-drag>
+			<ul id="slider-timeline-{{ randomNumber }}" class="flex flex-wrap -mx-5 w-full tns-slider cursor-pointer" data-tns-next-button="#c-timeline-2-id-{{ randomNumber }} .tns-next-button" data-tns-prev-button="#c-timeline-2-id-{{ randomNumber }} .tns-prev-button" data-tns-controls data-tns-autowidth data-tns-mouse-drag>
 				{% for item in params.items %}
-					<li class="col-6 lg:col-4 {{ loop.index == 1 ? " xl:offset-1" : " " }} lg:px-5 select-none">
-						<div class="relative pb-26 lg:pb-32 timer-upper">
-							<p class="text-peppermint tiny-tag lg:arboria-small-subheader">{{ item.month }}</p>
-							<h5 class="h5 lg:h4 title text-white">{{ item.year }}</h5>
+					<li class="col-8 lg:col-4 {{ loop.index == 1 ? " xl:offset-1" : " " }} lg:px-5 select-none">
+						<div class="relative pb-24 lg:pb-30 timer-upper">
+							<h5 class="timeline-title">{{ item.title }}</h5>
 							<div class="timeline-bullet" style="border-radius:50%;"></div>
 						</div>
 
@@ -91,9 +72,8 @@ Example:
 
 					</li>
 				{% endfor %}
-				<li class="col-6 lg:col-4 lg:px-5 select-none">
+				<li class="col-8 lg:col-4 lg:px-5 select-none">
 					<div class="relative pb-11 lg:pb-32 timer-upper">
-						<p class="text-transparent tiny-tag lg:arboria-small-subheader">xx</p>
 						<h5 class="h5 lg:h4 title text-transparent">xx</h5>
 					</div>
 					<div class="">
@@ -101,9 +81,8 @@ Example:
 						<p class="small-paragraph lg:medium-paragraph text-transparent lg:mb-11">xx</p>
 					</div>
 				</li>
-				<li class="hidden lg:inline-block col-6 lg:col-4 lg:px-5 select-none">
+				<li class="hidden lg:inline-block col-8 lg:col-4 lg:px-5 select-none">
 					<div class="relative pb-11 lg:pb-32 timer-upper">
-						<p class="text-transparent tiny-tag lg:arboria-small-subheader">xx</p>
 						<h5 class="h5 lg:h4 title text-transparent">xx</h5>
 					</div>
 					<div class="">

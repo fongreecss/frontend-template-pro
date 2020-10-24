@@ -1,6 +1,6 @@
 {#
 
-Person info - version 1
+Person info - version 2
 Left: image with pattern
 Right: text. Name, job title, quote, description and cta
 
@@ -9,7 +9,7 @@ Right: text. Name, job title, quote, description and cta
 @param {string} title - name of person
 @param {string} jobtitle - position of person
 @param {string} quote - her/his quote
-@param {string} description
+@param {bool}   image_first - true or false - default is false
 @param {object}  cta 
 {
   @param {string} title
@@ -25,21 +25,21 @@ Example:
         "title": "Dr. David Vegelj",
         "jobtitle" : "Cheif investment officer",
         "quote" : "Key statement about the product and how exciting it is, or some other manner of interesting quote.",
-        "description" : "Vsi registrirani uporabniki ste enkrat letno upravičeni do brezplačnega pregleda portfelja. Vsi registrirani uporabniki ste enkrat letno upravičeni do brezplačnega pregleda portfelja.",
         "cta" : {
             "title" : "NAROČITE SVETOVALCA",
             "url" : "#"
-        }
+        },
+        "image_first" : true, 
       }
   %}
 
 #}
 
 {# Output #}
-<section class="c-person-info c-person-info-1 lg:bg-arcticsilver">
+<section class="c-person-info c-person-info-2 {{ params.image_first == true ? "lg:bg-transparent" : "lg:bg-arcticsilver" }}">
 	<div class="container-only-lg">
-		<div class="flex flex-wrap -mx-5 lg:items-center">
-			<div class="col-12 lg:col-6 xl:offset-1 xl:col-5 bg-arcticsilver lg:bg-transparent lg:mt-34">
+		<div class="flex flex-wrap lg:items-center -mx-5">
+			<div class="col-12 lg:col-6 xl:col-5 bg-arcticsilver lg:bg-transparent lg:mt-22 {{ params.image_first == true ? "xl:offset-1 lg:order-0" : "lg:order-1" }}">
 				<div class="hidden lg:block w-full relative overflow-hidden" style="height:620px;">
 					<svg class="absolute h-auto max-w-none" style="width:60%; top:22%; left:20%;" width="174" height="174" viewBox="0 0 174 174" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<mask id="a" maskUnits="userSpaceOnUse" x="0" y="0" width="174" height="174">
@@ -65,12 +65,11 @@ Example:
 				</div>
 				
 			</div>
-			<div class="col-12 lg:col-6 xl:col-5">
+			<div class="col-12 lg:col-6 xl:col-5 {{ params.image_first == true ? "lg:order-1" : "xl:offset-1 lg:order-0" }}">
 				<div class="h-1 w-8 bg-peppermint mt-8 lg:mt-0 mb-2"></div>
 				<h5 class="h5 lg:h5 title text-coalblack">{{ params.title }}</h5>
 				<p class="arboria-main-button text-midtonegray mb-3 lg:mb-7">{{ params.jobtitle }}</p>
-				<p class="regular-quote lg:leading-quote text-coalblack mb-4 lg:mb-5">{{ params.quote }}</p>
-				<p class="medium-paragraph lg:medium-paragraph text-textgray mb-8 lg:mb-10">{{ params.description }}</p>
+				<p class="regular-quote lg:leading-quote text-coalblack mb-8 lg:mb-8">{{ params.quote }}</p>
 				{% if params.cta %}
 					<div class="">
 						<a href="{{ params.cta.url }}" class="button button-full medium-button w-full lg:w-auto">{{ params.cta.title }}</a>
