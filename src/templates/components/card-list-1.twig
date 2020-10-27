@@ -90,7 +90,7 @@ Example:
 			{% if params.featured_item %}
 				<a href="{{ params.featured_item.url }}" class="hidden lg:block card card-featured h-75 lg:h-100 lg:mb-10">
 					<div class="flex relative items-end w-full h-full">
-						<img src="{{ params.featured_item.image }}" class="absolute top-0 left-0 object-contain w-full h-full">
+						<img loading="lazy" src="{{ params.featured_item.image }}" class="absolute top-0 left-0 object-contain w-full h-full">
 						<div class="card-featured-bg absolute w-full h-full top-0 left-0"></div>
 						<div class="px-4 py-8 lg:px-10 lg:py-10 lg:pb-15 z-10">
 							<svg class="inline-block mb-5" width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -108,7 +108,7 @@ Example:
 			<div class="flex flex-wrap -mx-5 ">
 				<a href="{{ params.featured_item.url }}" class="block lg:hidden card-featured w-full h-0 pb-full select-none relative">
 					<div class="flex items-end w-full h-full absolute top-0 left-0">
-						<img src="{{ params.featured_item.image }}" class="absolute top-0 left-0 object-contain w-full h-full">
+						<img loading="lazy" src="{{ params.featured_item.image }}" class="absolute top-0 left-0 object-contain w-full h-full">
 						<div class="card-featured-bg absolute w-full h-full top-0 left-0"></div>
 						<div class="px-4 py-8 z-10">
 							<svg class="inline-block mb-5" width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">

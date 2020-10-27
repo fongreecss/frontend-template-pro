@@ -1,18 +1,12 @@
 export default class Navigation {
   constructor() {
 
-    //this.container = document.querySelector('.navigation');
-    //this.items = document.getElementById('navigationItems');
-
-    //this.btnToggle = document.getElementById('navigationToggle');
-    //this.openClass = 'navigation--open';
-    //this.overflowClass = 'overflow-hidden';
-
-    //this.btnToggle.addEventListener('click', this.toggleNavigation.bind(this));
-
-    this.header = document.querySelector('.n-navigation');
+    this.header = document.querySelector('.n-navigation-sticky');
+    if(!this.header) {
+      return;
+    }
     this.sticky = this.header.offsetTop;
-
+  
     window.addEventListener('scroll', () => {
       if (window.pageYOffset > this.sticky) {
         this.header.classList.add("sticky");
@@ -34,8 +28,5 @@ export default class Navigation {
   /**
    * Show navigation on mobile
    */
-  toggleNavigation() {
-    this.container.classList.toggle(this.openClass);
-    document.querySelector('body').classList.toggle(this.overflowClass);
-  }
+
 }

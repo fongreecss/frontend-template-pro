@@ -30,16 +30,16 @@ Example:
 #}
 
 {# Output #}
-<section class="c-progress-bar c-progress-bar-1">
+<section class="c-progress-bar c-progress-bar-1" data-inviewport="once" data-inviewport-offsety="40">
 	<div class="container-only-lg">
 		<div class="flex flex-wrap -mx-10 lg:-mx-5">
 			<div class="col-12 px-0 lg:px-5">
 				<div class="bg-image-left-container">
-					<img src="{{ manifest("assets/images/three-small-3.png") }}" class="object-cover h-full w-full" alt="">
+					<img loading="lazy" src="{{ manifest("assets/images/three-small-3.png") }}" class="object-cover h-full w-full" alt="">
 				</div>
 				<div class="w-full bg-arcticsilver h-75 lg:h-75 overflow-hidden relative">
 					<div class="progress-bar number-{{ params.number }} bg-peppermint h-full absolute top-0 left-0"></div>
-					<div class="lg3-number number mask-number bg-white" style="background-image: url({{manifest(" assets/images/mask1.svg")}});">{{ params.number }}</div>
+					<div class="lg3-number relative number mask-number bg-peppermint" style="background-image: url({{manifest(" assets/images/mask-progress.svg")}});">{{ params.number }}</div>
 					{% if params.is_percent == true %}
 						<div class="percent h2 lg:h1 title text-midtonegray">%</div>
 					{% endif %}

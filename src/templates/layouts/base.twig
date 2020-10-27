@@ -39,14 +39,16 @@
 
 <body class="flex flex-col min-h-screen bg-white">
 
-  {% include 'templates/components/navigation-1.twig' %}
+  {% include '/templates/layouts/navigation-' ~ divisionName ~ '.twig' ignore missing %}
 
   <div class="flex-grow">
   {% block content %}{% endblock %}
   </div>
 
-  {% include 'templates/layouts/footer.twig' %}
-  {# include 'templates/components/cookie-notice.twig' #}
+  {% include '/templates/layouts/footer-' ~ divisionName ~ '.twig' ignore missing %}
+ 
+  
+  {# include '/templates/components/cookie-notice.twig' #}
 
   {{ function('wp_footer') }}
 

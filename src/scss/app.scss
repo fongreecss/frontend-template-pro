@@ -8,7 +8,8 @@
 
 @tailwind utilities;
 
-@import "../../node_modules/tiny-slider/src/tiny-slider.scss";
+@import "../../node_modules/tiny-slider/src/tiny-slider";
+@import "../../node_modules/odometer/themes/odometer-theme-default";
 @import "../../node_modules/pikaday/scss/pikaday";
 @import "typography";
 @import "colors";
@@ -22,7 +23,7 @@
 @import "./components/we-offer";
 @import "./components/button";
 @import "./components/card-list";
-@import "./components/input";
+@import "./components/input"; 
 @import "./components/text";
 @import "./components/list-slider";
 @import "./components/text-with-note";
@@ -60,7 +61,8 @@ body {
 
 .container-only-lg,
 .container-lg-only,
-.container-wider {
+.container-wider,
+.container-fs {
   width: 100%;
   margin-right: auto;
   margin-left: auto;
@@ -82,4 +84,13 @@ body {
   .container-wider {
     max-width: 1408px;
   }
+
+  .container-fs {
+    max-width: none;
+  }
+}
+
+html[data-modal-prevent-scrolling],
+html[data-modal-prevent-scrolling] body {
+  overflow-y: hidden;
 }

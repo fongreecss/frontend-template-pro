@@ -35,7 +35,7 @@ Example:
             {% endif %}
             {% if params.cta %}
             <a href="{{ params.cta.url }}" class="inline-block relative mb-12 lg:mb-16 ">
-              <img src="{{ manifest('assets/images/buttons/button_md-s.svg') }}" class="top-0 left-0 w-full h-full absolute max-h-none max-w-none shadow-button ls-is-cached lazyloaded">
+              <img loading="lazy" src="{{ manifest('assets/images/buttons/button_md-s.svg') }}" class="top-0 left-0 w-full h-full absolute max-h-none max-w-none shadow-button ls-is-cached lazyloaded">
               <div class="relative inline-block text-white text-xs leading-none text-center uppercase font-bold py-4 lg:py-5 px-6 rounded-none text-shadow-button">{{ params.cta.title }}</div>
             </a>
             {% endif %}

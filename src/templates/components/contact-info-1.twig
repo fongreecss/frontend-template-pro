@@ -60,7 +60,7 @@ Example:
 						<li class="">
 							<a href="{{ item.url }}" class="block contact-info-link lg:medium-paragraph text-white pt-4 pb-5 lg:pt-0 lg:pb-0 lg:pl-6 lg:pr-6 border-midtonegray lg:border-r border-solid relative {{ loop.index == 1 ? " lg:border-l" : " border-t lg:border-t-0"}}">
 								{{ item.title }}
-								<img src="{{ manifest('assets/images/caret-right.svg') }}" class="absolute inline-block lg:hidden right-0" alt="" style="top:calc(50% - 7px);">
+								<img loading="lazy" src="{{ manifest('assets/images/caret-right.svg') }}" class="absolute inline-block lg:hidden right-0" alt="" style="top:calc(50% - 7px);">
 							</a>
 						</li>
 					{% endfor %}

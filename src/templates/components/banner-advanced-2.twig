@@ -48,7 +48,7 @@ Example:
 		<div class="flex flex-wrap -mx-10 lg:-mx-5 lg:mb-14">
 			<div class="col-12 lg:col-11 lg:offset-1 relative">
 				<div class="paralax-section lg:relative">
-					<img class="w-full h-full object-cover" src="{{ params.image }}" alt="">
+					<img loading="lazy" class="w-full h-full object-cover" src="{{ params.image }}" alt="">
 					{% if params.textItem1 %}
 						<div class="text-1 h5 lg:h1 title {{ params.mode == " light" ? " text-coalblack" : " text-white" }}">{{ params.textItem1 }}</div>
 					{% endif %}

@@ -1,10 +1,11 @@
 .c-progress-bar-1,
 .c-progress-bar-2 {
   [class*=" number-"] {
+    width:0;
     transition: width 1s ease 0.5s;
   }
   @for $i from 1 through 100 {
-    .number-#{$i} {
+    &.js-inviewport .number-#{$i} {
       width: $i * 1%;
     }
   }
@@ -88,8 +89,12 @@
 }
 
 .c-progress-bar-3 {
+  [class*=" number-"] {
+    height:0;
+    transition: height 1s ease 0.5s;
+  }
   @for $i from 1 through 100 {
-    .number-#{$i} {
+    &.js-inviewport .number-#{$i} {
       height: $i * 1%;
     }
   }

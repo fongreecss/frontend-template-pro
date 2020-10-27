@@ -105,7 +105,7 @@ has chart as image in center (on desktop)
 							<div class="h3 title text-white">{{ params.chartItems[1].number }}</div>
 							<div class="small-subheader text-white">{{ params.chartItems[1].caption }}</div>
 						</div>
-						<img class="chart-image" style="" src="{{ manifest('assets/images/chart-mobile.png') }}">
+						<img loading="lazy" class="chart-image" style="" src="{{ manifest('assets/images/chart-mobile.png') }}">
 						{% for item in params.chartItems.slice(2, params.chartItems|length) %}
 							<div class="chart-number chart-number-{{loop.index}}">
 								<div class="chart-number-h h5 title text-white lg:text-coalblack">{{ item.number }}</div>

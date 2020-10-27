@@ -1,0 +1,43 @@
+{% 
+      set navigationItems = { 
+        "logo": "assets/images/Invest-logo.svg",
+        "homepage_url" : "/invest-landing.html",
+
+        "mm_items" : [
+            {
+                "image" : "assets/images/Academy-logo.svg",
+                "title" : "Vse o vašem finančnem življenju na enem mestu",
+                "url" : "#"
+            },
+            {
+                "image" : "assets/images/Consulting-logo.svg",
+                "title" : "Vaš partner pri doseganju finančnih ciljev.",
+                "url" : "/consult-landing-1.html"
+            },
+            {
+                "image" : "assets/images/Invest-logo.svg",
+                "title" : "Najboljše finančne produktne rešitve, ustvarjene za vas.",
+                "url" : "/invest-landing.html",
+                "is_active" : true
+            }
+        ],
+        "mm_items2_title" : "Raziščite tudi",
+        "mm_items2" : [
+            {
+                "image" : "assets/images/johnatan-mars-logo-menu.svg",
+                "url" : "/invest-product-1.html"
+            },
+            {
+                "image" : "assets/images/realestate-logo-menu.svg",
+                "url" : "/invest-product-2.html"
+            },
+        ],
+        "cta" : { 
+          "title" : "Naročite svetovalca", 
+          "url" : "#" 
+        }
+      } 
+
+%}
+
+{% include '/templates/layouts/navigation-1.twig' with {params : navigationItems } %}

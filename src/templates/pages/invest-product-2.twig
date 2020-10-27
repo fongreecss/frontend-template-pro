@@ -1,4 +1,5 @@
 {% extends '/templates/layouts/base.twig' %}
+
 {% set headerItems = { 
     "logo" : "assets/images/Realestate-logo-1.svg",
     "image" : "assets/images/realestate-bright.png",
@@ -119,7 +120,7 @@ our clients as well.",
 		"description" : "Pomen imena Vile Destino je zadnja pot, saj se po investitorjevem mnenju enkrat vselite in tam tudi ostanete.",
 		"cta" : {
 			"title" : "Obiščite stran projekta",
-			"url" : "#"
+			"url" : "https://nepremicnine.vzajemci.com/sl/projekti/vila-destino"
 		},
 		"text_first" : true,
 		"image" : "assets/images/penthouse1.jpg",
@@ -134,7 +135,7 @@ our clients as well.",
 		"description" : "Pomen imena Vile Destino je zadnja pot, saj se po investitorjevem mnenju enkrat vselite in tam tudi ostanete.",
 		"cta" : {
 			"title" : "Obiščite stran projekta",
-			"url" : "#"
+			"url" : "https://nepremicnine.vzajemci.com/sl/projekti/soseska-sereno"
 		},
 		"image" : "assets/images/penthouse2.jpg",
 		"image_mobile" : "assets/images/penthouse2-mobile.jpg",
@@ -216,8 +217,10 @@ our clients as well.",
 	} 
 %}
 
+{% set divisionName = 'invest' %}
+
 {% block content %}
-	<main role="main" class="p-invest-product-2">
+	<main role="main" class="p-invest p-invest-product-2">
         {% include "/templates/components/header-invest-3.twig" with { params: headerItems } %}
         <div class="pb-14 lg:pb-0 lg:-mb-15"></div>
         {% include "/templates/components/timeline-2.twig" with { params: timelineItems } %}
@@ -257,6 +260,16 @@ our clients as well.",
 		{# end spacer #}
 
 		{% include "/templates/components/contact-info-1.twig" with { params: contactInfoItems } %}
+
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "96", "desktop" : "188" } } %}
+		{# end spacer #}
+
+		{% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems } %}
+		
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "96", "desktop" : "110" } } %}
+		{# end spacer #}
 		
 	</main>
 {% endblock %}

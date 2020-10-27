@@ -1,0 +1,268 @@
+{#
+    Navigation with megamenu on desktop and two switchers on mobile. one is for pages and other is for menu
+
+    {#
+
+Simple section with text. - Version 2
+Text sections. SHould only contain text. Without images. 
+
+
+@param {string}  logo - path to logo
+@paran {string} homepage_url
+@param {array} menu_items [
+    @param {string} title
+    @param {string} url
+]
+@param {array} mm_items [
+    @param {string} image
+    @param {string} title
+    @param {string} url
+    @param {string} is_active - true or false - depends on page.
+]
+@param {string} mm_items2_title
+@param {array} mm_items2 [
+    @param {string} image
+    @param {string} url
+]
+@param {object} cta 
+{
+  @param {string}  title
+  @param {string}  url
+}
+
+Example:
+
+    {% 
+      set navigationItems = { 
+        "logo": "assets/images/Consulting-logo.svg",
+        "homepage_url" : "/consult-landing-1.html",
+        "menu_items" : [
+            {
+                "title" : "Consultant",
+                "url" : "/consult-all-advisors-2.html"
+            }, 
+            {
+                "title" : "Services",
+                "url" : "/consult-services-4.html"
+            },
+            {
+                "title" : "About",
+                "url" : "/consult-about-7.html"
+            }
+        ],
+        "mm_items" : [
+            {
+                "image" : "assets/images/Academy-logo.svg",
+                "title" : "Vse o vašem finančnem življenju na enem mestu",
+                "url" : "#"
+            },
+            {
+                "image" : "assets/images/Consulting-logo.svg.svg",
+                "title" : "Vaš partner pri doseganju finančnih ciljev.",
+                "url" : "/consult-landing-1.html",
+                "is_active" : true
+            },
+            {
+                "image" : "assets/images/Invest-logo.svg",
+                "title" : "Najboljše finančne produktne rešitve, ustvarjene za vas.",
+                "url" : "/invest-landing.html"
+            }
+
+        ],
+        "mm_items2_title : "Raziščite tudi",
+        "mm_items2" : [
+            {
+                "image" : "assets/images/johnatan-mars-logo-menu.svg",
+                "url" : "/invest-product-1.html"
+            },
+            {
+                "image" : "assets/images/realestate-logo-menu.svg",
+                "url" : "/invest-product-2.html"
+            },
+        ],
+        "cta" : { 
+          "title" : "Naročite svetovalca", 
+          "url" : "#" 
+        }
+      } 
+    %}
+
+#}
+<section class="hidden lg:block n-navigation n-navigation-sticky n-navigation-1 relative bg-white">
+	<div class="container-fs">
+		<div class="flex flex-wrap -mx-5 justify-between items-center">
+			<div class="col-3">
+				<div class="flex items-center">
+					<a href="{{ params.homepage_url }}">
+						<img src="{{ params.logo }}" class="logo mr-6" alt="">
+					</a>
+					<div class=" bg-arcticsilver" style="width:2px; height:48px;"></div>
+
+					<div class="caret-container flex items-center cursor-pointer px-6" style="height:48px;" data-modal-trigger="#desktop-megamenu-1">
+						<svg class="inline-block" width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M7 10l5 5 5-5H7z" fill="#1A262E"/>
+						</svg>
+					</div>
+
+				</div>
+			</div>
+			<!-- .col -->
+			<div class="col-6">
+                
+				<ul class="nav flex flex-wrap justify-center">
+                    {% for item in params.menu_items %}
+					<li>
+						<a class="px-4 arboria-navigation-button text-coalblack" href="{{ item.url }}">{{ item.title }}</a>
+					</li>
+                    {% endfor %}
+				</ul>
+			</div>
+			<div class="col-3">
+                {% if params.cta %}
+				<div class="flex justify-end">
+					<a href="{{ params.cta.url }}}" data-order-consultant="any" class="button button-narrow button-empty medium-button w-full lg:w-auto">{{ params.cta.title }}</a>
+				</div>
+                {% endif %}
+			</div>
+		</div>
+	</div>
+	<ul id="desktop-megamenu-1" class="megamenu-desktop">
+		<div class="container-fs">
+
+			<div class="flex flex-wrap -mx-5 py-4">
+                {% for item in params.mm_items %}
+				<li class="col-3 relative mm-item {{ item.is_active is defined ? "active" : "" }}">
+					<a href="{{ item.url }}" class="py-6 block relative">
+						<img src="{{ item.image }}" class="mb-8 w-auto" style="height:72px;" alt="">
+						<p class="medium-paragraph text-textgray" style="max-width:264px;">{{ item.title }}</p>
+						
+					</a>
+                    <div class="absolute bg-lighttonegray h-full top-0 right-5" style="width:1px;"></div>
+				</li>
+                {% endfor %}
+
+				<li class="col-3">
+					<div class="ml-auto py-2" style="max-width:274px;">
+
+						<p class="big-tag text-midtonegray mb-6">{{ params.mm_items2_title }}</p>
+                        {% for item in params.mm_items2 %}
+						<a href="{{ item.url }}" class="flex items-center {{ loop.last == true ? "" : "mb-6" }}">
+							<img src="{{ item.image }}" class="h-auto" style="width:160px;" alt="">
+							<svg class="ml-8" width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M14.27 8H6.708V6h11v11h-2V9.392L8 17l-1.414-1.414L14.27 8z" fill="#54BAB3"/>
+							</svg>
+						</a>
+                        {% endfor %}
+
+					</div>
+				</li>
+
+			</div>
+		</div>
+	</ul>
+</section>
+
+
+<!-- .mobile -->
+<section class="block lg:hidden n-navigation n-navigation-1-m bg-white">
+	<!-- page-switcher-1 -->
+	<ul id="page-switcher-1" class="switcher-page bg-white">
+		<div class="container-only-lg">
+			<div class="flex flex-wrap -mx-5">
+                {% for item in params.mm_items %}
+				<li class="mm-item col-12 border-b border-lighttonegray {{ item.is_active is defined ? "active" : "" }}">
+					<a href="{{ item.url }}" class="py-4 block relative ">
+						<img src="{{ item.image }}" class="mb-4 w-auto" style="height:56px;" alt="">
+						<p class="medium-paragraph text-textgray" style="max-width:264px;">{{ item.title }}</p>
+					</a>
+				</li>
+                {% endfor %}
+
+                {% if params.mm_items2 %}
+				<li class="col-12">
+					
+                    <div class="py-4">
+
+						<p class="big-tag text-midtonegray mb-5">{{ params.mm_items2_title }}</p>
+
+						<div class="flex justify-between items-center">
+                            
+                            {% for item in params.mm_items2 %}
+							<a href="{{ item.url }}" class="inline-flex items-center">
+								<img src="{{ item.image }}" class="w-auto" style="height:44px;" alt="">
+							</a>
+                            {% endfor %}
+
+						</div>
+
+					</div>
+
+				</li>
+                {% endif %}
+
+			</div>
+		</div>
+	</ul>
+
+	<!-- .menu-switcher-1 -->
+	<ul id="menu-switcher-1" class="switcher-menu bg-white flex flex-col justify-end">
+		<div class="container-only-lg absolute top-0 left-0 w-full">
+			<div class="flex flex-wrap -mx-5">
+				<li class="col-12">
+					<a href="{{ params.homepage_url }}" class="py-4 block relative ">
+						<img src="{{ params.logo }}" class="mb-4 w-auto" style="height:56px;" alt="">
+					</a>
+				</li>
+			</div>
+		</div>
+		<div class="container-only-lg">
+			<div class="flex flex-wrap -mx-5">
+                {% for item in params.menu_items %}
+				<li class="col-12 border-b border-lighttonegray">
+					<a class="block py-4 arboria-navigation-button text-coalblack" href="{{ item.url }}">{{ item.title }}</a>
+				</li>
+                {% endfor %}
+                {% if params.cta %}
+				<li class="col-12">
+					<div class="flex mb-8 mt-6">
+						<a href="{{ params.cta.url }}" data-order-consultant="any" class="button button-narrow button-empty medium-button w-full lg:w-auto">{{ params.cta.title }}</a>
+					</div>
+				</li>
+                {% endif %}
+			</div>
+		</div>
+	</ul>
+
+
+	<!-- mobile triggers - menu container -->
+	<div class="container-only-lg relative bg-white" style="">
+		<div class="flex flex-wrap -mx-5 bg-white mobile-menu-triggers">
+			<div class="col-3 caret-container cursor-pointer" data-modal-prevent-scrolling data-modal-trigger="#page-switcher-1">
+				<div class="flex items-center">
+
+					<img src="{{ manifest('assets/images/invest-logo-mobile.svg') }}" class="w-auto" style="height:32px;" alt="">
+					<div class="flex items-center pl-2 pr-4" style="height:56px;">
+						<svg class="inline-block" width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M7 10l5 5 5-5H7z" fill="#1A262E"/>
+						</svg>
+					</div>
+
+				</div>
+			</div>
+			<div class="col-6 menu-switcher">
+				<div class="flex justify-center items-center cursor-pointer w-full mx-auto" data-modal-prevent-scrolling data-modal-trigger="#menu-switcher-1" style="height:56px; width:104px;">
+					<span class="menu-hamburger">
+						<div class="menu-bar menu-bar-1"></div>
+						<div class="menu-bar menu-bar-2"></div>
+						<div class="menu-bar menu-bar-3"></div>
+					</span>
+					<span class="arboria-main-button text-coalblack">Menu</span>
+				</div>
+			</div>
+			<div class="col-3">
+				&nbsp;<!-- insert search icon -->
+			</div>
+		</div>
+	</div>
+
+</section>

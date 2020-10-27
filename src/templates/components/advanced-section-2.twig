@@ -37,9 +37,9 @@ Example:
 		<div class="flex flex-wrap -mx-10 lg:-mx-5">
 			<div class="col-12">
 				<div class="w-full h-120 lg:h-140 mb-4 lg:mb-11">
-					<img src="{{ params.image }}" alt="" class="hidden lg:block object-cover w-full h-full">
+					<img loading="lazy" src="{{ params.image }}" alt="" class="hidden lg:block object-cover w-full h-full">
 					<!-- .mobile -->
-					<img src="{{ params.image_mobile is defined ? params.image_mobile : params.image }}" alt="" class="lg:hidden object-cover w-full h-full">
+					<img loading="lazy" src="{{ params.image_mobile is defined ? params.image_mobile : params.image }}" alt="" class="lg:hidden object-cover w-full h-full">
 				</div>
 			</div>
 		</div>

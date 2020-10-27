@@ -119,9 +119,10 @@
     ]
 } %}
 
+{% set divisionName = 'consult' %}
 
 {% block content %}
-	<main role="main" class="p-consult-4">
+	<main role="main" class="p-consult p-consult-4">
         {% include "/templates/components/header-consult-2.twig" with { params: headerItems } %}
 		<div class="pb-14 lg:pb-32"></div>
 		{% include "/templates/components/list-slider-1.twig" with { params: listSliderItems} %}

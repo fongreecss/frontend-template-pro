@@ -8,7 +8,7 @@
 	our clients as well.", 
 		"cta" : { 
 			"title" : "Spoznajte odbor", 
-			"url" : "#" 
+			"url" : "/consult-functions-6.html#board-members"
 		},
 		"items" : [
 			{
@@ -51,7 +51,7 @@
 			{ 
 				"title": "More is possible", 
 				"description": "JonatanMars is a spin-off company of VZAJEMCI Group, and is a result of its extensive presence and influence in the field of finance in the past 18 years.", 
-				"cta" : { "title" : "Izvejte več", "url" : "#" },
+				"cta" : { "title" : "Izvejte več", "url" : "/invest-product-1.html" },
 				"number": 78,
 				"percentage": true,
 				"title2": "Startup-ov namerava zaposlit novi kader",
@@ -59,7 +59,7 @@
 			{ 
 				"title": "Nepremičnine", 
 				"description": "Podjetje, ki je del Skupine Vzajemci. Cilj podjetja je graditi projekte, ki imajo visoko dodano vrednost, in ki bodo pustili pozitiven pečat v slovenski družbi.", 
-				"cta" : { "title" : "Izvejte več", "url" : "#" },
+				"cta" : { "title" : "Izvejte več", "url" : "/invest-product-2.html" },
 				"number": 42,
 				"title2": "Stanovanj" 
 			}
@@ -75,7 +75,7 @@
 	our clients as well.",
 		"cta" : {
 			"title" : "Spoznajte odbor",
-			"url" : "#"
+			"url" : "/consult-functions-6.html#board-members"
 		},
 		"cta2" : {
 			"title" : "Naročite svetovalca",
@@ -164,8 +164,10 @@
 
 %}
 
+{% set divisionName = 'invest' %}
+
 {% block content %}
-	<main role="main" class="p-invest-landing">
+	<main role="main" class="p-invest p-invest-landing">
 		{% include "/templates/components/header-invest-1.twig" with { params: headerItems } %}
 
 		{# spacer #}
@@ -193,7 +195,7 @@
 		{% include "/templates/components/text-advanced-2.twig" with { params: textAdvancedItems } %}
 		
 		{# spacer #}
-		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "0", "desktop" : "80" } } %}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "0", "desktop" : "82" } } %}
 		{# end spacer #}
 	</main>
 {% endblock %}

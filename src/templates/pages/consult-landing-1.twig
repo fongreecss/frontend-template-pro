@@ -365,8 +365,10 @@ our clients as well.",
     }
 %}
 
+{% set divisionName = 'consult' %}
+
 {% block content %}
-	<main role="main" class="p-consult-5">
+	<main role="main" class="p-consult p-consult-5">
         {% include "/templates/components/header-consult-1.twig" with { params: headerItems } %}
 
 		{# spacer #}

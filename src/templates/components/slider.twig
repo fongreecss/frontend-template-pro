@@ -12,18 +12,3 @@ Section with slider
 #}
 
 {# Output #}
-{% if params.items|length %}
-<section class="c-slider">
-  <div class="container-only-lg">
-    <div class="flex flex-wrap -mx-5 w-full tns-slider">
-      
-          {% for item in params.items %}
-          <div class="col-12 lg:col-4 mb-4 lg:mb-8">
-              <img class="tns-lazy-img w-full h-auto" src="{{ item.image }}" >
-          </div>
-          {% endfor %}
-      
-    </div>
-  </div>
-</section>
-{% endif %}

@@ -64,10 +64,10 @@ Example:
 		<div class="flex flex-wrap -mx-10 lg:-mx-5">
 			<div class="col-12">
 				<div class="hidden lg:block w-full h-130 relative">
-					<img src="{{ params.image }}" alt="{{ params.caption }}" class="absolute top-0 left-0 object-cover w-full h-full">
+					<img loading="lazy" src="{{ params.image }}" alt="{{ params.caption }}" class="absolute top-0 left-0 object-cover w-full h-full">
 				</div>
 				<div class="lg:hidden w-full h-0 relative" style="padding-bottom:calc(150%);">
-					<img src="{{ params.image_mobile is defined ? params.image_mobile : params.image }}" alt="{{ params.caption }}" class="absolute top-0 left-0 object-cover w-full h-full">
+					<img loading="lazy" src="{{ params.image_mobile is defined ? params.image_mobile : params.image }}" alt="{{ params.caption }}" class="absolute top-0 left-0 object-cover w-full h-full">
 				</div>
 			</div>
 		</div>

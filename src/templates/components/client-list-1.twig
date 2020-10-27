@@ -75,7 +75,7 @@ set clientListItems = {
 					{% for item in params.items %}
 						<div class="col-6 lg:col-3">
 							<div class="relative w-full mb-4 lg:mb-18">
-								<img class="relative w-auto h-auto" src="{{ item.image }}" alt="">
+								<img loading="lazy" class="relative w-auto h-auto" src="{{ item.image }}" alt="">
 							</div>
 						</div>
 					{% endfor %}

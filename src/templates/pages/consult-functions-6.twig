@@ -150,8 +150,10 @@
 	} 
 %}
 
+{% set divisionName = 'consult' %}
+
 {% block content %}
-	<main role="main" class="p-consult-5">
+	<main role="main" class="p-consult p-consult-5">
 		{% include "/templates/components/header-consult-2.twig" with { params: headerItems } %}
 		<div class="pb-14 lg:pb-27"></div>
 		{% include "/templates/components/title-1.twig" with { params: titleItems } %}

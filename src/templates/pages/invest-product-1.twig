@@ -223,9 +223,10 @@
 	} 
 %}
 
+{% set divisionName = 'invest' %}
 
 {% block content %}
-	<main role="main" class="p-invest-landing">
+	<main role="main" class="p-invest p-invest-landing">
         {% include "/templates/components/header-invest-3.twig" with { params: headerItems } %}
         <div class="pb-14 lg:pb-0 lg:-mb-15"></div>
         {% include "/templates/components/timeline-2.twig" with { params: timelineItems } %}
@@ -277,6 +278,16 @@
 		{# end spacer #}
 
 		{% include "/templates/components/contact-info-1.twig" with { params: contactInfoItems } %}
+
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "96", "desktop" : "188" } } %}
+		{# end spacer #}
+
+		{% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems } %}
 		
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "96", "desktop" : "130" } } %}
+		{# end spacer #}
 	</main>
 {% endblock %}
+

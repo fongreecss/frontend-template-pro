@@ -1,7 +1,6 @@
 {% extends '/templates/layouts/base.twig' %}
 
 {% block content %}
-
 	<main role="main" class="p-{{ page }}">
 		{% if _context[page].content|length %}
 			{% for item in _context[page].content %}
@@ -10,3 +9,4 @@
 		{% endif %}
 	</main>
 {% endblock %}
+

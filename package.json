@@ -50,6 +50,7 @@
     "lazysizes": "^5.1.2",
     "moment": "^2.24.0",
     "node-sass-tilde-importer": "^1.0.2",
+    "odometer": "^0.4.8",
     "pikaday": "^1.8.0",
     "rellax": "^1.10.0",
     "tailwind-bootstrap-grid": "^2.1.0",

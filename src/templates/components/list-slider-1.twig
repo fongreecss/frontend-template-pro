@@ -127,7 +127,7 @@ Example:
                         {% for item in params.items %}
 							<li class="w-full h-full relative">
 								<div class="image-container">
-									<img src="{{ item.image }}" class="absolute top-0 left-0 object-cover w-full h-full" alt="">
+									<img loading="lazy" src="{{ item.image }}" class="absolute top-0 left-0 object-cover w-full h-full" alt="">
 								</div>
 
 								<div class="relative flex flex-wrap bg-white -mx-5 lg:absolute lg:bottom-0 lg:left-0 slider-text-container lg:pt-10 xl:pt-14 lg:pr-10 xl:pr-20 lg:w-130 xl:w-170 lg:h-69" >
