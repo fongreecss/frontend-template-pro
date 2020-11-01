@@ -180,8 +180,8 @@
 			</div>
 		</div>
 	</div>
-	<main id="quiz-1" role="main" class="p-invest p-invest-quiz pt-20 lg:pt-0  pb-20 lg:pb-0">
-		<form method="post" novalidate id="quiz-form-1" class="tns-slider" data-tns-angle="1" data-tns-loop data-tns-gallery data-tns-items="1">
+	<main id="quiz-1" role="main" class="p-invest p-invest-quiz pt-20 lg:pt-0  pb-20 lg:pb-0 select-none">
+		<form method="post" novalidate id="quiz-form-1" class="tns-slider" data-tns-disable-touch data-tns-loop data-tns-gallery data-tns-items="1">
 			{% include "/templates/components/quiz-multiple-checkboxes.twig" with { params:question1 } %}
 			{% include "/templates/components/quiz-range-vertical.twig" with { params:question2 } %}
 			{% include "/templates/components/quiz-range-horizontal.twig" with { params:question3 } %}

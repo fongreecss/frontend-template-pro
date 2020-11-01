@@ -222,3 +222,10 @@
     @apply bg-coalgray;
   }
 }
+
+#quiz-1 {
+  .tns-gallery>.tns-item {
+    left: -100vw;
+    width:100vw;
+  }
+}
