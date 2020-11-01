@@ -1,0 +1,96 @@
+{#
+
+Section quiz - range
+
+@param {string}  title
+@param {string}  suptitle
+@param {string}  caption
+@param {object}  cta 
+{
+  @param {string} title
+  @param {string} url
+}
+@param {object}  cta2 
+{
+  @param {string} title
+  @param {string} url
+}
+@param {array}  items - checkboxes
+{
+  @param {string} value
+  @param {string} name
+  @param {string} title
+}
+
+Example:
+
+    {%
+            set question3 = {
+                "title": "How much would you like to invest?",
+                "suptitle" : "Vprašanje 3",
+                "caption" : "*Speculative balance represented",
+                "cta" : {
+                    "title" : "Nazaj",
+                    "url" : "#"
+                },
+                "cta2" : {
+                    "title" : "Naprej",
+                    "url" : "#"
+                },
+                "cta3" : {
+                    "title" : "Preskoči",
+                    "url" : "#"
+                },
+                "items" : [
+                    {
+                        "value" : "50",
+                        "name" : "investment",
+                        "title" : "EUR",
+                        "max_value" : 50000;
+                    }        
+                ]
+            }
+    %}
+
+#}
+
+{# Output #}
+<section class="c-quiz-range c-quiz-range-2  w-full">
+    <div class="block lg:flex lg:flex-row lg:min-h-screen w-full lg:items-center relative">
+	<div class="container-only-lg">
+		<div class="flex flex-wrap -mx-5 items-center">
+            <div class="col-12 lg:col-6 xl:offset-1 xl:col-4">
+                <p class="arboria-small-subheader text-white mb-4 lg:mb-6">{{ params.suptitle }}</p>
+				<h2 class="h4 lg:h2 title text-white mb-8 lg:mb-0">{{ params.title }}</h2>
+            </div>
+            <div class="col-12 lg:col-6 xl:offset-1 xl:col-4">
+                <div class="block">
+                    {% if params.items[0] %}
+                    <div class="relative">
+                        <div class="lg:text-center h6 lg:h4 title text-peppermint mb-4 lg:mb-6"><span class="label-value">{{ params.items[0].max_value * params.items[0].value * 0.01 }}</span><span> {{ params.items[0].title}}</span></div>
+                        <label class="input-label">
+                            <input required type="range" value="{{ params.items[0].value }}" name="{{ params.items[0].name }}"  style="width:100%;" class="input-range-hor" oninput="this.parentNode.parentNode.querySelector('.label-value').innerHTML = {{ params.items[0].max_value }} * this.value / 100;">
+                        </label>
+                    </div>
+                    {% endif %}
+                </div>
+                <p class="pt-6 lg:pt-8 text-white medium-subheader">{{ params.caption }}</p>
+            </div>
+		</div>
+	</div>
+    <div class="w-full mt-8 lg:mt-0 relative lg:absolute lg:bottom-15">
+        <div class="flex flex-wrap lg:justify-between lg:items-center  w-full">
+				<div class="col-12 lg:col-6 lg:text-left">
+                    {% if params.cta %}
+						<button onClick="prevButton_quiz1();" class="button button-empty medium-button w-full lg:w-auto mb-4 lg:mb-0">{{ params.cta.title }}</button>
+					{% endif %}
+                </div>
+                <div class="col-12 lg:col-6 lg:text-right">
+					{% if params.cta2 %}
+						<button onClick="nextButton_quiz1();" class="button button-full medium-button w-full lg:w-auto">{{ params.cta2.title }}</button>
+					{% endif %}
+				</div>
+		</div>
+    </div>
+    </div>
+</section>

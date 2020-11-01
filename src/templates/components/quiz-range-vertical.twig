@@ -1,0 +1,108 @@
+{#
+
+Section quiz - range
+
+@param {string}  title
+@param {string}  suptitle
+@param {string}  caption
+@param {object}  cta 
+{
+  @param {string} title
+  @param {string} url
+}
+@param {object}  cta2 
+{
+  @param {string} title
+  @param {string} url
+}
+@param {array}  items - checkboxes
+{
+  @param {string} value
+  @param {string} name
+  @param {string} title
+}
+
+Example:
+
+    
+    {%
+            set question2 = {
+                "title": "How would you describe your risk profile?",
+                "suptitle" : "Vprašanje 2",
+                "cta" : {
+                "title" : "Nazaj",
+                "url" : "#"
+                },
+                "cta2" : {
+                    "title" : "Naprej",
+                    "url" : "#"
+                },
+                "caption" : "*Speculative balance represented",
+                "items" : [
+                    {
+                        "value" : "80",
+                        "name" : "risk",
+                        "title" : "High risk*",
+                        "title2" : "Low risk*"
+                    },{
+                        "value" : "40",
+                        "name" : "yield",
+                        "title" : "High yield*",
+                        "title2" : "Low yield*"
+                    },            
+                ]
+            }
+    %}
+
+#}
+
+{# Output #}
+<section class="c-quiz-range c-quiz-range-2  w-full">
+    <div class="block lg:flex lg:flex-row lg:min-h-screen w-full lg:items-center relative">
+	<div class="container-only-lg">
+		<div class="flex flex-wrap -mx-5 items-center">
+            <div class="col-12 lg:col-6 xl:offset-1 xl:col-4">
+                <p class="arboria-small-subheader text-white mb-4 lg:mb-6">{{ params.suptitle }}</p>
+				<h2 class="h4 lg:h2 title text-white mb-8 lg:mb-0">{{ params.title }}</h2>
+            </div>
+            <div class="col-12 lg:col-6 xl:offset-1 xl:col-4">
+                <div class="flex justify-center">
+                    {% if params.items[0] %}
+                    <div class="range-button-container-1 relative inline-block mr-4 lg:mr-10">
+                        <label class="input-label-inline input-label-vert">
+                            <input required type="range" value="{{ params.items[0].value }}" name="{{ params.items[0].name }}"  class="input-range-vert">
+                        </label>
+                        <span class="label-top whitespace-no-wrap absolute top-0 small-button lg:medium-button-bu text-white" >{{ params.items[0].title }}</span>
+                        <span class="label-bottom whitespace-no-wrap bottom-0 absolute small-button lg:medium-button-bu text-white">{{ params.items[0].title2 }}</span>
+                    </div>
+                    {% endif %}
+                    {% if params.items[1] %}
+                    <div class="range-button-container-2 relative inline-block">
+                        <label class="input-label-inline input-label-vert">
+                            <input required type="range" value="{{ params.items[1].value }}" name="{{ params.items[1].name }}"  class="input-range-vert">
+                        </label>
+                        <span class="label-top whitespace-no-wrap absolute top-0 small-button lg:medium-button-bu text-white">{{ params.items[1].title }}</span>
+                        <span class="label-bottom whitespace-no-wrap bottom-0 absolute small-button lg:medium-button-bu text-white">{{ params.items[1].title2 }}</span>
+                    </div>
+                    {% endif %}
+                </div>
+                <p class="pt-6 lg:pt-8 lg:pl-26 text-white medium-subheader">{{ params.caption }}</p>
+            </div>
+		</div>
+	</div>
+    <div class="w-full mt-8 lg:mt-0 relative lg:absolute lg:bottom-15">
+        <div class="flex flex-wrap lg:justify-between lg:items-center  w-full">
+				<div class="col-12 lg:col-6 lg:text-left">
+                    {% if params.cta %}
+						<button onClick="prevButton_quiz1();" class="button button-empty medium-button w-full lg:w-auto mb-4 lg:mb-0">{{ params.cta.title }}</button>
+					{% endif %}
+                </div>
+                <div class="col-12 lg:col-6 lg:text-right">
+					{% if params.cta2 %}
+						<button onClick="nextButton_quiz1();" class="button button-full medium-button w-full lg:w-auto">{{ params.cta2.title }}</button>
+					{% endif %}
+				</div>
+		</div>
+    </div>
+    </div>
+</section>

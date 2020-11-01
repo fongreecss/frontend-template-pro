@@ -150,30 +150,69 @@
 	} 
 %}
 
-{% set divisionName = 'consult' %}
+{% set division_name = 'consult' %}
 
 {% block content %}
-	<main role="main" class="p-consult p-consult-5">
+	<main role="main" class="p-consult p-consult-6">
 		{% include "/templates/components/header-consult-2.twig" with { params: headerItems } %}
-		<div class="pb-14 lg:pb-27"></div>
+
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "56", "desktop" : "108" } } %}
+		{# end spacer #}
+
 		{% include "/templates/components/title-1.twig" with { params: titleItems } %}
-		<div class="pb-14 lg:pb-16"></div>
+		
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "66", "desktop" : "64" } } %}
+		{# end spacer #}
+
 		{% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems1 } %}
-		<div class="pb-14 lg:pb-36"></div>
+		
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "44", "desktop" : "194" } } %}
+		{# end spacer #}
+
 		{% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems2 } %}
-		<div class="pb-14 lg:pb-24"></div>
+		
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "44", "desktop" : "96" } } %}
+		{# end spacer #}
+
 		{% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems3 } %}
-		<div class="pb-14 lg:pb-16"></div>
+		
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "44", "desktop" : "158" } } %}
+		{# end spacer #}
+
 		{% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems4 } %}
-		<div class="pb-14 lg:pb-24"></div>
+		
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "44", "desktop" : "96" } } %}
+		{# end spacer #}
+
 		{% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems5 } %}
-		<div class="pb-14 lg:pb-28"></div>
+		
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "44", "desktop" : "114" } } %}
+		{# end spacer #}
+
 		{% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems6 } %}
-		<div class="pb-14 lg:pb-30"></div>
+
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "57", "desktop" : "120" } } %}
+		{# end spacer #}
+
 		{% include "/templates/components/advanced-section-2.twig" with { params: advancedSectionItems } %}
-		<div class="pb-14 lg:pb-30"></div>
+		
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "77", "desktop" : "119" } } %}
+		{# end spacer #}
+
 		{% include "/templates/components/team-1.twig" with { params: teamItems } %}
-		<div class="pb-14 lg:pb-30"></div>
+		
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "60", "desktop" : "120" } } %}
+		{# end spacer #}
 		{% include "/templates/components/contact-info-1.twig" with { params: contactInfoItems } %}
 
 	</main>

@@ -43,6 +43,7 @@
 } %}
 
 {% set articleListItems = {
+    "id" : 4,
 	"title" : "Articles written by Myhajlo Todurov",
     "suptitle" : "Academy contributions",
 	"description" : "Vsi registrirani uporabniki ste enkrat letno upravičeni do brezplačnega pregleda portfelja.",
@@ -137,6 +138,7 @@
 
 {%
     set personInfoItems = {
+       "id" : 4,
        "image" : "assets/images/Vegelj4-big.png",
        "image_mobile": "assets/images/Vegelj4-big.png",
        "title": "Dr. David Vegelj",
@@ -183,6 +185,7 @@
            }
        ],
        "featured_item" : {
+               "id" : 4,
                "title" : "Naročite termin z svetovalcem",
                "url" : "#featured",
                "image" : "assets/images/vegelj-big.png",
@@ -191,10 +194,10 @@
     }
 %}
 
-{% set divisionName = 'consult' %}
+{% set division_name = 'consult' %}
 
 {% block content %}
-	<main role="main" class="p-consult p-consult-4">
+	<main role="main" class="p-consult p-consult-3">
 		{% include "/templates/components/header-consult-3.twig" with { params: headerItems } %}
 		<div class="pb-14 lg:pb-26"></div>
 		{% include "/templates/components/article-list-1.twig" with { params: articleListItems } %}

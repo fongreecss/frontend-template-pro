@@ -1,0 +1,122 @@
+{#
+
+Section quiz - multiple checkboxes
+
+@param {string}  title
+@param {string}  suptitle
+@param {object}  cta 
+{
+  @param {string} title
+  @param {string} url
+}
+@param {object}  cta2 
+{
+  @param {string} title
+  @param {string} url
+}
+@param {array}  items - checkboxes
+{
+  @param {string} value
+  @param {string} name
+  @param {string} title
+}
+
+Example:
+
+    set question1 = {
+        "title": "Kateri sektorji vas zanimajo?",
+        "suptitle" : "Vprašanje 1",
+        "cta" : {
+          "title" : "Naprej",
+          "url" : "#"
+        },
+        "cta2" : {
+            "title" : "Nazaj",
+            "url" : "#"
+        },
+        "items" : [
+            {
+                "value" : "1",
+                "name" : "interest",
+                "title" : "Finančne storitve"
+            },{
+                "value" : "2",
+                "name" : "interest",
+                "title" : "Zdravstvo"
+            },
+            {
+                "value" : "3",
+                "name" : "interest",
+                "title" : "Trajne Potrošne Dobrine"
+            },
+            {
+                "value" : "4",
+                "name" : "interest",
+                "title" : "Industrija"
+            },
+            {
+                "value" : "5",
+                "name" : "interest",
+                "title" : "Osnovne potrošne dobrine"
+            },
+            {
+                "value" : "6",
+                "name" : "interest",
+                "title" : "Energetika"
+            },
+            {
+                "value" : "7",
+                "name" : "interest",
+                "title" : "Surovine in predelovalna industrija"
+            },
+            {
+                "value" : "8",
+                "name" : "interest",
+                "title" : "Javna oskrba"
+            },
+            {
+                "value" : "9",
+                "name" : "interest",
+                "title" : "Ostalo"
+            },
+            
+        ]
+    }
+
+#}
+
+{# Output #}
+<section class="c-multiple-checkboxes c-multiple-checkboxes-1  w-full">
+    <div class="block lg:flex lg:flex-row lg:min-h-screen w-full lg:items-center relative">
+	<div class="container-only-lg">
+		<div class="flex flex-wrap -mx-5 items-center">
+            <div class="col-12 lg:col-6 xl:offset-1 xl:col-4">
+                <p class="arboria-small-subheader text-white mb-4 lg:mb-6">{{ params.suptitle }}</p>
+				<h2 class="h4 lg:h2 title text-white mb-8 lg:mb-0">{{ params.title }}</h2>
+            </div>
+            <div class="col-12 lg:col-6 xl:offset-1 xl:col-4">
+                {% for item in params.items %}
+                    <label class="input-label-flex mb-4 lg:mb-4 items-center p-4 cursor-pointer">
+                        <input type="checkbox" value="{{ item.value }}" name="{{ item.name }}[]" class="input-checkbox">
+                        <span class="pl-8 medium-button text-white">{{ item.title }}</span>
+                    </label>
+                {% endfor %}
+            </div>
+		</div>
+	</div>
+    <div class="w-full mt-8 lg:mt-0 relative lg:absolute lg:bottom-15">
+        <div class="flex flex-wrap lg:justify-between lg:items-center  w-full">
+				<div class="col-12 lg:col-6 lg:text-left">
+                    {% if params.cta %}
+						<button onClick="prevButton_quiz1();" class="button button-empty medium-button w-full lg:w-auto mb-4 lg:mb-0">{{ params.cta.title }}</button>
+					{% endif %}
+                </div>
+                <div class="col-12 lg:col-6 lg:text-right">
+					{% if params.cta2 %}
+						<button onClick="nextButton_quiz1();" class="button button-full medium-button w-full lg:w-auto">{{ params.cta2.title }}</button>
+					{% endif %}
+				</div>
+		</div>
+    </div>
+    </div>
+</section>

@@ -48,8 +48,8 @@ Example:
 				<div class="pb-10 lg:pb-12 bg-arcticsilver"></div>
 			</div>
 		</div>
-		<div class="flex flex-wrap -mx-5 relative lg:h-100 items-center">
-			<div class="image-container absolute top-0 left-0 w-full h-full lg:px-5 {{ params.text_first == true ? 'xl:offset-1 lg:left-0' : 'xl:-left-17'}}">
+		<div class="flex flex-wrap -mx-5 relative lg:h-100 xl:h-110 items-center">
+			<div class="image-container absolute top-0 left-0 w-full h-full lg:px-5 {{ params.text_first == true ? 'image-container-2 xl:offset-1' : 'image-container-1'}}">
 				<img loading="lazy" src="{{ params.image }}" alt="{{ params.caption }}" class="hidden lg:block object-cover object-center w-full h-full">
 				<!-- .mobile image -->
 				<img loading="lazy" src="{{ params.image_mobile is defined ? params.image_mobile : params.image }}" alt="{{ params.caption }}" class="lg:hidden object-cover object-center w-full h-full">
@@ -61,7 +61,7 @@ Example:
 			</div>
 			<div class="col-12 lg:col-5  xl:col-4 {{ params.text_first == true ? 'lg:order-1 lg:offset-1 xl:offset-2 lg:text-right' : 'lg:order-0'}}">
 				{% if params.cta %}
-					<a href="{{ params.cta.url }}" class="button button-full medium-button w-full lg:w-auto mb-8 lg:inline-block">{{ params.cta.title }}</a>
+					<a href="{{ params.cta.url }}" class="button button-full medium-button w-full lg:w-auto mb-8 lg:mb-0 lg:inline-block">{{ params.cta.title }}</a>
 				{% endif %}
 			</div>
 		</div>

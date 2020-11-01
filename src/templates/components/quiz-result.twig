@@ -1,0 +1,96 @@
+{#
+
+Section quiz - range
+
+@param {string}  title
+@param {string}  suptitle
+@param {object}  cta 
+{
+  @param {string} title
+  @param {string} url
+}
+@param {object}  cta2 
+{
+  @param {string} title
+  @param {string} url
+}
+@param {object} result - checkboxes
+{
+  @param {string} title
+  @param {string} description
+  @param {object}  cta 
+    {
+    @param {string} title
+    @param {string} url
+    }
+  @param {string} image
+}
+
+Example:
+
+    
+    {%
+            set result = {
+                "title": "Jonatan Mars",
+                "suptitle" : "Predlagamo",
+                "cta" : {
+                "title" : "RE-DO",
+                "url" : "#"
+                },
+                "cta2" : {
+                    "title" : "Želim svetovanje",
+                    "url" : "#"
+                },
+                "result" :
+                {
+                    "title" : "More is possible",
+                    "description" : "JonatanMars is a spin-off company of VZAJEMCI Group, and is a result of its extensive presence and influence in the field of finance in the past 18 years.",
+                    "cta" : {
+                        "title" : "Izvejte več",
+                        "url" : "#"
+                    },
+                    "image" : ""
+                }         
+            }
+    %}
+
+#}
+
+{# Output #}
+<section class="c-quiz-result c-quiz-result-1 w-full">
+    <div class="block lg:flex lg:flex-row lg:min-h-screen w-full lg:items-center relative">
+	<div class="container-only-lg">
+		<div class="flex flex-wrap -mx-5 items-center">
+            <div class="col-12 lg:col-6 xl:offset-1 xl:col-4">
+                <p class="arboria-small-subheader text-white mb-4 lg:mb-6">{{ params.suptitle }}</p>
+				<h2 class="h4 lg:h2 title text-white mb-8 lg:mb-0">{{ params.title }}</h2>
+            </div>
+            <div class="col-12 lg:col-6 xl:offset-1 xl:col-4">
+                <div class="block relative pt-8 pb-8 lg:pt-22 lg:pb-22">
+                    <div class="background-panel"></div>
+                    <div class="relative  h5 lg:h3 title text-white mb-4 lg:mb-8">{{ params.result.title }}</div>
+                    <div class="relative small-paragraph lg:medium-paragraph text-white mb-4 lg:mb-8">{{ params.result.description }}</div>
+                    {% if params.result.cta %}
+                    <div class="relative">
+						<a href="{{ params.result.cta.url }}" class="button button-full medium-button w-full lg:w-auto mb-4 lg:mb-0">{{ params.result.cta.title }}</a>
+                    </div>
+					{% endif %}
+                </div>
+                
+            </div>
+		</div>
+	</div>
+    <div class="w-full mt-8 lg:mt-0 relative lg:absolute lg:bottom-15">
+        <div class="flex flex-wrap lg:justify-between lg:items-center  w-full">
+				<div class="col-12 lg:flex lg:justify-between lg:items-center" style="">
+                    {% if params.cta %}
+						<button onClick="redoButton_quiz1();" class="button button-empty medium-button w-full lg:w-auto mb-4 lg:mb-0">{{ params.cta.title }}</button>
+					{% endif %}
+					{% if params.cta2 %}
+						<a href="#" class="button button-full medium-button w-full lg:w-auto">{{ params.cta2.title }}</a>
+					{% endif %}
+				</div>
+		</div>
+    </div>
+    </div>
+</section>

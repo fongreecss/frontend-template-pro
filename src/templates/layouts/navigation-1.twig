@@ -35,6 +35,7 @@ Example:
     {% 
       set navigationItems = { 
         "logo": "assets/images/Consulting-logo.svg",
+		"logo_mobile" : "",
         "homepage_url" : "/consult-landing-1.html",
         "menu_items" : [
             {
@@ -120,7 +121,8 @@ Example:
 			<div class="col-3">
                 {% if params.cta %}
 				<div class="flex justify-end">
-					<a href="{{ params.cta.url }}}" data-order-consultant="any" class="button button-narrow button-empty medium-button w-full lg:w-auto">{{ params.cta.title }}</a>
+
+					<a href="{{ params.cta.url }}" data-order-consultant="any" class="button button-narrow {{ division_name == 'consult' ? 'button-empty' : 'button-full' }} medium-button w-full lg:w-auto">{{ params.cta.title }}</a>
 				</div>
                 {% endif %}
 			</div>
@@ -210,7 +212,7 @@ Example:
 			<div class="flex flex-wrap -mx-5">
 				<li class="col-12">
 					<a href="{{ params.homepage_url }}" class="py-4 block relative ">
-						<img src="{{ params.logo }}" class="mb-4 w-auto" style="height:56px;" alt="">
+						<img src="{{ params.logo_mobile is defined ? params.logo_mobile : params.logo }}" class="mb-4 w-auto" style="height:56px;" alt="">
 					</a>
 				</li>
 			</div>

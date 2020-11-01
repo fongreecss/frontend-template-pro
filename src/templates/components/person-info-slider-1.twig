@@ -1,8 +1,64 @@
-
+{#
+	@params {string} title
+	@params {string} description
+	@params {array} items [
+		@params {int} id
+		@params {string} title
+		@params {string} quote
+		@params {string} jobtitle
+		@params {string} image
+		@params {string} image_mobile
+		@params {object} cta {
+			@params {string} title
+			@params {string} url
+		}
+	]
+	
+	Example:
+	{%
+		set personInfoSliderItems = {
+		"title": "Naši finančni svetovalci",
+		"description" : "Vsi registrirani uporabniki ste enkrat letno upravičeni do brezplačnega pregleda portfelja.",
+		"cta" : {
+					"title" : "Spoznajte",
+					"url" : "/consult-advisor-3.html"
+				},
+		"items" : [
+			{
+				"id" : "1",
+				"title" : "Dr. David Vegelj",
+				"quote" : "Key statement about the product and how exciting it is, or some other manner of interesting quote.",
+				"jobtitle" : "Cheif investment officer",
+				"image" : "assets/images/Vegelj4-big.png",
+				"image_mobile": "assets/images/Vegelj4-big.png",
+				
+			},
+			{
+				"id" : "2",
+				"title" : "Dr. Radovan Obal",
+				"quote" : "Key statement about the product and how exciting it is, or some other manner of interesting quote. 2",
+				"jobtitle" : "Cheif investment officer 2",
+				"image" : "assets/images/Vegelj4-big.png",
+				"image_mobile": "assets/images/Vegelj4-big.png",
+				
+			},
+			{
+				"id" : "3",
+				"title" : "Dr. Aleksander Fras",
+				"quote" : "Key statement about the product and how exciting it is, or some other manner of interesting quote. 3",
+				"jobtitle" : "Cheif investment officer 3",
+				"image" : "assets/images/Vegelj4-big.png",
+				"image_mobile": "assets/images/Vegelj4-big.png",
+				
+			}
+		]
+		}
+	%}
+#}
 {% set randomNumber = random() %}
 <section id="c-person-info-id-{{ randomNumber }}" class="c-person-info-slider c-person-info-slider-1 bg-arcticsilver pt-14 lg:pt-26 pb-10 lg:pb-0">
 	<div class="container-only-lg relative">
-		<div class="flex flex-wrap -mx-5">
+		<div class="flex flex-wrap -mx-5 relative" style="z-index:100;">
 			<div class="col-12 xl:offset-1 lg:col-6 xl:col-4 relative">
 				<h2 class="h4 lg:h2 title text-coalblack mb-2 lg:mb-3">{{ params.title }}</h2>
 				<p class="small-paragraph lg:small-paragraph text-textgray mb-8 lg:mb-5" style="max-width:296px;">{{ params.description }}</p>
@@ -13,13 +69,13 @@
 				{% endif %}
 			</div>
 		</div><!-- .row -->
-		<div id="person-slider-{{ randomNumber }}" class="flex flex-wrap relative w-full lg:mx-0 lg:-mt-56 tns-slider select-none" data-tns-loop  data-tns-gallery data-tns-items="1">
+		<div id="person-slider-{{ randomNumber }}" class="flex flex-wrap relative w-full lg:mx-0 lg:-mt-56 tns-slider select-none"  data-tns-loop  data-tns-gallery data-tns-items="1">
 			{% for item in params.items %}
 				<div class="col-12 relative select-none">
 					<div class="flex flex-wrap -mx-10 lg:-mx-5">
 						<div class="hidden lg:block col-12 lg:col-3 xl:col-3">
                             <div class="absolute lg:bottom-16 lg:-right-5 flex">
-                                <button class="tns-prev-button flex items-center" onClick="(function(){ prevButton_{{ randomNumber }}(); })();">
+                                <button class="tns-prev-button flex items-center" onClick="(function(){ prevButton_personInfo{{ randomNumber }}(); })();">
                                     <svg class="inline-block mr-2" width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M14.293 5.293l1.414 1.414L10.414 12l5.293 5.293-1.414 1.414L7.586 12l6.707-6.707z" fill="#1A262E"/>
                                     </svg>
@@ -63,7 +119,7 @@
 							{% endif %}
 
                             <div class="lg:absolute lg:bottom-16 flex justify-end lg:justify-start">
-								<button class="tns-prev-button flex lg:hidden items-center" onClick="(function(){ prevButton_{{ randomNumber }}(); })();">
+								<button class="tns-prev-button flex lg:hidden items-center" onClick="(function(){ prevButton_personInfo{{ randomNumber }}(); })();">
                                     <svg class="hidden lg:inline-block mr-2" width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M14.293 5.293l1.414 1.414L10.414 12l5.293 5.293-1.414 1.414L7.586 12l6.707-6.707z" fill="#1A262E"/>
                                     </svg>
@@ -75,7 +131,7 @@
 									</svg>
 								</button>
                                 <!-- prev button -->
-                                <button class="tns-next-button flex items-center" onClick="(function(){ nextButton_{{ randomNumber }}(); })();">
+                                <button class="tns-next-button flex items-center" onClick="(function(){ nextButton_personInfo{{ randomNumber }}(); })();">
                                     <span class="hidden lg:inline-block text-coalblack arboria-main-button">{{ params.items[loop.index0 + 1].title is defined ? params.items[loop.index0 + 1].title : params.items[0].title  }}</span>
                                     <svg class="hidden lg:inline-block ml-2" width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M9 18.707l-1.414-1.414L12.879 12 7.586 6.707 9 5.293 15.707 12 9 18.707z" fill="#1A262E"/>
@@ -100,13 +156,13 @@
 </section>
 
 <script>
-    function nextButton_{{ randomNumber }}() {
+    function nextButton_personInfo{{ randomNumber }}() {
         var slider =  document.querySelector("#person-slider-{{ randomNumber }}");
         if(typeof slider.tnsSlider != "undefined" ) {
             slider.tnsSlider.goTo('next');
         }
     }
-    function prevButton_{{ randomNumber }}() {
+    function prevButton_personInfo{{ randomNumber }}() {
         var slider =  document.querySelector("#person-slider-{{ randomNumber }}");
         if(typeof slider.tnsSlider != "undefined" ) {
             slider.tnsSlider.goTo('prev');

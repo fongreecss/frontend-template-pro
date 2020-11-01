@@ -1,0 +1,77 @@
+<section id="oder-advisor-form-1" class="c-order-form c-order-advisor-form c-order-advisor-form-1 ">
+    <div class="modal-background" onClick="(function(){ window.closeModal(); })()"></div>
+    <div class="form-container">
+        <header class="border-b border-arcticsilver px-5 lg:px-16 py-4 flex justify-between items-center">
+            <p class="lg:arboria-small-subheader text-darkcoal">Želim svetovanje</p>
+            <svg onClick="(function(){ window.closeModal(); })()" class="close-button cursor-pointer" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.586 12l-5.293 5.293 1.414 1.414L12 13.414l5.293 5.293 1.414-1.414L13.414 12l5.293-5.293-1.414-1.414L12 10.586 6.707 5.293 5.293 6.707 10.586 12z" fill="#1A262E"/>
+            </svg>
+        </header>
+        <section class="px-5 lg:px-16">
+            <h4 class="h5 lg:h4 title text-coalgray mt-7 lg:mt-8 mb-4">Želim svetovanje</h4>
+            <p class="small-paragraph lg:medium-paragraph mb-4 lg:mb-8">Skupina Vzajemci velja za vodilno finančno svetovalno podjetje v regiji. V 16 letih delovanja nam je zaupalo več kot 20.000 vlagateljev. Naše svetovalce odlikuje neodvisen pristop, odlično znanje ter želja po dolgoročnem sodelovanju, kar je recept za vaše zadovoljstvo.</p>
+            <form novalidate method="POST" name="form-oaf">
+                <input type="hidden" name="advisor_id" id="advisor_id" value="">
+                <label class="input-label mb-8 lg:mb-8">
+                    <input required pattern="([\p{L}]+(\s+)?)+" placeholder="Janez Novak" id="name" name="name" type="text" class="input-text px-4 pt-6 pb-1">
+                    <i class="inline-block absolute top-2 left-4 tiny-tag">Vaše ime in priimek</i>
+                    <p class="error-msg absolute right-0 tiny-tag text-alertred" style="top: calc(100% + 2px);">Vnesite ime in priimek</p>
+                </label>
+
+                <label class="input-label mb-8 lg:mb-8">
+                    <input  required placeholder="janeznovak@email.com" id="email" name="email" type="email" class="input-text px-4 pt-6 pb-1">
+                    <i class="inline-block absolute top-2 left-4 tiny-tag">Vaš e-naslov</i>
+                    <p class="error-msg absolute right-0 tiny-tag text-alertred" style="top: calc(100% + 2px);">Vnesite pravilen email naslov</p>
+                </label>
+
+                <label class="input-label mb-8 lg:mb-8">
+                    <input required placeholder="031-555-555" id="telephone" name="telephone" type="tel" pattern="^\d+(?:-\d+)*$" class="input-text px-4 pt-6 pb-1">
+                    <i class="inline-block absolute top-2 left-4 tiny-tag">Telefonska števika</i>
+                    <p class="error-msg absolute right-0 tiny-tag text-alertred" style="top: calc(100% + 2px);">Vnesite pravo telefonsko številko</p>
+                </label>
+
+                <label for="interests" class="input-label input-label-caret mb-8 lg:mb-8">
+                    <select class="input-select input-select-caret px-4 pt-6 pb-1" name="interests" id="interests">
+                        <option value="1">Finančne storitve</option>
+                        <option value="2">Zdravstvo</option>
+                        <option value="3">Trajne Potrošne Dobrine</option>
+                        <option value="4">Industrija</option>
+                        <option value="5">Osnovne potrošne dobrine</option>
+                        <option value="6">Energetika</option>
+                        <option value="7">Surovine in predelovalna industrija</option>
+                        <option value="8">Javna oskrba</option>
+                        <option value="9">Ostalo</option>
+                    </select>
+                    <i class="inline-block absolute top-2 left-4 tiny-tag">Kateri sektorji vas zanimajo</i>
+                    
+                </label>
+
+                <label class="input-label mb-8 lg:mb-8">
+                    <textarea id="wishes" rows="3" placeholder="Npr.: želim ustvariti naložbeni portfelj" name="wishes" class="input-text px-4 pt-6 pb-1"></textarea>
+                    <i class="inline-block absolute top-2 left-4 tiny-tag">Vaše želje</i>
+                </label>
+
+                <label class="input-label-flex mb-8 lg:mb-8 items-center">
+                    <input required type="checkbox" class="input-checkbox w-4 h-4">
+                    <span class="inline-block pl-7 small-tag">I accept the <a href="#privacy-policy">privacy policy</a></span><br>
+                </label>
+
+                <button type="submit" class="button button-full medium-button w-full lg:w-auto">Pošljite zanimanje</button>
+            </form>
+        </section>
+    </div>
+</section>
+
+<script>
+    document.querySelector('[name="form-oaf"]').addEventListener('submit', function(event){
+        if(!this.checkValidity()) {
+            event.preventDefault();
+            this.classList.add('error');
+            var invalidElements = this.querySelectorAll('input:invalid');
+            if(invalidElements.length) {
+                invalidElements[0].focus();
+            }
+        }
+    });
+    
+</script>

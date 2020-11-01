@@ -2,6 +2,7 @@
 
 DEMO RAZREZA: http://vzajemci.alfra.si/
 Ure: 174 ur dp 26.oktober
+Pon : 8 + 8
 
 ## Features
 - Templating using Twig

@@ -193,8 +193,27 @@
 
 .c-banner-advanced-1 {
   .image-container {
+    @screen lg {
+      width: 1319px;
+    }
     @screen xl {
-      width: 1300px;
+      width: 1540px;
+    }
+  }
+  .image-container-2 {
+    @screen lg {
+      left:-158px;
+    }
+    @screen xl {
+      left: 0;
+    }
+  }
+  .image-container-1 {
+    @screen lg {
+      left:-158px;
+    }
+    @screen xl {
+      left:-308px;
     }
   }
 }

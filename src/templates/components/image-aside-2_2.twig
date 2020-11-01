@@ -13,7 +13,7 @@ the content can be naked.
   @param {string} url
 }
 @param {string} image     image url
-@param {string} layout    default set to 1. possible layouts 1,2,3,4,5, 6(used on invest landing page)
+@param {string} layout    default set to 1. possible layouts 1,2,3,4,5, 6(used on invest landing page), 7 was aditional. version of 4
 
 Example: 
 
@@ -35,7 +35,7 @@ Example:
 {# Output #}
 {% set imageClass = "w-full h-0 pb-full mb-4 lg:mb-0" %}
 {% set patternClass = "absolute" %}
-{% set rowClass = params.layout in [3,5,6] ? "items-center" : "" %}
+{% set rowClass = params.layout in [2,3,5,6,7] ? "items-center" : "" %}
 
 
 <section class="c-image-aside c-image-aside-2_2 {{ params.layout ? " layout-" ~ params.layout : " layout-1" }}">

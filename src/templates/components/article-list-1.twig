@@ -5,6 +5,7 @@ this one ony has three featured articles
 @param {string} suptitle
 @param {string} title 
 @param {object} cta
+@param {int} id - advisor id - article creator id 
 {
     @param {string} title
     @param {string} url
@@ -28,6 +29,7 @@ Example:
 	"title" : "Articles written by Myhajlo Todurov",
     "suptitle" : "Academy contributions",
 	"description" : "Vsi registrirani uporabniki ste enkrat letno upravičeni do brezplačnega pregleda portfelja.",
+    "id" : "",
     "cta" : {
         "title" : "Naročite svetovalca",
         "url" : "#"
@@ -106,7 +108,7 @@ Example:
 				<div class="hidden lg:block col-12 xl:offset-2 xl:col-4">
 					{% if params.cta %}
 						<div class="relative lg:text-right">
-							<a href="{{ params.cta.url }}" class="block lg:inline-block button button-full medium-button w-full lg:w-auto">{{ params.cta.title }}</a>
+							<a data-advisor-id ="{{ params.id }}" href="{{ params.cta.url }}" class="block lg:inline-block button button-full medium-button w-full lg:w-auto">{{ params.cta.title }}</a>
 						</div>
 					{% endif %}
 				</div>
@@ -144,7 +146,7 @@ Example:
 		<div class="flex flex-wrap -mx-5">
 			{% if params.cta %}
 				<div class="col-12 lg:hidden relative">
-					<a href="{{ params.cta.url }}" class="block lg:inline-block button button-full medium-button w-full lg:w-auto">{{ params.cta.title }}</a>
+					<a data-advisor-id ="{{ params.id }}" href="{{ params.cta.url }}" class="block lg:inline-block button button-full medium-button w-full lg:w-auto">{{ params.cta.title }}</a>
 				</div>
 			{% endif %}
 		</div>

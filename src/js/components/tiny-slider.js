@@ -61,6 +61,7 @@ export default class TinySlider {
       var tnsMouseDrag = el.hasAttribute('data-tns-mouse-drag') ? true : false;
       var tnsPrevButton = el.dataset.tnsPrevButton ? document.querySelector(el.dataset.tnsPrevButton) : document.querySelector(sel + " .tns-prev-button");
       var tnsNextButton = el.dataset.tnsNextButton ? document.querySelector(el.dataset.tnsNextButton) : document.querySelector(sel + " .tns-next-button");
+      var tnsAngle = el.hasAttribute('data-tns-angle') ? el.dataset.tnsAngle*1 : false;
       this.connectedMenu = el.dataset.tnsConnectedMenu ? el.dataset.tnsConnectedMenu : "";
       var tnsMode = el.hasAttribute('data-tns-gallery') ? "gallery" : "carousel";
       var options = {
@@ -68,7 +69,7 @@ export default class TinySlider {
         mode : tnsMode,
         autoplay: tnsAutoplay,
         autoWidth: tnsAutowidth,
-        swipeAngle : false,
+        swipeAngle : tnsAngle,
         lazyload: true,
         mouseDrag: tnsMouseDrag,
         controls: tnsHasControls,

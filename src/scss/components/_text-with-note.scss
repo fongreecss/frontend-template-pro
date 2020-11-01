@@ -1,10 +1,10 @@
 .c-text-with-note-1 {
   .note-number {
-    transform: translate(5px, 5px);
+    transform: translate(5px, 0px);
   }
   @screen lg {
     .note-number {
-      transform: translate(10px, 10px);
+      transform: translate(10px, 0px);
     }
   }
 }

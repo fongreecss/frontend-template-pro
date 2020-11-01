@@ -34,7 +34,9 @@ Example:
 				<h2 class="h4 lg:h1 title mb-4 lg:mb-10">{{ params.title }}</h2>
 			</div>
 		</div>
-		<div class="flex flex-wrap -mx-10 lg:-mx-5">
+	</div>
+	<div class="container-max">
+		<div class="flex flex-wrap -mx-5 lg:-mx-5">
 			<div class="col-12">
 				<div class="w-full h-120 lg:h-140 mb-4 lg:mb-11">
 					<img loading="lazy" src="{{ params.image }}" alt="" class="hidden lg:block object-cover w-full h-full">
@@ -43,6 +45,9 @@ Example:
 				</div>
 			</div>
 		</div>
+	</div>
+	
+	<div class="container-only-lg">
 		<div class="flex flex-wrap -mx-5">
 			<div class="col-12 lg:col-7 xl:col-5 xl:offset-1">
 				<div class="medium-paragraph lg:large-paragraph text-textgray mb-4 lg:mb-0">{{ params.description }}</div>

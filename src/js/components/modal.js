@@ -10,6 +10,10 @@ export default class Modal {
         this.toggleModal(el, el.dataset.modalTrigger);
       });
 
+      window.closeModal = () => {
+        this.closeModal();
+      };
+
     });
 
 

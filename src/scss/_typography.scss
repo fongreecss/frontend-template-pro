@@ -577,6 +577,18 @@ h1.title {
     letter-spacing: -1px;
   }
 
+  .lg\:medium-button-bu {
+    /* Medium button */
+    font-family: "Roboto Condensed";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
   .lg\:medium-button {
     font-family: "Arboria";
     font-style: normal;

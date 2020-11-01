@@ -9,6 +9,7 @@ this one ony has three featured articles
   @param {string} jobtitle
   @param {string} url
   @param {string} image
+  @params {int} id - advisor id
 }
 
 Example: 
@@ -17,24 +18,28 @@ Example:
     set cardListItems2 = {
       "items" : [
           {
+              "id" : 1,
               "title" : "Myhajlo Todurov",
               "jobtitle" : "Svetovalec, Vodja uredništva",
               "url" : "#",
               "image" : "assets/images/vegelj-big.png"
           },
           {
+              "id" : 2,
               "title" : "Myhajlo Todurov",
               "jobtitle" : "Svetovalec, Vodja uredništva",
               "url" : "#",
               "image" : "assets/images/vegelj-big.png"
           },
           {
+              "id" : 3,
               "title" : "Myhajlo Todurov",
               "jobtitle" : "Svetovalec, Vodja uredništva",
               "url" : "#",
               "image" : "assets/images/vegelj-big.png"
           },
           {
+              "id" : 4,
               "title" : "Myhajlo Todurov",
               "jobtitle" : "Svetovalec, Vodja uredništva",
               "url" : "#",
@@ -52,7 +57,7 @@ Example:
 		<div class="flex flex-wrap -mx-1 lg:-mx-5">
 			{% for item in params.items %}
 				<div class="w-1/2 px-1 lg:w-1/3 lg:px-5">
-					<a href="{{ item.url }}" class="mb-6 lg:mb-10 block w-full  relative">
+					<a data-advisor-id ="{{ item.id }}" href="{{ item.url }}" class="mb-6 lg:mb-10 block w-full  relative">
 						<div class="image-container pb-full w-full h-0 lg:pb-7/10 lg:w-7/10 lg:mx-auto relative">
 							<img loading="lazy" src="{{ item.image }}" class="absolute w-full h-full object-cover object-bottom" alt="">
 						</div>

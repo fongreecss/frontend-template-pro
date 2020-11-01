@@ -117,7 +117,7 @@
 our clients as well.",
 	"cta" : {
 		"title" : "Spoznajte zdaj",
-		"url" : "#"
+		"url" : "/consult-functions-6.html"
 	},
 	"cta2" : {
 		"title" : "Naročite svetovalca",
@@ -251,6 +251,7 @@ our clients as well.",
         }
     ],
     "featured_item" : {
+			"id" : "1",
             "title" : "Naročite termin z svetovalcem",
             "url" : "#featured",
             "image" : "assets/images/vegelj-big.png",
@@ -336,11 +337,12 @@ our clients as well.",
        "title": "Naši finančni svetovalci",
        "description" : "Vsi registrirani uporabniki ste enkrat letno upravičeni do brezplačnega pregleda portfelja.",
        "cta" : {
-           "title" : "NAROČITE SVETOVALCA",
-           "url" : "#"
+           "title" : "Vsi svetovalci",
+           "url" : "/consult-all-advisors-2.html"
        },
 	   "items" : [
 		   {
+			   "id" : "1",
 			   "title" : "Dr. David Vegelj",
 			   "quote" : "Key statement about the product and how exciting it is, or some other manner of interesting quote.",
 			   "jobtitle" : "Cheif investment officer",
@@ -348,6 +350,7 @@ our clients as well.",
                "image_mobile": "assets/images/Vegelj4-big.png",
 		   },
 		   {
+			   "id" : "2",
 			   "title" : "Dr. Radovan Obal",
 			   "quote" : "Key statement about the product and how exciting it is, or some other manner of interesting quote. 2",
 			   "jobtitle" : "Cheif investment officer 2",
@@ -355,6 +358,7 @@ our clients as well.",
                "image_mobile": "assets/images/Vegelj4-big.png",
 		   },
 		   {
+			   "id" : "3",
 			   "title" : "Dr. Aleksander Fras",
 			   "quote" : "Key statement about the product and how exciting it is, or some other manner of interesting quote. 3",
 			   "jobtitle" : "Cheif investment officer 3",
@@ -365,10 +369,10 @@ our clients as well.",
     }
 %}
 
-{% set divisionName = 'consult' %}
+{% set division_name = 'consult' %}
 
 {% block content %}
-	<main role="main" class="p-consult p-consult-5">
+	<main role="main" class="p-consult p-consult-1">
         {% include "/templates/components/header-consult-1.twig" with { params: headerItems } %}
 
 		{# spacer #}

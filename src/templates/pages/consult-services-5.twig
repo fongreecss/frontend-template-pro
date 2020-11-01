@@ -116,7 +116,7 @@
 		"url" : "#"
 	},
 	"image" : "assets/images/office-empty-mobile.png",
-    "layout" : 4,
+    "layout" : 7,
 } %}
 
 {% set imageAsideItems5 = {
@@ -130,27 +130,55 @@
     "layout" : 5,
 } %}
 
-{% set divisionName = 'consult' %}
+{% set division_name = 'consult' %}
 
 {% block content %}
 	<main role="main" class="p-consult p-consult-5">
         {% include "/templates/components/header-consult-2.twig" with { params: headerItems } %}
         <div class="pb-14 lg:pb-0 lg:-mb-15"></div>
         {% include "/templates/components/text-simple-2.twig" with { params: textSimpleItems } %}
-		<div class="pb-9 lg:pb-30"></div>
+
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "36", "desktop" : "120" } } %}
+		{# end spacer #}
+
         {% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems1 } %}
-        <div class="pb-10 lg:pb-36"></div>
+
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "40", "desktop" : "195" } } %}
+		{# end spacer #}
+
+
         {% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems2 } %}
-        <div class="pb-10 lg:pb-24"></div>
+
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "40", "desktop" : "95" } } %}
+		{# end spacer #}
+
         {% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems3 } %}
-        <div class="pb-10 lg:pb-16"></div>
+
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "40", "desktop" : "156" } } %}
+		{# end spacer #}
+
         {% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems4 } %}
-        <div class="pb-10 lg:pb-24"></div>
+
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "40", "desktop" : "92" } } %}
+		{# end spacer #}
+
         {% include "/templates/components/image-aside-2_2.twig" with { params: imageAsideItems5 } %}
-        <div class="pb-14 lg:pb-50"></div>
+
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "56", "desktop" : "200" } } %}
+		{# end spacer #}
+
 		{% include "/templates/components/text-advanced-1.twig" with { params: textAdvancedItems } %}
-		<div class="pb-20 lg:pb-0"></div>
+
+		{# spacer #}
+		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "80", "desktop" : "0" } } %}
+		{# end spacer #}
+
 		{% include "/templates/components/contact-info-1.twig" with { params: contactInfoItems } %}
-		
 	</main>
 {% endblock %}

@@ -37,16 +37,16 @@
 
 </head>
 
-<body class="flex flex-col min-h-screen bg-white">
+<body class="flex flex-col min-h-screen bg-white body-{{ division_name }} {{ has_footer == false ? "nofooter" : "" }}">
 
-  {% include '/templates/layouts/navigation-' ~ divisionName ~ '.twig' ignore missing %}
+  {% include '/templates/layouts/navigation-' ~ division_name ~ '.twig' ignore missing %}
 
   <div class="flex-grow">
   {% block content %}{% endblock %}
   </div>
 
-  {% include '/templates/layouts/footer-' ~ divisionName ~ '.twig' ignore missing %}
- 
+  {% include '/templates/layouts/footer-' ~ division_name ~ '.twig' ignore missing %}
+  {% include '/templates/components/order-advisor-form.twig' ignore missing %}
   
   {# include '/templates/components/cookie-notice.twig' #}
 

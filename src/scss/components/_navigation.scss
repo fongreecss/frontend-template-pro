@@ -206,3 +206,10 @@ html[data-modal-active="#page-switcher-1"] .n-navigation-1-m {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
   }
 }
+
+
+.nofooter {
+  .n-navigation {
+    background-color: transparent!important;
+  }
+}

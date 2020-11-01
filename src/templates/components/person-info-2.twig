@@ -4,6 +4,7 @@ Person info - version 2
 Left: image with pattern
 Right: text. Name, job title, quote, description and cta
 
+@param {int} id - advisor id
 @param {string} image - person's image
 @param {string} image_mobile - mobile image
 @param {string} title - name of person
@@ -20,6 +21,7 @@ Example:
 
   {%
       set personInfoItems = {
+		"id" : 5,
         "image" : "assets/images/Vegelj4-big.png",
         "image_mobile": "assets/images/Vegelj4-big.png",
         "title": "Dr. David Vegelj",
@@ -72,7 +74,7 @@ Example:
 				<p class="regular-quote lg:leading-quote text-coalblack mb-8 lg:mb-8">{{ params.quote }}</p>
 				{% if params.cta %}
 					<div class="">
-						<a href="{{ params.cta.url }}" class="button button-full medium-button w-full lg:w-auto">{{ params.cta.title }}</a>
+						<a data-advisor-id ="{{ params.id }}" href="{{ params.cta.url }}" class="button button-full medium-button w-full lg:w-auto">{{ params.cta.title }}</a>
 					</div>
 				{% endif %}
 			</div>

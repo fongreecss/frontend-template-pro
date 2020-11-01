@@ -1,0 +1,224 @@
+.c-multiple-checkboxes-1 {
+  .input-label-flex {
+    border: 2px solid #ffffff;
+  }
+
+  .input-label,
+  .input-label-flex {
+    .input-checkbox + * {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0px;
+        top: 3px;
+        @apply border-2 border-white w-5 h-5;
+      }
+    }
+
+    .input-checkbox:checked + * {
+      &:after {
+        content: "\2713";
+        font-family: "Arboria";
+        font-size: 16px;
+        line-height: 16px;
+        text-align: center;
+        @apply border-2 border-white text-peppermint bg-white;
+      }
+    }
+  }
+}
+
+.c-quiz-age-1 {
+  .input-text {
+    @apply border-b border-peppermint bg-arcticsilver p-4;
+    border-top: 0 !important;
+    border-right: 0 !important;
+    border-left: 0 !important;
+    border-width: 4px !important;
+    /* Leading paragraph */
+    font-family: "Tiempos Text";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 40px;
+    /* identical to box height, or 167% */
+    @apply text-textgray;
+    &::placeholder {
+      /* Microsoft Edge */
+      @apply text-midtonegray;
+      opacity: 1;
+      /* Leading paragraph */
+      font-family: "Tiempos Text";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 40px;
+      /* identical to box height, or 167% */
+    }
+  }
+}
+
+.c-quiz-range {
+  .input-label-inline {
+    display: inline-block;
+    position: relative;
+  }
+
+  .input-label-vert {
+    height: 226px;
+    width: 60px;
+    @screen lg {
+      height: 226px;
+      width: 72px;
+    }
+  }
+
+  .input-range-vert {
+    transform: translate(60px,166px) rotate(-90deg);
+    @screen lg {
+      transform: translate(72px, 154px) rotate(-90deg);
+    }
+    transform-origin: left bottom;
+    position: absolute;
+    top: 0;
+    left: 0;
+    &::-webkit-slider-thumb {
+      cursor: n-resize;
+    }
+    &::-moz-range-thumb {
+      cursor: n-resize;
+    }
+  }
+
+  .input-range-hor {
+    &::-webkit-slider-thumb {
+      cursor: ew-resize;
+    }
+    &::-moz-range-thumb {
+      cursor: ew-resize;
+    }
+  }
+
+  .range-button-container-1 {
+    .label-top {
+      right:calc(100% + 15px);
+    }
+    .label-bottom {
+      right:calc(100% + 15px);
+    }
+    @screen lg {
+      .label-top {
+        right:calc(100% + 43px);
+      }
+      .label-bottom {
+        right:calc(100% + 43px);
+      }
+    }
+  }
+
+  .range-button-container-2 {
+    .label-top {
+      left:calc(100% + 15px);
+    }
+    .label-bottom {
+      left:calc(100% + 15px);
+    }
+    @screen lg {
+      .label-top {
+        left:calc(100% + 43px);
+      }
+      .label-bottom {
+        left:calc(100% + 43px);
+      }
+    }
+  }
+  
+
+  .input-range-hor,
+  .input-range-vert {
+    -webkit-appearance: none;
+    height: 60px;
+    width: 226px;
+    @screen lg {
+      height: 72px;
+      width: 226px;
+    }
+    position: relative;
+    border: 2px solid #fff;
+    //transform: rotate(90deg);
+    & {
+      overflow: hidden;
+      height: 60px;
+      @screen lg {
+        height: 72px;
+      }
+      -webkit-appearance: none;
+      background-color: transparent;
+    }
+    &::-webkit-slider-runnable-track {
+      height: 60px;
+      @screen lg {
+        height: 72px;
+      }
+      -webkit-appearance: none;
+    }
+
+    &::-moz-range-track {
+      height: 60px;
+      @screen lg {
+        height: 72px;
+      }
+      -webkit-appearance: none;
+    }
+
+    &::-webkit-slider-thumb {
+      width: 32px;
+      -webkit-appearance: none;
+      height: 60px;
+      @screen lg {
+        height: 72px;
+      }
+      box-shadow: -340px 0 0 320px #54bab3;
+      background-color: #54bab3;
+      background-image: url("data:image/svg+xml,%3Csvg width='6' height='16' viewBox='0 0 6 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23308278' d='M6 0v16H4V0zM2 0v16H0V0z'/%3E%3C/svg%3E");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 6px 16px;
+      outline: 0 !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+    }
+
+    &::-moz-range-thumb {
+      width: 32px;
+      -webkit-appearance: none;
+      height: 60px;
+      @screen lg {
+        height: 72px;
+      }
+      box-shadow: -340px 0 0 320px #54bab3;
+      background-color: #54bab3;
+      background-image: url("data:image/svg+xml,%3Csvg width='6' height='16' viewBox='0 0 6 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23308278' d='M6 0v16H4V0zM2 0v16H0V0z'/%3E%3C/svg%3E");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 6px 16px;
+      outline: 0 !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+    }
+  }
+}
+
+.c-quiz-result-1 {
+  .background-panel {
+    position: absolute;
+    top:0;
+    height: 100%;
+    left: -68px;
+    width: 1010px;
+    @apply bg-coalgray;
+  }
+}
