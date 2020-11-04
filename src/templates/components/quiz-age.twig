@@ -67,7 +67,7 @@ Example:
             <div class="col-12 lg:col-6 xl:offset-1 xl:col-4">
                 {% for item in params.items %}
                     <label class="input-label-flex mb-4 lg:mb-4 items-center cursor-pointer">
-                        <input type="number" name="{{ item.name }}" class="input-text">
+                        <input value="30" type="number" step="10" name="{{ item.name }}" class="input-text">
                     </label>
                 {% endfor %}
             </div>
@@ -85,7 +85,7 @@ Example:
 						<button onClick="nextButton_quiz1();" class="button button-full medium-button w-full lg:w-auto">{{ params.cta2.title }}</button>
 					{% endif %}
 				</div>
-		</div>
+		</div> 
     </div>
     </div>
 </section>

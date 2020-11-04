@@ -96,9 +96,10 @@ Example:
             </div>
             <div class="col-12 lg:col-6 xl:offset-1 xl:col-4">
                 {% for item in params.items %}
-                    <label class="input-label-flex mb-4 lg:mb-4 items-center p-4 cursor-pointer">
+                    <label class="input-label-flex input-label-flex-border-transparent  mb-4 lg:mb-4 items-center p-4 cursor-pointer relative">
                         <input type="checkbox" value="{{ item.value }}" name="{{ item.name }}[]" class="input-checkbox">
                         <span class="pl-8 medium-button text-white">{{ item.title }}</span>
+                        <div class="bg-checked"></div>
                     </label>
                 {% endfor %}
             </div>

@@ -166,13 +166,13 @@
 				<svg onclick="nextButton_quiz1();" class="inline-block cursor-pointer mr-2 lg:mr-6" width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path fill-rule="evenodd" clip-rule="evenodd" d="M9 18.707l-1.414-1.414L12.879 12 7.586 6.707 9 5.293 15.707 12 9 18.707z" fill="white"/>
 				</svg>
-				<span id="question-number" class="text-peppermint medium-button-bu inline-block mr-2 lg:mr-6">Q. 1
+				<span id="question-number" class="text-peppermint arboria-main-button inline-block mr-2 lg:mr-6">Q. 1
 				</span>
 				<div class="inline-block bg-white relative" style="width:calc(100% - 270px); height:2px;">
-                    <div id="question-progress" class="absolute top-0 left-0 bg-peppermint transition-all" style="height:2px;transition:width 1s ease 0s;"></div>
-                </div>
+					<div id="question-progress" class="absolute top-0 left-0 bg-peppermint transition-all" style="height:2px;transition:width 1s ease 0s;"></div>
+				</div>
 				<div class="inline-block cursor-pointer" onclick="window.location.href = document.referrer; ">
-                    <span class="hidden lg:inline-block align-middle medium-button-bu text-white ml-2 lg:ml-6 mr-2">Zapri</span>
+					<span class="hidden lg:inline-block align-middle arboria-main-button text-white ml-2 lg:ml-6 mr-2">Zapri</span>
 					<svg class="inline-block align-middle" width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path fill-rule="evenodd" clip-rule="evenodd" d="M10.586 12l-5.293 5.293 1.414 1.414L12 13.414l5.293 5.293 1.414-1.414L13.414 12l5.293-5.293-1.414-1.414L12 10.586 6.707 5.293 5.293 6.707 10.586 12z" fill="white"/>
 					</svg>
@@ -189,49 +189,65 @@
 			{% include "/templates/components/quiz-result.twig" with { params:result } %}
 		</form>
 		<script>
-			function nextButton_quiz1() {
-event.preventDefault();
-var slider = document.querySelector("#quiz-form-1");
-
-if (typeof slider.tnsSlider != "undefined") {
-slider.tnsSlider.goTo('next');
+function scrollTop() {
 document.body.scrollTop = 0;
 document.documentElement.scrollTop = 0;
 }
+
+function canNext_quiz1(slider) {
+    if( slider.tnsSlider.getInfo().displayIndex < slider.tnsSlider.getInfo().slideCount) {
+        return true;
+    }
+    return false;
+}
+function nextButton_quiz1() {
+    event.preventDefault();
+    var slider = document.querySelector("#quiz-form-1");
+    if (typeof slider.tnsSlider != "undefined") {
+        if( canNext_quiz1(slider) ) {
+            slider.tnsSlider.goTo('next');
+            scrollTop();
+        }
+        
+    }
+}
+
+function canPrev_quiz1(slider) {
+    if(slider.tnsSlider.getInfo().displayIndex >1) {
+        return true;
+    }
+    return false;
 }
 function prevButton_quiz1() {
-event.preventDefault();
-var slider = document.querySelector("#quiz-form-1");
-if (typeof slider.tnsSlider != "undefined") {
-slider.tnsSlider.goTo('prev');
-document.body.scrollTop = 0;
-document.documentElement.scrollTop = 0;
-}
+    event.preventDefault();
+    var slider = document.querySelector("#quiz-form-1");
+    if (typeof slider.tnsSlider != "undefined") {
+        if(canPrev_quiz1(slider)) {
+            slider.tnsSlider.goTo('prev');
+            scrollTop();
+        }  
+    }
 }
 
 function redoButton_quiz1() {
-event.preventDefault();
-
-var slider = document.querySelector("#quiz-form-1");
-slider.reset();
-if (typeof slider.tnsSlider != "undefined") {
-slider.tnsSlider.goTo(0);
-document.body.scrollTop = 0;
-document.documentElement.scrollTop = 0;
-}
-}
-
-window.addEventListener('DOMContentLoaded', function(){
+    event.preventDefault();
     var slider = document.querySelector("#quiz-form-1");
     
     if (typeof slider.tnsSlider != "undefined") {
-        document.querySelector('#question-progress').style.width =  (1 / slider.tnsSlider.getInfo().slideCount * 100) + "%";
-        slider.tnsSlider.events.on("indexChanged", (info, eventName) => {
+        slider.reset();
+        window.location.href = window.location.href;
+    }
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+    var slider = document.querySelector("#quiz-form-1");
+
+    if (typeof slider.tnsSlider != "undefined") {
+        document.querySelector('#question-progress').style.width = (1 / slider.tnsSlider.getInfo().slideCount * 100) + "%";
+        slider.tnsSlider.events.on("indexChanged", function(info, eventName) {
             document.querySelector('#question-number').innerHTML = "Q. " + info.displayIndex;
-            document.querySelector('#question-progress').style.width =  (info.displayIndex / info.slideCount * 100) + "%";
+            document.querySelector('#question-progress').style.width = (info.displayIndex / info.slideCount * 100) + "%";
         });
-        
-            
     }
 });
 		</script>

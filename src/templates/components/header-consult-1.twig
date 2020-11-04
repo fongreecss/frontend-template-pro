@@ -84,8 +84,8 @@ Example:
 	<div class="container-only-lg">
 		<div class="flex flex-wrap -mx-5 relative">
 			<div class="col-12 mb-0 lg:mb-0 relative">
-				<div class="cta-container relative lg:absolute lg:bottom-0 lg:left-5 lg:pr-24 lg:pt-11 lg:pb-10 lg:pl-28 lg:bg-white ">
-					<div class="relative">
+				<div class="cta-container relative lg:absolute lg:bottom-0 lg:left-5 lg:pr-24 lg:pt-11 lg:pb-10 lg:pl-24 lg:bg-white ">
+					<div class="relative" style="z-index:1;">
 						{% if params.cta %}
 							<a href="{{ params.cta.url }}" class="button button-full medium-button w-full lg:w-auto mb-4 lg:mb-0 xl:mr-8 lg:inline-block">{{ params.cta.title }}</a>
 						{% endif %}

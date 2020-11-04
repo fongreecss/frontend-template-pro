@@ -1,3 +1,57 @@
+{% 
+      set footerItems = { 
+        "title" : "Drop us a line or two, we are open for creative minds and collaborations!",
+		"email_title" : "vzajemci@vzajemci.si",
+		"email_url" : "mailto:vzajemci@vzajemci.si",
+		"address" : "Vzajemci Skupina d.o.o.<br>Litostrojska 52<br>1000 Ljubljana",
+		"copyright_text" : "Copyright © 2016 Vzajemci Skupina d.o.o. Vse pravice pridržane.",
+		"items_top" : [
+			{
+				"title" : "Vzajemci",
+				"title2" : "Consulting",
+				"url" : "/consult-landing-1.html"
+			},
+			{
+				"title" : "Vzajemci",
+				"title2" : "Academy",
+				"url" : "#"
+			},
+			{
+				"title" : "Vzajemci",
+				"title2" : "Invest",
+				"url" : "/invest-landing.html"
+			}
+		],
+		"items_bottom" : [
+			{
+				"title" : "Pravno obvestilo",
+				"url" : "#"
+			},
+			{
+				"title" : "Piškotki",
+				"url" : "#"
+			}
+		],
+		"items_social" : [
+			{
+				"type" : "facebook",
+				"url" : "#"
+			},
+			{
+				"type" : "twitter",
+				"url" : "#"
+			},
+			{
+				"type" : "linkedin",
+				"url" : "#"
+			},
+			{
+				"type" : "mail",
+				"url" : "mailto:vzajemci@vzajemci.si"
+			}
+		]
+      } 
+%}
 <div class="footer-separator">
 	<div class="container-only-lg">
 		<div class="flex wrap -mx-5">
@@ -7,4 +61,4 @@
 		</div>
 	</div>
 </div>
-{% include '/templates/layouts/footer.twig' %}
+{% include '/templates/layouts/footer.twig' with { params : footerItems } %}

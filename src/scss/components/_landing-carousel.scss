@@ -1,4 +1,4 @@
-.invest-graph {
+.invest-landing-carousel-container {
   position: absolute;
   top: auto;
   bottom: 0px;
@@ -16,12 +16,27 @@
   left: 485px;
   top: -115px;
   position: absolute;
-  .carousel-vertical-line {
-    height: 150px;
-  }
+  
   .carousel-item-image {
     width: 115px;
     height: 115px;
+  }
+
+  .carousel-item {
+    opacity: 0;
+    transform: translate(100px, 0px);
+    transition: opacity 0.7s ease 0s, transform 0.7s ease 0s;
+    .carousel-vertical-line {
+      height: 0px;
+      transition: height 0.5s ease 0.7s;
+    }
+  }
+  .carousel-item.active {
+    opacity: 1;
+    transform: translate(0px, 0px);
+    .carousel-vertical-line {
+      height: 150px;
+    }
   }
   @screen lg {
     top: -211px;
@@ -30,8 +45,17 @@
       width: 211px;
       height: 211px;
     }
-    .carousel-vertical-line {
-      height: 11vw;
+    .carousel-item {
+      .carousel-vertical-line {
+        height: 0vw;
+      }
     }
+
+    .carousel-item.active {
+      .carousel-vertical-line {
+        height: 11vw;
+      }
+    }
+    
   }
 }

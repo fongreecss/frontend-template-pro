@@ -1,6 +1,6 @@
 .button {
   outline: none;
-  @apply outline-none border-2 uppercase border-transparent border-solid text-white px-8 py-4 inline-block text-center font-bold text-base;
+  @apply outline-none relative border-2 uppercase border-transparent border-solid text-white px-8 py-4 inline-block text-center font-bold text-base;
   line-height: 24px;
   @screen lg {
     @apply text-base;
@@ -16,11 +16,44 @@
   
 }
 
-.button-main,
+
 .button-full {
+  
   @apply bg-peppermint text-white;
+  
   &:hover {
     background-color: #308278;
+    transition: background-color 0.5s ease 0s;
+    &:after {
+      transition: border-color 0.5s ease 0s;
+    }
+  }
+}
+
+.body-consult .button-full {
+  transform: translate3d(0px,-4px,0);
+  &:after {
+    @apply border-2 border-peppermint bg-transparent;
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    top: 2px;
+    left: 2px;
+    right: -6px;
+    z-index: -1;
+    
+  }
+  &:hover {
+    &:after {
+      border-color: #308278;
+      
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .body-consult .button-full.w-full {
+    width: calc(100% - 4px);
   }
 }
 

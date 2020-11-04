@@ -39,7 +39,7 @@ Example:
             },
             {
                 "image" : "assets/images/man1.jpg",
-                "number" : "121%",
+                "number" : "31%",
                 "caption" : "odstotkov več"
             }
         ]
@@ -48,7 +48,7 @@ Example:
 #}
 
 {# Output #}
-<header class="c-header c-header-invest-1 w-full pt-8 lg:pt-0 lg:min-h-screen relative lg:flex lg:justify-center lg:items-center">
+<header id="graph-invest" data-invest-carousel-items="{{ params.items|length }}" class="c-header c-header-invest-1 w-full pt-8 lg:pt-0 lg:min-h-screen relative lg:flex lg:justify-center lg:items-center">
 	<div class="container-only-lg">
 		<div class="flex flex-wrap -mx-5">
 			<div class="col-12 lg:col-7 xl:col-5 xl:offset-2">
@@ -61,10 +61,10 @@ Example:
 		</div>
 	</div>
 
-	<div class="invest-graph">
+	<div class="invest-landing-carousel-container">
 		<div class="landing-carousel">
 			{% for item in params.items %}
-				<div class="carousel-item absolute {{ loop.index == 1 ? " " : " invisible" }}">
+				<div class="carousel-item carousel-item-{{ loop.index }} absolute {{ loop.index == 1 ? "active" : "" }}">
 					<div class="carousel-item-image mb-0 lg:mb-3">
 						<img class="object-cover w-full h-full" src="{{ item.image }}" alt="">
 					</div>

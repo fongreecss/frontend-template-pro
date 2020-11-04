@@ -1,6 +1,6 @@
 {% extends '/templates/layouts/base.twig' %}
 
-{% 
+{#
 
 	set headerItems = { 
 		"title": "Ustvarjeno za vas", 
@@ -29,15 +29,30 @@
 		]
 	} 
 
-%}
+#}
+
+{% set headerItems = { 
+    "image" : "assets/images/created-for-you.png",
+    
+    "suptitle" : "Ustvarjeno",
+	"title": "za vas.", 
+	"cta" : { 
+		"title" : "Naročite svetovalca", 
+		"url" : "#" 
+	},
+    "cta2" : {
+        "title" : "Video klic v živo", 
+		"url" : "#" 
+    }
+} %}
 
 {% 
 	set imageAsideItems = {
 		"title": "Ste pravi tip vlagatelja za invest?",
 		"description": "Not sales, but consultancy. Our interests are in providing excellent advice and mentorship for our clients.",
 		"cta" : {
-			"title" : "Naročite svetovalca",
-			"url" : "#"
+			"title" : "Spoznajte zdaj",
+			"url" : "/quiz-1.html"
 		},
 		"layout" : 6,
 		"image" : "assets/images/mansuit.jpg",
@@ -168,7 +183,7 @@
 
 {% block content %}
 	<main role="main" class="p-invest p-invest-landing">
-		{% include "/templates/components/header-invest-1.twig" with { params: headerItems } %}
+		{% include "/templates/components/header-consult-1.twig" with { params: headerItems } %}
 
 		{# spacer #}
 		{% include "/templates/components/spacer.twig" with { "params": { "mobile" : "0", "desktop" : "148" } } %}
